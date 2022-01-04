@@ -1,0 +1,2 @@
+class ShopUser < ApplicationRecord
+end
