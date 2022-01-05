@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 2022_01_04_134512) do
 
   create_table "shops", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", limit: 100, null: false
+    t.text "description"
+    t.text "shop_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
