@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>アカウントを登録</h2>
-    <form>
+    <form @submit.prevent="signUp">
       <input type="text" required placeholder="名前" v-model="name" />
       <input
         type="email"
@@ -27,6 +27,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   data() {
     return {
@@ -36,5 +38,21 @@ export default {
       passwordConfirmation: "",
     };
   },
+  methods: {
+    async signUp() {
+      try {
+        const res = await axios.post('http://localhost:3000/auth', {
+          name: this.name,
+          email: this.email,
+          password: this.password,
+          passwordConfirmation: this.passwordConfirmation,
+        })
+        console.log(res);
+        return res;
+      } catch(e) {
+        console.log({e});
+      }
+    }
+  }
 };
 </script>
