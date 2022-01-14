@@ -21,6 +21,7 @@
         placeholder="パスワード（確認用）"
         v-model="passwordConfirmation"
       />
+      <div class="error">{{ error }}</div>
       <button>登録する</button>
     </form>
   </div>
@@ -36,10 +37,12 @@ export default {
       email: "",
       password: "",
       passwordConfirmation: "",
+      error: null,
     };
   },
   methods: {
     async signUp() {
+      this.error = null
       try {
         const res = await axios.post('http://localhost:3000/auth', {
           name: this.name,
@@ -47,10 +50,14 @@ export default {
           password: this.password,
           passwordConfirmation: this.passwordConfirmation,
         })
+        if (!res) {
+          throw new Error('アカウントを登録できませんでした')
+        }
         console.log(res);
         return res;
-      } catch(e) {
-        console.log({e});
+      } catch(error) {
+        this.error = 'アカウントを登録できませんでした'
+        console.log({ error });
       }
     }
   }
