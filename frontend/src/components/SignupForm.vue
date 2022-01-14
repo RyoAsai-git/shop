@@ -53,7 +53,7 @@ export default {
         if (!res) {
           throw new Error('アカウントを登録できませんでした')
         }
-        console.log(res);
+        console.log({ res });
         return res;
       } catch(error) {
         this.error = 'アカウントを登録できませんでした'
