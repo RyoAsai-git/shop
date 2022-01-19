@@ -24,6 +24,7 @@
 import axios from 'axios'
 
 export default {
+  emits: ['redirectToHome'],
   data() {
     return {
       email: "",
@@ -41,6 +42,9 @@ export default {
         })
         if (!res) {
           throw new Error('メールアドレスかパスワードが違います')
+        }
+        if (!this.error) {
+          this.$emit('redirectToHome')
         }
         console.log({ res })
         return res
