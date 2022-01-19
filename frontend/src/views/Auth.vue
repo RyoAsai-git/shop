@@ -2,11 +2,11 @@
   <div class="container welcome">
     <p>ようこそ！</p>
     <div v-if="shouldShowLoginForm">
-      <LoginForm />
+      <LoginForm @redirectToHome="redirectToHome" />
       <p class="change-form">初めての方は<span @click="shouldShowLoginForm = false">こちら</span>をクリック</p>
     </div>
     <div v-if="!shouldShowLoginForm">
-      <SignupForm />
+      <SignupForm @redirectToHome="redirectToHome" />
       <p class="change-form">アカウントをお持ちの方は<span @click="shouldShowLoginForm = true">こちら</span>をクリック</p>
     </div>
   </div>
@@ -25,6 +25,12 @@ export default {
   data () {
     return {
       shouldShowLoginForm: true
+    }
+  },
+
+  methods: {
+    redirectToHome() {
+      this.$router.push({ name: 'Home' })
     }
   }
 }

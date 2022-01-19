@@ -31,6 +31,7 @@
 import axios from 'axios'
 
 export default {
+  emits: ['redirectToHome'],
   data() {
     return {
       name: "",
@@ -52,6 +53,9 @@ export default {
         })
         if (!res) {
           throw new Error('アカウントを登録できませんでした')
+        }
+        if (!this.error) {
+          this.$emit('redirectToHome')
         }
         console.log({ res })
         return res
