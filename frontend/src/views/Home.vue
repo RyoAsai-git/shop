@@ -1,5 +1,4 @@
 <template>
-  <!-- ここにサインアップページとログインページのルーティング作成 -->
   <body>
     <header>
       <h1 class="headline">
