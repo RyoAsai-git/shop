@@ -10,6 +10,7 @@
         </li>
         <li class="nav-list-item">About</li>
         <li class="nav-list-item">Topic</li>
+        <li class="nav-list-item">Login</li>
       </ul>
     </header>
     <div>
@@ -52,7 +53,7 @@ header .headline {
 }
 footer {
   width: 100%;
-  height: 120px; 
+  height: 120px;
   text-align: center;
   padding: 50px 0;
   background-color: #fff;
