@@ -13,7 +13,11 @@
       </ul>
     </header>
     <div>
+      <p>Home</p>
     </div>
+    <footer>
+      <p>© All rights reserved by shop.</p>
+    </footer>
   </body>
 </template>
 
@@ -23,15 +27,17 @@ export default {};
 
 <style scoped>
 * {
-  margin:0; padding:0;
+  margin: 0;
+  padding: 0;
 }
 header {
   width: 100%;
   padding: 15px 0;
   margin: 0 auto;
   text-align: center;
+  background: #fff;
 }
-header .headline{
+header .headline {
   font-size: 32px;
 }
 .nav-list {
@@ -43,5 +49,15 @@ header .headline{
   list-style: none;
   display: inline-block;
   margin: 0 20px;
+}
+footer {
+  width: 100%;
+  height: 120px; 
+  text-align: center;
+  padding: 50px 0;
+  background-color: #fff;
+}
+.footer-text {
+  color: #fff;
 }
 </style>
