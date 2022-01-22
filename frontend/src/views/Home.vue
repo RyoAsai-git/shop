@@ -53,7 +53,7 @@ header .headline {
 }
 footer {
   width: 100%;
-  height: 120px;
+  height: 80px;
   text-align: center;
   padding: 50px 0;
   background-color: #fff;
