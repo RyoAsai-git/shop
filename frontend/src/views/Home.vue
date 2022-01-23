@@ -17,13 +17,6 @@
         <li class="nav-list-item">
           <a>Login</a>
         </li>
-        <!-- <li class="nav-list-item">
-          <a href=""></a>
-          About
-          </li>
-        <li class="nav-list-item">Topic</li> -->
-        <!-- <li class="nav-list-item"><a @click="shouldShowAuthForm = true">Login</a></li>
-        <v-btn class="nav-list-item" @click="shouldShowAuthForm = true">Login</v-btn> -->
       </ul>
     </header>
     <div class="container welcome">
