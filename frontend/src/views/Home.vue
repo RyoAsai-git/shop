@@ -5,12 +5,25 @@
         <a>サンプルのサイト</a>
       </h1>
       <ul class="nav-list">
-        <li class="nav-list-item">
-          <a>Home </a>
+        <li class="nav-list-item">Ï
+          <a>Home</a>
         </li>
-        <li class="nav-list-item">About</li>
-        <li class="nav-list-item">Topic</li>
-        <li class="nav-list-item">Login</li>
+        <li class="nav-list-item">
+          <a>Topic</a>
+        </li>
+        <li class="nav-list-item">
+          <a>About</a>
+        </li>
+        <li class="nav-list-item">
+          <a>Login</a>
+        </li>
+        <!-- <li class="nav-list-item">
+          <a href=""></a>
+          About
+          </li>
+        <li class="nav-list-item">Topic</li> -->
+        <!-- <li class="nav-list-item"><a @click="shouldShowAuthForm = true">Login</a></li>
+        <v-btn class="nav-list-item" @click="shouldShowAuthForm = true">Login</v-btn> -->
       </ul>
     </header>
     <div class="container welcome">
@@ -48,6 +61,7 @@ export default {
 
   data() {
     return {
+      shouldShowAuthForm: false,
       shouldShowLoginForm: false,
     };
   },
