@@ -17,9 +17,15 @@
         <li class="nav-list-item">
           <a>Login</a>
         </li>
+        <li class="nav-list-item">
+          <button>Login</button>
+        </li>
       </ul>
     </header>
-    <div class="container welcome">
+    <div class="main">
+      <p>test</p>
+    </div>
+    <div class="container welcome" v-if="(shouldShowAuthForm = false)">
       <div v-if="shouldShowLoginForm">
         <LoginForm @redirectToHome="redirectToHome" />
         <p class="change-form">
@@ -36,9 +42,9 @@
         </p>
       </div>
     </div>
-      <footer>
-        <p>© All rights reserved by shop.</p>
-      </footer>
+    <footer>
+      <p>© All rights reserved by shop.</p>
+    </footer>
   </body>
 </template>
 
@@ -92,6 +98,10 @@ header .headline {
   display: inline-block;
   margin: 0 20px;
 }
+.main {
+  height: 100%;
+  widows: 100%;
+}
 .welcome {
   text-align: center;
   padding: 20px 0;
@@ -126,11 +136,15 @@ header .headline {
   margin: 10px;
 }
 footer {
-  width: 100%;
-  height: 80px;
   text-align: center;
-  padding: 50px 0;
+  padding: 40px 0;
+  text-align: center;
+  padding: 40 px 0;
   background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 .footer-text {
   color: #fff;
