@@ -25,7 +25,7 @@
     <div class="main">
       <p>test</p>
     </div>
-    <div class="container welcome" v-if="(shouldShowAuthForm = false)">
+    <div class="container welcome" v-if="shouldShowAuthForm = false">
       <div v-if="shouldShowLoginForm">
         <LoginForm @redirectToHome="redirectToHome" />
         <p class="change-form">
