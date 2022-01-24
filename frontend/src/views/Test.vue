@@ -5,7 +5,17 @@
     </div>
     <div id="overlay" v-show="showContent">
       <div id="content">
-        <p>これがモーダルウィンドウです。</p>
+        <LoginForm v-if="!shouldShowLoginForm" />
+        <p class="change-form">
+          初めての方は<span @click="shouldShowLoginForm = false">こちら</span
+          >をクリック
+        </p>
+        <SignupForm v-if="shouldShowLoginForm" />
+        <p class="change-form">
+          アカウントをお持ちの方は<span @click="shouldShowLoginForm = true"
+            >こちら</span
+          >をクリック
+        </p>
         <button v-on:click="closeModal">close</button>
       </div>
     </div>
@@ -13,23 +23,30 @@
 </template>
 
 <script>
+import LoginForm from "../components/LoginForm.vue";
+import SignupForm from "../components/SignupForm.vue";
 
 export default {
-  name: '#app',
+  name: "#app",
+  components: {
+    LoginForm,
+    SignupForm,
+  },
   data() {
     return {
-      showContent: false
-    }
+      showContent: false,
+      shouldShowLoginForm: false,
+    };
   },
-  methods:{
-    openModal: function(){
-      this.showContent = true
+  methods: {
+    openModal: function () {
+      this.showContent = true;
     },
-    closeModal: function(){
-      this.showContent = false
-    }
-  }
-}
+    closeModal: function () {
+      this.showContent = false;
+    },
+  },
+};
 </script>
 
 <style>
@@ -46,10 +63,15 @@ export default {
   justify-content: center;
 }
 
-#content{
-  z-index:2;
-  width:50%;
+#content {
+  z-index: 2;
+  width: 50%;
   padding: 1em;
-  background:#fff;
+  background: #fff;
 }
+
+/* .welcome {
+  text-align: center;
+  padding: 20px 0;
+} */
 </style>
