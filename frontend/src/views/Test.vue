@@ -6,17 +6,22 @@
       </div>
       <div id="overlay" v-show="showContent">
         <div id="content" class="modal">
-          <LoginForm v-if="!shouldShowLoginForm" />
-          <p class="change-form">
-            初めての方は<span @click="shouldShowLoginForm = false">こちら</span
-            >をクリック
-          </p>
-          <SignupForm v-if="shouldShowLoginForm" />
-          <p class="change-form">
-            アカウントをお持ちの方は<span @click="shouldShowLoginForm = true"
-              >こちら</span
-            >をクリック
-          </p>
+          <div v-if="shouldShowLoginForm">
+            <LoginForm  />
+            <p class="change-form">
+              初めての方は<span @click="shouldShowLoginForm = false"
+                >こちら</span
+              >をクリック
+            </p>
+          </div>
+          <div v-if="!shouldShowLoginForm">
+            <SignupForm />
+            <p class="change-form">
+              アカウントをお持ちの方は<span @click="shouldShowLoginForm = true"
+                >こちら</span
+              >をクリック
+            </p>
+          </div>
           <button v-on:click="closeModal">close</button>
         </div>
       </div>
