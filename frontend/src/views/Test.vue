@@ -81,8 +81,7 @@ export default {
 }
 .modal {
   background: #fff;
-  height: 50%;
-  width: 50%;
+  height: 68%;
   text-align: center;
   padding: 20px 0;
 }
@@ -96,10 +95,10 @@ export default {
 }
 .modal input {
   width: 100%;
-  padding: 12 px 20 px;
-  margin: 8 px auto;
-  border-radius: 4 px;
-  border: 1 px solid #eee;
+  padding: 12px 20px;
+  margin: 8px auto;
+  border-radius: 4px;
+  border: 1px solid #eee;
   outline: none;
   box-sizing: border-box;
 }
