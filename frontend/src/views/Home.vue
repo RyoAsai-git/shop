@@ -1,50 +1,31 @@
 <template>
   <body>
-    <header>
-      <h1 class="headline">
-        <a>サンプルのサイト</a>
-      </h1>
-      <ul class="nav-list">
-        <li class="nav-list-item">
-          <a>Home</a>
-        </li>
-        <li class="nav-list-item">
-          <a>Topic</a>
-        </li>
-        <li class="nav-list-item">
-          <a>About</a>
-        </li>
-        <li class="nav-list-item">
-          <a>Login</a>
-        </li>
-        <li class="nav-list-item">
-          <button>Login</button>
-        </li>
-      </ul>
-    </header>
     <div class="main">
-      <p>test</p>
-    </div>
-    <div class="container welcome">
-      <div v-if="shouldShowLoginForm">
-        <LoginForm @redirectToHome="redirectToHome" />
-        <p class="change-form">
-          初めての方は<span @click="shouldShowLoginForm = false">こちら</span
-          >をクリック
-        </p>
+      <div id="app">
+        <button v-on:click="openModal">Click</button>
       </div>
-      <div v-if="!shouldShowLoginForm">
-        <SignupForm @redirectToHome="redirectToHome" />
-        <p class="change-form">
-          アカウントをお持ちの方は<span @click="shouldShowLoginForm = true"
-            >こちら</span
-          >をクリック
-        </p>
+      <div id="overlay" v-show="showContent">
+        <div id="content" class="modal">
+          <div v-if="shouldShowLoginForm">
+            <LoginForm  />
+            <p class="change-form">
+              初めての方は<span @click="shouldShowLoginForm = false"
+                >こちら</span
+              >をクリック
+            </p>
+          </div>
+          <div v-if="!shouldShowLoginForm">
+            <SignupForm />
+            <p class="change-form">
+              アカウントをお持ちの方は<span @click="shouldShowLoginForm = true"
+                >こちら</span
+              >をクリック
+            </p>
+          </div>
+          <button v-on:click="closeModal">close</button>
+        </div>
       </div>
     </div>
-    <footer>
-      <p>© All rights reserved by shop.</p>
-    </footer>
   </body>
 </template>
 
@@ -53,68 +34,66 @@ import LoginForm from "../components/LoginForm.vue";
 import SignupForm from "../components/SignupForm.vue";
 
 export default {
+  name: "#app",
   components: {
     LoginForm,
     SignupForm,
   },
-
   data() {
     return {
-      shouldShowAuthForm: false,
+      showContent: false,
       shouldShowLoginForm: false,
     };
   },
-
   methods: {
-    redirectToHome() {
-      this.$router.push({ name: "Home" });
+    openModal: function () {
+      this.showContent = true;
+    },
+    closeModal: function () {
+      this.showContent = false;
     },
   },
 };
 </script>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-}
-header {
-  width: 100%;
-  padding: 15px 0;
-  margin: 0 auto;
-  text-align: center;
-  background: #fff;
-}
-header .headline {
-  font-size: 32px;
-}
-.nav-list {
-  text-align: center;
-  padding: 10px 0;
-  margin: 0 auto;
-}
-.nav-list-item {
-  list-style: none;
-  display: inline-block;
-  margin: 0 20px;
-}
 .main {
   height: 100%;
   widows: 100%;
 }
-.welcome {
+#overlay {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#content {
+  z-index: 2;
+  width: 50%;
+  padding: 1em;
+  background: #fff;
+}
+.modal {
+  background: #fff;
+  height: 68%;
   text-align: center;
   padding: 20px 0;
 }
-.welcome form {
+.modal form {
   width: 300px;
   margin: 20px auto;
 }
-.welcome label {
+.modal label {
   display: block;
   margin: 20px 0 10px;
 }
-.welcome input {
+.modal input {
   width: 100%;
   padding: 12px 20px;
   margin: 8px auto;
@@ -123,30 +102,16 @@ header .headline {
   outline: none;
   box-sizing: border-box;
 }
-.welcome span {
+.modal span {
   font-weight: bold;
   text-decoration: underline;
   cursor: pointer;
 }
-.welcome button {
+.modal button {
   margin: 20px auto;
 }
 .change-form {
   font-size: 14px;
   margin: 10px;
-}
-footer {
-  text-align: center;
-  padding: 40px 0;
-  text-align: center;
-  padding: 40 px 0;
-  background-color: #fff;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-.footer-text {
-  color: #fff;
 }
 </style>
