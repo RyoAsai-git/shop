@@ -21,10 +21,10 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
 export default {
-  emits: ['redirectToHome'],
+  emits: ["redirectToHome"],
   data() {
     return {
       email: "",
@@ -34,25 +34,25 @@ export default {
   },
   methods: {
     async login() {
-      this.error = null
+      this.error = null;
       try {
-        const res = await axios.post('http://localhost:3000/auth/sign_in', {
+        const res = await axios.post("http://localhost:3000/auth/sign_in", {
           email: this.email,
           password: this.password,
-        })
+        });
         if (!res) {
-          throw new Error('メールアドレスかパスワードが違います')
+          throw new Error("メールアドレスかパスワードが違います");
         }
         if (!this.error) {
-          this.$emit('redirectToHome')
+          this.$emit("redirectToHome");
         }
-        console.log({ res })
-        return res
+        console.log({ res });
+        return res;
       } catch (error) {
-        console.log({ error })
-        this.error = 'メールアドレスかパスワードが違います'
+        console.log({ error });
+        this.error = "メールアドレスかパスワードが違います";
       }
-    }
-  }
+    },
+  },
 };
 </script>

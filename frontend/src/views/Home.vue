@@ -7,7 +7,7 @@
       <div id="overlay" v-show="showContent">
         <div id="content" class="modal">
           <div v-if="shouldShowLoginForm">
-            <LoginForm  />
+            <LoginForm />
             <p class="change-form">
               初めての方は<span @click="shouldShowLoginForm = false"
                 >こちら</span
