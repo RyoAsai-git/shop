@@ -28,10 +28,10 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
 export default {
-  emits: ['redirectToHome'],
+  emits: ["redirectToHome"],
   data() {
     return {
       name: "",
@@ -43,27 +43,27 @@ export default {
   },
   methods: {
     async signUp() {
-      this.error = null
+      this.error = null;
       try {
-        const res = await axios.post('http://localhost:3000/auth', {
+        const res = await axios.post("http://localhost:3000/auth", {
           name: this.name,
           email: this.email,
           password: this.password,
           passwordConfirmation: this.passwordConfirmation,
-        })
+        });
         if (!res) {
-          throw new Error('アカウントを登録できませんでした')
+          throw new Error("アカウントを登録できませんでした");
         }
         if (!this.error) {
-          this.$emit('redirectToHome')
+          this.$emit("redirectToHome");
         }
-        console.log({ res })
-        return res
-      } catch(error) {
-        this.error = 'アカウントを登録できませんでした'
+        console.log({ res });
+        return res;
+      } catch (error) {
+        this.error = "アカウントを登録できませんでした";
         console.log({ error });
       }
-    }
-  }
+    },
+  },
 };
 </script>
