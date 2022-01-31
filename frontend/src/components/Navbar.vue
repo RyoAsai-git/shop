@@ -1,7 +1,9 @@
 <template>
   <div class="navbar">
     <ul class="navbar-list">
-      <li>探す</li>
+      <li>
+        <button>探す</button>
+      </li>
       <li>お気に入り</li>
       <li>マイページ</li>
       <li>設定</li>
