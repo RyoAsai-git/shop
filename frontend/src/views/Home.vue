@@ -4,7 +4,18 @@
     <div class="search-area">
       <p>さがす</p>
       <div class="shop">
-        <img src="" alt="" />
+        <li>
+          <img src="" alt="" />
+        </li>
+        <li>
+          <img src="" alt="" />
+        </li>
+        <li>
+          <img src="" alt="" />
+        </li>
+        <li>
+          <img src="" alt="" />
+        </li>
       </div>
     </div>
   </div>
@@ -43,10 +54,21 @@ body {
   position: fixed;
   left: 20%;
   top: 0;
+  overflow: scroll;
 }
 
 .shop {
+  margin-top: 100px;
+}
+
+li {
   height: 300px;
   width: 400px;
+  display: inline-block;
+  padding-left: 50px;
+}
+
+li:nth-child(2n) {
+  
 }
 </style>
