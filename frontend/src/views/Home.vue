@@ -1,6 +1,5 @@
 <template>
   <div class="main">
-    Home画面です
     <div class="navbar">
       <ul class="navbar-list">
         <li>test1</li>
@@ -40,6 +39,7 @@ body {
 .navbar {
   height: 100%;
   width: 20%;
+  border-right: 2px solid #f1f1f1;
 }
 
 .navbar-list {
@@ -52,6 +52,7 @@ li:first-child {
 
 li {
   padding-top: 20px;
+  list-style-type: none
 }
 
 
