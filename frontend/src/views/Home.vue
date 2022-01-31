@@ -1,6 +1,12 @@
 <template>
   <div class="main">
     <Navbar />
+    <!-- <div class="search-area">
+      <p>さがす</p>
+      <div class="shop">
+        <img src="" alt="">
+      </div>
+    </div> -->
   </div>
 </template>
 
@@ -28,6 +34,10 @@ body {
 .main {
   height: 100%;
   width: 100%;
+}
+
+.search-area {
+  display: inline-block;
 }
 
 

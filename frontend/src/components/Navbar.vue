@@ -18,7 +18,9 @@
 </template>
 
 <script>
+export default {
 
+};
 </script>
 
 <style scoped>
@@ -26,6 +28,10 @@
   height: 100%;
   width: 20%;
   border-right: 2px solid #f1f1f1;
+  /* display: inline-block; */
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 
 /* .navbar-list {
