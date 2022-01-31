@@ -2,16 +2,23 @@
   <div class="navbar">
     <ul class="navbar-list">
       <li>
-        <button>探す</button>
+        <a href="">さがす</a>
       </li>
-      <li>お気に入り</li>
-      <li>マイページ</li>
-      <li>設定</li>
+      <li>
+        <a href="">お気に入り</a>
+      </li>
+      <li>
+        <a href="">マイページ</a>
+      </li>
+      <li>
+        <a href="">設定</a>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
+
 </script>
 
 <style scoped>
@@ -42,6 +49,15 @@ li {
 li:hover {
   background-color: rgb(191, 207, 207);
   transition: background-color 100ms;
+}
+
+li a{
+    font-weight: 600;
+    color: #333333;
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
 }
 
 /* ボタン選択時の色候補 */
