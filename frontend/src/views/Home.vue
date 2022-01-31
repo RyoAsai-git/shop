@@ -4,7 +4,7 @@
     <div class="search-area">
       <p>さがす</p>
       <div class="shop">
-        <img src="" alt="">
+        <img src="" alt="" />
       </div>
     </div>
   </div>
@@ -45,5 +45,8 @@ body {
   top: 0;
 }
 
-
+.shop {
+  height: 300px;
+  width: 400px;
+}
 </style>
