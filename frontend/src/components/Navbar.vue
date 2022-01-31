@@ -19,8 +19,8 @@
   border-right: 2px solid #f1f1f1;
 }
 
-.navbar-list {
-}
+/* .navbar-list {
+} */
 
 li:first-child {
   padding-top: 20px;
