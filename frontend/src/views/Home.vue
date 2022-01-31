@@ -1,15 +1,12 @@
 <template>
-  <div class="body">
+  <div class="main">
     Home画面です
-    <!-- <Navbar /> -->
-    <div class="test">
-      <div class="navbar">
-        <ul>
-          <li>test1</li>
-          <li>test2</li>
-          <li>test3</li>
-        </ul>
-      </div>
+    <div class="navbar">
+      <ul class="navbar-list">
+        <li>test1</li>
+        <li>test2</li>
+        <li>test3</li>
+      </ul>
     </div>
   </div>
 </template>
@@ -25,8 +22,37 @@ export default {
 </script>
 
 <style scoped>
-.body {
+body {
   height: 100%;
   widows: 100%;
 }
+
+#app {
+  height: 100%;
+  width: 100%;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+}
+
+.navbar {
+  height: 100%;
+  width: 20%;
+}
+
+.navbar-list {
+
+}
+
+li:first-child {
+  padding-top: 0px;
+}
+
+li {
+  padding-top: 20px;
+}
+
+
 </style>
