@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="test">
     <div class="navbar">
       <ul>
         <li>test1</li>
@@ -15,5 +15,9 @@
 </script>
 
 <style scoped>
-
+  .navbar {
+    background: black;
+    height: 100%;
+    width: 20%;
+  }
 </style>
