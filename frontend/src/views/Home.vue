@@ -3,6 +3,7 @@
     <Navbar />
     <div class="search_area">
       <div class="search_area-shop">
+        <button v-on:click="openModal">Click</button>
         <li>
           <img
             src="https://media.wwdjapan.com/wp-content/uploads/2018/12/26155656/181226_select_011.jpg"
@@ -39,16 +40,14 @@
             alt=""
           />
         </li>
-        <button v-on:click="openModal">Click</button>
       </div>
     </div>
-    <div id="overlay" v-show="showContent">
-      <div id="content">
+    <div class="modal" id="overlay" v-show="showContent">
+      <div class="content">
         <p>これがモーダルウィンドウです。</p>
         <p><button v-on:click="closeModal">close</button></p>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -74,7 +73,6 @@ export default {
       this.showContent = false;
     },
   },
-
 };
 </script>
 
@@ -124,7 +122,26 @@ img {
   -moz-border-radius: 20px;
 }
 
-#content {
+#overlay{
+  z-index:1;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  height: 70%;
+  width: 50%;
+  z-index: 2;
+}
+
+.content {
   z-index: 2;
   width: 50%;
   padding: 1em;
