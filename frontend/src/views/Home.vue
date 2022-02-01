@@ -2,10 +2,7 @@
   <div class="main">
     <Navbar />
     <div class="search_area">
-      <div class="search_area-header">
-        <p>さがす</p>
-      </div>
-      <div class="shop">
+      <div class="search_area-shop">
         <li>
           <img
             src="https://media.wwdjapan.com/wp-content/uploads/2018/12/26155656/181226_select_011.jpg"
@@ -77,21 +74,14 @@ body {
   height: 100%;
   width: 80%;
   display: inline-block;
-  /* position: fixed; */
   position: absolute;
   left: 20%;
   top: 0;
 }
 
-.search_area-header {
-  position: fixed;
-  height: 10%;
-  width: 100%;
-}
-
-.shop {
+.search_area-shop {
   margin-top: 100px;
-  overflow: scroll;
+  overflow: auto;
 }
 
 li {
