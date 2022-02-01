@@ -77,14 +77,21 @@ body {
   height: 100%;
   width: 80%;
   display: inline-block;
-  position: fixed;
+  /* position: fixed; */
+  position: absolute;
   left: 20%;
   top: 0;
-  overflow: scroll;
+}
+
+.search_area-header {
+  position: fixed;
+  height: 10%;
+  width: 100%;
 }
 
 .shop {
   margin-top: 100px;
+  overflow: scroll;
 }
 
 li {
