@@ -39,8 +39,16 @@
             alt=""
           />
         </li>
+        <button v-on:click="openModal">Click</button>
       </div>
     </div>
+    <div id="overlay" v-show="showContent">
+      <div id="content">
+        <p>これがモーダルウィンドウです。</p>
+        <p><button v-on:click="closeModal">close</button></p>
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -51,6 +59,22 @@ export default {
   components: {
     Navbar,
   },
+
+  data() {
+    return {
+      showContent: false,
+    };
+  },
+
+  methods: {
+    openModal: function () {
+      this.showContent = true;
+    },
+    closeModal: function () {
+      this.showContent = false;
+    },
+  },
+
 };
 </script>
 
@@ -100,6 +124,10 @@ img {
   -moz-border-radius: 20px;
 }
 
-li:nth-child(2n) {
+#content {
+  z-index: 2;
+  width: 50%;
+  padding: 1em;
+  background: #fff;
 }
 </style>
