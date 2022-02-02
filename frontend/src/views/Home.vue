@@ -158,14 +158,13 @@ img {
 }
 
 .modal-right {
-  height: 250px;
-  width: 250px;
-  background: red;
+  height: 180px;
+  width: 280px;
+  background: #fff;
+  border-radius: 40px;
 }
 
 .modal-right:nth-child(2n) {
   height: 250px;
-  width: 250px;
-  background: black;
 }
 </style>
