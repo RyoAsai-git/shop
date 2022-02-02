@@ -42,10 +42,18 @@
         </li>
       </div>
     </div>
-    <div class="modal" id="overlay" v-show="showContent">
-      <div class="content">
+    <div id="overlay" v-show="showContent">
+      <div class="modal">
         <p>これがモーダルウィンドウです。</p>
         <p><button v-on:click="closeModal">close</button></p>
+      </div>
+      <div class="test">
+        <div class="modal-right">
+          <p>テストです</p>
+        </div>
+        <div class="modal-right">
+          <p>テストです</p>
+        </div>
       </div>
     </div>
   </div>
@@ -122,29 +130,42 @@ img {
   -moz-border-radius: 20px;
 }
 
-#overlay{
-  z-index:1;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background-color:rgba(0,0,0,0.5);
+#overlay {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.modal {
-  height: 70%;
-  width: 50%;
-  z-index: 2;
+.test {
+  display: flex;
+  flex-direction: column;
 }
 
-.content {
+.modal {
+  height: 400px;
+  width: 250px;
   z-index: 2;
-  width: 50%;
   padding: 1em;
   background: #fff;
+  border-radius: 40px;
+}
+
+.modal-right {
+  height: 250px;
+  width: 250px;
+  background: red;
+}
+
+.modal-right:nth-child(2n) {
+  height: 250px;
+  width: 250px;
+  background: black;
 }
 </style>
