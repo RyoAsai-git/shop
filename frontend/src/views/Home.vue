@@ -149,7 +149,7 @@ img {
 }
 
 .modal {
-  height: 400px;
+  height: 420px;
   width: 250px;
   z-index: 2;
   padding: 1em;
@@ -158,13 +158,15 @@ img {
 }
 
 .modal-right {
-  height: 180px;
+  height: 185px;
   width: 280px;
   background: #fff;
   border-radius: 40px;
+  margin-left: 10px;
 }
 
 .modal-right:nth-child(2n) {
-  height: 250px;
+  height: 260px;
+  margin-top: 10px;
 }
 </style>
