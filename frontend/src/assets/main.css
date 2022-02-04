@@ -31,3 +31,8 @@ body {
     color: #ff3f80;
     font-size: 14px;
 }
+
+.item_text {
+    font-weight: 600;
+    color: #333333;
+  }

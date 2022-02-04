@@ -1,24 +1,26 @@
 <template>
   <div class="navbar">
     <ul class="navbar-list">
-      <li>
-        <a href="">さがす</a>
+      <li >
+        <a href="" class="item_text">さがす</a>
       </li>
       <li>
-        <a href="">お気に入り</a>
+        <a href="" class="item_text">お気に入り</a>
       </li>
       <li>
-        <a href="">マイページ</a>
+        <a href="" class="item_text">マイページ</a>
       </li>
       <li>
-        <a href="">設定</a>
+        <a href="" class="item_text">設定</a>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+
+};
 </script>
 
 <style scoped>
@@ -52,8 +54,6 @@ li:hover {
 }
 
 li a {
-  font-weight: 600;
-  color: #333333;
   display: block;
   height: 100%;
   width: 100%;
