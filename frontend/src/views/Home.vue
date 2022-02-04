@@ -54,10 +54,15 @@
       </div>
       <div class="test">
         <div class="modal_right">
-          <p class="modal_right-top item_text">テストです</p>
+          <h1 class="modal_right-top item_text">取扱ブランド</h1>
         </div>
         <div class="modal_right">
-          <p class="modal_right-top item_text">テストです</p>
+          <h1 class="modal_right-top item_text">店舗情報</h1>
+          <dir class="description_text-area">
+            <p class="description_text">
+              あああああああああああああああああああああああああああああああああ
+            </p>
+          </dir>
         </div>
       </div>
     </div>
@@ -138,8 +143,8 @@ img {
   -moz-border-radius: 20px;
 }
 
-img:hover{
-  box-shadow: 10px 10px 10px rgba(0,0,0,0.5);
+img:hover {
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   transform: translateY(-10px);
   transition-duration: 0.5s;
 }
@@ -186,7 +191,23 @@ img:hover{
 }
 
 .modal_right-top {
+  position: absolute;
+  font-size: 17px;
   top: 20px;
   left: 40px;
+}
+
+.description_text-area {
+  position: absolute;
+  top: 65px;
+  left: 35px;
+  height: 240px;
+  width: 200px;
+}
+
+.description_text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
 }
 </style>
