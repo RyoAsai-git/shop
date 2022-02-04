@@ -56,8 +56,8 @@
         <div class="modal_right">
           <p class="modal_right-top item_text">テストです</p>
         </div>
-        <div class="modal_right item_text">
-          <p>テストです</p>
+        <div class="modal_right">
+          <p class="modal_right-top item_text">テストです</p>
         </div>
       </div>
     </div>
