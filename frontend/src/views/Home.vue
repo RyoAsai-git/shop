@@ -71,7 +71,9 @@
         <div class="modal_right">
           <h1 class="modal_right-top item_text">取扱ブランド</h1>
         </div>
-        <div class="modal_right"></div>
+        <div class="modal_right">
+          <div class="modal_right-top item_text">アクセス</div>
+        </div>
       </div>
     </div>
   </div>
