@@ -18,9 +18,7 @@
 </template>
 
 <script>
-export default {
-
-};
+export default {};
 </script>
 
 <style scoped>
@@ -32,9 +30,6 @@ export default {
   left: 0;
   top: 0;
 }
-
-/* .navbar-list {
-} */
 
 li:first-child {
   padding-top: 20px;
@@ -56,13 +51,13 @@ li:hover {
   transition: background-color 100ms;
 }
 
-li a{
-    font-weight: 600;
-    color: #333333;
-    display: block;
-    height: 100%;
-    width: 100%;
-    text-decoration: none;
+li a {
+  font-weight: 600;
+  color: #333333;
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
 }
 
 /* ボタン選択時の色候補 */

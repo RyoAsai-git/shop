@@ -53,10 +53,10 @@
         <p><button v-on:click="closeModal">close</button></p>
       </div>
       <div class="test">
-        <div class="modal-right">
-          <p>テストです</p>
+        <div class="modal_right">
+          <p class="modal_right-top">テストです</p>
         </div>
-        <div class="modal-right">
+        <div class="modal_right">
           <p>テストです</p>
         </div>
       </div>
@@ -171,16 +171,22 @@ img:hover{
   border-radius: 40px;
 }
 
-.modal-right {
+.modal_right {
   height: 185px;
   width: 280px;
   background: #fff;
   border-radius: 40px;
   margin-left: 10px;
+  position: relative;
 }
 
-.modal-right:nth-child(2n) {
+.modal_right:nth-child(2n) {
   height: 260px;
   margin-top: 10px;
+}
+
+.modal_right-top {
+  top: 20px;
+  left: 40px;
 }
 </style>
