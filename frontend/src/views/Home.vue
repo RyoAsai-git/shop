@@ -198,10 +198,7 @@ img:hover {
 }
 
 .description_text-area {
-  position: absolute;
-  top: 65px;
-  left: 35px;
-  height: 240px;
+  height: 170px;
   width: 200px;
 }
 
