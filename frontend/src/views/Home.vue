@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Navbar from "../components/Navbar.vue"
-import SearchArea from "../components/SearchArea"
+import Navbar from "../components/Navbar.vue";
+import SearchArea from "../components/SearchArea";
 
 export default {
   components: {
