@@ -12,7 +12,7 @@ RUN apt-get update -qq && \
     apt-get install -y build-essential \
     libpq-dev \
     sudo \
-    && gem install bundler:2.0.1
+    && gem install bundler:2.2.32
 
 RUN bundle install
 
