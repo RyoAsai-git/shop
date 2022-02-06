@@ -1,0 +1,63 @@
+version: "3"
+
+services:
+  db:
+    container_name: db
+    image: mysql:5.7.30
+    environment:
+      TZ: Asia/Tokyo
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - 3307:3306
+    networks:
+      app_net:
+        ipv4_address: '172.20.0.2'
+
+  frontend:
+    build: ./frontend
+    volumes:
+      - ./frontend:/app
+    ports:
+      - '8080:8080'
+    tty: true
+    stdin_open: true
+    command: npm run serve
+
+  shop_api:
+    container_name: shop_api
+    build: ./shop_api/
+    image: shop_api
+    command: bundle exec rails server -b 0.0.0.0
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./shop_api:/app:cached
+      - bundle_data:/usr/local/bundle:cached
+      - /app/vendor
+      - /app/tmp
+      - /app/log
+      - /app/.git
+    environment:
+      TZ: Asia/Tokyo
+    depends_on:
+      - db
+    ports:
+      - 3000:3000
+    networks:
+      app_net:
+        ipv4_address: '172.20.0.3'
+
+networks:
+  app_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/24
+
+volumes:
+  mysql_data:
+  bundle_data:
