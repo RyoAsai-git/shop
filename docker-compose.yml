@@ -7,9 +7,6 @@ services:
     environment:
       TZ: Asia/Tokyo
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
-      MYSQL_USER: sample_user
-      MYSQL_PASSWORD: password
-      MYSQL_DATABASE: sample_db
       MYSQL_ROOT_PASSWORD: password
     volumes:
       - mysql_data:/var/lib/mysql
