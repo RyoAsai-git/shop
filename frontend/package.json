@@ -22,10 +22,12 @@
     "@vue/compiler-sfc": "^3.0.0",
     "@vue/test-utils": "^2.0.0-rc.17",
     "babel-eslint": "^10.1.0",
+    "babel-jest": "^27.5.1",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
-    "jest": "^27.5.0",
-    "normalize.css": "^8.0.1"
+    "jest": "^27.5.1",
+    "normalize.css": "^8.0.1",
+    "vue-jest": "^3.0.7"
   },
   "eslintConfig": {
     "root": true,
