@@ -1,7 +1,5 @@
-import {
-    mount
-} from '@vue/test-utils'
-import Component from '../src/App.vue'
+import { mount } from '@vue/test-utils'
+import Component from '@/App.vue'
 
 
 describe('Testing App component', () => {
