@@ -2,13 +2,15 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test": "jest"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest"
   },
   "dependencies": {
+    "@vue/test-utils": "^2.0.0-rc.17",
     "axios": "^0.25.0",
     "core-js": "^3.6.5",
     "jest": "^27.5.1",
@@ -64,6 +66,9 @@
     },
     "moduleNameMapper": {
       "^@/(.*)$": "<rootDir>/src/$1"
-    }
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/(?!@vueform/multiselect|vue3-carousel/dist/carousel.css)"
+    ]
   }
 }
