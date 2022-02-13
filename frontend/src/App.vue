@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import 'normalize.css'
+// import 'normalize.css'
 
 export default {
   name: 'App'
