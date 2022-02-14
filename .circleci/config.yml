@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   shop_api:
     docker:
-      - image: circleci/ruby:2.6.6-stretch-node
+      - image: circleci/ruby:2.7.1-stretch-node
         environment:
           RAILS_ENV: test
           DB_HOST: 127.0.0.1
