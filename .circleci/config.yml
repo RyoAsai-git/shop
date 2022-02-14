@@ -97,7 +97,7 @@ workflows:
   version: 2
   test:
     jobs:
-      - backend:
+      - shop_api:
           filters:
             branches:
               ignore: main
