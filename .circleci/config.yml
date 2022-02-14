@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  test_shop_api:
+  shop_api:
     docker:
       - image: circleci/ruby:2.6.6-stretch-node
         environment:
@@ -65,7 +65,7 @@ jobs:
       - store_artifacts:
           path: /home/circleci/repo/tmp/screenshots
 
-  test_frontend:
+  frontend:
     docker:
       - image: circleci/node:14.3
         environment:
@@ -97,11 +97,11 @@ workflows:
   version: 2
   test:
     jobs:
-      - test_backend:
+      - backend:
           filters:
             branches:
               ignore: main
-      - test_frontend:
+      - frontend:
           filters:
             branches:
               ignore: main
