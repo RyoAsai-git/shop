@@ -1,30 +1,107 @@
-# Use the latest 2.1 version of CircleCI pipeline process engine.
-# See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-# Orbs are reusable packages of CircleCI configuration that you may share across projects, enabling you to create encapsulated, parameterized commands, jobs, and executors that can be used across multiple projects.
-# See: https://circleci.com/docs/2.0/orb-intro/
-orbs:
-  ruby: circleci/ruby@1.4.0
-
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  build:
+  test_shop_api:
     docker:
-      - image: cimg/ruby:2.7.1
-    executor: ruby/default
+      - image: circleci/ruby:2.6.6-stretch-node
+        environment:
+          RAILS_ENV: test
+          DB_HOST: 127.0.0.1
+      - image: circleci/mysql:5.7.30
+
+    working_directory: ~/repo
+
     steps:
       - checkout
-      - run:
-          name: Which bundler?
-          command: bundle -v
-      # - ruby/bundle-install
 
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+      # restore gem from cache
+      - restore_cache:
+          keys:
+            - gem-cache-v1-{{ checksum "~/repo/shop_api/Gemfile.lock" }}
+            - gem-cache-v1-
+          working_directory: ~/repo/shop_api
+
+      # gem install
+      - run:
+          command: |
+            gem install bundler
+            bundle config set path 'vendor/bundle'
+            bundle install --jobs=4 --retry=3
+          working_directory: ~/repo/shop_api
+
+      - save_cache:
+          key: gem-cache-v1-{{ checksum "~/repo/shop_api/Gemfile.lock" }}
+          paths:
+            - ~/repo/shop_api/vendor/bundle
+          working_directory: ~/repo/shop_api
+
+      # Database setup
+      - run:
+          command: bundle exec rails db:create
+          working_directory: ~/repo/shop_api
+      - run:
+          command: bundle exec rails db:migrate
+          working_directory: ~/repo/shop_api
+
+      - run:
+          name: create directory to store test results
+          command: mkdir /tmp/test-results
+          working_directory: ~/repo/shop_api
+
+      # run tests
+      - run:
+          name: RSpec
+          command: |
+            bundle exec rspec $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings) \
+              || (printf "====== RETRYING...\n\n\n"; bundle exec rspec --only-failures)
+          working_directory: ~/repo/shop_api
+
+      # collect reports
+      - store_test_results:
+          path: /tmp/test-results
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test-results
+      - store_artifacts:
+          path: /home/circleci/repo/tmp/screenshots
+
+  test_frontend:
+    docker:
+      - image: circleci/node:14.3
+        environment:
+          NODE_ENV: test
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "~/repo/frontend/package.json" }}
+          working_directory: ~/repo/frontend
+      - run:
+          name: install-packages
+          command: npm install
+          working_directory: ~/repo/frontend
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "~/repo/frontend/package.json" }}
+          working_directory: ~/repo/frontend
+      - run:
+          name: test
+          command: npm run test
+          working_directory: ~/repo/frontend
+
 workflows:
-  sample: # This is the name of the workflow, feel free to change it to better match your workflow.
-    # Inside the workflow, you define the jobs you want to run.
+  version: 2
+  test:
     jobs:
-      - build
+      - test_backend:
+          filters:
+            branches:
+              ignore: main
+      - test_frontend:
+          filters:
+            branches:
+              ignore: main
