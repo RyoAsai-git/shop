@@ -6,7 +6,7 @@ jobs:
       - image: circleci/ruby:2.6.6-stretch-node
         environment:
           RAILS_ENV: test
-          DB_HOST: 172.20.0.2
+          DB_HOST: db
       - image: circleci/mysql:5.7.30
 
     working_directory: ~/repo
