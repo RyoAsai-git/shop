@@ -1,4 +1,4 @@
-FROM ruby:2.7.1
+FROM ruby:2.6.6
 
 RUN apt-get update -qq && \
     apt-get install -y build-essential \
@@ -13,4 +13,5 @@ WORKDIR $APP_ROOT
 ADD ./Gemfile $APP_ROOT/Gemfile
 ADD ./Gemfile.lock $APP_ROOT/Gemfile.lock
 
-RUN bundle install
+RUN gem install bundler:2.3.6 && \
+    bundle install
