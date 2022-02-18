@@ -4,6 +4,9 @@
       <li >
         <a href="" class="item_text">さがす</a>
       </li>
+      <li >
+        <a href="" class="item_text">ブランド</a>
+      </li>
       <li>
         <a href="" class="item_text">お気に入り</a>
       </li>
