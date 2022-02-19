@@ -2,19 +2,19 @@
   <div class="navbar">
     <ul class="navbar-list">
       <li >
-        <a href="" class="item_text">さがす</a>
+        <a href="" class="item_text disabled">さがす</a>
       </li>
       <li >
-        <a href="" class="item_text">ブランド</a>
+        <a href="" class="item_text disabled">ブランド</a>
       </li>
       <li>
-        <a href="" class="item_text">お気に入り</a>
+        <a href="" class="item_text disabled">お気に入り</a>
       </li>
       <li>
-        <a href="" class="item_text">マイページ</a>
+        <a href="" class="item_text disabled">マイページ</a>
       </li>
       <li>
-        <a href="" class="item_text">設定</a>
+        <a href="" class="item_text disabled">設定</a>
       </li>
     </ul>
   </div>
