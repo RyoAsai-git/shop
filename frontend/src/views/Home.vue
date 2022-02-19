@@ -3,10 +3,10 @@
     <div class="navbar">
       <ul class="navbar-list">
         <li @click="showSearchArea">
-          <p class="item_text">さがす</p>
+          <p class="item_text" v-bind:class="{is_active: searchArea}">さがす</p>
         </li>
         <li @click="showBrandArea">
-          <p class="item_text">ブランド</p>
+          <p class="item_text" v-bind:class="{is_active: brandArea}">ブランド</p>
         </li>
         <li>
           <p class="item_text">お気に入り</p>
@@ -98,6 +98,7 @@ li:hover {
   transition: background-color 100ms;
 }
 
-/* ボタン選択時の色候補 */
-/* color: #0096a9 */
+.is_active {
+  color: #0096a9;
+}
 </style>
