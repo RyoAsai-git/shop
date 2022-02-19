@@ -1,20 +1,20 @@
 <template>
   <div class="navbar">
     <ul class="navbar-list">
-      <li >
-        <a href="" class="item_text disabled">さがす</a>
+      <li>
+        <a href="#" class="item_text disabled">さがす</a>
       </li>
-      <li >
-        <a href="" class="item_text disabled">ブランド</a>
+      <li v-on:click="showBrandArea">
+        <a href="#" class="item_text disabled">ブランド</a>
       </li>
       <li>
-        <a href="" class="item_text disabled">お気に入り</a>
+        <a href="#" class="item_text disabled">お気に入り</a>
       </li>
       <li>
-        <a href="" class="item_text disabled">マイページ</a>
+        <a href="#" class="item_text disabled">マイページ</a>
       </li>
       <li>
-        <a href="" class="item_text disabled">設定</a>
+        <a href="#" class="item_text disabled">設定</a>
       </li>
     </ul>
   </div>
@@ -22,7 +22,19 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+      searchArea: true,
+      brandArea: false,
+    }
+  },
+  methods: {
+    showBrandArea() {
+      this.brandArea = true;
+      console.log(brandArea);
+      this.$emit('showBrandArea', this.brandArea)
+    }
+  }
 };
 </script>
 
