@@ -103,4 +103,7 @@ li a {
   width: 100%;
   text-decoration: none;
 }
+
+/* ボタン選択時の色候補 */
+/* color: #0096a9 */
 </style>
