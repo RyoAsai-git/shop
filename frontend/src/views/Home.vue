@@ -3,19 +3,19 @@
     <div class="navbar">
       <ul class="navbar-list">
         <li @click="showSearchArea">
-          <a href="#" class="item_text disabled">さがす</a>
+          <p class="item_text">さがす</p>
         </li>
         <li @click="showBrandArea">
-          <a href="#" class="item_text disabled">ブランド</a>
+          <p class="item_text">ブランド</p>
         </li>
         <li>
-          <a href="#" class="item_text disabled">お気に入り</a>
+          <p class="item_text">お気に入り</p>
         </li>
         <li>
-          <a href="#" class="item_text disabled">マイページ</a>
+          <p class="item_text">マイページ</p>
         </li>
         <li>
-          <a href="#" class="item_text disabled">設定</a>
+          <p class="item_text">設定</p>
         </li>
       </ul>
     </div>
@@ -90,18 +90,12 @@ li {
   list-style-type: none;
   transition: background-color 0.5s;
   font-size: 17px;
+  cursor: pointer;
 }
 
 li:hover {
   background-color: rgb(191, 207, 207);
   transition: background-color 100ms;
-}
-
-li a {
-  display: block;
-  height: 100%;
-  width: 100%;
-  text-decoration: none;
 }
 
 /* ボタン選択時の色候補 */
