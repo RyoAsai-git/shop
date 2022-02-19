@@ -3,10 +3,10 @@
     <div class="navbar">
       <ul class="navbar-list">
         <li @click="showSearchArea">
-          <p class="item_text" v-bind:class="{is_active: searchArea}">さがす</p>
+          <p class="item_text" :class="{is_active: searchArea}">さがす</p>
         </li>
         <li @click="showBrandArea">
-          <p class="item_text" v-bind:class="{is_active: brandArea}">ブランド</p>
+          <p class="item_text" :class="{is_active: brandArea}">ブランド</p>
         </li>
         <li>
           <p class="item_text">お気に入り</p>
