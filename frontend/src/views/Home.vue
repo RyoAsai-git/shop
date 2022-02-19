@@ -5,7 +5,7 @@
         <li @click="showSearchArea">
           <a href="#" class="item_text disabled">さがす</a>
         </li>
-        <li v-on:click="showBrandArea">
+        <li @click="showBrandArea">
           <a href="#" class="item_text disabled">ブランド</a>
         </li>
         <li>
