@@ -1,8 +1,8 @@
 <template>
   <div class="brand_area">
-    <!-- <div class="">
+    <div class="">
 
-    </div> -->
+    </div>
   </div>
 </template>
 
