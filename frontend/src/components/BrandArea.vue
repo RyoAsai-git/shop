@@ -15,8 +15,16 @@
       alt=""
       class="brand_image"
     />
-    <img src="" alt="" class="brand_image" />
-    <img src="" alt="" class="brand_image" />
+    <img
+      src="http://www.oneness-article.com/user_data/img/brand_logo/bp-masu.gif"
+      alt=""
+      class="brand_image"
+    />
+    <img
+      src="https://www.imn.jp/images/upload/2020/04/39e67032baf7048714a1097a41a74c9e.jpg"
+      alt=""
+      class="brand_image"
+    />
   </div>
 </template>
 
