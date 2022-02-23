@@ -78,7 +78,7 @@
 .brand_image {
   background-color: #ccc;
   width: 22%;
-  -webkit-border-radius: 20px;
+  border-radius: 20px;
   border: 1px solid #d3d3d3;
   margin-top: 30px;
   margin-left: 20px;
