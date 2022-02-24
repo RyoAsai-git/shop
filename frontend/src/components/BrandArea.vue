@@ -4,7 +4,7 @@
       <img
         src="https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg"
         alt=""
-        v-on:click="openModal"
+        @click="openModal"
         class="brand-image"
       />
       <img
@@ -64,7 +64,9 @@
       />
     </div>
     <div class="brand-details_area" v-show="showContent">
-      <p>test</p>
+      <div class="brand-details_header">
+        <button >back</button>
+      </div>
     </div>
   </div>
 </template>
