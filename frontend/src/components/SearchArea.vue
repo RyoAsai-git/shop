@@ -137,19 +137,6 @@ export default {
   transition-duration: 0.5s;
 }
 
-#overlay {
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .modal_right-area {
   display: flex;
   flex-direction: column;
