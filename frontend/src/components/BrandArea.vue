@@ -4,7 +4,7 @@
       <img
         src="https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg"
         alt=""
-        @click="openModal"
+        @click="openDetails"
         class="brand-image"
       />
       <img
@@ -65,7 +65,7 @@
     </div>
     <div class="brand-details_area" v-show="showContent">
       <div class="brand-details_header">
-        <button >back</button>
+        <button @click="closeDetails">back</button>
       </div>
     </div>
   </div>
@@ -80,10 +80,10 @@ export default {
   },
 
   methods: {
-    openModal: function () {
+    openDetails: function () {
       this.showContent = true;
     },
-    closeModal: function () {
+    closeDetails: function () {
       this.showContent = false;
     },
   },
