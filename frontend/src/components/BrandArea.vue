@@ -76,9 +76,6 @@
     <div class="brand-details_area" v-show="showContent">
       <div class="brand-details_header">
         <button @click="closeDetails">back</button>
-        <div>
-          <fa icon="leaf" />
-        </div>
       </div>
     </div>
   </div>
