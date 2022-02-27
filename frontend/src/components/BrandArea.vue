@@ -15,51 +15,61 @@
       <img
         src="data:image/png;base64,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"
         alt=""
+        @click="openDetails"
         class="brand-image"
       />
       <img
         src="http://www.oneness-article.com/user_data/img/brand_logo/bp-masu.gif"
         alt=""
+        @click="openDetails"
         class="brand-image"
       />
       <img
         src="https://www.imn.jp/images/upload/2020/04/39e67032baf7048714a1097a41a74c9e.jpg"
         alt=""
+        @click="openDetails"
         class="brand-image"
       />
       <img
         src="https://www.imn.jp/images/upload/2020/04/39e67032baf7048714a1097a41a74c9e.jpg"
         alt=""
+        @click="openDetails"
         class="brand-image"
       />
       <img
         src="https://www.imn.jp/images/upload/2020/04/39e67032baf7048714a1097a41a74c9e.jpg"
         alt=""
+        @click="openDetails"
         class="brand-image"
       />
       <img
         src="https://www.imn.jp/images/upload/2020/04/39e67032baf7048714a1097a41a74c9e.jpg"
         alt=""
+        @click="openDetails"
         class="brand-image"
       />
       <img
         src="https://www.imn.jp/images/upload/2020/04/39e67032baf7048714a1097a41a74c9e.jpg"
         alt=""
+        @click="openDetails"
         class="brand-image"
       />
       <img
         src="https://www.imn.jp/images/upload/2020/04/39e67032baf7048714a1097a41a74c9e.jpg"
         alt=""
+        @click="openDetails"
         class="brand-image"
       />
       <img
         src="https://www.imn.jp/images/upload/2020/04/39e67032baf7048714a1097a41a74c9e.jpg"
         alt=""
+        @click="openDetails"
         class="brand-image"
       />
       <img
         src="https://www.imn.jp/images/upload/2020/04/39e67032baf7048714a1097a41a74c9e.jpg"
         alt=""
+        @click="openDetails"
         class="brand-image"
       />
     </div>
