@@ -77,7 +77,7 @@
       <div class="brand-details_header">
         <button @click="closeDetails">back</button>
       </div>
-      <FAIcon :icon="['fas', 'angle-left']" />
+      <FAIcon :icon="['fas', 'angle-left']" class="back-button" />
     </div>
   </div>
 </template>
@@ -132,5 +132,10 @@ export default {
   position: absolute;
   left: 20%;
   top: 0;
+}
+
+.back-button {
+  height: 40px;
+  width: 40px;
 }
 </style>
