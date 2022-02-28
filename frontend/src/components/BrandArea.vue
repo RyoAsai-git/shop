@@ -77,8 +77,7 @@
       <div class="brand-details_header">
         <button @click="closeDetails">back</button>
       </div>
-      <FAIcon icon="coffee" />
-      <FAIcon :icon="['fas', 'coffee']" />
+      <FAIcon :icon="['fas', 'angle-left']" />
     </div>
   </div>
 </template>
