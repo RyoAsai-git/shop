@@ -137,5 +137,10 @@ export default {
 .back-button {
   height: 40px;
   width: 40px;
+  margin-left: 20px;
+}
+
+.back-button:hover {
+  color: #0096a9;
 }
 </style>
