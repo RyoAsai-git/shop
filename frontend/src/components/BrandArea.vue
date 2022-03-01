@@ -158,10 +158,8 @@ export default {
 }
 
 .brand-details_background-image {
-  /* min-height: 100vh;
-  background-size: cover; */
   width: 100%;
-  height: 500px;
+  height: 350px;
   object-fit: cover;
 }
 
