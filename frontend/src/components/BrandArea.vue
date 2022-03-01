@@ -75,9 +75,12 @@
     </div>
     <div class="brand-details_area" v-show="showContent">
       <div class="brand-details_header">
-        <button @click="closeDetails">back</button>
+        <FAIcon
+          :icon="['fas', 'angle-left']"
+          class="back-button"
+          @click="closeDetails"
+        />
       </div>
-      <FAIcon :icon="['fas', 'angle-left']" class="back-button" />
     </div>
   </div>
 </template>
