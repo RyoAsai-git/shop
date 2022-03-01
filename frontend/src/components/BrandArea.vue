@@ -73,13 +73,22 @@
         class="brand-image"
       />
     </div>
-    <div class="brand-details_area" v-show="showContent">
+    <div class="brand-details_body" v-show="showContent">
       <div class="brand-details_header">
         <FAIcon
           :icon="['fas', 'angle-left']"
           class="back-button"
           @click="closeDetails"
         />
+      </div>
+      <div class="brand-details_main">
+        <div class="brand-details-image_area">
+          <img
+            src="https://www.imn.jp/images/upload/2020/04/39e67032baf7048714a1097a41a74c9e.jpg"
+            alt=""
+            class="brand-details_background-image"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -129,7 +138,7 @@ export default {
   transition-duration: 0.5s;
 }
 
-.brand-details_area {
+.brand-details_body {
   height: 100%;
   width: 80%;
   position: absolute;
@@ -138,12 +147,25 @@ export default {
 }
 
 .back-button {
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
+  margin-top: 15px;
   margin-left: 20px;
 }
 
 .back-button:hover {
   color: #0096a9;
+}
+
+.brand-details_background-image {
+  /* min-height: 100vh;
+  background-size: cover; */
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.brand-details-image_area {
+
 }
 </style>
