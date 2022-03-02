@@ -129,7 +129,6 @@ export default {
 
 .brand-image {
   background-color: #ccc;
-  /* width: 22%; */
   border-radius: 20px;
   border: 1px solid #d3d3d3;
   margin-top: 30px;
