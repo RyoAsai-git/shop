@@ -95,7 +95,7 @@
           class="brand-detail-image brand-details-icon"
         />
         <div class="brand-details-button">
-          <p>このブランドをフォローする</p>
+          <p class="button-text">このブランドをフォローする</p>
         </div>
       </div>
     </div>
@@ -196,6 +196,23 @@ export default {
 }
 
 .brand-details-button {
-  color: #0096a9;
+  background: #0096a9;
+  color: #fff;
+  font-weight: 2px;
+  position: absolute;
+  top: 380px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 230px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.button-text {
+  color: #fff;
+  font-weight: bold;
 }
 </style>
