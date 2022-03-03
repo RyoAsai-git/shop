@@ -165,6 +165,11 @@ export default {
   color: #0096a9;
 }
 
+.brand-details-image_area {
+  width: 100%;
+  position: absolute;
+}
+
 .brand-details_background-image {
   width: 100%;
   height: 350px;
@@ -173,5 +178,8 @@ export default {
 
 .brand-details-icon {
   width: 15%;
+  position: absolute;
+  top: 80px;
+  left: 100px;
 }
 </style>
