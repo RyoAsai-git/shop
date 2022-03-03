@@ -92,7 +92,7 @@
         <img
           src="https://www.imn.jp/images/upload/2020/04/39e67032baf7048714a1097a41a74c9e.jpg"
           alt=""
-          class="brand-image brand-details-icon"
+          class="brand-detail-image brand-details-icon"
         />
         <div class="brand-details-button">
           <p>このブランドをフォローする</p>
@@ -177,6 +177,15 @@ export default {
   width: 100%;
   height: 350px;
   object-fit: cover;
+}
+
+.brand-detail-image {
+  background-color: #ccc;
+  border-radius: 20px;
+  border: 1px solid #d3d3d3;
+  margin-top: 30px;
+  margin-left: 20px;
+  aspect-ratio: 1;
 }
 
 .brand-details-icon {
