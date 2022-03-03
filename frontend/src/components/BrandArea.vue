@@ -94,6 +94,9 @@
           alt=""
           class="brand-image brand-details-icon"
         />
+        <div class="brand-details-button">
+          <p>このブランドをフォローする</p>
+        </div>
       </div>
     </div>
   </div>
@@ -181,5 +184,9 @@ export default {
   position: absolute;
   top: 120px;
   left: 100px;
+}
+
+.brand-details-button {
+  color: #0096a9;
 }
 </style>
