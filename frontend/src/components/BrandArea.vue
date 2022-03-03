@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="brand_area" v-show="!showContent">
+    <div class="brand-area" v-show="!showContent">
       <img
         src="https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg"
         alt=""
@@ -73,20 +73,20 @@
         class="brand-image brand-image-icon"
       />
     </div>
-    <div class="brand-details_body" v-show="showContent">
-      <div class="brand-details_header">
+    <div class="brand-details-body" v-show="showContent">
+      <div class="brand-details-header">
         <FAIcon
           :icon="['fas', 'angle-left']"
           class="back-button"
           @click="closeDetails"
         />
       </div>
-      <div class="brand-details_main">
-        <div class="brand-details-image_area">
+      <div class="brand-details-main">
+        <div class="brand-details-image-area">
           <img
             src="https://www.imn.jp/images/upload/2020/04/39e67032baf7048714a1097a41a74c9e.jpg"
             alt=""
-            class="brand-details_background-image"
+            class="brand-details-background-image"
           />
         </div>
         <img
@@ -122,7 +122,7 @@ export default {
 </script>
 
 <style scoped>
-.brand_area {
+.brand-area {
   height: 100%;
   width: 80%;
   position: absolute;
@@ -149,7 +149,7 @@ export default {
   transition-duration: 0.5s;
 }
 
-.brand-details_body {
+.brand-details-body {
   height: 100%;
   width: 80%;
   position: absolute;
@@ -168,12 +168,12 @@ export default {
   color: #0096a9;
 }
 
-.brand-details-image_area {
+.brand-details-image-area {
   width: 100%;
   position: absolute;
 }
 
-.brand-details_background-image {
+.brand-details-background-image {
   width: 100%;
   height: 350px;
   object-fit: cover;
