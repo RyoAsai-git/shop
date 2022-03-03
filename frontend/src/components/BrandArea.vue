@@ -179,7 +179,7 @@ export default {
 .brand-details-icon {
   width: 15%;
   position: absolute;
-  top: 80px;
+  top: 120px;
   left: 100px;
 }
 </style>
