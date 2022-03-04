@@ -168,11 +168,6 @@ export default {
   color: var(--main-bg-color);
 }
 
-.brand-details-image-area {
-  width: 100%;
-  position: absolute;
-}
-
 .brand-details-background-image {
   width: 100%;
   height: 350px;
@@ -188,14 +183,12 @@ export default {
 
 .brand-details-button {
   background-color: var(--main-bg-color);
-  font-weight: 2px;
   position: absolute;
   top: 380px;
   left: 0;
   right: 0;
   margin: auto;
   width: 230px;
-  height: 40px;
   line-height: 40px;
   text-align: center;
   border-radius: 20px;
