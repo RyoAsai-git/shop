@@ -74,7 +74,7 @@ li {
   padding-left: 40px;
   list-style-type: none;
   transition: background-color 0.5s;
-  font-size: 17px;
+  font-size: var(--main-font-size);;
   cursor: pointer;
 }
 

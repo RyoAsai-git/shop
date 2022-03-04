@@ -167,7 +167,7 @@ export default {
 
 .modal-right-top {
   position: absolute;
-  font-size: 17px;
+  font-size: var(--main-font-size);
   top: 20px;
   left: 40px;
 }
@@ -181,14 +181,14 @@ export default {
 
 .description-top {
   position: absolute;
-  font-size: 17px;
+  font-size: var(--main-font-size);;
   top: 120px;
 }
 
 .description_text {
   position: absolute;
   top: 165px;
-  font-size: 14px;
+  font-size: var(--sub-font-size);
   font-weight: 600;
 }
 </style>

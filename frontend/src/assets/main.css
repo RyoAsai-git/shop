@@ -5,6 +5,8 @@
 
 :root {
   --main-font-color: #fff;
+  --main-font-size: 17px;
+  --sub-font-size: 14px;
   --main-bg-color: #0096a9;
 }
 
@@ -35,7 +37,7 @@ body {
 
 .error {
   color: #ff3f80;
-  font-size: 14px;
+  font-size: var(--sub-font-size);
 }
 
 .item-text {

@@ -71,7 +71,7 @@ export default {
   margin: 20px auto;
 }
 .change-form {
-  font-size: 14px;
+  font-size: var(--sub-font-size);
   margin: 10px;
 }
 </style>
