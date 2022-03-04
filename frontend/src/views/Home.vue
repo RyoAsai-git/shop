@@ -3,10 +3,10 @@
     <div class="navbar">
       <ul class="navbar-list">
         <li @click="showSearchArea">
-          <p class="item-text" :class="{is_active: searchArea}">さがす</p>
+          <p class="item-text" :class="{ is_active: searchArea }">さがす</p>
         </li>
         <li @click="showBrandArea">
-          <p class="item-text" :class="{is_active: brandArea}">ブランド</p>
+          <p class="item-text" :class="{ is_active: brandArea }">ブランド</p>
         </li>
         <li>
           <p class="item-text">お気に入り</p>
@@ -47,7 +47,7 @@ export default {
     showBrandArea() {
       this.searchArea = false;
       this.brandArea = true;
-    }
+    },
   },
 };
 </script>
