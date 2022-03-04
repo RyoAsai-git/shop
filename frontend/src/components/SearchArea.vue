@@ -60,7 +60,7 @@
           class="modal-image"
         />
         <dir class="description_text-area">
-          <h1 class="description_top item_text">店舗情報</h1>
+          <h1 class="description_top item-text">店舗情報</h1>
           <p class="description_text">
             あああああああああああああああああああああああああああああああああ
           </p>
@@ -68,10 +68,10 @@
       </div>
       <div class="modal_right-area">
         <div class="modal_right">
-          <h1 class="modal_right-top item_text">取扱ブランド</h1>
+          <h1 class="modal_right-top item-text">取扱ブランド</h1>
         </div>
         <div class="modal_right">
-          <div class="modal_right-top item_text">アクセス</div>
+          <div class="modal_right-top item-text">アクセス</div>
         </div>
       </div>
     </div>
@@ -99,12 +99,8 @@ export default {
 
 <style scoped>
 .search_area {
-  height: 100%;
-  width: 80%;
-  display: inline-block;
   position: absolute;
   left: 20%;
-  top: 0;
 }
 
 .search_area-shop {
@@ -127,8 +123,6 @@ export default {
   width: 100%;
   aspect-ratio: 5 / 3;
   border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
 }
 
 .search_area-image:hover {
@@ -147,7 +141,7 @@ export default {
   width: 250px;
   z-index: 2;
   padding: 1em;
-  background: #fff;
+  background: var(--main-font-color);
   border-radius: 40px;
   position: relative;
 }
@@ -161,7 +155,7 @@ export default {
 .modal_right {
   height: 185px;
   width: 280px;
-  background: #fff;
+  background: var(--main-font-color);
   border-radius: 40px;
   margin-left: 10px;
   position: relative;
@@ -183,7 +177,6 @@ export default {
   position: absolute;
   top: 65px;
   left: 35px;
-  height: 170px;
   width: 200px;
 }
 
@@ -198,6 +191,5 @@ export default {
   top: 165px;
   font-size: 14px;
   font-weight: 600;
-  color: #333333;
 }
 </style>
