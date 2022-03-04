@@ -82,7 +82,7 @@
         />
       </div>
       <div class="brand-details-main">
-        <div class="brand-details-image-area">
+        <div class="brand-details-content">
           <img
             src="https://www.imn.jp/images/upload/2020/04/39e67032baf7048714a1097a41a74c9e.jpg"
             alt=""
@@ -94,7 +94,7 @@
           alt=""
           class="brand-image brand-icon-details"
         />
-        <div class="brand-details-button">
+        <div class="brand-button">
           <p class="button-text">このブランドをフォローする</p>
         </div>
       </div>
@@ -179,7 +179,7 @@ export default {
   left: 100px;
 }
 
-.brand-details-button {
+.brand-button {
   background-color: var(--main-bg-color);
   position: absolute;
   top: 380px;
