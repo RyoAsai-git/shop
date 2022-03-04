@@ -3,19 +3,19 @@
     <div class="navbar">
       <ul class="navbar-list">
         <li @click="showSearchArea">
-          <p class="item_text" :class="{is_active: searchArea}">さがす</p>
+          <p class="item-text" :class="{is_active: searchArea}">さがす</p>
         </li>
         <li @click="showBrandArea">
-          <p class="item_text" :class="{is_active: brandArea}">ブランド</p>
+          <p class="item-text" :class="{is_active: brandArea}">ブランド</p>
         </li>
         <li>
-          <p class="item_text">お気に入り</p>
+          <p class="item-text">お気に入り</p>
         </li>
         <li>
-          <p class="item_text">マイページ</p>
+          <p class="item-text">マイページ</p>
         </li>
         <li>
-          <p class="item_text">設定</p>
+          <p class="item-text">設定</p>
         </li>
       </ul>
     </div>
