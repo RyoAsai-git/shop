@@ -165,7 +165,7 @@ export default {
 }
 
 .back-button:hover {
-  color: #0096a9;
+  color: var(--main-bg-color);
 }
 
 .brand-details-image-area {
@@ -187,8 +187,7 @@ export default {
 }
 
 .brand-details-button {
-  background: #0096a9;
-  color: #fff;
+  background-color: var(--main-bg-color);
   font-weight: 2px;
   position: absolute;
   top: 380px;
@@ -204,7 +203,7 @@ export default {
 }
 
 .button-text {
-  color: #fff;
+  color: var(--main-font-color);
   font-weight: bold;
 }
 </style>

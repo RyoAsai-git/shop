@@ -99,6 +99,6 @@ li:hover {
 }
 
 .is_active {
-  color: #0096a9;
+  color: var(--main-bg-color);
 }
 </style>

@@ -3,6 +3,11 @@
   padding: 0px;
 }
 
+:root {
+  --main-font-color: #fff;
+  --main-bg-color: #0096a9;
+}
+
 html {
   height: 100%;
   width: 100%;
