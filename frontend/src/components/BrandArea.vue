@@ -123,11 +123,9 @@ export default {
 
 <style scoped>
 .brand-area {
-  height: 100%;
   width: 80%;
   position: absolute;
   left: 20%;
-  top: 0;
 }
 
 .brand-image {
