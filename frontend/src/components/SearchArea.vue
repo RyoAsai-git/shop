@@ -59,18 +59,18 @@
           alt=""
           class="modal-image"
         />
-        <dir class="description-text-area">
+        <dir class="description-content">
           <h1 class="description-top item-text">店舗情報</h1>
           <p class="description-text">
             あああああああああああああああああああああああああああああああああ
           </p>
         </dir>
       </div>
-      <div class="modal-right-area">
-        <div class="modal-right">
+      <div class="modal-right">
+        <div class="modal-right-content">
           <h1 class="modal-right-top item-text">取扱ブランド</h1>
         </div>
-        <div class="modal-right">
+        <div class="modal-right-content">
           <div class="modal-right-top item-text">アクセス</div>
         </div>
       </div>
@@ -131,11 +131,6 @@ export default {
   transition-duration: 0.5s;
 }
 
-.modal-right-area {
-  display: flex;
-  flex-direction: column;
-}
-
 .modal {
   position: relative;
   height: 420px;
@@ -151,7 +146,9 @@ export default {
   aspect-ratio: 5 / 3;
 }
 
-.modal-right {
+.modal-right-content {
+  display: flex;
+  flex-direction: column;
   position: relative;
   height: 185px;
   width: 280px;
@@ -160,7 +157,7 @@ export default {
   background: var(--main-font-color);
 }
 
-.modal-right:nth-child(2n) {
+.modal-right-content:nth-child(2n) {
   height: 260px;
   margin-top: 10px;
 }
@@ -172,7 +169,7 @@ export default {
   font-size: var(--main-font-size);
 }
 
-.description-text-area {
+.description-content {
   position: absolute;
   width: 200px;
   top: 65px;
