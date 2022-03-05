@@ -109,9 +109,9 @@ export default {
 }
 
 .search-area-image-wrap {
+  display: inline-block;
   height: 300px;
   width: 400px;
-  display: inline-block;
   padding-left: 50px;
   margin: 20px auto 0;
   transition-duration: 0.5s;
@@ -119,8 +119,8 @@ export default {
 }
 
 .search-area-image {
-  background-color: #ccc;
   width: 100%;
+  background-color: #ccc;
   aspect-ratio: 5 / 3;
   border-radius: 20px;
 }
@@ -137,27 +137,27 @@ export default {
 }
 
 .modal {
+  position: relative;
   height: 420px;
   width: 250px;
   padding: 1em;
   background: var(--main-font-color);
   border-radius: 40px;
-  position: relative;
 }
 
 .modal-image {
+  width: 100%;
   aspect-ratio: 5 / 3;
   border-radius: 20px;
-  width: 100%;
 }
 
 .modal-right {
+  position: relative;
   height: 185px;
   width: 280px;
   background: var(--main-font-color);
   border-radius: 40px;
   margin-left: 10px;
-  position: relative;
 }
 
 .modal-right:nth-child(2n) {
@@ -174,9 +174,9 @@ export default {
 
 .description-text-area {
   position: absolute;
+  width: 200px;
   top: 65px;
   left: 35px;
-  width: 200px;
 }
 
 .description-top {

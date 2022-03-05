@@ -123,8 +123,8 @@ export default {
 
 <style scoped>
 .brand-area {
-  width: 80%;
   position: absolute;
+  width: 80%;
   left: 20%;
 }
 
@@ -148,9 +148,9 @@ export default {
 }
 
 .brand-details-body {
+  position: absolute;
   height: 100%;
   width: 80%;
-  position: absolute;
   left: 20%;
   top: 0;
 }
@@ -167,34 +167,34 @@ export default {
 }
 
 .brand-details-background-image {
-  width: 100%;
   height: 350px;
+  width: 100%;
   object-fit: cover;
 }
 
 .brand-icon-details {
-  width: 15%;
   position: absolute;
+  width: 15%;
   top: 120px;
   left: 100px;
 }
 
 .brand-button {
-  background-color: var(--main-bg-color);
   position: absolute;
+  width: 230px;
   top: 380px;
   left: 0;
   right: 0;
   margin: auto;
-  width: 230px;
+  border-radius: 20px;
+  background-color: var(--main-bg-color);
   line-height: 40px;
   text-align: center;
-  border-radius: 20px;
   cursor: pointer;
 }
 
 .button-text {
-  color: var(--main-font-color);
   font-weight: bold;
+  color: var(--main-font-color);
 }
 </style>
