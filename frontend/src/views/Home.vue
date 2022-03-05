@@ -3,19 +3,19 @@
     <div class="navbar">
       <ul class="navbar-list">
         <li @click="showSearchArea">
-          <p class="item_text" :class="{is_active: searchArea}">さがす</p>
+          <p class="item-text" :class="{ is_active: searchArea }">さがす</p>
         </li>
         <li @click="showBrandArea">
-          <p class="item_text" :class="{is_active: brandArea}">ブランド</p>
+          <p class="item-text" :class="{ is_active: brandArea }">ブランド</p>
         </li>
         <li>
-          <p class="item_text">お気に入り</p>
+          <p class="item-text">お気に入り</p>
         </li>
         <li>
-          <p class="item_text">マイページ</p>
+          <p class="item-text">マイページ</p>
         </li>
         <li>
-          <p class="item_text">設定</p>
+          <p class="item-text">設定</p>
         </li>
       </ul>
     </div>
@@ -47,27 +47,12 @@ export default {
     showBrandArea() {
       this.searchArea = false;
       this.brandArea = true;
-    }
+    },
   },
 };
 </script>
 
 <style scoped>
-body {
-  height: 100%;
-  widows: 100%;
-}
-
-#app {
-  height: 100%;
-  width: 100%;
-}
-
-.main {
-  height: 100%;
-  width: 100%;
-}
-
 .navbar {
   height: 100%;
   width: 20%;
@@ -89,7 +74,7 @@ li {
   padding-left: 40px;
   list-style-type: none;
   transition: background-color 0.5s;
-  font-size: 17px;
+  font-size: var(--main-font-size);;
   cursor: pointer;
 }
 
@@ -99,6 +84,6 @@ li:hover {
 }
 
 .is_active {
-  color: #0096a9;
+  color: var(--main-bg-color);
 }
 </style>
