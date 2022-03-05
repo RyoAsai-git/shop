@@ -120,9 +120,9 @@ export default {
 
 .search-area-image {
   width: 100%;
+  border-radius: 20px;
   background-color: #ccc;
   aspect-ratio: 5 / 3;
-  border-radius: 20px;
 }
 
 .search-area-image:hover {
@@ -141,23 +141,23 @@ export default {
   height: 420px;
   width: 250px;
   padding: 1em;
-  background: var(--main-font-color);
   border-radius: 40px;
+  background: var(--main-font-color);
 }
 
 .modal-image {
   width: 100%;
-  aspect-ratio: 5 / 3;
   border-radius: 20px;
+  aspect-ratio: 5 / 3;
 }
 
 .modal-right {
   position: relative;
   height: 185px;
   width: 280px;
-  background: var(--main-font-color);
-  border-radius: 40px;
   margin-left: 10px;
+  border-radius: 40px;
+  background: var(--main-font-color);
 }
 
 .modal-right:nth-child(2n) {
@@ -167,9 +167,9 @@ export default {
 
 .modal-right-top {
   position: absolute;
-  font-size: var(--main-font-size);
   top: 20px;
   left: 40px;
+  font-size: var(--main-font-size);
 }
 
 .description-text-area {
@@ -181,8 +181,8 @@ export default {
 
 .description-top {
   position: absolute;
-  font-size: var(--main-font-size);;
   top: 120px;
+  font-size: var(--main-font-size);
 }
 
 .description-text {
