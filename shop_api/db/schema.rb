@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_04_134512) do
+ActiveRecord::Schema.define(version: 2022_03_07_130727) do
 
   create_table "brand_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 2022_01_04_134512) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "shop_brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "shops_id"
+    t.bigint "brands_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["brands_id"], name: "index_shop_brands_on_brands_id"
+    t.index ["shops_id"], name: "index_shop_brands_on_shops_id"
+  end
+
   create_table "shop_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "shops_id"
@@ -38,6 +47,7 @@ ActiveRecord::Schema.define(version: 2022_01_04_134512) do
 
   create_table "shops", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", limit: 100, null: false
+    t.string "image"
     t.text "description"
     t.text "shop_url"
     t.datetime "created_at", precision: 6, null: false
@@ -59,6 +69,8 @@ ActiveRecord::Schema.define(version: 2022_01_04_134512) do
 
   add_foreign_key "brand_users", "brands", column: "brands_id"
   add_foreign_key "brand_users", "users"
+  add_foreign_key "shop_brands", "brands", column: "brands_id"
+  add_foreign_key "shop_brands", "shops", column: "shops_id"
   add_foreign_key "shop_users", "shops", column: "shops_id"
   add_foreign_key "shop_users", "users"
 end
