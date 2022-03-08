@@ -6,5 +6,9 @@
     shop_url: "https://auralee.jp/",
     # puts "#{number}番目のお店を作成しました"
   )
+
+  Brand.create(
+    name: "AURALEE",
+  )
   puts "#{number}番目のメッセージを作成しました"
 end
