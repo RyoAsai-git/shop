@@ -2,6 +2,7 @@
   User.create(
     name: Faker::JapaneseMedia::OnePiece.unique.character,
     email: Faker::Internet.email,
+    password: 'aaaaaaaa',
   )
 
   Shop.create(
