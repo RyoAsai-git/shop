@@ -1,8 +1,8 @@
 class CreateBrandUsers < ActiveRecord::Migration[6.0]
   def change
     create_table :brand_users do |t|
-      t.references :user,  index: true, foreign_key: true
-      t.references :brand, index: true, foreign_key: true
+      t.integer :user_id
+      t.intefer :brand_id
       t.timestamps
     end
   end
