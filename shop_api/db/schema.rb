@@ -10,39 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_07_130727) do
-
-  create_table "brand_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "brands_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["brands_id"], name: "index_brand_users_on_brands_id"
-    t.index ["user_id"], name: "index_brand_users_on_user_id"
-  end
+ActiveRecord::Schema.define(version: 2021_12_19_124703) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", limit: 100, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "shop_brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.bigint "shops_id"
-    t.bigint "brands_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["brands_id"], name: "index_shop_brands_on_brands_id"
-    t.index ["shops_id"], name: "index_shop_brands_on_shops_id"
-  end
-
-  create_table "shop_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "shops_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["shops_id"], name: "index_shop_users_on_shops_id"
-    t.index ["user_id"], name: "index_shop_users_on_user_id"
   end
 
   create_table "shops", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -67,10 +40,4 @@ ActiveRecord::Schema.define(version: 2022_03_07_130727) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
-  add_foreign_key "brand_users", "brands", column: "brands_id"
-  add_foreign_key "brand_users", "users"
-  add_foreign_key "shop_brands", "brands", column: "brands_id"
-  add_foreign_key "shop_brands", "shops", column: "shops_id"
-  add_foreign_key "shop_users", "shops", column: "shops_id"
-  add_foreign_key "shop_users", "users"
 end
