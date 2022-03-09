@@ -1,14 +1,19 @@
-3.times do |number|
+10.times do |number|
+  User.create(
+    name: Faker::JapaneseMedia::OnePiece.unique.character,
+    email: Faker::Internet.email,
+  )
+
   Shop.create(
-    name: "#{number}番目のお店",
+    name: Faker::JapaneseMedia::OnePiece.sea,
     image: "https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg",
-    description: "#{number}番目の店舗説明",
-    shop_url: "https://auralee.jp/",
-    # puts "#{number}番目のお店を作成しました"
+    description: Faker::JapaneseMedia::OnePiece.quote,
+    shop_url: Faker::Internet.url,
   )
 
   Brand.create(
-    name: "AURALEE",
+    name: Faker::JapaneseMedia::OnePiece.island,
   )
-  puts "#{number}番目のメッセージを作成しました"
+
+  puts "#{number}番目のダミーデータを作成しました"
 end
