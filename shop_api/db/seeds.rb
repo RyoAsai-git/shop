@@ -18,10 +18,3 @@
 
   puts "#{number}番目のダミーデータを作成しました"
 end
-
-# 記事、カテゴリのidを列挙して中間テーブルに投入
-# Shop.all.ids.sort.each do |shop_id|
-#   Brand.all.ids.sort.each do |brand_id|
-#     Shop_brands.create(article_id: article_id, category_id: category_id)
-#   end
-# end
