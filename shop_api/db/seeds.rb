@@ -16,5 +16,20 @@
     name: Faker::JapaneseMedia::OnePiece.island,
   )
 
+  ShopUser.create(
+    user_id: 1,
+    shop_id: 1,
+  )
+
+  ShopBrand.create(
+    user_id: 1,
+    brand_id: 1,
+  )
+
+  BrandUser.create(
+    user_id: 1,
+    brand_id: 1,
+  )
+
   puts "#{number}番目のダミーデータを作成しました"
 end
