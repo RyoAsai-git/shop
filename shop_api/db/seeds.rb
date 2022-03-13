@@ -22,7 +22,7 @@
   )
 
   ShopBrand.create(
-    user_id: 1,
+    shop_id: 1,
     brand_id: 1,
   )
 
