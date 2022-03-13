@@ -10,15 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_04_134512) do
+ActiveRecord::Schema.define(version: 2022_03_07_130727) do
 
   create_table "brand_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "brands_id"
+    t.integer "user_id"
+    t.integer "brand_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["brands_id"], name: "index_brand_users_on_brands_id"
-    t.index ["user_id"], name: "index_brand_users_on_user_id"
   end
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -27,17 +25,23 @@ ActiveRecord::Schema.define(version: 2022_01_04_134512) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "shop_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "shops_id"
+  create_table "shop_brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.integer "shop_id"
+    t.integer "brand_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["shops_id"], name: "index_shop_users_on_shops_id"
-    t.index ["user_id"], name: "index_shop_users_on_user_id"
+  end
+
+  create_table "shop_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "shop_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "shops", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", limit: 100, null: false
+    t.string "image"
     t.text "description"
     t.text "shop_url"
     t.datetime "created_at", precision: 6, null: false
@@ -57,8 +61,4 @@ ActiveRecord::Schema.define(version: 2022_01_04_134512) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
-  add_foreign_key "brand_users", "brands", column: "brands_id"
-  add_foreign_key "brand_users", "users"
-  add_foreign_key "shop_users", "shops", column: "shops_id"
-  add_foreign_key "shop_users", "users"
 end
