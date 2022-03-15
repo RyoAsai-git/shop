@@ -4,10 +4,10 @@ class ShopsController < ApplicationController
     shops_array = shops.map do |shop|
       {
         id: shop.id,
-        shop_name: shop.name,
-        shop_image: shop.image,
-        shop_description: shop.description,
-        shop_url: shop.shop_url,
+        name: shop.name,
+        image: shop.image,
+        description: shop.description,
+        url: shop.shop_url,
         created_at: shop.created_at,
       }
     end
