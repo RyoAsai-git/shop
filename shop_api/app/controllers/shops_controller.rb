@@ -5,6 +5,7 @@ class ShopsController < ApplicationController
       {
         id: shop.id,
         shop_name: shop.name,
+        shop_image: shop.image,
         shop_description: shop.description,
         shop_url: shop.shop_url,
         created_at: shop.created_at,
