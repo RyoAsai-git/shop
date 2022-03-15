@@ -2,14 +2,23 @@
   <div>
     <div class="search-area">
       <div class="search-area-content">
-        <div class="search-area-image-wrap">
+        <div class="search-area-image-wrap" v-for="shop in shops" :key="shop.id">
+          {{ shop.name }}
+          <img
+            src=""
+            alt=""
+            @click="openModal"
+            class="search-area-image"
+          />
+        </div>
+        <!-- <div class="search-area-image-wrap">
           <img
             src="https://media.wwdjapan.com/wp-content/uploads/2018/12/26155656/181226_select_011.jpg"
             alt=""
             @click="openModal"
             class="search-area-image"
           />
-        </div>
+        </div> -->
         <!-- <div class="search-area-image-wrap">
           <img
             src="https://evermade.jp/wp-content/uploads/2019/11/IMG_0123-1024x682.jpg"
@@ -79,11 +88,12 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 
 export default {
   data() {
     return {
+      shops: null,
       showContent: false,
     };
   },
@@ -96,13 +106,25 @@ export default {
       this.showContent = false;
     },
 
-    async getShopInfo () {
-      try {
-        const res = axios.get("http://localhost:3000/shops");
-        console.log(res);
-      } catch (error) {
-        console.error(error);
-      }
+    // async getShopInfo () {
+    //   try {
+    //     const res = axios.get("http://localhost:3000/shops");
+    //     console.log(res);
+    //   } catch (error) {
+    //     console.error(error);
+    //   }
+    // }
+  },
+
+  created() {
+    // async getShopInfo () {
+      console.log('test');
+    try {
+      const res = axios.get("http://localhost:3000/shops");
+      console.log(res);
+      this.shops = res.data;
+    } catch (error) {
+      console.error(error);
     }
   },
 };
