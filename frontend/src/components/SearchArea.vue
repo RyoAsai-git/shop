@@ -92,7 +92,7 @@ import axios from "axios";
 export default {
   data() {
     return {
-      shops: null,
+      shops: "",
       showContent: false,
     };
   },
@@ -105,16 +105,16 @@ export default {
       this.showContent = false;
     },
 
-    window:onload = async function () {
-      console.log("test");
+    window: (onload = async function () {
       try {
         const res = await axios.get("http://localhost:3000/shops");
         console.log(res);
         this.shops = res.data;
+        console.log(this.shops);
       } catch (error) {
         console.error(error);
       }
-    },
+    }),
   },
 };
 </script>
