@@ -10,7 +10,7 @@
             class="search-area-image"
           />
         </div>
-        <div class="search-area-image-wrap">
+        <!-- <div class="search-area-image-wrap">
           <img
             src="https://evermade.jp/wp-content/uploads/2019/11/IMG_0123-1024x682.jpg"
             alt=""
@@ -49,7 +49,7 @@
             @click="openModal"
             class="search-area-image"
           />
-        </div>
+        </div> -->
       </div>
     </div>
     <div id="overlay" v-show="showContent" @click="closeModal">
@@ -95,6 +95,15 @@ export default {
     closeModal: function () {
       this.showContent = false;
     },
+
+    async getShopInfo () {
+      try {
+        const res = axios.get("http://localhost:3000/shops");
+        console.log(res);
+      } catch (error) {
+        console.error(error);
+      }
+    }
   },
 };
 </script>
