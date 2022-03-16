@@ -7,17 +7,8 @@
           v-for="shop in shops"
           :key="shop.id"
         >
-        {{ shop.name }}
-          <img src="" alt="" @click="openModal" class="search-area-image" />
+          <img v-bind:src="shop.image" alt="" @click="openModal" class="search-area-image" />
         </div>
-        <!-- <div class="search-area-image-wrap">
-          <img
-            src="https://media.wwdjapan.com/wp-content/uploads/2018/12/26155656/181226_select_011.jpg"
-            alt=""
-            @click="openModal"
-            class="search-area-image"
-          />
-        </div> -->
       </div>
     </div>
     <div id="overlay" v-show="showContent" @click="closeModal">
