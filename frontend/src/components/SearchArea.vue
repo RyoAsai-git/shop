@@ -7,7 +7,12 @@
           v-for="shop in shops"
           :key="shop.id"
         >
-          <img :src="shop.image" alt="" @click="openModal" class="search-area-image" />
+          <img
+            :src="shop.image"
+            alt=""
+            @click="openModal"
+            class="search-area-image"
+          />
         </div>
       </div>
     </div>
@@ -36,7 +41,6 @@
     </div>
   </div>
 </template>
-
 <script>
 import axios from "axios";
 
