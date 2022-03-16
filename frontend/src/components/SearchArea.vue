@@ -7,7 +7,7 @@
           v-for="shop in shops"
           :key="shop.id"
         >
-          <img v-bind:src="shop.image" alt="" @click="openModal" class="search-area-image" />
+          <img :src="shop.image" alt="" @click="openModal" class="search-area-image" />
         </div>
       </div>
     </div>
