@@ -7,7 +7,6 @@
           v-for="shop in shops"
           :key="shop.id"
         >
-          {{ shop.name }}
           <img src="" alt="" @click="openModal" class="search-area-image" />
         </div>
         <!-- <div class="search-area-image-wrap">
@@ -52,7 +51,7 @@ import axios from "axios";
 export default {
   data() {
     return {
-      shops: "",
+      shops: {},
       showContent: false,
     };
   },
