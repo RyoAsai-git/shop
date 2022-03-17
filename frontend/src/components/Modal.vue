@@ -8,10 +8,12 @@
       />
       <dir class="description-content">
         <h1 class="description-top item-text">店舗情報</h1>
-        <p class="description-text">
-          {{ val.name }}
+        <!-- <p class="shop-name">店舗名: {{ val.name }}</p> -->
+        <p class="description-text content">
           {{ val.description }}
         </p>
+        <!-- <h2 class="description-url item-text">店舗URL</h2>
+        <p class="description-text">{{ val.url }}</p> -->
       </dir>
     </div>
     <div class="modal-right">
@@ -27,14 +29,13 @@
 
 <script>
 export default {
-  props: ['val'],
+  props: ["val"],
   data() {
     return {
       showContent: false,
-    }
-  }
-}
-
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -94,5 +95,16 @@ export default {
   top: 165px;
   font-size: var(--sub-font-size);
   font-weight: 600;
+}
+
+.content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.description-url {
+  position: absolute;
 }
 </style>
