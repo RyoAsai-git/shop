@@ -11,8 +11,8 @@
         <p class="description-text content">
           {{ val.description }}
         </p>
-        <!-- <h2 class="description-url item-text">店舗URL</h2>
-        <p class="description-text">{{ val.url }}</p> -->
+        <h2 class="description-url item-text">店舗URL</h2>
+        <p class="description-text description-url-content">{{ val.url }}</p>
       </dir>
     </div>
     <div class="modal-right">
@@ -105,5 +105,15 @@ export default {
 
 .description-url {
   position: absolute;
+  top: 250px;
+  font-size: var(--sub-font-size);
+  font-weight: 600;
+}
+
+.description-url-content {
+  position: absolute;
+  top: 270px;
+  font-size: var(--sub-font-size);
+  font-weight: 600;
 }
 </style>
