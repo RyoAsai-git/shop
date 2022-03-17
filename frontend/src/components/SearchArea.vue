@@ -16,7 +16,7 @@
         </div>
       </div>
     </div>
-    <Modal v-show="showContent" />
+    <Modal v-show="showContent" @close="closeModal" />
   </div>
 </template>
 <script>
