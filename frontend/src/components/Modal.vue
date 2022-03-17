@@ -7,12 +7,11 @@
         class="modal-image"
       />
       <dir class="description-content">
-        <h1 class="description-top item-text">店舗名: {{ val.name }}</h1>
+        <h1 class="description-top item-text">{{ val.name }}</h1>
         <p class="description-text content">
           {{ val.description }}
         </p>
-        <h2 class="description-url item-text">店舗URL</h2>
-        <p class="description-text description-url-content">{{ val.url }}</p>
+        <h2 class="description-url item-text">{{ val.url }}</h2>
       </dir>
     </div>
     <div class="modal-right">
@@ -99,20 +98,13 @@ export default {
 .content {
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 6;
   overflow: hidden;
 }
 
 .description-url {
   position: absolute;
-  top: 250px;
-  font-size: var(--sub-font-size);
-  font-weight: 600;
-}
-
-.description-url-content {
-  position: absolute;
-  top: 270px;
+  top: 310px;
   font-size: var(--sub-font-size);
   font-weight: 600;
 }
