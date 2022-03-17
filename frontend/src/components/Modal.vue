@@ -9,7 +9,8 @@
       <dir class="description-content">
         <h1 class="description-top item-text">店舗情報</h1>
         <p class="description-text">
-          あああああああああああああああああああああああああああああああああ
+          {{ val.name }}
+          {{ val.description }}
         </p>
       </dir>
     </div>
@@ -26,6 +27,7 @@
 
 <script>
 export default {
+  props: ['val'],
   data() {
     return {
       showContent: false,

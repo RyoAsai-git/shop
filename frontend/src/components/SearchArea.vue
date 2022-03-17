@@ -10,13 +10,13 @@
           <img
             :src="shop.image"
             alt=""
-            @click="openModal"
+            @click="openModal(shop)"
             class="search-area-image"
           />
         </div>
       </div>
     </div>
-    <Modal v-show="showContent" @close="closeModal" />
+    <Modal :val="postItem" v-show="showContent" @close="closeModal" />
   </div>
 </template>
 <script>
@@ -30,16 +30,15 @@ export default {
   data() {
     return {
       shops: {},
+      postItem: '',
       showContent: false,
     };
   },
 
   methods: {
-    openModal: function () {
+    openModal: function (shop) {
       this.showContent = true;
-      // const shop = this.shops[id];
-      // console.log(shop);
-      // return shop;
+      this.postItem = shop;
     },
     closeModal: function () {
       this.showContent = false;
