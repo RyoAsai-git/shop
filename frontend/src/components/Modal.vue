@@ -7,8 +7,7 @@
         class="modal-image"
       />
       <dir class="description-content">
-        <h1 class="description-top item-text">店舗情報</h1>
-        <!-- <p class="shop-name">店舗名: {{ val.name }}</p> -->
+        <h1 class="description-top item-text">店舗名: {{ val.name }}</h1>
         <p class="description-text content">
           {{ val.description }}
         </p>
@@ -92,7 +91,7 @@ export default {
 
 .description-text {
   position: absolute;
-  top: 165px;
+  top: 160px;
   font-size: var(--sub-font-size);
   font-weight: 600;
 }
