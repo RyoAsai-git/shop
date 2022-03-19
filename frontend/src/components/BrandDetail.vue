@@ -10,16 +10,17 @@
     <div class="brand-details-main">
       <div class="brand-details-content">
         <img
-          src="https://www.imn.jp/images/upload/2020/04/39e67032baf7048714a1097a41a74c9e.jpg"
+          :src="val.image"
           alt=""
           class="brand-details-background-image"
         />
       </div>
       <img
-        src="https://www.imn.jp/images/upload/2020/04/39e67032baf7048714a1097a41a74c9e.jpg"
+        :src="val.image"
         alt=""
         class="brand-image brand-icon-details"
       />
+      {{ val.description }}
       <div class="brand-button">
         <p class="button-text">このブランドをフォローする</p>
       </div>
@@ -29,6 +30,7 @@
 
 <script>
 export default {
+  props: ["val"],
   data() {
     return {
       showContent: false,
@@ -68,6 +70,8 @@ export default {
   width: 15%;
   top: 120px;
   left: 100px;
+  border-radius: 20px;
+  border: 1px solid #d3d3d3;
 }
 
 .brand-button {

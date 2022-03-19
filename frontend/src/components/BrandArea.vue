@@ -6,11 +6,11 @@
         :key="brand.id"
         :src="brand.image"
         alt=""
-        @click="openDetails"
+        @click="openDetails(brand)"
         class="brand-image brand-icon-top"
       />
     </div>
-    <BrandDetail v-show="showContent" @close="closeDetails" />
+    <BrandDetail :val="postItem" v-show="showContent" @close="closeDetails" />
   </div>
 </template>
 
@@ -25,13 +25,15 @@ export default {
   data() {
     return {
       brands: {},
+      postItem: '',
       showContent: false,
     };
   },
 
   methods: {
-    openDetails: function () {
+    openDetails: function (brand) {
       this.showContent = true;
+      this.postItem = brand;
     },
     closeDetails: function () {
       this.showContent = false;
