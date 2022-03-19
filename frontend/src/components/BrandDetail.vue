@@ -14,7 +14,7 @@
       <img :src="val.image" alt="" class="brand-image brand-icon-details" />
       <div class="brand-description-area">
         <h1 class="brand-name">{{ val.name }}</h1>
-        <p class="brand-description-content">{{ val.description }}</p>
+        <p class="brand-content">{{ val.description }}</p>
       </div>
       <div class="brand-button">
         <p class="button-text">このブランドをフォローする</p>
@@ -81,12 +81,12 @@ export default {
   color: #333333;
 }
 
-.brand-description-content {
+/* .brand-description-content {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
-}
+} */
 
 .brand-button {
   position: absolute;

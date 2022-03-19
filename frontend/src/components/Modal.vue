@@ -95,13 +95,6 @@ export default {
   font-weight: 600;
 }
 
-.content {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6;
-  overflow: hidden;
-}
-
 .description-url {
   position: absolute;
   top: 310px;
