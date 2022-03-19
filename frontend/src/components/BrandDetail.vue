@@ -81,13 +81,6 @@ export default {
   color: #333333;
 }
 
-/* .brand-description-content {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
-} */
-
 .brand-button {
   position: absolute;
   width: 230px;
