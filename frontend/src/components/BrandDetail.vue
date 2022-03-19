@@ -12,6 +12,10 @@
         <img :src="val.image" alt="" class="brand-details-background-image" />
       </div>
       <img :src="val.image" alt="" class="brand-image brand-icon-details" />
+      <div class="brand-description-area">
+        <h1 class="brand-name">{{ val.name }}</h1>
+        <p class="brand-description-content">{{ val.description }}</p>
+      </div>
       <div class="brand-button">
         <p class="button-text">このブランドをフォローする</p>
       </div>
@@ -37,6 +41,7 @@ export default {
   width: 80%;
   left: 20%;
   top: 0;
+  margin-left: 20px;
 }
 
 .back-button {
@@ -65,10 +70,28 @@ export default {
   border: 1px solid #d3d3d3;
 }
 
+.brand-description-area {
+  width: 90%;
+  margin-left: 40px;
+}
+
+.brand-name {
+  font-weight: 600;
+  font-size: 20px;
+  color: #333333;
+}
+
+.brand-description-content {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
 .brand-button {
   position: absolute;
   width: 230px;
-  top: 380px;
+  top: 500px;
   left: 0;
   right: 0;
   margin: auto;
