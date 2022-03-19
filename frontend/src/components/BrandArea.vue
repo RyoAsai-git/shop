@@ -78,10 +78,6 @@ export default {
   left: 20%;
 }
 
-.brand-area-content {
-  display: inline-block;
-}
-
 .brand-image {
   background-color: #ccc;
   border-radius: 20px;
