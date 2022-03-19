@@ -16,16 +16,16 @@
 
 <script>
 import axios from "axios";
-import BrandDetail from "../components/BrandDetail.vue"
+import BrandDetail from "../components/BrandDetail.vue";
 
 export default {
   components: {
-    BrandDetail
+    BrandDetail,
   },
   data() {
     return {
       brands: {},
-      postItem: '',
+      postItem: "",
       showContent: false,
     };
   },
