@@ -9,18 +9,9 @@
     </div>
     <div class="brand-details-main">
       <div class="brand-details-content">
-        <img
-          :src="val.image"
-          alt=""
-          class="brand-details-background-image"
-        />
+        <img :src="val.image" alt="" class="brand-details-background-image" />
       </div>
-      <img
-        :src="val.image"
-        alt=""
-        class="brand-image brand-icon-details"
-      />
-      {{ val.description }}
+      <img :src="val.image" alt="" class="brand-image brand-icon-details" />
       <div class="brand-button">
         <p class="button-text">このブランドをフォローする</p>
       </div>
