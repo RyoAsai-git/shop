@@ -1,7 +1,9 @@
 <template>
   <div>
-    <div class="brand-area" v-show="!showContent" v-for="brand in brands" :key="brand.id">
+    <div class="brand-area" v-show="!showContent">
       <img
+        v-for="brand in brands"
+        :key="brand.id"
         :src="brand.image"
         alt=""
         @click="openDetails"
@@ -38,7 +40,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 
 export default {
   data() {
@@ -57,7 +59,7 @@ export default {
     },
   },
 
-    created: async function () {
+  created: async function () {
     try {
       const res = await axios.get("http://localhost:3000/brands");
       console.log(res);
@@ -73,8 +75,11 @@ export default {
 <style scoped>
 .brand-area {
   position: absolute;
-  width: 80%;
   left: 20%;
+}
+
+.brand-area-content {
+  display: inline-block;
 }
 
 .brand-image {
