@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="brand-area" v-show="!showContent">
+    <div class="brand-area" v-show="!showContent" v-for="brand in brands" :key="brand.id">
+      {{ brand.name }}
       <img
         src="https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg"
         alt=""
@@ -38,9 +39,12 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data() {
     return {
+      brands: {},
       showContent: false,
     };
   },
