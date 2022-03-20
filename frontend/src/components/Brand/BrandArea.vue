@@ -10,17 +10,17 @@
         class="brand-image brand-icon-top"
       />
     </div>
-    <BrandDetail :val="postItem" v-show="showContent" @close="closeDetails" />
+    <Detail :val="postItem" v-show="showContent" @close="closeDetails" />
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import BrandDetail from "./BrandDetail";
+import Detail from "./Detail";
 
 export default {
   components: {
-    BrandDetail,
+    Detail,
   },
   data() {
     return {
