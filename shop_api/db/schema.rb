@@ -21,8 +21,13 @@ ActiveRecord::Schema.define(version: 2022_03_07_130727) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", limit: 100, null: false
+    t.string "image"
+    t.text "description"
+    t.text "brand_url"
+    t.bigint "shops_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["shops_id"], name: "index_brands_on_shops_id"
   end
 
   create_table "shop_brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -61,4 +66,5 @@ ActiveRecord::Schema.define(version: 2022_03_07_130727) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
+  add_foreign_key "brands", "shops", column: "shops_id"
 end

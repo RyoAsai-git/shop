@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   }
 
   resources :shops, only: ['index']
+  resources :brands, only: ['index']
 end
