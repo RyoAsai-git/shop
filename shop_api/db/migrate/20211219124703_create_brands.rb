@@ -5,7 +5,6 @@ class CreateBrands < ActiveRecord::Migration[6.0]
       t.string :image
       t.text :description
       t.text :brand_url
-      t.references :shops, index: true, foreign_key: true
       t.timestamps
     end
   end
