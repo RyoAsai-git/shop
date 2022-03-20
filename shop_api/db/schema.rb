@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_07_130727) do
+ActiveRecord::Schema.define(version: 2022_03_20_144837) do
 
   create_table "brand_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "user_id"
@@ -24,10 +24,10 @@ ActiveRecord::Schema.define(version: 2022_03_07_130727) do
     t.string "image"
     t.text "description"
     t.text "brand_url"
-    t.bigint "shops_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["shops_id"], name: "index_brands_on_shops_id"
+    t.bigint "shop_id"
+    t.index ["shop_id"], name: "index_brands_on_shop_id"
   end
 
   create_table "shop_brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 2022_03_07_130727) do
     t.text "shop_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "brand_id"
+    t.index ["brand_id"], name: "index_shops_on_brand_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -66,5 +68,6 @@ ActiveRecord::Schema.define(version: 2022_03_07_130727) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
-  add_foreign_key "brands", "shops", column: "shops_id"
+  add_foreign_key "brands", "shops"
+  add_foreign_key "shops", "brands"
 end
