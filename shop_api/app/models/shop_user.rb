@@ -1,4 +1,4 @@
 class ShopUser < ApplicationRecord
-  belongs_to :users, optional: true
-  belongs_to :shops, optional: true
+  belongs_to :user, optional: true
+  belongs_to :shop, optional: true
 end

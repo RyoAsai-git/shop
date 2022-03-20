@@ -1,4 +1,4 @@
 class BrandUser < ApplicationRecord
-  belongs_to :users, optional: true
-  belongs_to :brands, optional: true
+  belongs_to :user, optional: true
+  belongs_to :brand, optional: true
 end
