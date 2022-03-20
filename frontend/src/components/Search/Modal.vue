@@ -1,11 +1,7 @@
 <template>
   <div id="overlay" v-show="showContent" @click="$emit('close')">
     <div class="modal">
-      <img
-        :src="val.image"
-        alt=""
-        class="modal-image"
-      />
+      <img :src="val.image" alt="" class="modal-image" />
       <dir class="description-content">
         <h1 class="description-top item-text">{{ val.name }}</h1>
         <p class="description-text content">
@@ -16,7 +12,12 @@
     </div>
     <div class="modal-right">
       <div class="modal-right-content">
-        <h1 class="modal-right-top item-text">取扱ブランド</h1>
+        <h1
+          class="modal-right-top item-text"
+        >
+          取扱ブランド
+        </h1>
+        {{ val.brand_array }}
       </div>
       <div class="modal-right-content">
         <div class="modal-right-top item-text">アクセス</div>
