@@ -25,8 +25,8 @@
 </template>
 
 <script>
-import SearchArea from "../components/SearchArea";
-import BrandArea from "../components/BrandArea";
+import SearchArea from "../components/Search/SearchArea";
+import BrandArea from "../components/Brand/BrandArea";
 
 export default {
   components: {

@@ -16,7 +16,7 @@
 
 <script>
 import axios from "axios";
-import BrandDetail from "../components/BrandDetail.vue";
+import BrandDetail from "./BrandDetail";
 
 export default {
   components: {

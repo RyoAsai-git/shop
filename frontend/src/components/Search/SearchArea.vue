@@ -21,7 +21,7 @@
 </template>
 <script>
 import axios from "axios";
-import Modal from "../components/Modal.vue"
+import Modal from "./Modal";
 
 export default {
   components: {
