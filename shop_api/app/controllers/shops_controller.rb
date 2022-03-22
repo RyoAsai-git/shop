@@ -1,7 +1,6 @@
 class ShopsController < ApplicationController
   def index
     shops = Shop.all.includes(shop_brands: :brand)
-    # shops = Shop.all
     shops_array = shops.map do |shop|
       {
         id: shop.id,
@@ -22,7 +21,6 @@ class ShopsController < ApplicationController
       }
     end
 
-    # render json: shops_array, status: 200
     render json: shops_array.to_json(include: :brand), status: 200
   end
 end
