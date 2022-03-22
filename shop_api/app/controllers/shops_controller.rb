@@ -10,18 +10,9 @@ class ShopsController < ApplicationController
         description: shop.description,
         url: shop.shop_url,
         created_at: shop.created_at,
-        # brand: shop.shop_brands
         brand_array: shop.shop_brands.map do |brand|
           {
             id: brand.brand.id,
-            # shop_id: brand.shop_id,
-            # brand_id: brand.brand_id,
-            # created_at: brand.created_at,
-            # updated_at: brand.updated_at,
-            # name: brand.name,
-            # image: brand.image,
-            # description: brand.description,
-            # url: brand.brand_url,
             name: brand.brand.name,
             image: brand.brand.image,
             description: brand.brand.description,
