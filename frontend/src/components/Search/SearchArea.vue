@@ -16,7 +16,9 @@
         </div>
       </div>
     </div>
-    <Modal :val="postItem" v-show="showContent" @close="closeModal" />
+    <div v-for="brand in postItem.brands" :key="brand.id">
+      <Modal :shop="postItem" :brand="brand" v-show="showContent" @close="closeModal" />
+    </div>
   </div>
 </template>
 <script>
@@ -31,6 +33,7 @@ export default {
     return {
       shops: {},
       postItem: '',
+      brand: '',
       showContent: false,
     };
   },

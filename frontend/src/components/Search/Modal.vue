@@ -1,13 +1,13 @@
 <template>
   <div id="overlay" v-show="showContent" @click="$emit('close')">
     <div class="modal">
-      <img :src="val.image" alt="" class="modal-image" />
+      <img :src="shop.image" alt="" class="modal-image" />
       <dir class="description-content">
-        <h1 class="description-top item-text">{{ val.name }}</h1>
+        <h1 class="description-top item-text">{{ shop.name }}</h1>
         <p class="description-text content">
-          {{ val.description }}
+          {{ shop.description }}
         </p>
-        <h2 class="description-url item-text">{{ val.url }}</h2>
+        <h2 class="description-url item-text">{{ shop.url }}</h2>
       </dir>
     </div>
     <div class="modal-right">
@@ -16,8 +16,8 @@
           class="modal-right-top item-text"
         >
           取扱ブランド
+          <img :src="brand.image" alt="" class="modal-image" />
         </h1>
-        {{ val.brand_array }}
       </div>
       <div class="modal-right-content">
         <div class="modal-right-top item-text">アクセス</div>
@@ -28,7 +28,7 @@
 
 <script>
 export default {
-  props: ["val"],
+  props: ["shop", "brand"],
   data() {
     return {
       showContent: false,
