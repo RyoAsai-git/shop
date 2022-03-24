@@ -12,9 +12,7 @@
     </div>
     <div class="modal-right">
       <div class="modal-right-content">
-        <h1 class="modal-right-top item-text">
-          取扱ブランド
-        </h1>
+        <h1 class="modal-right-top item-text">取扱ブランド</h1>
         <div class="brand-image-area">
           <div
             class="brand-image-content"
