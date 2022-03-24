@@ -12,12 +12,17 @@
     </div>
     <div class="modal-right">
       <div class="modal-right-content">
-        <h1
-          class="modal-right-top item-text"
-        >
+        <h1 class="modal-right-top item-text">
           取扱ブランド
-          <img :src="brand.image" alt="" class="modal-image" />
+          <!-- {{ brands.name }} -->
+          <!-- {{ brand.name }} -->
         </h1>
+        <div class="brand-image-area">
+          <img :src="brands.image" alt="" class="brand-image" />
+          <img :src="brands.image" alt="" class="brand-image" />
+          <img :src="brands.image" alt="" class="brand-image" />
+          <img :src="brands.image" alt="" class="brand-image" />
+        </div>
       </div>
       <div class="modal-right-content">
         <div class="modal-right-top item-text">アクセス</div>
@@ -28,7 +33,7 @@
 
 <script>
 export default {
-  props: ["shop", "brand"],
+  props: ["shop", "brands"],
   data() {
     return {
       showContent: false,
@@ -101,5 +106,19 @@ export default {
   top: 310px;
   font-size: var(--sub-font-size);
   font-weight: 600;
+}
+
+.brand-image-area {
+  display: inline-block;
+  overflow-x:scroll;
+}
+
+.brand-image {
+  width: 40%;
+  aspect-ratio: 3 / 3;
+  border-radius: 20px;
+  border: 1px solid #d3d3d3;
+  margin-top: 55px;
+  margin-left: 20px;
 }
 </style>
