@@ -18,10 +18,12 @@
           <!-- {{ brand.name }} -->
         </h1>
         <div class="brand-image-area">
-          <img :src="brands.image" alt="" class="brand-image" />
-          <img :src="brands.image" alt="" class="brand-image" />
-          <img :src="brands.image" alt="" class="brand-image" />
-          <img :src="brands.image" alt="" class="brand-image" />
+          <div class="brand-image-content">
+            <img :src="brands.image" alt="" class="brand-image" />
+            <img :src="brands.image" alt="" class="brand-image" />
+            <img :src="brands.image" alt="" class="brand-image" />
+            <img :src="brands.image" alt="" class="brand-image" />
+          </div>
         </div>
       </div>
       <div class="modal-right-content">
@@ -109,8 +111,15 @@ export default {
 }
 
 .brand-image-area {
-  display: inline-block;
-  overflow-x:scroll;
+  /* display: inline-block;
+  overflow-x: scroll; */
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.brand-image-content {
+
 }
 
 .brand-image {
