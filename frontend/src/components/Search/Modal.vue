@@ -107,6 +107,7 @@ export default {
   font-weight: 600;
 }
 
+/* 横スクロールができていないため修正 */
 .brand-image-area {
   overflow-x: auto;
   white-space: nowrap;
