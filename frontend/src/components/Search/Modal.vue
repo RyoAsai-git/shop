@@ -111,8 +111,6 @@ export default {
 }
 
 .brand-image-area {
-  /* display: inline-block;
-  overflow-x: scroll; */
   overflow-x: auto;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
