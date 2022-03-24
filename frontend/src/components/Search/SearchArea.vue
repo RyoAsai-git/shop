@@ -16,14 +16,11 @@
         </div>
       </div>
     </div>
-    <div v-for="brands in postItem.brands" :key="brands.id">
       <Modal
         :shop="postItem"
-        :brands="brands"
         v-show="showContent"
         @close="closeModal"
       />
-    </div>
   </div>
 </template>
 <script>
@@ -38,7 +35,6 @@ export default {
     return {
       shops: {},
       postItem: "",
-      brands: "",
       showContent: false,
     };
   },

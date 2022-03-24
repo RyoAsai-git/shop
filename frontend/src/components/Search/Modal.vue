@@ -14,15 +14,14 @@
       <div class="modal-right-content">
         <h1 class="modal-right-top item-text">
           取扱ブランド
-          <!-- {{ brands.name }} -->
-          <!-- {{ brand.name }} -->
         </h1>
         <div class="brand-image-area">
-          <div class="brand-image-content">
-            <img :src="brands.image" alt="" class="brand-image" />
-            <img :src="brands.image" alt="" class="brand-image" />
-            <img :src="brands.image" alt="" class="brand-image" />
-            <img :src="brands.image" alt="" class="brand-image" />
+          <div
+            class="brand-image-content"
+            v-for="brand in shop.brands"
+            :key="brand.id"
+          >
+            <img :src="brand.image" alt="" class="brand-image" />
           </div>
         </div>
       </div>
@@ -35,7 +34,7 @@
 
 <script>
 export default {
-  props: ["shop", "brands"],
+  props: ["shop"],
   data() {
     return {
       showContent: false,
