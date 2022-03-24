@@ -114,10 +114,7 @@ export default {
   overflow-x: auto;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
-}
-
-.brand-image-content {
-
+  border-radius: 26px;
 }
 
 .brand-image {
