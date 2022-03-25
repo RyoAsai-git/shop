@@ -3,9 +3,7 @@
     <div class="modal">
       <img :src="shop.image" alt="" class="modal-image" />
       <dir class="description-area">
-        <a :href="shop.url" class="shop-name item-text"
-          >{{ shop.name }}</a
-        >
+        <a :href="shop.url" class="shop-name item-text">{{ shop.name }}</a>
         <p class="shop-text content">
           {{ shop.description }}
         </p>

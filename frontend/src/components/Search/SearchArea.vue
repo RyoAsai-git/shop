@@ -16,11 +16,7 @@
         </div>
       </div>
     </div>
-      <Modal
-        :shop="postItem"
-        v-show="showContent"
-        @close="closeModal"
-      />
+    <Modal :shop="postItem" v-show="showContent" @close="closeModal" />
   </div>
 </template>
 <script>
