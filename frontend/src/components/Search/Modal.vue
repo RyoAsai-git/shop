@@ -7,7 +7,7 @@
         <p class="description-text content">
           {{ shop.description }}
         </p>
-        <h2 class="description-url item-text">{{ shop.url }}</h2>
+        <a :href="shop.url" class="description-url item-text">ショップHPへ行く</a>
       </dir>
     </div>
     <div class="modal-right">
@@ -105,6 +105,11 @@ export default {
   top: 310px;
   font-size: var(--sub-font-size);
   font-weight: 600;
+  text-decoration: none;
+}
+
+.description-url:hover {
+  color: var(--main-bg-color);
 }
 
 /* 横スクロールができていないため修正 */
