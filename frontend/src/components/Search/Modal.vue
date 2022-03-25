@@ -3,13 +3,12 @@
     <div class="modal">
       <img :src="shop.image" alt="" class="modal-image" />
       <dir class="description-content">
-        <h1 class="description-top item-text">{{ shop.name }}</h1>
+        <a :href="shop.url" class="description-top item-text"
+          >{{ shop.name }}</a
+        >
         <p class="description-text content">
           {{ shop.description }}
         </p>
-        <a :href="shop.url" class="description-url item-text"
-          >ショップHPへ行く</a
-        >
       </dir>
     </div>
     <div class="modal-right">
@@ -95,6 +94,11 @@ export default {
   position: absolute;
   top: 120px;
   font-size: var(--main-font-size);
+  text-decoration: none;
+}
+
+.description-top:hover {
+  color: var(--main-bg-color);
 }
 
 .description-text {
@@ -104,7 +108,7 @@ export default {
   font-weight: 600;
 }
 
-.description-url {
+/* .description-url {
   position: absolute;
   top: 310px;
   font-size: var(--sub-font-size);
@@ -114,7 +118,7 @@ export default {
 
 .description-url:hover {
   color: var(--main-bg-color);
-}
+} */
 
 .brand-image-content {
   overflow-x: auto;
