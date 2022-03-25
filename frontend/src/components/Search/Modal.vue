@@ -7,19 +7,23 @@
         <p class="description-text content">
           {{ shop.description }}
         </p>
-        <a :href="shop.url" class="description-url item-text">ショップHPへ行く</a>
+        <a :href="shop.url" class="description-url item-text"
+          >ショップHPへ行く</a
+        >
       </dir>
     </div>
     <div class="modal-right">
       <div class="modal-right-content">
         <h1 class="modal-right-top item-text">取扱ブランド</h1>
         <div class="brand-image-area">
-          <div
-            class="brand-image-content"
-            v-for="brand in shop.brands"
-            :key="brand.id"
-          >
-            <img :src="brand.image" alt="" class="brand-image" />
+          <div class="brand-image-content">
+            <img
+              :src="brand.image"
+              alt=""
+              class="brand-image"
+              v-for="brand in shop.brands"
+              :key="brand.id"
+            />
           </div>
         </div>
       </div>
@@ -112,12 +116,10 @@ export default {
   color: var(--main-bg-color);
 }
 
-/* 横スクロールができていないため修正 */
-.brand-image-area {
+.brand-image-content {
   overflow-x: auto;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-  border-radius: 26px;
+	white-space: nowrap;
+  border-radius: 30px;
 }
 
 .brand-image {
