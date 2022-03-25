@@ -16,12 +16,12 @@
         </div>
       </div>
     </div>
-    <Modal :val="postItem" v-show="showContent" @close="closeModal" />
+    <Modal :shop="postItem" v-show="showContent" @close="closeModal" />
   </div>
 </template>
 <script>
 import axios from "axios";
-import Modal from "../components/Modal.vue"
+import Modal from "./Modal";
 
 export default {
   components: {
@@ -30,7 +30,7 @@ export default {
   data() {
     return {
       shops: {},
-      postItem: '',
+      postItem: "",
       showContent: false,
     };
   },

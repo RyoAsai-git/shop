@@ -20,18 +20,18 @@
   )
 
   ShopUser.create(
-    user_id: 1,
-    shop_id: 1,
+    user_id: number,
+    shop_id: number,
   )
 
   ShopBrand.create(
-    shop_id: 1,
-    brand_id: 1,
+    shop_id: number,
+    brand_id: number,
   )
 
   BrandUser.create(
-    user_id: 1,
-    brand_id: 1,
+    user_id: number,
+    brand_id: number,
   )
 
   puts "#{number}番目のダミーデータを作成しました"

@@ -3,6 +3,6 @@ Rails.application.routes.draw do
     registrations: 'auth/registrations'
   }
 
-  resources :shops, only: ['index']
+  resources :shops, only: ['index', 'show']
   resources :brands, only: ['index']
 end

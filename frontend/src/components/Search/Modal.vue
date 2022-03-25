@@ -1,22 +1,28 @@
 <template>
   <div id="overlay" v-show="showContent" @click="$emit('close')">
     <div class="modal">
-      <img
-        :src="val.image"
-        alt=""
-        class="modal-image"
-      />
-      <dir class="description-content">
-        <h1 class="description-top item-text">{{ val.name }}</h1>
-        <p class="description-text content">
-          {{ val.description }}
+      <img :src="shop.image" alt="" class="modal-image" />
+      <dir class="description-area">
+        <a :href="shop.url" class="shop-name item-text">{{ shop.name }}</a>
+        <p class="shop-text content">
+          {{ shop.description }}
         </p>
-        <h2 class="description-url item-text">{{ val.url }}</h2>
       </dir>
     </div>
     <div class="modal-right">
       <div class="modal-right-content">
         <h1 class="modal-right-top item-text">取扱ブランド</h1>
+        <div class="brand-image-area">
+          <div class="brand-image-content">
+            <img
+              :src="brand.image"
+              alt=""
+              class="brand-image"
+              v-for="brand in shop.brands"
+              :key="brand.id"
+            />
+          </div>
+        </div>
       </div>
       <div class="modal-right-content">
         <div class="modal-right-top item-text">アクセス</div>
@@ -27,7 +33,7 @@
 
 <script>
 export default {
-  props: ["val"],
+  props: ["shop"],
   data() {
     return {
       showContent: false,
@@ -75,30 +81,43 @@ export default {
   font-size: var(--main-font-size);
 }
 
-.description-content {
+.description-area {
   position: absolute;
   width: 200px;
   top: 65px;
   left: 35px;
 }
 
-.description-top {
+.shop-name {
   position: absolute;
   top: 120px;
   font-size: var(--main-font-size);
+  text-decoration: none;
 }
 
-.description-text {
+.shop-name:hover {
+  color: var(--main-bg-color);
+}
+
+.shop-text {
   position: absolute;
   top: 160px;
   font-size: var(--sub-font-size);
   font-weight: 600;
 }
 
-.description-url {
-  position: absolute;
-  top: 310px;
-  font-size: var(--sub-font-size);
-  font-weight: 600;
+.brand-image-content {
+  overflow-x: auto;
+  white-space: nowrap;
+  border-radius: 30px;
+}
+
+.brand-image {
+  width: 40%;
+  aspect-ratio: 3 / 3;
+  border-radius: 20px;
+  border: 1px solid #d3d3d3;
+  margin-top: 55px;
+  margin-left: 20px;
 }
 </style>

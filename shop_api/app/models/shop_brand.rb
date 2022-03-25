@@ -1,4 +1,4 @@
 class ShopBrand < ApplicationRecord
-  belongs_to :shops, optional: true
-  belongs_to :brands, optional: true
+  belongs_to :shop
+  belongs_to :brand
 end
