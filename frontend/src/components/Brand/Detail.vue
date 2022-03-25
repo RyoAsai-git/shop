@@ -13,7 +13,7 @@
       </div>
       <img :src="val.image" alt="" class="brand-image brand-icon-details" />
       <div class="brand-description-area">
-        <h1 class="brand-name">{{ val.name }}</h1>
+        <a :href="val.brand_url" class="brand-name">{{ val.name }}</a>
         <p class="brand-content">{{ val.description }}</p>
       </div>
       <div class="brand-button">
@@ -79,6 +79,11 @@ export default {
   font-weight: 600;
   font-size: 20px;
   color: #333333;
+  text-decoration: none;
+}
+
+.brand-name:hover {
+  color: var(--main-bg-color);
 }
 
 .brand-button {
