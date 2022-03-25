@@ -2,7 +2,7 @@
   <div id="overlay" v-show="showContent" @click="$emit('close')">
     <div class="modal">
       <img :src="shop.image" alt="" class="modal-image" />
-      <dir class="description-content">
+      <dir class="description-area">
         <a :href="shop.url" class="shop-name item-text"
           >{{ shop.name }}</a
         >
@@ -83,7 +83,7 @@ export default {
   font-size: var(--main-font-size);
 }
 
-.description-content {
+.description-area {
   position: absolute;
   width: 200px;
   top: 65px;
