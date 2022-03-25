@@ -118,7 +118,7 @@ export default {
 
 .brand-image-content {
   overflow-x: auto;
-	white-space: nowrap;
+  white-space: nowrap;
   border-radius: 30px;
 }
 
