@@ -3,10 +3,10 @@
     <div class="modal">
       <img :src="shop.image" alt="" class="modal-image" />
       <dir class="description-content">
-        <a :href="shop.url" class="description-top item-text"
+        <a :href="shop.url" class="shop-name item-text"
           >{{ shop.name }}</a
         >
-        <p class="description-text content">
+        <p class="shop-text content">
           {{ shop.description }}
         </p>
       </dir>
@@ -90,35 +90,23 @@ export default {
   left: 35px;
 }
 
-.description-top {
+.shop-name {
   position: absolute;
   top: 120px;
   font-size: var(--main-font-size);
   text-decoration: none;
 }
 
-.description-top:hover {
+.shop-name:hover {
   color: var(--main-bg-color);
 }
 
-.description-text {
+.shop-text {
   position: absolute;
   top: 160px;
   font-size: var(--sub-font-size);
   font-weight: 600;
 }
-
-/* .description-url {
-  position: absolute;
-  top: 310px;
-  font-size: var(--sub-font-size);
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.description-url:hover {
-  color: var(--main-bg-color);
-} */
 
 .brand-image-content {
   overflow-x: auto;
