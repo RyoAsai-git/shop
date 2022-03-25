@@ -10,7 +10,7 @@
         class="brand-image brand-icon-top"
       />
     </div>
-    <Detail :val="postItem" v-show="showContent" @close="closeDetails" />
+    <Detail :brand="postItem" v-show="showContent" @close="closeDetails" />
   </div>
 </template>
 

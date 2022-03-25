@@ -9,12 +9,12 @@
     </div>
     <div class="brand-details-main">
       <div class="brand-details-content">
-        <img :src="val.image" alt="" class="brand-details-background-image" />
+        <img :src="brand.image" alt="" class="brand-details-background-image" />
       </div>
-      <img :src="val.image" alt="" class="brand-image brand-icon-details" />
+      <img :src="brand.image" alt="" class="brand-image brand-icon-details" />
       <div class="brand-description-area">
-        <a :href="val.brand_url" class="brand-name">{{ val.name }}</a>
-        <p class="brand-content">{{ val.description }}</p>
+        <a :href="brand.brand_url" class="brand-name">{{ brand.name }}</a>
+        <p class="brand-content">{{ brand.description }}</p>
       </div>
       <div class="brand-button">
         <p class="button-text">このブランドをフォローする</p>
@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  props: ["val"],
+  props: ["brand"],
   data() {
     return {
       showContent: false,
