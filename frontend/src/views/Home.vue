@@ -8,46 +8,51 @@
         <li @click="showBrandArea">
           <p class="item-text" :class="{ is_active: brandArea }">ブランド</p>
         </li>
-        <li>
-          <p class="item-text">お気に入り</p>
-        </li>
-        <li>
-          <p class="item-text">マイページ</p>
-        </li>
-        <li>
-          <p class="item-text">設定</p>
+        <li @click="showMyPage">
+          <p class="item-text" :class="{ is_active: MyPage}">マイページ</p>
         </li>
       </ul>
     </div>
     <SearchArea v-if="searchArea" />
     <BrandArea v-if="brandArea" />
+    <MyPage v-if="myPage" />
   </div>
 </template>
 
 <script>
 import SearchArea from "../components/Search/SearchArea";
 import BrandArea from "../components/Brand/BrandArea";
+import MyPage from "../components/MyPage/MyPage.vue";
 
 export default {
   components: {
     SearchArea,
     BrandArea,
+    MyPage,
   },
   data() {
     return {
       searchArea: true,
       brandArea: false,
+      myPage: false,
     };
   },
   methods: {
     showSearchArea() {
       this.searchArea = true;
       this.brandArea = false;
+      this.myPage = false;
     },
     showBrandArea() {
       this.searchArea = false;
       this.brandArea = true;
+      this.myPage = false;
     },
+    showMyPage() {
+      this.searchArea = false;
+      this.brandArea = false;
+      this.myPage = true;
+    }
   },
 };
 </script>
