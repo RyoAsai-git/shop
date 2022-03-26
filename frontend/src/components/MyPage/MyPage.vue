@@ -9,6 +9,11 @@
             class="profile-image"
           />
           <p class="profile-name">サンプルさん</p>
+          <!-- <FAIcon :icon="['fas', 'angle-left']" class="camera-icon" /> -->
+          <FAIcon :icon="['fas', 'fa-camera']" class="camera-icon" />
+          <FALayers :icon="['fas', 'fa-camera']" class="camera-icon" />
+          <FAText :icon="['fas', 'fa-camera']" class="camera-icon" />
+          <i class="fas fa-camera-retro fa-xs"></i>
         </div>
       </div>
 
@@ -55,13 +60,17 @@ export default {};
 
 .profile-name {
   position: absolute;
-  width: 30%;
-  height: 30%;
   top: 75px;
   left: 215px;
   color: #333333;
   caret-color: transparent;
   font-weight: 600;
   font-size: 20px;
+}
+
+.camera-icon {
+  height: 100px;
+  width: 100px;
+  color: var(--main-bg-color);
 }
 </style>
