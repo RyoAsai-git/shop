@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="search-area">
+    <div class="content">
       <div class="search-area-content">
         <div
           class="search-area-image-wrap"
@@ -59,11 +59,6 @@ export default {
 </script>
 
 <style scoped>
-.search-area {
-  position: absolute;
-  left: 20%;
-}
-
 .search-area-content {
   margin-top: 100px;
   overflow: auto;

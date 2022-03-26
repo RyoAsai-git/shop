@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div class="my_page-area">
+  <div class="content">
     <p>マイページです</p>
   </div>
 </div>
@@ -14,8 +14,5 @@ export default {
 
 
 <style scoped>
-  .my_page-area {
-    position: absolute;
-    left: 20%;
-  }
+
 </style>
