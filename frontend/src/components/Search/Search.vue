@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="content">
-      <div class="search-area-content">
+      <div class="search-area">
         <div
           class="search-area-image-wrap"
           v-for="shop in shops"
@@ -59,7 +59,7 @@ export default {
 </script>
 
 <style scoped>
-.search-area-content {
+.search-area {
   margin-top: 100px;
   overflow: auto;
 }

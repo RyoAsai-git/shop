@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="content">
-    <p>マイページです</p>
+    <div class=""></div>
   </div>
 </div>
 </template>
