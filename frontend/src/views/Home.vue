@@ -9,7 +9,7 @@
           <p class="item-text" :class="{ is_active: brandArea }">ブランド</p>
         </li>
         <li @click="showMyPage">
-          <p class="item-text" :class="{ is_active: MyPage}">マイページ</p>
+          <p class="item-text" :class="{ is_active: myPage }">マイページ</p>
         </li>
       </ul>
     </div>
