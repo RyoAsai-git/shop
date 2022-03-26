@@ -2,55 +2,55 @@
   <div class="main">
     <div class="navbar">
       <ul class="navbar-list">
-        <li @click="showSearchArea">
-          <p class="item-text" :class="{ is_active: searchArea }">さがす</p>
+        <li @click="showSearch">
+          <p class="item-text" :class="{ is_active: search }">さがす</p>
         </li>
-        <li @click="showBrandArea">
-          <p class="item-text" :class="{ is_active: brandArea }">ブランド</p>
+        <li @click="showBrand">
+          <p class="item-text" :class="{ is_active: brand }">ブランド</p>
         </li>
         <li @click="showMyPage">
           <p class="item-text" :class="{ is_active: myPage }">マイページ</p>
         </li>
       </ul>
     </div>
-    <SearchArea v-if="searchArea" />
-    <BrandArea v-if="brandArea" />
+    <Search v-if="search" />
+    <Brand v-if="brand" />
     <MyPage v-if="myPage" />
   </div>
 </template>
 
 <script>
-import SearchArea from "../components/Search/SearchArea";
-import BrandArea from "../components/Brand/BrandArea";
+import Search from "../components/Search/Search";
+import Brand from "../components/Brand/Brand";
 import MyPage from "../components/MyPage/MyPage";
 
 export default {
   components: {
-    SearchArea,
-    BrandArea,
+    Search,
+    Brand,
     MyPage,
   },
   data() {
     return {
-      searchArea: true,
-      brandArea: false,
+      search: true,
+      brand: false,
       myPage: false,
     };
   },
   methods: {
-    showSearchArea() {
-      this.searchArea = true;
-      this.brandArea = false;
+    showSearch() {
+      this.search = true;
+      this.brand = false;
       this.myPage = false;
     },
-    showBrandArea() {
-      this.searchArea = false;
-      this.brandArea = true;
+    showBrand() {
+      this.search = false;
+      this.brand = true;
       this.myPage = false;
     },
     showMyPage() {
-      this.searchArea = false;
-      this.brandArea = false;
+      this.search = false;
+      this.brand = false;
       this.myPage = true;
     }
   },
