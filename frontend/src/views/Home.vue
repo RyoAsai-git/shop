@@ -22,7 +22,7 @@
 <script>
 import SearchArea from "../components/Search/SearchArea";
 import BrandArea from "../components/Brand/BrandArea";
-import MyPage from "../components/MyPage/MyPage.vue";
+import MyPage from "../components/MyPage/MyPage";
 
 export default {
   components: {
