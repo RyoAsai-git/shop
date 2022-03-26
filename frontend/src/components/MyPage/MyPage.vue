@@ -1,15 +1,17 @@
 <template>
   <div>
-    <div class="content">
+    <div class="content my_page-area">
       <div class="my_page">
         <div class="my_page-profile">
           <img
-            src="https://1.bp.blogspot.com/-DU9jll2ZQ38/XexqGlVzO9I/AAAAAAABWdQ/m0lQONbEfSgEjIN14h7iIfRh8WS5qwrFACNcBGAsYHQ/s1600/gal_o_man.png"
+            src="https://pakutaso.cdn.rabify.me/shared/img/page/model_yumiko.jpg?d=500"
             alt=""
             class="profile-image"
           />
+          <p class="profile-name">サンプルさん</p>
         </div>
       </div>
+
       <div class="favorite-shop">
         <img src="" alt="" class="favorite-shop-image" />
       </div>
@@ -26,4 +28,40 @@ export default {};
 
 
 <style scoped>
+.my_page-area {
+  height: 100%;
+  width: 100%;
+}
+
+.my_page {
+  height: 30%;
+  display: flex;
+}
+
+.my_page-profile {
+  width: 20%;
+  height: 100%;
+}
+
+.profile-image {
+  height: 80%;
+  border: 0.5px solid #d3d3d3;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  margin-top: 40px;
+  margin-left: 35px;
+  position: relative;
+}
+
+.profile-name {
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  top: 75px;
+  left: 215px;
+  color: #333333;
+  caret-color: transparent;
+  font-weight: 600;
+  font-size: 20px;
+}
 </style>
