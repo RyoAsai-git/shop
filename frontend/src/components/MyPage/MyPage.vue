@@ -78,7 +78,6 @@ export default {};
 
 .favorite-content {
   margin-top: 50px;
-  /* width: 25%; */
 }
 
 .favorite-topic {
