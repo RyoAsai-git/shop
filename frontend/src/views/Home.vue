@@ -2,51 +2,68 @@
   <div class="main">
     <div class="navbar">
       <ul class="navbar-list">
-        <li @click="showSearchArea">
-          <p class="item-text" :class="{ is_active: searchArea }">さがす</p>
+        <li
+          @click="showSearch"
+          class="item-text"
+          :class="{ is_active: search }"
+        >
+          ショップ
         </li>
-        <li @click="showBrandArea">
-          <p class="item-text" :class="{ is_active: brandArea }">ブランド</p>
+        <li
+          @click="showBrand"
+          class="item-text"
+          :class="{ is_active: brand }"
+        >
+          ブランド
         </li>
-        <li>
-          <p class="item-text">お気に入り</p>
-        </li>
-        <li>
-          <p class="item-text">マイページ</p>
-        </li>
-        <li>
-          <p class="item-text">設定</p>
+        <li
+          @click="showMyPage"
+          class="item-text"
+          :class="{ is_active: myPage }"
+        >
+          マイページ
         </li>
       </ul>
     </div>
-    <SearchArea v-if="searchArea" />
-    <BrandArea v-if="brandArea" />
+    <Search v-if="search" />
+    <Brand v-if="brand" />
+    <MyPage v-if="myPage" />
   </div>
 </template>
 
 <script>
-import SearchArea from "../components/Search/SearchArea";
-import BrandArea from "../components/Brand/BrandArea";
+import Search from "../components/Search/Search";
+import Brand from "../components/Brand/Brand";
+import MyPage from "../components/MyPage/MyPage";
 
 export default {
   components: {
-    SearchArea,
-    BrandArea,
+    Search,
+    Brand,
+    MyPage,
   },
   data() {
     return {
-      searchArea: true,
-      brandArea: false,
+      search: true,
+      brand: false,
+      myPage: false,
     };
   },
   methods: {
-    showSearchArea() {
-      this.searchArea = true;
-      this.brandArea = false;
+    showSearch() {
+      this.search = true;
+      this.brand = false;
+      this.myPage = false;
     },
-    showBrandArea() {
-      this.searchArea = false;
-      this.brandArea = true;
+    showBrand() {
+      this.search = false;
+      this.brand = true;
+      this.myPage = false;
+    },
+    showMyPage() {
+      this.search = false;
+      this.brand = false;
+      this.myPage = true;
     },
   },
 };
@@ -55,7 +72,7 @@ export default {
 <style scoped>
 .navbar {
   height: 100%;
-  width: 20%;
+  width: 15%;
   border-right: 2px solid #f1f1f1;
   position: fixed;
   left: 0;
@@ -71,8 +88,6 @@ li {
   line-height: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 40px;
-  list-style-type: none;
   transition: background-color 0.5s;
   font-size: var(--main-font-size);
   cursor: pointer;

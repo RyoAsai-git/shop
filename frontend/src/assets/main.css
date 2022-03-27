@@ -35,6 +35,11 @@ body {
   background: white;
 }
 
+.content {
+  position: absolute;
+  left: 15%;
+}
+
 .error {
   color: #ff3f80;
   font-size: var(--sub-font-size);
@@ -59,7 +64,7 @@ body {
   justify-content: center;
 }
 
-.content {
+.description {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 10;

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="search-area">
-      <div class="search-area-content">
+    <div class="content">
+      <div class="search-area">
         <div
           class="search-area-image-wrap"
           v-for="shop in shops"
@@ -60,19 +60,14 @@ export default {
 
 <style scoped>
 .search-area {
-  position: absolute;
-  left: 20%;
-}
-
-.search-area-content {
   margin-top: 100px;
   overflow: auto;
 }
 
 .search-area-image-wrap {
   display: inline-block;
-  height: 300px;
-  width: 400px;
+  height: 100px;
+  width: 300px;
   padding-left: 50px;
   margin: 20px auto 0;
   transition-duration: 0.5s;

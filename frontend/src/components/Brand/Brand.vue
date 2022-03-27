@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="brand-area" v-show="!showContent">
+    <div class="content" v-show="!showContent">
       <img
         v-for="brand in brands"
         :key="brand.id"
@@ -54,11 +54,6 @@ export default {
 </script>
 
 <style scoped>
-.brand-area {
-  position: absolute;
-  left: 20%;
-}
-
 .brand-image {
   background-color: #ccc;
   border-radius: 20px;

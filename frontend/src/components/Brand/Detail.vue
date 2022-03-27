@@ -39,7 +39,7 @@ export default {
   position: absolute;
   height: 100%;
   width: 80%;
-  left: 20%;
+  left: 15%;
   top: 0;
   margin-left: 20px;
 }
