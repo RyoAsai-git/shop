@@ -14,7 +14,36 @@
 
       <div class="favorite-shop">
         <h1 class="favorite-topic item-text">お気に入りショップ</h1>
-        <img src="" alt="" class="favorite-shop-image" />
+        <img
+          src="https://lh5.googleusercontent.com/p/AF1QipMccV9puxC1HRW6434gib2j3boiTTMHb_0jBEPM=w1080-k-no"
+          alt=""
+          class="favorite-shop-image"
+        />
+                <img
+          src="https://lh5.googleusercontent.com/p/AF1QipMccV9puxC1HRW6434gib2j3boiTTMHb_0jBEPM=w1080-k-no"
+          alt=""
+          class="favorite-shop-image"
+        />
+                <img
+          src="https://lh5.googleusercontent.com/p/AF1QipMccV9puxC1HRW6434gib2j3boiTTMHb_0jBEPM=w1080-k-no"
+          alt=""
+          class="favorite-shop-image"
+        />
+                      <img
+          src="https://lh5.googleusercontent.com/p/AF1QipMccV9puxC1HRW6434gib2j3boiTTMHb_0jBEPM=w1080-k-no"
+          alt=""
+          class="favorite-shop-image"
+        />
+                      <img
+          src="https://lh5.googleusercontent.com/p/AF1QipMccV9puxC1HRW6434gib2j3boiTTMHb_0jBEPM=w1080-k-no"
+          alt=""
+          class="favorite-shop-image"
+        />
+                      <img
+          src="https://lh5.googleusercontent.com/p/AF1QipMccV9puxC1HRW6434gib2j3boiTTMHb_0jBEPM=w1080-k-no"
+          alt=""
+          class="favorite-shop-image"
+        />
       </div>
       <div class="favorite-brand">
         <h1 class="favorite-topic item-text">お気に入りブランド</h1>
@@ -37,16 +66,10 @@ export default {};
 
 .my_page {
   height: 30%;
-  display: flex;
-}
-
-.my_page-profile {
-  width: 20%;
-  height: 100%;
 }
 
 .profile-image {
-  height: 80%;
+  height: 175px;
   border: 0.5px solid #d3d3d3;
   aspect-ratio: 1;
   border-radius: 50%;
@@ -72,10 +95,19 @@ export default {};
 }
 
 .favorite-shop {
-
+  margin-top: 50px;
 }
 
 .favorite-topic {
   font-size: 25px;
+  margin-left: 30px;
+}
+
+.favorite-shop-image{
+  width: 20%;
+  border-radius: 20px;
+  aspect-ratio: 5 / 3;
+  margin-top: 15px;
+  margin-left: 20px;
 }
 </style>
