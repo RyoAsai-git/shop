@@ -12,7 +12,7 @@
         </div>
       </div>
 
-      <div class="favorite-shop">
+      <div class="favorite-content">
         <h1 class="favorite-topic item-text">お気に入りショップ</h1>
         <img
           src="https://lh5.googleusercontent.com/p/AF1QipMccV9puxC1HRW6434gib2j3boiTTMHb_0jBEPM=w1080-k-no"
@@ -45,7 +45,7 @@
           class="favorite-shop-image"
         />
       </div>
-      <div class="favorite-brand">
+      <div class="favorite-content">
         <h1 class="favorite-topic item-text">お気に入りブランド</h1>
         <img src="" alt="" class="favorite-brand-image" />
       </div>
@@ -62,6 +62,7 @@ export default {};
 .my_page-area {
   height: 100%;
   width: 100%;
+  position: fixed;
 }
 
 .my_page {
@@ -94,7 +95,7 @@ export default {};
   color: var(--main-bg-color);
 }
 
-.favorite-shop {
+.favorite-content {
   margin-top: 50px;
 }
 
