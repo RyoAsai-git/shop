@@ -28,41 +28,6 @@
             alt=""
             class="favorite-brand-image"
           />
-          <img
-            src="https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg"
-            alt=""
-            class="favorite-brand-image"
-          />
-          <img
-            src="https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg"
-            alt=""
-            class="favorite-brand-image"
-          />
-          <img
-            src="https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg"
-            alt=""
-            class="favorite-brand-image"
-          />
-          <img
-            src="https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg"
-            alt=""
-            class="favorite-brand-image"
-          />
-          <img
-            src="https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg"
-            alt=""
-            class="favorite-brand-image"
-          />
-          <img
-            src="https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg"
-            alt=""
-            class="favorite-brand-image"
-          />
-          <img
-            src="https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg"
-            alt=""
-            class="favorite-brand-image"
-          />
         </div>
       </div>
     </div>
@@ -130,7 +95,7 @@ export default {};
 }
 
 .brand-content {
-    overflow-x: auto;
+  overflow-x: auto;
   white-space: nowrap;
   /* overflow: auto; */
 }
