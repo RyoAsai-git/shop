@@ -66,8 +66,8 @@ export default {
 
 .search-area-image-wrap {
   display: inline-block;
-  height: 300px;
-  width: 400px;
+  height: 100px;
+  width: 300px;
   padding-left: 50px;
   margin: 20px auto 0;
   transition-duration: 0.5s;
