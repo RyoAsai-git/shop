@@ -77,8 +77,8 @@ export default {};
 <style scoped>
 .my_page-area {
   height: 100%;
-  width: 100%;
-  position: fixed;
+  width: 80%;
+  /* position: fixed; */
 }
 
 .my_page {
@@ -129,10 +129,11 @@ export default {};
   margin-left: 20px;
 }
 
-/* .brand-content {
+.brand-content {
     overflow-x: auto;
   white-space: nowrap;
-} */
+  /* overflow: auto; */
+}
 
 .favorite-brand-image {
   width: 10%;

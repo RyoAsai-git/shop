@@ -2,14 +2,26 @@
   <div class="main">
     <div class="navbar">
       <ul class="navbar-list">
-        <li @click="showSearch">
-          <p class="item-text" :class="{ is_active: search }">さがす</p>
+        <li
+          @click="showSearch"
+          class="item-text"
+          :class="{ is_active: search }"
+        >
+          ショップ
         </li>
-        <li @click="showBrand">
-          <p class="item-text" :class="{ is_active: brand }">ブランド</p>
+        <li
+          @click="showBrand"
+          class="item-text"
+          :class="{ is_active: brand }"
+        >
+          ブランド
         </li>
-        <li @click="showMyPage">
-          <p class="item-text" :class="{ is_active: myPage }">マイページ</p>
+        <li
+          @click="showMyPage"
+          class="item-text"
+          :class="{ is_active: myPage }"
+        >
+          マイページ
         </li>
       </ul>
     </div>
@@ -52,7 +64,7 @@ export default {
       this.search = false;
       this.brand = false;
       this.myPage = true;
-    }
+    },
   },
 };
 </script>
@@ -76,8 +88,6 @@ li {
   line-height: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
-  padding-left: 40px;
-  list-style-type: none;
   transition: background-color 0.5s;
   font-size: var(--main-font-size);
   cursor: pointer;
