@@ -19,35 +19,51 @@
           alt=""
           class="favorite-shop-image"
         />
-                <img
-          src="https://lh5.googleusercontent.com/p/AF1QipMccV9puxC1HRW6434gib2j3boiTTMHb_0jBEPM=w1080-k-no"
-          alt=""
-          class="favorite-shop-image"
-        />
-                <img
-          src="https://lh5.googleusercontent.com/p/AF1QipMccV9puxC1HRW6434gib2j3boiTTMHb_0jBEPM=w1080-k-no"
-          alt=""
-          class="favorite-shop-image"
-        />
-                      <img
-          src="https://lh5.googleusercontent.com/p/AF1QipMccV9puxC1HRW6434gib2j3boiTTMHb_0jBEPM=w1080-k-no"
-          alt=""
-          class="favorite-shop-image"
-        />
-                      <img
-          src="https://lh5.googleusercontent.com/p/AF1QipMccV9puxC1HRW6434gib2j3boiTTMHb_0jBEPM=w1080-k-no"
-          alt=""
-          class="favorite-shop-image"
-        />
-                      <img
-          src="https://lh5.googleusercontent.com/p/AF1QipMccV9puxC1HRW6434gib2j3boiTTMHb_0jBEPM=w1080-k-no"
-          alt=""
-          class="favorite-shop-image"
-        />
       </div>
       <div class="favorite-content">
         <h1 class="favorite-topic item-text">お気に入りブランド</h1>
-        <img src="" alt="" class="favorite-brand-image" />
+        <div class="brand-content">
+          <img
+            src="https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg"
+            alt=""
+            class="favorite-brand-image"
+          />
+          <img
+            src="https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg"
+            alt=""
+            class="favorite-brand-image"
+          />
+          <img
+            src="https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg"
+            alt=""
+            class="favorite-brand-image"
+          />
+          <img
+            src="https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg"
+            alt=""
+            class="favorite-brand-image"
+          />
+          <img
+            src="https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg"
+            alt=""
+            class="favorite-brand-image"
+          />
+          <img
+            src="https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg"
+            alt=""
+            class="favorite-brand-image"
+          />
+          <img
+            src="https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg"
+            alt=""
+            class="favorite-brand-image"
+          />
+          <img
+            src="https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg"
+            alt=""
+            class="favorite-brand-image"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -97,6 +113,7 @@ export default {};
 
 .favorite-content {
   margin-top: 50px;
+  /* width: 25%; */
 }
 
 .favorite-topic {
@@ -104,10 +121,24 @@ export default {};
   margin-left: 30px;
 }
 
-.favorite-shop-image{
+.favorite-shop-image {
   width: 20%;
   border-radius: 20px;
   aspect-ratio: 5 / 3;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+/* .brand-content {
+    overflow-x: auto;
+  white-space: nowrap;
+} */
+
+.favorite-brand-image {
+  width: 10%;
+  border-radius: 20px;
+  border: 1px solid #d3d3d3;
+  aspect-ratio: 1;
   margin-top: 15px;
   margin-left: 20px;
 }
