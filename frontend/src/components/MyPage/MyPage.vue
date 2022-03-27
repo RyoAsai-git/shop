@@ -9,18 +9,15 @@
             class="profile-image"
           />
           <p class="profile-name">サンプルさん</p>
-          <!-- <FAIcon :icon="['fas', 'angle-left']" class="camera-icon" /> -->
-          <FAIcon :icon="['fas', 'fa-camera']" class="camera-icon" />
-          <FALayers :icon="['fas', 'fa-camera']" class="camera-icon" />
-          <FAText :icon="['fas', 'fa-camera']" class="camera-icon" />
-          <i class="fas fa-camera-retro fa-xs"></i>
         </div>
       </div>
 
       <div class="favorite-shop">
+        <h1 class="favorite-topic item-text">お気に入りショップ</h1>
         <img src="" alt="" class="favorite-shop-image" />
       </div>
       <div class="favorite-brand">
+        <h1 class="favorite-topic item-text">お気に入りブランド</h1>
         <img src="" alt="" class="favorite-brand-image" />
       </div>
     </div>
@@ -72,5 +69,13 @@ export default {};
   height: 100px;
   width: 100px;
   color: var(--main-bg-color);
+}
+
+.favorite-shop {
+
+}
+
+.favorite-topic {
+  font-size: 25px;
 }
 </style>
