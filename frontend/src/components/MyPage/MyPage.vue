@@ -97,7 +97,6 @@ export default {};
 .brand-content {
   overflow-x: auto;
   white-space: nowrap;
-  /* overflow: auto; */
 }
 
 .favorite-brand-image {
