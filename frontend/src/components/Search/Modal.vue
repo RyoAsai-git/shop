@@ -102,6 +102,7 @@ export default {
 .shop-description {
   position: absolute;
   top: 160px;
+  left: 0;
   font-size: var(--sub-font-size);
   font-weight: 600;
 }
