@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     registrations: 'auth/registrations'
   }
 
+  resources :mypages, only: ['index', 'show']
   resources :shops, only: ['index', 'show']
   resources :brands, only: ['index']
 end
