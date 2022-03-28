@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_20_144837) do
+ActiveRecord::Schema.define(version: 2022_03_28_150232) do
 
   create_table "brand_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "user_id"
@@ -27,7 +27,9 @@ ActiveRecord::Schema.define(version: 2022_03_20_144837) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "shop_id"
+    t.bigint "user_id"
     t.index ["shop_id"], name: "index_brands_on_shop_id"
+    t.index ["user_id"], name: "index_brands_on_user_id"
   end
 
   create_table "shop_brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -64,10 +66,14 @@ ActiveRecord::Schema.define(version: 2022_03_20_144837) do
     t.text "tokens"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "brand_id"
+    t.index ["brand_id"], name: "index_users_on_brand_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
   add_foreign_key "brands", "shops"
+  add_foreign_key "brands", "users"
   add_foreign_key "shops", "brands"
+  add_foreign_key "users", "brands"
 end
