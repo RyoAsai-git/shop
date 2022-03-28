@@ -1,7 +1,6 @@
 class MypagesController < ApplicationController
   def show
     user = User.includes(brand_users: :brand).find(params[:id])
-    
     render json: user, status: 200;
   end
 
