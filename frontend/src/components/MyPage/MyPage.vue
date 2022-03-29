@@ -8,7 +8,7 @@
             alt=""
             class="profile-image"
           />
-          <p class="profile-name">サンプルさん</p>
+          <p class="profile-name">{{ user.name }}</p>
         </div>
       </div>
 
@@ -40,17 +40,15 @@ import axios from "axios";
 export default {
   data() {
     return {
-      user: "",
+      user: {},
     }
   },
 
   created: async function () {
     try {
-      const res = await axios.get("http://localhost:3000/mypages", {
-        params: {
-          id: 1
-        }
-      })
+      const res = await axios.get("http://localhost:3000/mypages/1")
+      console.log('aaaaaaaaaaaaaaaaa');
+      console.log(res);
       this.user = res.data;
       console.log(this.user);
     } catch (error) {
