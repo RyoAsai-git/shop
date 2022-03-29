@@ -8,25 +8,29 @@
             alt=""
             class="profile-image"
           />
-          <p class="profile-name">サンプルさん</p>
+          <p class="profile-name">{{ user.name }}</p>
         </div>
       </div>
 
       <div class="favorite-content">
         <h1 class="favorite-topic item-text">お気に入りショップ</h1>
         <img
-          src="https://lh5.googleusercontent.com/p/AF1QipMccV9puxC1HRW6434gib2j3boiTTMHb_0jBEPM=w1080-k-no"
+          :src="shop.image"
           alt=""
           class="favorite-shop-image"
+          v-for="shop in user.shops"
+          :key="shop.id"
         />
       </div>
       <div class="favorite-content">
         <h1 class="favorite-topic item-text">お気に入りブランド</h1>
         <div class="brand-content">
           <img
-            src="https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg"
+            :src="brand.image"
             alt=""
             class="favorite-brand-image"
+            v-for="brand in user.brands"
+            :key="brand.id"
           />
         </div>
       </div>
@@ -35,7 +39,30 @@
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      user: {},
+    };
+  },
+
+  created: async function () {
+    try {
+      // ここのidをcurrent_user.idで引っ張ってこれるように変更
+      // vueのマイページをログイン済みユーザーのみ表示できるように修正
+      // brand,shopクリック後に詳細ページに遷移するような記述作成(モーダル表示でも)
+      const res = await axios.get("http://localhost:3000/mypages/1");
+      // 上記のidは`http://localhost:3000/api/v1/questionnaires/${this.$route.params.id}`
+      // を参考につなぐ
+      console.log(res);
+      this.user = res.data;
+    } catch (error) {
+      console.error(error);
+    }
+  },
+};
 </script>
 
 
@@ -43,7 +70,6 @@ export default {};
 .my_page-area {
   height: 100%;
   width: 80%;
-  /* position: fixed; */
 }
 
 .my_page {
