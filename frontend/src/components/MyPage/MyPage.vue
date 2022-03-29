@@ -35,7 +35,29 @@
 </template>
 
 <script>
-export default {};
+import axios from "axios";
+
+export default {
+  data() {
+    return {
+      user: "",
+    }
+  },
+
+  created: async function () {
+    try {
+      const res = await axios.get("http://localhost:3000/mypages", {
+        params: {
+          id: 1
+        }
+      })
+      this.user = res.data;
+      console.log(this.user);
+    } catch (error) {
+      console.error(error)
+    }
+  }
+};
 </script>
 
 
