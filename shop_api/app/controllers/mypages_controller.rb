@@ -1,9 +1,4 @@
 class MypagesController < ApplicationController
-  def show
-    user = User.includes(brand_users: :brand).find(params[:id])
-    render json: user, status: 200;
-  end
-
   def index
     users = User.all.includes(brand_users: :brand)
     users_array = users.map do |user|
@@ -24,5 +19,14 @@ class MypagesController < ApplicationController
     end
 
     render json: users_array.to_json(include: :brand), status: 200
+  end
+
+  def show
+    user = User.includes(:brands).find(params[:id])
+    brands = user.brands
+    render json: user.to_json(:include => [:brands])
+
+    # shop追加後はここから
+    # render json: user.to_json(:include => [:shops :brands])
   end
 end
