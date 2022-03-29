@@ -14,10 +14,12 @@
 
       <div class="favorite-content">
         <h1 class="favorite-topic item-text">お気に入りショップ</h1>
-        <img
-          src="https://lh5.googleusercontent.com/p/AF1QipMccV9puxC1HRW6434gib2j3boiTTMHb_0jBEPM=w1080-k-no"
+          <img
+          :src="shop.image"
           alt=""
           class="favorite-shop-image"
+          v-for="shop in user.shops"
+          :key="shop.id"
         />
       </div>
       <div class="favorite-content">
@@ -48,6 +50,8 @@ export default {
 
   created: async function () {
     try {
+      // ここのidをcurrent_user.idで引っ張ってこれるように変更
+      // vueのマイページをログイン済みユーザーのみ表示できるように修正
       const res = await axios.get("http://localhost:3000/mypages/1")
       console.log(res);
       this.user = res.data;
