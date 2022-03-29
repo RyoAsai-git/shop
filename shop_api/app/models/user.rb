@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :brand_users
   has_many :brands, through: :brand_users
 
+  has_many :shop_users
   has_many :shops, through: :shop_users
   # accepts_nested_attributes_for :brand_users
   # accepts_nested_attributes_for :shop_users
