@@ -14,7 +14,7 @@
 
       <div class="favorite-content">
         <h1 class="favorite-topic item-text">お気に入りショップ</h1>
-          <img
+        <img
           :src="shop.image"
           alt=""
           class="favorite-shop-image"
@@ -45,20 +45,21 @@ export default {
   data() {
     return {
       user: {},
-    }
+    };
   },
 
   created: async function () {
     try {
       // ここのidをcurrent_user.idで引っ張ってこれるように変更
       // vueのマイページをログイン済みユーザーのみ表示できるように修正
-      const res = await axios.get("http://localhost:3000/mypages/1")
+      // brand,shopクリック後に詳細ページに遷移するような記述作成(モーダル表示でも)
+      const res = await axios.get("http://localhost:3000/mypages/1");
       console.log(res);
       this.user = res.data;
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
-  }
+  },
 };
 </script>
 
