@@ -43,7 +43,6 @@ export default {};
 .my_page-area {
   height: 100%;
   width: 80%;
-  /* position: fixed; */
 }
 
 .my_page {
