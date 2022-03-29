@@ -24,9 +24,11 @@
         <h1 class="favorite-topic item-text">お気に入りブランド</h1>
         <div class="brand-content">
           <img
-            src="https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg"
+            :src="brand.image"
             alt=""
             class="favorite-brand-image"
+            v-for="brand in user.brands"
+            :key="brand.id"
           />
         </div>
       </div>
@@ -47,10 +49,8 @@ export default {
   created: async function () {
     try {
       const res = await axios.get("http://localhost:3000/mypages/1")
-      console.log('aaaaaaaaaaaaaaaaa');
       console.log(res);
       this.user = res.data;
-      console.log(this.user);
     } catch (error) {
       console.error(error)
     }
