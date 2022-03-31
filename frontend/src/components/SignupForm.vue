@@ -29,7 +29,7 @@
 
 <script>
 import axios from "axios";
-import setItem from '../auth/setItem'
+import setItem from '../auth/removeItem'
 
 export default {
   emits: ["redirectToHome"],
