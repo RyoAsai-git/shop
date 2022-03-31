@@ -56,6 +56,7 @@ export default {
       const res = await axios.get("http://localhost:3000/mypages/1");
       // 上記のidは`http://localhost:3000/api/v1/questionnaires/${this.$route.params.id}`
       // を参考につなぐ
+      // const res = await axios.get(`http://localhost:3000/api/v1/questionnaires/${this.$route.params.id}`)
       console.log(res);
       this.user = res.data;
     } catch (error) {

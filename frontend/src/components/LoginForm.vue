@@ -44,6 +44,7 @@ export default {
           throw new Error("メールアドレスかパスワードが違います");
         }
         if (!this.error) {
+          // console.log(res.data.data.id);
           this.$emit("redirectToHome");
         }
         console.log({ res });

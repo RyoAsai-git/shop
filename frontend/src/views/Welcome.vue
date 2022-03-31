@@ -35,6 +35,13 @@ export default {
   methods: {
     redirectToHome() {
       this.$router.push({ name: "Home" });
+      //動作せず
+
+      //welcome.vueとhome.vueを統合すれば, login/signup -> home -> myPageへ
+      // 孫コンポーネントまで値を渡すのですむ
+
+      //それかログイン済みのユーザーIDをローカルストレージから取得できれば良い??
+      this.router.push({ name: 'Home', params: { id: 1 }})
     },
   },
 };
