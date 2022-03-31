@@ -45,6 +45,7 @@ export default {
         }
         if (!this.error) {
           // console.log(res.data.data.id);
+          setItem(res.headers, res.data.data.name)
           this.$emit("redirectToHome");
         }
         console.log({ res });

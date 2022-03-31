@@ -29,6 +29,7 @@
 
 <script>
 import axios from "axios";
+import setItem from '../auth/setItem'
 
 export default {
   emits: ["redirectToHome"],
@@ -55,6 +56,7 @@ export default {
           throw new Error("アカウントを登録できませんでした");
         }
         if (!this.error) {
+          setItem(res.headers, res.data.data.name);
           this.$emit("redirectToHome");
         }
         console.log({ res });
