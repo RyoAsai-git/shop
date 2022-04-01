@@ -70,7 +70,7 @@ export default {
           throw new Error("ログアウトできませんでした");
         }
         if (!this.error) {
-          removeItem;
+          removeItem();
           this.$router.push({ name: "Welcome" });
         }
         console.log({ res });
