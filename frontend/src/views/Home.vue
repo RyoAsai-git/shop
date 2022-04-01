@@ -32,6 +32,7 @@
 </template>
 
 <script>
+import getItem from "../auth/getItem";
 import Search from "../components/Search/Search";
 import Brand from "../components/Brand/Brand";
 import MyPage from "../components/MyPage/MyPage";
@@ -66,6 +67,15 @@ export default {
       this.myPage = true;
     },
   },
+  mounted: function() {
+    const accessToken = getItem();
+    console.log('aaaaaaaaaaaaaaaaa');
+    console.log(accessToken);
+    if (!accessToken) {
+      console.log('リダイレクトします')
+      this.$router.push({ name: "Welcome" });
+    }
+  }
 };
 </script>
 
