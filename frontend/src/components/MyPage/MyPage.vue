@@ -73,13 +73,14 @@ export default {
 }
 
 .profile-image {
+  position: relative;
+  aspect-ratio: 1;
   height: 175px;
   border: 0.5px solid #d3d3d3;
-  aspect-ratio: 1;
   border-radius: 50%;
   margin-top: 40px;
   margin-left: 35px;
-  position: relative;
+  caret-color: transparent;
 }
 
 .profile-name {
