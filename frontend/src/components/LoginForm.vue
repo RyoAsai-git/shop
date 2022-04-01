@@ -22,7 +22,7 @@
 
 <script>
 import axios from "axios";
-import setItem from '../auth/setItem'
+import setItem from "../auth/setItem";
 
 export default {
   emits: ["redirectToHome"],
