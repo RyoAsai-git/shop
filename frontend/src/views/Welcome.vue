@@ -38,6 +38,13 @@ export default {
       this.$router.push({ name: "Home" });
     },
   },
+  mounted: function() {
+    const accessToken = window.localStorage.getItem('access-token')
+    console.log(accessToken);
+    if (accessToken) {
+      this.$router.push({ name: "Home" });
+    }
+  }
 };
 </script>
 
