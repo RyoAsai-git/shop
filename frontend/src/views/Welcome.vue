@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     redirectToHome() {
-      this.$router.push({ name: "Home" });
+      this.$router.push({ name: "Home" });''
     },
   },
 };
