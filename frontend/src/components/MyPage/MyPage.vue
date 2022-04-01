@@ -50,12 +50,8 @@ export default {
 
   created: async function () {
     try {
-      // ここのidをcurrent_user.idで引っ張ってこれるように変更
-      // vueのマイページをログイン済みユーザーのみ表示できるように修正
-      // brand,shopクリック後に詳細ページに遷移するような記述作成(モーダル表示でも)
-      const res = await axios.get("http://localhost:3000/mypages/1");
-      // 上記のidは`http://localhost:3000/api/v1/questionnaires/${this.$route.params.id}`
-      // を参考につなぐ
+      const userId = window.localStorage.getItem("id");
+      const res = await axios.get(`http://localhost:3000/mypages/${userId}`);
       console.log(res);
       this.user = res.data;
     } catch (error) {
