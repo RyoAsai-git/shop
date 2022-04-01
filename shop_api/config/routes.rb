@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   }
 
   resources :mypages, only: ['show']
-  resources :shops, only: ['index', 'show']
+  resources :shops, only: ['index']
   resources :brands, only: ['index']
 end
