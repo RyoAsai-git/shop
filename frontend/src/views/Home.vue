@@ -32,7 +32,6 @@
 </template>
 
 <script>
-import getItem from "../auth/getItem";
 import Search from "../components/Search/Search";
 import Brand from "../components/Brand/Brand";
 import MyPage from "../components/MyPage/MyPage";
@@ -68,7 +67,8 @@ export default {
     },
   },
   mounted: function() {
-    const accessToken = getItem();
+    const accessToken = window.localStorage.getItem('access-token')
+    console.log(accessToken);
     if (!accessToken) {
       this.$router.push({ name: "Welcome" });
     }

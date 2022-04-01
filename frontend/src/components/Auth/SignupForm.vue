@@ -63,7 +63,7 @@ export default {
         return res;
       } catch (error) {
         this.error = "アカウントを登録できませんでした";
-        console.log({ error });
+        console.error({ error });
       }
     },
   },

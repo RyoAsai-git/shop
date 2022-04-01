@@ -34,18 +34,52 @@
           />
         </div>
       </div>
+      <button class="sign_out-button" @click="signOut">
+        <p class="sign_out-text">ログアウトする</p>
+      </button>
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import removeItem from "../../auth/removeItem";
 
 export default {
   data() {
     return {
       user: {},
+      error: null,
     };
+  },
+  methods: {
+    async signOut() {
+      this.error = null;
+      const uid = window.localStorage.getItem('uid');
+      const accessToken = window.localStorage.getItem('access-token');
+      const client = window.localStorage.getItem('client');
+      try {
+        const res = await axios.delete("http://localhost:3000/auth/sign_out", {
+          headers: {
+            "uid": uid,
+            "client": client,
+            "access-token": accessToken,
+          }
+        });
+        if (!res) {
+          throw new Error("ログアウトできませんでした");
+        }
+        if (!this.error) {
+          removeItem;
+          this.$router.push({ name: "Welcome" });
+        }
+        console.log({ res });
+        return res;
+      } catch (error) {
+        this.error = "ログアウトできませんでした";
+        console.error({ error });
+      }
+    }
   },
 
   created: async function () {
@@ -126,5 +160,24 @@ export default {
   aspect-ratio: 1;
   margin-top: 15px;
   margin-left: 20px;
+}
+
+.sign_out-button {
+  position: absolute;
+  width: 200px;
+  top: 500px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 20px;
+  background-color: #ff4500;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.sign_out-text {
+  font-weight: bold;
+  color: var(--main-font-color);
 }
 </style>
