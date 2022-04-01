@@ -70,7 +70,6 @@ export default {
   mounted: function() {
     const accessToken = getItem();
     if (!accessToken) {
-      console.log('リダイレクトします')
       this.$router.push({ name: "Welcome" });
     }
   }
