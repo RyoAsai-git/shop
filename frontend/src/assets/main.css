@@ -29,6 +29,10 @@ input:focus {
   border: 1px solid #51b392;
 }
 
+.no-caret {
+  caret-color: transparent;
+}
+
 .container {
   width: 90%;
   max-width: 960px;

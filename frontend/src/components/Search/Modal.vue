@@ -1,7 +1,7 @@
 <template>
   <div id="overlay" v-show="showContent" @click="$emit('close')">
     <div class="modal">
-      <img :src="shop.image" alt="" class="modal-image" />
+      <img :src="shop.image" alt="" class="modal-image no-caret" />
       <dir class="description-area">
         <a :href="shop.url" class="shop-name item-text">{{ shop.name }}</a>
         <p class="shop-description description">
@@ -17,7 +17,7 @@
             <img
               :src="brand.image"
               alt=""
-              class="brand-image"
+              class="brand-image no-caret"
               v-for="brand in shop.brands"
               :key="brand.id"
             />

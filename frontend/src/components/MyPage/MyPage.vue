@@ -6,7 +6,7 @@
           <img
             src="https://pakutaso.cdn.rabify.me/shared/img/page/model_yumiko.jpg?d=500"
             alt=""
-            class="profile-image"
+            class="profile-image no-caret"
           />
           <p class="profile-name">{{ user.name }}</p>
         </div>
@@ -80,7 +80,6 @@ export default {
   border-radius: 50%;
   margin-top: 40px;
   margin-left: 35px;
-  caret-color: transparent;
 }
 
 .profile-name {
@@ -88,7 +87,6 @@ export default {
   top: 75px;
   left: 215px;
   color: #333333;
-  caret-color: transparent;
   font-weight: 600;
   font-size: 20px;
 }
