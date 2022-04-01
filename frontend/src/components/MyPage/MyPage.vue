@@ -6,7 +6,7 @@
           <img
             src="https://pakutaso.cdn.rabify.me/shared/img/page/model_yumiko.jpg?d=500"
             alt=""
-            class="profile-image"
+            class="profile-image no-caret"
           />
           <p class="profile-name">{{ user.name }}</p>
         </div>
@@ -34,18 +34,52 @@
           />
         </div>
       </div>
+      <button class="sign_out-button" @click="signOut">
+        <p class="sign_out-text">ログアウトする</p>
+      </button>
     </div>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import removeItem from "../../auth/removeItem";
 
 export default {
   data() {
     return {
       user: {},
+      error: null,
     };
+  },
+  methods: {
+    async signOut() {
+      this.error = null;
+      const uid = window.localStorage.getItem('uid');
+      const accessToken = window.localStorage.getItem('access-token');
+      const client = window.localStorage.getItem('client');
+      try {
+        const res = await axios.delete("http://localhost:3000/auth/sign_out", {
+          headers: {
+            "uid": uid,
+            "client": client,
+            "access-token": accessToken,
+          }
+        });
+        if (!res) {
+          throw new Error("ログアウトできませんでした");
+        }
+        if (!this.error) {
+          removeItem;
+          this.$router.push({ name: "Welcome" });
+        }
+        console.log({ res });
+        return res;
+      } catch (error) {
+        this.error = "ログアウトできませんでした";
+        console.error({ error });
+      }
+    }
   },
 
   created: async function () {
@@ -73,13 +107,13 @@ export default {
 }
 
 .profile-image {
+  position: relative;
+  aspect-ratio: 1;
   height: 175px;
   border: 0.5px solid #d3d3d3;
-  aspect-ratio: 1;
   border-radius: 50%;
   margin-top: 40px;
   margin-left: 35px;
-  position: relative;
 }
 
 .profile-name {
@@ -87,7 +121,6 @@ export default {
   top: 75px;
   left: 215px;
   color: #333333;
-  caret-color: transparent;
   font-weight: 600;
   font-size: 20px;
 }
@@ -127,5 +160,24 @@ export default {
   aspect-ratio: 1;
   margin-top: 15px;
   margin-left: 20px;
+}
+
+.sign_out-button {
+  position: absolute;
+  width: 200px;
+  top: 500px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 20px;
+  background-color: #ff4500;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.sign_out-text {
+  font-weight: bold;
+  color: var(--main-font-color);
 }
 </style>

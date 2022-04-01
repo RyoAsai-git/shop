@@ -13,7 +13,6 @@
 html {
   height: 100%;
   width: 100%;
-  caret-color: transparent;
 }
 
 body {
@@ -24,6 +23,14 @@ body {
 #app {
   height: 100%;
   width: 100%;
+}
+
+input:focus {
+  border: 1px solid #51b392;
+}
+
+.no-caret {
+  caret-color: transparent;
 }
 
 .container {

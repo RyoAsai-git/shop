@@ -20,8 +20,9 @@
 </template>
 
 <script>
-import LoginForm from "../components/LoginForm.vue";
-import SignupForm from "../components/SignupForm.vue";
+import LoginForm from "../components/Auth/LoginForm.vue";
+import SignupForm from "../components/Auth/SignupForm.vue";
+
 export default {
   components: {
     LoginForm,
@@ -35,7 +36,6 @@ export default {
   methods: {
     redirectToHome() {
       this.$router.push({ name: "Home" });
-      this.router.push({ name: "Home", params: { id: 1 } });
     },
   },
 };

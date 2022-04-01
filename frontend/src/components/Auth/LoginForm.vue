@@ -22,7 +22,7 @@
 
 <script>
 import axios from "axios";
-import setItem from "../auth/setItem";
+import setItem from "../../auth/setItem";
 
 export default {
   emits: ["redirectToHome"],
@@ -45,7 +45,6 @@ export default {
           throw new Error("メールアドレスかパスワードが違います");
         }
         if (!this.error) {
-          // console.log(res.data.data.id);
           setItem(res.headers, res.data);
           this.$emit("redirectToHome");
         }

@@ -66,6 +66,13 @@ export default {
       this.myPage = true;
     },
   },
+  mounted: function() {
+    const accessToken = window.localStorage.getItem('access-token')
+    console.log(accessToken);
+    if (!accessToken) {
+      this.$router.push({ name: "Welcome" });
+    }
+  }
 };
 </script>
 

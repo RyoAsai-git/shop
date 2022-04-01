@@ -1,7 +1,7 @@
 import {
     mount
 } from '@vue/test-utils'
-import LoginForm from '@/components/LoginForm.vue'
+import LoginForm from '@/components/Auth/LoginForm.vue'
 
 describe('LoginForm', () => {
     test('display LoginForm Text', () => {
