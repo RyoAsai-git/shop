@@ -69,8 +69,6 @@ export default {
   },
   mounted: function() {
     const accessToken = getItem();
-    console.log('aaaaaaaaaaaaaaaaa');
-    console.log(accessToken);
     if (!accessToken) {
       console.log('リダイレクトします')
       this.$router.push({ name: "Welcome" });
