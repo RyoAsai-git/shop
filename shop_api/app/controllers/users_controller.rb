@@ -8,13 +8,12 @@ class UsersController < ApplicationController
 
   def likes
     user = User.find(params[:id])
-    # userId = user.id
-
     brand = Brand.find(params[:id])
-    # brandId = brand.id
-    Brand_user.create(user_id: user.id, brand_id: brand.id)
-    # render json: user, status: 200
-
-    # Brand_user.create(user_id: current_user.id, brand_id: brand.id)
+    like = BrandUser.new(user_id: user.id, brand_id: brand.id)
+    if like.save
+    render json: { user_id: user.id, brand_id: brand.id, message: '成功しました' }, status: 200
+    else
+      render json: { message: '保存できませんでした', errors: like.errors.messages }, status: 400
+    end
   end
 end
