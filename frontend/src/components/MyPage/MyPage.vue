@@ -85,7 +85,7 @@ export default {
   created: async function () {
     try {
       const userId = window.localStorage.getItem("id");
-      const res = await axios.get(`http://localhost:3000/mypages/${userId}`);
+      const res = await axios.get(`http://localhost:3000/users/${userId}`);
       console.log(res);
       this.user = res.data;
     } catch (error) {

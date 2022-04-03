@@ -3,10 +3,10 @@ Rails.application.routes.draw do
     registrations: 'auth/registrations'
   }
 
-  resources :mypages, only: ['show']
+  resources :users, only: ['show']
   resources :shops, only: ['index']
   resources :brands, only: ['index'] do
-    resources :mypages do
+    resources :users, only: ['show'] do
       member do
         post :likes
       end
