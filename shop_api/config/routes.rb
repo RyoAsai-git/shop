@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :mypages, only: ['show']
   resources :shops, only: ['index']
   resources :brands, only: ['index'] do
-    # post 'likes', to: 'likes#create', as: 'like_brand'
-    post 'likes', to: 'likes#like_brand'
+    member do
+      post :likes
+    end
   end
 end
