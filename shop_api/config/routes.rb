@@ -6,8 +6,10 @@ Rails.application.routes.draw do
   resources :mypages, only: ['show']
   resources :shops, only: ['index']
   resources :brands, only: ['index'] do
-    member do
-      post :likes
+    resources :mypages do
+      member do
+        post :likes
+      end
     end
   end
 end
