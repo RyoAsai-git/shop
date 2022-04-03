@@ -6,10 +6,6 @@ Rails.application.routes.draw do
   resources :users, only: ["show"]
   resources :shops, only: ["index"]
   resources :brands, only: ["index"] do
-    resources :users, only: ["show"] do
-      member do
-        post :likes
-      end
-    end
+    post "user/:user_id" => "brands#likes", as: "likes"
   end
 end
