@@ -14,6 +14,12 @@ class BrandsController < ApplicationController
     render json: brands_array, status: 200
   end
 
+  # detailコンポーネントを表示するためのshowメソッドを作成する
+  # showメソッドでブランドIDを渡す
+  # ユーザーIDをブランドIDをもとにbrand_userから一致するレコードを探す
+  # 一致するレコードが存在しなければ、お気に入り登録ボタンを押せるようにする
+  # 一致するレコードが存在すれば、お気に入り登録済みの表示にする
+
   def likes
     brand = Brand.find(params[:brand_id])
     user = User.find(params[:user_id])
