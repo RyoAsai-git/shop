@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Welcome from '../views/Welcome'
+import Welcome from '../components/Auth/Welcome'
 import Search from '../components/Search/Search'
 import Brand from '../components/Brand/Brand'
 import MyPage from '../components/MyPage/MyPage'
