@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :shops, only: ["index"]
   resources :brands, only: ["index"] do
     post "user/:user_id" => "brands#likes", as: "likes"
+    delete "user/:user_id" => "brands#delete_likes", as: "delete_likes"
   end
 end
