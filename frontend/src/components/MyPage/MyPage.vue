@@ -86,10 +86,10 @@ export default {
     try {
       const userId = window.localStorage.getItem("id");
       const res = await axios.get(`http://localhost:3000/users/${userId}`);
-      console.log(res);
+      console.log({ res });
       this.user = res.data;
     } catch (error) {
-      console.error(error);
+      console.error({ error });
     }
   },
 };

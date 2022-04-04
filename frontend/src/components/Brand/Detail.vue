@@ -42,13 +42,13 @@ export default {
       try {
         const res = await axios.post(`http://localhost:3000/brands/${brandId}/user/${userId}`);
         if (!res) {
-          throw new Error("いいねできませんでした");
+          throw new Error("お気に入り登録できませんでした");
         }
         if (!this.error) {
           console.log({ res });
         }
       } catch (error) {
-        this.error = "いいねできませんでした";
+        this.error = "お気に入り登録できませんでした";
         console.error({ error });
       }
     }
