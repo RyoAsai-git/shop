@@ -31,13 +31,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      search: false,
-      brand: false,
-      myPage: false
-    }
-  },
 };
 </script>
 
