@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <div class="content my_page-area">
       <div class="my_page">
         <div class="my_page-profile">
@@ -38,7 +38,7 @@
         <p class="sign_out-text">ログアウトする</p>
       </button>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>

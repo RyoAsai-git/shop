@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <div class="content" v-show="!showContent">
       <img
         v-for="brand in brands"
@@ -11,7 +11,7 @@
       />
     </div>
     <Detail :brand="postItem" v-show="showContent" @close="closeDetails" />
-  </div>
+  </main>
 </template>
 
 <script>

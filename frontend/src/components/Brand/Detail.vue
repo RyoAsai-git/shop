@@ -7,7 +7,7 @@
         @click="$emit('close')"
       />
     </div>
-    <div class="brand-details-main">
+    <div class="brand-details-main no-caret">
       <div class="brand-details-content">
         <img :src="brand.image" alt="" class="brand-details-background-image" />
       </div>
