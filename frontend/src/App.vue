@@ -20,7 +20,7 @@ export default {
       accessToken: null,
     }
   },
-  mounted: function() {
+  created: function() {
     const accessToken = window.localStorage.getItem('access-token')
     if (!accessToken) {
       this.$router.push({ name: "Welcome" });

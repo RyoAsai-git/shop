@@ -55,7 +55,7 @@ export default {
     },
   },
 
-  mounted: async function () {
+  created: async function () {
     const id = this.brandId;
     try {
       const res = await axios.get(`http://localhost:3000/brands/${id}`);
