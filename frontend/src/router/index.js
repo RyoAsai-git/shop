@@ -23,7 +23,7 @@ const routes = [{
     name: 'brand',
     component: Brand,
     children: [{
-      path: 'detail',
+      path: ':id',
       name: 'detail',
       component: Detail,
     }]

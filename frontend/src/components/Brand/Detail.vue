@@ -32,11 +32,9 @@
 import axios from "axios";
 
 export default {
-  // props: ["brand"],
   data() {
     return {
-      // showContent: false,
-      // beforeRouter: '',
+      brandId: this.$route.params.id,
       brand: "",
       error: null,
     };
@@ -70,8 +68,8 @@ export default {
     }
   },
 
-  created: async function () {
-    const id = 1;
+  mounted: async function () {
+    const id = this.brandId;
     try {
       const res = await axios.get(`http://localhost:3000/brands/${id}`);
       console.log(res);
