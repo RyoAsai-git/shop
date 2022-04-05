@@ -21,20 +21,8 @@ import axios from "axios";
 export default {
   data() {
     return {
-      brands: {},
-      postItem: "",
-      showContent: false,
+      brands: "",
     };
-  },
-
-  methods: {
-    openDetails: function (brand) {
-      this.showContent = true;
-      this.postItem = brand;
-    },
-    closeDetails: function () {
-      this.showContent = false;
-    },
   },
 
   created: async function () {
