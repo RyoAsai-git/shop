@@ -1,43 +1,28 @@
 <template>
   <main>
-    <div class="content" v-show="!showContent">
-      <img
+    <div class="content">
+      <router-link
+        :to="{ name: 'detail', params: { id: brand.id } }"
         v-for="brand in brands"
         :key="brand.id"
-        :src="brand.image"
-        alt=""
-        @click="openDetails(brand)"
-        class="brand-image brand-icon-top"
-      />
+      >
+        <img :src="brand.image" class="brand-image brand-icon-top" />
+      </router-link>
     </div>
-    <Detail :brand="postItem" v-show="showContent" @close="closeDetails" />
+    <div>
+      <router-view></router-view>
+    </div>
   </main>
 </template>
 
 <script>
 import axios from "axios";
-import Detail from "./Detail";
 
 export default {
-  components: {
-    Detail,
-  },
   data() {
     return {
-      brands: {},
-      postItem: "",
-      showContent: false,
+      brands: "",
     };
-  },
-
-  methods: {
-    openDetails: function (brand) {
-      this.showContent = true;
-      this.postItem = brand;
-    },
-    closeDetails: function () {
-      this.showContent = false;
-    },
   },
 
   created: async function () {
@@ -45,7 +30,6 @@ export default {
       const res = await axios.get("http://localhost:3000/brands");
       console.log(res);
       this.brands = res.data;
-      console.log(this.brands);
     } catch (error) {
       console.error(error);
     }

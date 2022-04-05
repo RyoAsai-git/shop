@@ -50,7 +50,6 @@ export default {
       const res = await axios.get("http://localhost:3000/shops");
       console.log(res);
       this.shops = res.data;
-      console.log(this.shops);
     } catch (error) {
       console.error(error);
     }
