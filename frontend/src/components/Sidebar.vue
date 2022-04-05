@@ -38,6 +38,11 @@ export default {
 
 ul li a {
   text-decoration: none;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .navbar {
@@ -49,15 +54,9 @@ ul li a {
   top: 0;
 }
 
-li:first-child {
-  padding-top: 20px;
-}
-
 li {
   text-align: center;
   line-height: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
   transition: background-color 0.5s;
   font-size: var(--main-font-size);
   cursor: pointer;
