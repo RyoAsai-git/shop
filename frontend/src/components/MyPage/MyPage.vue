@@ -25,13 +25,13 @@
       <div class="favorite-content">
         <h1 class="favorite-topic item-text">お気に入りブランド</h1>
         <div class="brand-content">
-          <img
-            :src="brand.image"
-            alt=""
-            class="favorite-brand-image"
+          <router-link
+            :to="{ name: 'detail', params: { id: brand.id } }"
             v-for="brand in user.brands"
             :key="brand.id"
-          />
+          >
+            <img :src="brand.image" class="favorite-brand-image" />
+          </router-link>
         </div>
       </div>
       <button class="sign_out-button" @click="signOut">
@@ -55,16 +55,16 @@ export default {
   methods: {
     async signOut() {
       this.error = null;
-      const uid = window.localStorage.getItem('uid');
-      const accessToken = window.localStorage.getItem('access-token');
-      const client = window.localStorage.getItem('client');
+      const uid = window.localStorage.getItem("uid");
+      const accessToken = window.localStorage.getItem("access-token");
+      const client = window.localStorage.getItem("client");
       try {
         const res = await axios.delete("http://localhost:3000/auth/sign_out", {
           headers: {
-            "uid": uid,
-            "client": client,
+            uid: uid,
+            client: client,
             "access-token": accessToken,
-          }
+          },
         });
         if (!res) {
           throw new Error("ログアウトできませんでした");
@@ -79,7 +79,7 @@ export default {
         this.error = "ログアウトできませんでした";
         console.error({ error });
       }
-    }
+    },
   },
 
   created: async function () {
