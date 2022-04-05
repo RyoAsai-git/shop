@@ -21,9 +21,7 @@ export default {
     }
   },
   mounted: function() {
-    console.log(this.shouldShowHome);
     const accessToken = window.localStorage.getItem('access-token')
-    console.log(accessToken);
     if (!accessToken) {
       this.$router.push({ name: "Welcome" });
     }
