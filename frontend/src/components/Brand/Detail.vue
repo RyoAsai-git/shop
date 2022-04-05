@@ -4,13 +4,8 @@
       <FAIcon
         :icon="['fas', 'angle-left']"
         class="back-button"
-        @click="$emit('close')"
+        @click="$router.back()"
       />
-      <!-- <FAIcon
-        :icon="['fas', 'angle-left']"
-        class="back-button"
-        @click="back()"
-      /> -->
     </div>
     <div class="brand-details-main no-caret">
       <div class="brand-details-content">
@@ -34,20 +29,12 @@ import axios from "axios";
 export default {
   data() {
     return {
+      test: this.$route,
       brandId: this.$route.params.id,
       brand: "",
       error: null,
     };
   },
-
-  // watch:{
-  //   '$route'(from) {
-  //       this.beforeRouter = from.params.id
-  //       console.log('aaaaaaaaaaaaaaaaaa');
-  //       console.log(this.beforeRouter);
-  //       // this.afterRouter = to.params.id
-  //   }
-  // },
 
   methods: {
     async likeBrand(brandId) {
@@ -65,7 +52,7 @@ export default {
         this.error = "お気に入り登録できませんでした";
         console.error({ error });
       }
-    }
+    },
   },
 
   mounted: async function () {
