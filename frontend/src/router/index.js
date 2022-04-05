@@ -5,6 +5,7 @@ import {
 import Welcome from '../components/Auth/Welcome'
 import Search from '../components/Search/Search'
 import Brand from '../components/Brand/Brand'
+import Detail from '../components/Brand/Detail'
 import MyPage from '../components/MyPage/MyPage'
 
 const routes = [{
@@ -21,6 +22,11 @@ const routes = [{
     path: '/brand',
     name: 'brand',
     component: Brand,
+    children: [{
+      path: 'detail',
+      name: 'detail',
+      component: Detail,
+    }]
   },
   {
     path: '/myPage',

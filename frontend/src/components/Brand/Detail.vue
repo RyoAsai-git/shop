@@ -6,17 +6,22 @@
         class="back-button"
         @click="$emit('close')"
       />
+      <!-- <FAIcon
+        :icon="['fas', 'angle-left']"
+        class="back-button"
+        @click="back()"
+      /> -->
     </div>
     <div class="brand-details-main no-caret">
       <div class="brand-details-content">
-        <img :src="brand.image" alt="" class="brand-details-background-image" />
+        <img :src="this.brand.image" alt="" class="brand-details-background-image" />
       </div>
-      <img :src="brand.image" alt="" class="brand-image brand-icon-details" />
+      <img :src="this.brand.image" alt="" class="brand-image brand-icon-details" />
       <div class="brand-description-area">
-        <a :href="brand.brand_url" class="brand-name">{{ brand.name }}</a>
-        <p class="brand-content">{{ brand.description }}</p>
+        <a :href="this.brand.brand_url" class="brand-name">{{ this.brand.name }}</a>
+        <p class="brand-content">{{ this.brand.description }}</p>
       </div>
-      <div class="brand-button" @click="likeBrand(brand.id)">
+      <div class="brand-button" @click="likeBrand(this.brand.id)">
         <p class="button-text">このブランドをお気に入りにする</p>
       </div>
     </div>
@@ -27,13 +32,24 @@
 import axios from "axios";
 
 export default {
-  props: ["brand"],
+  // props: ["brand"],
   data() {
     return {
-      showContent: false,
+      // showContent: false,
+      // beforeRouter: '',
+      brand: "",
       error: null,
     };
   },
+
+  // watch:{
+  //   '$route'(from) {
+  //       this.beforeRouter = from.params.id
+  //       console.log('aaaaaaaaaaaaaaaaaa');
+  //       console.log(this.beforeRouter);
+  //       // this.afterRouter = to.params.id
+  //   }
+  // },
 
   methods: {
     async likeBrand(brandId) {
@@ -52,7 +68,19 @@ export default {
         console.error({ error });
       }
     }
-  }
+  },
+
+  created: async function () {
+    const id = 1;
+    try {
+      const res = await axios.get(`http://localhost:3000/brands/${id}`);
+      console.log(res);
+      this.brand = res.data;
+      console.log(this.brand);
+    } catch (error) {
+      console.error(error);
+    }
+  },
 };
 </script>
 
@@ -64,6 +92,7 @@ export default {
   left: 15%;
   top: 0;
   margin-left: 20px;
+  background: #fff;
 }
 
 .back-button {

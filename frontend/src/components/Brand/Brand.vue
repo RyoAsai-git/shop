@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div class="content" v-show="!showContent">
+    <!-- <div class="content" v-show="!showContent">
       <img
         v-for="brand in brands"
         :key="brand.id"
@@ -10,17 +10,36 @@
         class="brand-image brand-icon-top"
       />
     </div>
-    <Detail :brand="postItem" v-show="showContent" @close="closeDetails" />
+    <Detail :brand="postItem" v-show="showContent" @close="closeDetails" /> -->
+    <div class="content">
+      <!-- 普通にdetailコンポーネントを表示したい -->
+      <!-- ネストしなければ表示できた -->
+      <!-- ネストした状態で表示できた -->
+
+      <!-- ネストした状態で表示し、さらにbrand.idを渡したい -->
+      <router-link to="/brand/detail">
+        <img
+          v-for="brand in brands"
+          :key="brand.id"
+          :src="brand.image"
+          class="brand-image brand-icon-top"
+        />
+      </router-link>
+    </div>
+    <div>
+      <router-view></router-view>
+    </div>
+    <!-- <Detail :brand="postItem" v-show="showContent" @close="closeDetails" /> -->
   </main>
 </template>
 
 <script>
 import axios from "axios";
-import Detail from "./Detail";
+// import Detail from "./Detail";
 
 export default {
   components: {
-    Detail,
+    // Detail,
   },
   data() {
     return {
@@ -38,6 +57,13 @@ export default {
     closeDetails: function () {
       this.showContent = false;
     },
+
+    // selected: function(id) {
+    //     this.$router.push({
+    //     name: '',
+    //     params: { id: id }
+    //   })
+    // }
   },
 
   created: async function () {
