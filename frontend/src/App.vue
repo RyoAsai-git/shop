@@ -2,7 +2,7 @@
   <div id="app">
     <Sidebar v-if="!this.$route.path.match(/welcome$/)" />
     <div>
-      <router-view />
+      <router-view></router-view>
     </div>
   </div>
 </template>
