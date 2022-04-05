@@ -5,5 +5,6 @@ class CreateBrandUsers < ActiveRecord::Migration[6.0]
       t.integer :brand_id
       t.timestamps
     end
+    add_index :brand_users, [:user_id, :brand_id], unique: true
   end
 end

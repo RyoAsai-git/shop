@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <div class="content">
       <div class="search-area">
         <div
@@ -17,7 +17,7 @@
       </div>
     </div>
     <Modal :shop="postItem" v-show="showContent" @close="closeModal" />
-  </div>
+  </main>
 </template>
 <script>
 import axios from "axios";

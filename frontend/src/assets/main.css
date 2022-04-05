@@ -45,6 +45,7 @@ input:focus {
 .content {
   position: absolute;
   left: 15%;
+  caret-color: transparent;
 }
 
 .error {

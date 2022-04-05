@@ -1,4 +1,4 @@
-class MypagesController < ApplicationController
+class UsersController < ApplicationController
   def show
     user = User.includes([:brands, :shops]).find(params[:id])
     brands = user.brands

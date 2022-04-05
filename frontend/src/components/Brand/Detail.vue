@@ -7,7 +7,7 @@
         @click="$emit('close')"
       />
     </div>
-    <div class="brand-details-main">
+    <div class="brand-details-main no-caret">
       <div class="brand-details-content">
         <img :src="brand.image" alt="" class="brand-details-background-image" />
       </div>
@@ -16,21 +16,43 @@
         <a :href="brand.brand_url" class="brand-name">{{ brand.name }}</a>
         <p class="brand-content">{{ brand.description }}</p>
       </div>
-      <div class="brand-button">
-        <p class="button-text">このブランドをフォローする</p>
+      <div class="brand-button" @click="likeBrand(brand.id)">
+        <p class="button-text">このブランドをお気に入りにする</p>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   props: ["brand"],
   data() {
     return {
       showContent: false,
+      error: null,
     };
   },
+
+  methods: {
+    async likeBrand(brandId) {
+      this.error = null;
+      const userId = window.localStorage.getItem('id');
+      try {
+        const res = await axios.post(`http://localhost:3000/brands/${brandId}/user/${userId}`);
+        if (!res) {
+          throw new Error("お気に入り登録できませんでした");
+        }
+        if (!this.error) {
+          console.log({ res });
+        }
+      } catch (error) {
+        this.error = "お気に入り登録できませんでした";
+        console.error({ error });
+      }
+    }
+  }
 };
 </script>
 
@@ -88,7 +110,7 @@ export default {
 
 .brand-button {
   position: absolute;
-  width: 230px;
+  width: 265px;
   top: 500px;
   left: 0;
   right: 0;

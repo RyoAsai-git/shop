@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <div class="content my_page-area">
       <div class="my_page">
         <div class="my_page-profile">
@@ -38,7 +38,7 @@
         <p class="sign_out-text">ログアウトする</p>
       </button>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -70,7 +70,7 @@ export default {
           throw new Error("ログアウトできませんでした");
         }
         if (!this.error) {
-          removeItem;
+          removeItem();
           this.$router.push({ name: "Welcome" });
         }
         console.log({ res });
@@ -85,11 +85,11 @@ export default {
   created: async function () {
     try {
       const userId = window.localStorage.getItem("id");
-      const res = await axios.get(`http://localhost:3000/mypages/${userId}`);
-      console.log(res);
+      const res = await axios.get(`http://localhost:3000/users/${userId}`);
+      console.log({ res });
       this.user = res.data;
     } catch (error) {
-      console.error(error);
+      console.error({ error });
     }
   },
 };

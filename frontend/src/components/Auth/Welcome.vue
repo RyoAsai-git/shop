@@ -20,8 +20,8 @@
 </template>
 
 <script>
-import LoginForm from "../components/Auth/LoginForm.vue";
-import SignupForm from "../components/Auth/SignupForm.vue";
+import LoginForm from "./LoginForm.vue";
+import SignupForm from "./SignupForm.vue";
 
 export default {
   components: {
@@ -35,8 +35,15 @@ export default {
   },
   methods: {
     redirectToHome() {
-      this.$router.push({ name: "Home" });
+      this.$router.push({ name: "search" });
     },
+  },
+  mounted: function () {
+    const accessToken = window.localStorage.getItem("access-token");
+    console.log(accessToken);
+    if (accessToken) {
+      this.$router.push({ name: "search" });
+    }
   },
 };
 </script>
