@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Sidebar />
+    <Sidebar v-if="!this.$route.path.match(/welcome$/)" />
     <div>
       <router-view />
     </div>
@@ -17,7 +17,6 @@ export default {
   },
   data() {
     return {
-      shouldShowHome: false,
       accessToken: null,
     }
   },

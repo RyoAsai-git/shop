@@ -1,11 +1,13 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import {
+  createRouter,
+  createWebHistory
+} from 'vue-router'
 import Welcome from '../components/Auth/Welcome'
 import Search from '../components/Search/Search'
 import Brand from '../components/Brand/Brand'
 import MyPage from '../components/MyPage/MyPage'
 
-const routes = [
-  {
+const routes = [{
     path: '/welcome',
     name: 'Welcome',
     component: Welcome,
