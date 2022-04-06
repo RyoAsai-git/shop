@@ -14,13 +14,13 @@
         <h1 class="modal-right-top item-text">取扱ブランド</h1>
         <div class="brand-image-area">
           <div class="brand-image-content">
-            <img
-              :src="brand.image"
-              alt=""
-              class="brand-image no-caret"
+            <router-link
+              :to="{ name: 'detail', params: { id: brand.id } }"
               v-for="brand in shop.brands"
               :key="brand.id"
-            />
+            >
+              <img :src="brand.image" class="brand-image no-caret" />
+            </router-link>
           </div>
         </div>
       </div>
