@@ -4,6 +4,11 @@
       <img :src="shop.image" alt="" class="modal-image no-caret" />
       <dir class="description-area">
         <a :href="shop.url" class="shop-name item-text">{{ shop.name }}</a>
+        <FAIcon
+          :icon="['fas', 'angle-left']"
+          class="favorite-button"
+          @click="$router.back()"
+        />
         <p class="shop-description description">
           {{ shop.description }}
         </p>
@@ -45,8 +50,8 @@ export default {
 <style scoped>
 .modal {
   position: relative;
-  height: 420px;
-  width: 250px;
+  height: 60%;
+  width: 35%;
   padding: 1em;
   border-radius: 40px;
   background: var(--main-font-color);
@@ -56,6 +61,19 @@ export default {
   width: 100%;
   border-radius: 20px;
   aspect-ratio: 5 / 3;
+}
+
+.description-area {
+  position: absolute;
+  width: 90%;
+  top: 210px;
+  left: 35px;
+}
+
+.favorite-button {
+  position: absolute;
+  left: 120px;
+  top: 125px;
 }
 
 .modal-right-content {
@@ -79,13 +97,6 @@ export default {
   top: 20px;
   left: 40px;
   font-size: var(--main-font-size);
-}
-
-.description-area {
-  position: absolute;
-  width: 200px;
-  top: 65px;
-  left: 35px;
 }
 
 .shop-name {
