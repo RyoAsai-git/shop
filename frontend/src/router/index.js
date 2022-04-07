@@ -22,11 +22,6 @@ const routes = [{
       path: ':id',
       name: 'modal',
       component: Modal,
-    },
-    {
-      path: ':id',
-      name: 'detail',
-      component: Detail,
     }]
   },
   {
