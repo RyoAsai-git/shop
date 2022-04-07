@@ -8,9 +8,12 @@
     <div class="modal">
       <img :src="this.shop.image" alt="" class="modal-image no-caret" />
       <dir class="description-area">
-        <a :href="this.shop.shop_url" target="_blank" class="shop-name item-text">{{
-          this.shop.name
-        }}</a>
+        <a
+          :href="this.shop.shop_url"
+          target="_blank"
+          class="shop-name item-text"
+          >{{ this.shop.name }}</a
+        >
         <FAIcon
           :icon="['fas', 'angle-left']"
           class="favorite-button like-button"
