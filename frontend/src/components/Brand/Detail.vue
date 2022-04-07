@@ -16,10 +16,10 @@
         <a :href="this.brand.brand_url" target="_blank" class="brand-name">{{ this.brand.name }}</a>
         <p class="brand-content">{{ this.brand.description }}</p>
       </div>
-      <div class="brand-button like-button" @click="likeBrand(this.brand.id)">
+      <div class="brand-button like-button" v-show="isLiked" @click="likeBrand(this.brand.id)">
         <p class="button-text">このブランドをお気に入りにする</p>
       </div>
-      <div class="brand-button delete-like-button" @click="deleteLikeBrand(this.brand.id)">
+      <div class="brand-button delete-like-button" v-show="!isLiked" @click="deleteLikeBrand(this.brand.id)">
         <p class="button-text">このブランドのお気に入りを解除する</p>
       </div>
     </div>
@@ -34,6 +34,7 @@ export default {
     return {
       brandId: this.$route.params.id,
       brand: "",
+      isLiked: true,
       error: null,
     };
   },
@@ -49,6 +50,7 @@ export default {
         }
         if (!this.error) {
           console.log({ res });
+          this.isLiked = false;
         }
       } catch (error) {
         this.error = "お気に入り登録できませんでした";
@@ -66,6 +68,7 @@ export default {
         }
         if (!this.error) {
           console.log({ res });
+          this.isLiked = true;
         }
       } catch (error) {
         this.error = "お気に入りを解除できませんでした";
@@ -75,15 +78,52 @@ export default {
   },
 
   created: async function () {
-    const id = this.brandId;
+    const brandId = this.brandId;
     try {
-      const res = await axios.get(`http://localhost:3000/brands/${id}`);
+      const res = await axios.get(`http://localhost:3000/brands/${brandId}`);
       console.log(res);
       this.brand = res.data;
     } catch (error) {
       console.error(error);
     }
+
+    const userId = window.localStorage.getItem('id');
+    const res = await axios.get(`http://localhost:3000/users/${userId}`);
+    console.log('レスポンス');
+    console.log(res.data);
+    const brands = res.data.brands;
+    console.log('aaaaaaaaaaa');
+    console.log(brands);
+    for (const brand in brands) {
+      console.log('ループ');
+      console.log(brands[brand]);
+      console.log(brandId);
+      console.log(brands[brand].id);
+      if (brands[brand].id == brandId) {
+        console.log('bbbbbbbb');
+        console.log(brands[brand].id);
+        this.isLiked = false;
+        break;
+      }
+    }
   },
+  // created: async function () {
+  //   const userId = window.localStorage.getItem('id');
+  //   const user = await axios.get(`http://localhost:3000/users/${userId}`);
+  //   const brands = user.brands;
+  //   console.log('aaaaaaaaaaa');
+  //   console.log(user);
+  //   console.log(brands);
+  //   for (const brand in brands) {
+  //     if (brand.id === this.brandId) {
+  //       console.log('bbbbbbbb');
+  //       console.log(brand.id);
+  //       this.isLiked = true;
+  //       break;
+  //     }
+  //   }
+  // }
+
 };
 </script>
 
@@ -159,7 +199,7 @@ export default {
 
 .delete-like-button {
   width: 290px;
-  top: 600px;
+  top: 500px;
   background: red;
 }
 
