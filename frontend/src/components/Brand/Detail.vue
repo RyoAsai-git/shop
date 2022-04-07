@@ -122,11 +122,10 @@ export default {
 
 <style scoped>
 .brand-details-body {
-  position: absolute;
+  position: fixed;
   height: 100%;
   width: 80%;
   left: 15%;
-  top: 0;
   margin-left: 20px;
   background: #fff;
 }
