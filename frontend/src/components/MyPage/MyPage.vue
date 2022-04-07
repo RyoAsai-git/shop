@@ -8,19 +8,20 @@
             alt=""
             class="profile-image no-caret"
           />
+          <font-awesome-icon :icon="['fa-solid', 'camera']" class="icon" />
           <p class="profile-name">{{ user.name }}</p>
         </div>
       </div>
 
       <div class="favorite-content">
         <h1 class="favorite-topic item-text">お気に入りショップ</h1>
-          <router-link
-            :to="{ name: 'modal', params: { id: shop.id } }"
-            v-for="shop in user.shops"
-            :key="shop.id"
-          >
-            <img :src="shop.image" class="favorite-shop-image" />
-          </router-link>
+        <router-link
+          :to="{ name: 'modal', params: { id: shop.id } }"
+          v-for="shop in user.shops"
+          :key="shop.id"
+        >
+          <img :src="shop.image" class="favorite-shop-image" />
+        </router-link>
       </div>
       <div class="favorite-content">
         <h1 class="favorite-topic item-text">お気に入りブランド</h1>
@@ -125,10 +126,13 @@ export default {
   font-size: 20px;
 }
 
-.camera-icon {
-  height: 100px;
-  width: 100px;
-  color: var(--main-bg-color);
+.icon {
+  font-size: 25px;
+  position: absolute;
+  top: 175px;
+  left: 105px;
+  color: #fff;
+  cursor: pointer;
 }
 
 .favorite-content {
