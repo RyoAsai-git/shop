@@ -1,9 +1,16 @@
 <template>
-  <div id="overlay" @click="$router.back()">
+  <div id="overlay">
+    <FAIcon
+      :icon="['fas', 'angle-left']"
+      class="back-button"
+      @click="$router.back()"
+    />
     <div class="modal">
       <img :src="this.shop.image" alt="" class="modal-image no-caret" />
       <dir class="description-area">
-        <a :href="this.shop.url" class="shop-name item-text">{{ this.shop.name }}</a>
+        <a :href="this.shop.url" class="shop-name item-text">{{
+          this.shop.name
+        }}</a>
         <FAIcon
           :icon="['fas', 'angle-left']"
           class="favorite-button"
@@ -20,7 +27,7 @@
         <div class="brand-image-area">
           <div class="brand-image-content">
             <router-link
-              :to="{ path: '/brand', params: { id: brand.id } }"
+              :to="{ name: 'detail', params: { id: brand.id } }"
               v-for="brand in this.shop.brands"
               :key="brand.id"
             >
@@ -38,7 +45,7 @@
 </template>
 
 <script>
-import axios from "axios"
+import axios from "axios";
 
 export default {
   data() {
@@ -52,9 +59,11 @@ export default {
   methods: {
     async likeShop(shopId) {
       this.error = null;
-      const userId = window.localStorage.getItem('id');
+      const userId = window.localStorage.getItem("id");
       try {
-        const res = await axios.post(`http://localhost:3000/shops/${shopId}/user/${userId}`);
+        const res = await axios.post(
+          `http://localhost:3000/shops/${shopId}/user/${userId}`
+        );
         if (!res) {
           throw new Error("お気に入り登録できませんでした");
         }
@@ -77,11 +86,20 @@ export default {
     } catch (error) {
       console.error(error);
     }
-  }
+  },
 };
 </script>
 
 <style scoped>
+.back-button {
+  position: absolute;
+  top: 5%;
+  left: 22%;
+  height: 50px;
+  color: #fff;
+  cursor: pointer;
+}
+
 .modal {
   position: relative;
   height: 60%;
