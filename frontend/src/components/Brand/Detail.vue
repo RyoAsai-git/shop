@@ -9,15 +9,36 @@
     </div>
     <div class="brand-details-main no-caret">
       <div class="brand-details-content">
-        <img :src="this.brand.image" alt="" class="brand-details-background-image" />
+        <img
+          :src="this.brand.image"
+          alt=""
+          class="brand-details-background-image"
+        />
       </div>
-      <img :src="this.brand.image" alt="" class="brand-image brand-icon-details" />
+      <img
+        :src="this.brand.image"
+        alt=""
+        class="brand-image brand-icon-details"
+      />
       <div class="brand-description-area">
-        <a :href="this.brand.brand_url" target="_blank" class="brand-name">{{ this.brand.name }}</a>
+        <a :href="this.brand.brand_url" target="_blank" class="brand-name">{{
+          this.brand.name
+        }}</a>
         <p class="brand-content">{{ this.brand.description }}</p>
       </div>
-      <div class="brand-button" @click="likeBrand(this.brand.id)">
+      <div
+        class="brand-button like-button"
+        v-show="isLiked"
+        @click="likeBrand(this.brand.id)"
+      >
         <p class="button-text">このブランドをお気に入りにする</p>
+      </div>
+      <div
+        class="brand-button delete-like-button"
+        v-show="!isLiked"
+        @click="deleteLikeBrand(this.brand.id)"
+      >
+        <p class="button-text">このブランドのお気に入りを解除する</p>
       </div>
     </div>
   </div>
@@ -31,6 +52,7 @@ export default {
     return {
       brandId: this.$route.params.id,
       brand: "",
+      isLiked: true,
       error: null,
     };
   },
@@ -38,30 +60,65 @@ export default {
   methods: {
     async likeBrand(brandId) {
       this.error = null;
-      const userId = window.localStorage.getItem('id');
+      const userId = window.localStorage.getItem("id");
       try {
-        const res = await axios.post(`http://localhost:3000/brands/${brandId}/user/${userId}`);
+        const res = await axios.post(
+          `http://localhost:3000/brands/${brandId}/user/${userId}`
+        );
         if (!res) {
           throw new Error("お気に入り登録できませんでした");
         }
         if (!this.error) {
           console.log({ res });
+          this.isLiked = false;
         }
       } catch (error) {
         this.error = "お気に入り登録できませんでした";
         console.error({ error });
       }
     },
+
+    async deleteLikeBrand(brandId) {
+      this.error = null;
+      const userId = window.localStorage.getItem("id");
+      try {
+        const res = await axios.delete(
+          `http://localhost:3000/brands/${brandId}/user/${userId}`
+        );
+        if (!res) {
+          throw new Error("お気に入りを解除できませんでした");
+        }
+        if (!this.error) {
+          console.log({ res });
+          this.isLiked = true;
+        }
+      } catch (error) {
+        this.error = "お気に入りを解除できませんでした";
+        console.error({ error });
+      }
+    },
   },
 
   created: async function () {
-    const id = this.brandId;
+    const brandId = this.brandId;
     try {
-      const res = await axios.get(`http://localhost:3000/brands/${id}`);
+      const res = await axios.get(`http://localhost:3000/brands/${brandId}`);
       console.log(res);
       this.brand = res.data;
     } catch (error) {
       console.error(error);
+    }
+  },
+
+  mounted: async function () {
+    const userId = window.localStorage.getItem("id");
+    const res = await axios.get(`http://localhost:3000/users/${userId}`);
+    const brands = res.data.brands;
+    for (const brand in brands) {
+      if (brands[brand].id == this.brandId) {
+        this.isLiked = false;
+        break;
+      }
     }
   },
 };
@@ -122,16 +179,25 @@ export default {
 
 .brand-button {
   position: absolute;
-  width: 265px;
-  top: 500px;
   left: 0;
   right: 0;
   margin: auto;
   border-radius: 20px;
-  background-color: var(--main-bg-color);
   line-height: 40px;
   text-align: center;
   cursor: pointer;
+}
+
+.like-button {
+  width: 265px;
+  top: 500px;
+  background-color: var(--main-bg-color);
+}
+
+.delete-like-button {
+  width: 290px;
+  top: 500px;
+  background: red;
 }
 
 .button-text {

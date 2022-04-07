@@ -5,5 +5,6 @@ class CreateShopUsers < ActiveRecord::Migration[6.0]
       t.integer :shop_id
       t.timestamps
     end
+    add_index :shop_users, [:user_id, :shop_id], :unique => true
   end
 end

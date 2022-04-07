@@ -1,28 +1,8 @@
 class BrandsController < ApplicationController
-  # def index
-  #   brands = Brand.all
-  #   brands_array = brands.map do |brand|
-  #     {
-  #       id: brand.id,
-  #       name: brand.name,
-  #       image: brand.image,
-  #       description: brand.description,
-  #       brand_url: brand.brand_url,
-  #     }
-  #   end
-
-  #   render json: brands_array, status: 200
-  # end
   def index
     brands = Brand.all
     render json: brands, status: 200
   end
-
-  # detailコンポーネントを表示するためのshowメソッドを作成する
-  # showメソッドでブランドIDを渡す
-  # ユーザーIDをブランドIDをもとにbrand_userから一致するレコードを探す
-  # 一致するレコードが存在しなければ、お気に入り登録ボタンを押せるようにする
-  # 一致するレコードが存在すれば、お気に入り登録済みの表示にする
 
   def show
     brand = Brand.find(params[:id])
