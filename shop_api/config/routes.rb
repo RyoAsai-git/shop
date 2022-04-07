@@ -4,7 +4,7 @@ Rails.application.routes.draw do
                                       }
 
   resources :users, only: ["show"]
-  resources :shops, only: ["index"] do
+  resources :shops, only: ["index", "show"] do
     post "user/:user_id" => "shops#likes", as: "likes"
     delete "user/:user_id" => "shops#delete_likes", as: "delete_likes"
   end
