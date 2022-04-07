@@ -29,7 +29,6 @@ import axios from "axios";
 export default {
   data() {
     return {
-      test: this.$route,
       brandId: this.$route.params.id,
       brand: "",
       error: null,

@@ -7,6 +7,7 @@ import Search from '../components/Search/Search'
 import Brand from '../components/Brand/Brand'
 import Detail from '../components/Brand/Detail'
 import MyPage from '../components/MyPage/MyPage'
+import Modal from '../components/Search/Modal'
 
 const routes = [{
     path: '/welcome',
@@ -17,6 +18,16 @@ const routes = [{
     path: '/search',
     name: 'search',
     component: Search,
+    children: [{
+      path: ':id',
+      name: 'modal',
+      component: Modal,
+    },
+    {
+      path: ':id',
+      name: 'detail',
+      component: Detail,
+    }]
   },
   {
     path: '/brand',

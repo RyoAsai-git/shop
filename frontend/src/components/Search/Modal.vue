@@ -1,16 +1,16 @@
 <template>
-  <div id="overlay" v-show="showContent" @click="$emit('close')">
+  <div id="overlay" @click="$router.back()">
     <div class="modal">
-      <img :src="shop.image" alt="" class="modal-image no-caret" />
+      <img :src="this.shop.image" alt="" class="modal-image no-caret" />
       <dir class="description-area">
-        <a :href="shop.url" class="shop-name item-text">{{ shop.name }}</a>
+        <a :href="this.shop.url" class="shop-name item-text">{{ this.shop.name }}</a>
         <FAIcon
           :icon="['fas', 'angle-left']"
           class="favorite-button"
-          @click="$router.back()"
+          @click="likeShop(this.shop.id)"
         />
         <p class="shop-description description">
-          {{ shop.description }}
+          {{ this.shop.description }}
         </p>
       </dir>
     </div>
@@ -20,8 +20,8 @@
         <div class="brand-image-area">
           <div class="brand-image-content">
             <router-link
-              :to="{ name: 'detail', params: { id: brand.id } }"
-              v-for="brand in shop.brands"
+              :to="{ path: '/brand', params: { id: brand.id } }"
+              v-for="brand in this.shop.brands"
               :key="brand.id"
             >
               <img :src="brand.image" class="brand-image no-caret" />
@@ -33,17 +33,51 @@
         <div class="modal-right-top item-text">アクセス</div>
       </div>
     </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import axios from "axios"
+
 export default {
-  props: ["shop"],
   data() {
     return {
-      showContent: false,
+      shopId: this.$route.params.id,
+      shop: "",
+      error: null,
     };
   },
+
+  methods: {
+    async likeShop(shopId) {
+      this.error = null;
+      const userId = window.localStorage.getItem('id');
+      try {
+        const res = await axios.post(`http://localhost:3000/shops/${shopId}/user/${userId}`);
+        if (!res) {
+          throw new Error("お気に入り登録できませんでした");
+        }
+        if (!this.error) {
+          console.log({ res });
+        }
+      } catch (error) {
+        this.error = "お気に入り登録できませんでした";
+        console.error({ error });
+      }
+    },
+  },
+
+  created: async function () {
+    const id = this.shopId;
+    try {
+      const res = await axios.get(`http://localhost:3000/shops/${id}`);
+      console.log(res);
+      this.shop = res.data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
 };
 </script>
 
@@ -74,6 +108,11 @@ export default {
   position: absolute;
   left: 120px;
   top: 125px;
+  cursor: pointer;
+}
+
+.favorite-button:hover {
+  color: #e0548e;
 }
 
 .modal-right-content {

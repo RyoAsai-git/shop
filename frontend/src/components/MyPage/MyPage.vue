@@ -165,12 +165,11 @@ export default {
 .sign_out-button {
   position: absolute;
   width: 200px;
-  top: 500px;
   left: 0;
   right: 0;
   margin: auto;
   border-radius: 20px;
-  background-color: #ff4500;
+  background-color: var(--main-bg-color);
   line-height: 40px;
   text-align: center;
   cursor: pointer;

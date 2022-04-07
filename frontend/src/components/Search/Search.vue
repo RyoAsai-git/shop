@@ -2,36 +2,26 @@
   <main>
     <div class="content">
       <div class="search-area">
-        <div
-          class="search-area-image-wrap"
+        <router-link
+          :to="{ name: 'modal', params: { id: shop.id } }"
           v-for="shop in shops"
           :key="shop.id"
+          class="search-area-image-wrap"
         >
-          <img
-            :src="shop.image"
-            alt=""
-            @click="openModal(shop)"
-            class="search-area-image"
-          />
-        </div>
+          <img :src="shop.image" class="search-area-image" />
+        </router-link>
       </div>
     </div>
-    <Modal :shop="postItem" v-show="showContent" @close="closeModal" />
+    <router-view></router-view>
   </main>
 </template>
 <script>
 import axios from "axios";
-import Modal from "./Modal";
 
 export default {
-  components: {
-    Modal,
-  },
   data() {
     return {
-      shops: {},
-      postItem: "",
-      showContent: false,
+      shops: "",
     };
   },
 
