@@ -14,13 +14,13 @@
 
       <div class="favorite-content">
         <h1 class="favorite-topic item-text">お気に入りショップ</h1>
-        <img
-          :src="shop.image"
-          alt=""
-          class="favorite-shop-image"
-          v-for="shop in user.shops"
-          :key="shop.id"
-        />
+          <router-link
+            :to="{ name: 'modal', params: { id: shop.id } }"
+            v-for="shop in user.shops"
+            :key="shop.id"
+          >
+            <img :src="shop.image" class="favorite-shop-image" />
+          </router-link>
       </div>
       <div class="favorite-content">
         <h1 class="favorite-topic item-text">お気に入りブランド</h1>
@@ -165,12 +165,11 @@ export default {
 .sign_out-button {
   position: absolute;
   width: 200px;
-  top: 500px;
   left: 0;
   right: 0;
   margin: auto;
   border-radius: 20px;
-  background-color: #ff4500;
+  background-color: var(--main-bg-color);
   line-height: 40px;
   text-align: center;
   cursor: pointer;

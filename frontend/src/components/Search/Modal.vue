@@ -1,11 +1,23 @@
 <template>
-  <div id="overlay" v-show="showContent" @click="$emit('close')">
+  <div id="overlay">
+    <FAIcon
+      :icon="['fas', 'angle-left']"
+      class="back-button"
+      @click="$router.back()"
+    />
     <div class="modal">
-      <img :src="shop.image" alt="" class="modal-image no-caret" />
+      <img :src="this.shop.image" alt="" class="modal-image no-caret" />
       <dir class="description-area">
-        <a :href="shop.url" class="shop-name item-text">{{ shop.name }}</a>
+        <a :href="this.shop.shop_url" target="_blank" class="shop-name item-text">{{
+          this.shop.name
+        }}</a>
+        <FAIcon
+          :icon="['fas', 'angle-left']"
+          class="favorite-button"
+          @click="likeShop(this.shop.id)"
+        />
         <p class="shop-description description">
-          {{ shop.description }}
+          {{ this.shop.description }}
         </p>
       </dir>
     </div>
@@ -14,13 +26,13 @@
         <h1 class="modal-right-top item-text">取扱ブランド</h1>
         <div class="brand-image-area">
           <div class="brand-image-content">
-            <img
-              :src="brand.image"
-              alt=""
-              class="brand-image no-caret"
-              v-for="brand in shop.brands"
+            <router-link
+              :to="{ name: 'detail', params: { id: brand.id } }"
+              v-for="brand in this.shop.brands"
               :key="brand.id"
-            />
+            >
+              <img :src="brand.image" class="brand-image no-caret" />
+            </router-link>
           </div>
         </div>
       </div>
@@ -28,25 +40,70 @@
         <div class="modal-right-top item-text">アクセス</div>
       </div>
     </div>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
-  props: ["shop"],
   data() {
     return {
-      showContent: false,
+      shopId: this.$route.params.id,
+      shop: "",
+      error: null,
     };
+  },
+
+  methods: {
+    async likeShop(shopId) {
+      this.error = null;
+      const userId = window.localStorage.getItem("id");
+      try {
+        const res = await axios.post(
+          `http://localhost:3000/shops/${shopId}/user/${userId}`
+        );
+        if (!res) {
+          throw new Error("お気に入り登録できませんでした");
+        }
+        if (!this.error) {
+          console.log({ res });
+        }
+      } catch (error) {
+        this.error = "お気に入り登録できませんでした";
+        console.error({ error });
+      }
+    },
+  },
+
+  created: async function () {
+    const id = this.shopId;
+    try {
+      const res = await axios.get(`http://localhost:3000/shops/${id}`);
+      console.log(res);
+      this.shop = res.data;
+    } catch (error) {
+      console.error(error);
+    }
   },
 };
 </script>
 
 <style scoped>
+.back-button {
+  position: absolute;
+  top: 5%;
+  left: 22%;
+  height: 50px;
+  color: #fff;
+  cursor: pointer;
+}
+
 .modal {
   position: relative;
-  height: 420px;
-  width: 250px;
+  height: 60%;
+  width: 35%;
   padding: 1em;
   border-radius: 40px;
   background: var(--main-font-color);
@@ -56,6 +113,24 @@ export default {
   width: 100%;
   border-radius: 20px;
   aspect-ratio: 5 / 3;
+}
+
+.description-area {
+  position: absolute;
+  width: 90%;
+  top: 210px;
+  left: 35px;
+}
+
+.favorite-button {
+  position: absolute;
+  left: 120px;
+  top: 125px;
+  cursor: pointer;
+}
+
+.favorite-button:hover {
+  color: #e0548e;
 }
 
 .modal-right-content {
@@ -81,18 +156,12 @@ export default {
   font-size: var(--main-font-size);
 }
 
-.description-area {
-  position: absolute;
-  width: 200px;
-  top: 65px;
-  left: 35px;
-}
-
 .shop-name {
   position: absolute;
   top: 120px;
   font-size: var(--main-font-size);
   text-decoration: none;
+  cursor: pointer;
 }
 
 .shop-name:hover {
