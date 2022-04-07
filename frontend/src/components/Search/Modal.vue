@@ -8,7 +8,7 @@
     <div class="modal">
       <img :src="this.shop.image" alt="" class="modal-image no-caret" />
       <dir class="description-area">
-        <a :href="this.shop.url" class="shop-name item-text">{{
+        <a :href="this.shop.shop_url" target="_blank" class="shop-name item-text">{{
           this.shop.name
         }}</a>
         <FAIcon
@@ -161,6 +161,7 @@ export default {
   top: 120px;
   font-size: var(--main-font-size);
   text-decoration: none;
+  cursor: pointer;
 }
 
 .shop-name:hover {
