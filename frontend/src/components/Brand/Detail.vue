@@ -13,7 +13,7 @@
       </div>
       <img :src="this.brand.image" alt="" class="brand-image brand-icon-details" />
       <div class="brand-description-area">
-        <a :href="this.brand.brand_url" class="brand-name">{{ this.brand.name }}</a>
+        <a :href="this.brand.brand_url" target="_blank" class="brand-name">{{ this.brand.name }}</a>
         <p class="brand-content">{{ this.brand.description }}</p>
       </div>
       <div class="brand-button" @click="likeBrand(this.brand.id)">
