@@ -1,6 +1,6 @@
 <template>
   <div id="overlay">
-    <FAIcon
+    <font-awesome-icon
       :icon="['fas', 'angle-left']"
       class="back-button"
       @click="$router.back()"
@@ -14,14 +14,14 @@
           class="shop-name item-text"
           >{{ this.shop.name }}</a
         >
-        <FAIcon
-          :icon="['fas', 'angle-left']"
+        <font-awesome-icon
+          :icon="['fas', 'heart']"
           class="favorite-button like-button"
           v-show="isLiked"
           @click="likeShop(this.shop.id)"
         />
-        <FAIcon
-          :icon="['fas', 'angle-left']"
+        <font-awesome-icon
+          :icon="['fas', 'heart']"
           class="favorite-button delete-like-button"
           v-show="!isLiked"
           @click="deleteLikeShop(this.shop.id)"
@@ -174,14 +174,18 @@ export default {
 }
 
 .like-button {
-  color: var(--main-bg-color);
+  color: #d3d3d3;
+}
+
+.like-button:hover {
+  color: #d3d3d3;
 }
 
 .delete-like-button {
-  color: red;
+  color: #e0548e;;
 }
 
-.favorite-button:hover {
+.delete-button:hover {
   color: #e0548e;
 }
 
