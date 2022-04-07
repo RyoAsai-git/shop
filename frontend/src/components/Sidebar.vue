@@ -2,27 +2,27 @@
   <div class="navbar">
     <ul class="navbar-list">
       <li>
-        <router-link
-          to="/search"
-          exact
-          class="item-text"
-          >ショップ</router-link
+        <router-link to="/search" exact class="item-text"
+          ><font-awesome-icon
+            :icon="['fa-solid', 'shop']"
+            class="icon"
+          />ショップ</router-link
         >
       </li>
       <li>
-        <router-link
-          to="/brand"
-          exact
-          class="item-text"
-          >ブランド</router-link
+        <router-link to="/brand" exact class="item-text"
+          ><font-awesome-icon
+            :icon="['fa-solid', 'shirt']"
+            class="icon"
+          />ブランド</router-link
         >
       </li>
       <li>
-        <router-link
-          to="/myPage"
-          exact
-          class="item-text"
-          >マイページ</router-link
+        <router-link to="/myPage" exact class="item-text"
+          ><font-awesome-icon
+            :icon="['fa-solid', 'user']"
+            class="icon"
+          />マイページ</router-link
         >
       </li>
     </ul>
@@ -30,12 +30,10 @@
 </template>
 
 <script>
-export default {
-};
+export default {};
 </script>
 
 <style scoped>
-
 ul li a {
   text-decoration: none;
   display: inline-block;
@@ -60,11 +58,21 @@ li {
   transition: background-color 0.5s;
   font-size: var(--main-font-size);
   cursor: pointer;
+  /* margin-left: 1.4em;
+	text-indent: -1.4em; */
 }
 
 li:hover {
   background-color: rgb(191, 207, 207);
   transition: background-color 100ms;
+}
+
+.icon {
+  color: #d3d3d3;
+  margin-right: 5%;
+  /* margin-left: -15%; */
+  position: absolute;
+  left: 20px;
 }
 
 .router-link-active {

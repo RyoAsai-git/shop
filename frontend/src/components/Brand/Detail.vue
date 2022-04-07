@@ -1,11 +1,7 @@
 <template>
   <div class="brand-details-body">
     <div class="brand-details-header">
-      <FAIcon
-        :icon="['fas', 'angle-left']"
-        class="back-button"
-        @click="$router.back()"
-      />
+      <font-awesome-icon :icon="['fas', 'angle-left']" class="back-button" @click="$router.back()" />
     </div>
     <div class="brand-details-main no-caret">
       <div class="brand-details-content">
