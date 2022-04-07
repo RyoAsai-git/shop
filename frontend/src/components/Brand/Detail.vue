@@ -9,17 +9,35 @@
     </div>
     <div class="brand-details-main no-caret">
       <div class="brand-details-content">
-        <img :src="this.brand.image" alt="" class="brand-details-background-image" />
+        <img
+          :src="this.brand.image"
+          alt=""
+          class="brand-details-background-image"
+        />
       </div>
-      <img :src="this.brand.image" alt="" class="brand-image brand-icon-details" />
+      <img
+        :src="this.brand.image"
+        alt=""
+        class="brand-image brand-icon-details"
+      />
       <div class="brand-description-area">
-        <a :href="this.brand.brand_url" target="_blank" class="brand-name">{{ this.brand.name }}</a>
+        <a :href="this.brand.brand_url" target="_blank" class="brand-name">{{
+          this.brand.name
+        }}</a>
         <p class="brand-content">{{ this.brand.description }}</p>
       </div>
-      <div class="brand-button like-button" v-show="isLiked" @click="likeBrand(this.brand.id)">
+      <div
+        class="brand-button like-button"
+        v-show="isLiked"
+        @click="likeBrand(this.brand.id)"
+      >
         <p class="button-text">このブランドをお気に入りにする</p>
       </div>
-      <div class="brand-button delete-like-button" v-show="!isLiked" @click="deleteLikeBrand(this.brand.id)">
+      <div
+        class="brand-button delete-like-button"
+        v-show="!isLiked"
+        @click="deleteLikeBrand(this.brand.id)"
+      >
         <p class="button-text">このブランドのお気に入りを解除する</p>
       </div>
     </div>
@@ -42,9 +60,11 @@ export default {
   methods: {
     async likeBrand(brandId) {
       this.error = null;
-      const userId = window.localStorage.getItem('id');
+      const userId = window.localStorage.getItem("id");
       try {
-        const res = await axios.post(`http://localhost:3000/brands/${brandId}/user/${userId}`);
+        const res = await axios.post(
+          `http://localhost:3000/brands/${brandId}/user/${userId}`
+        );
         if (!res) {
           throw new Error("お気に入り登録できませんでした");
         }
@@ -60,9 +80,11 @@ export default {
 
     async deleteLikeBrand(brandId) {
       this.error = null;
-      const userId = window.localStorage.getItem('id');
+      const userId = window.localStorage.getItem("id");
       try {
-        const res = await axios.delete(`http://localhost:3000/brands/${brandId}/user/${userId}`);
+        const res = await axios.delete(
+          `http://localhost:3000/brands/${brandId}/user/${userId}`
+        );
         if (!res) {
           throw new Error("お気に入りを解除できませんでした");
         }
@@ -86,44 +108,19 @@ export default {
     } catch (error) {
       console.error(error);
     }
+  },
 
-    const userId = window.localStorage.getItem('id');
+  mounted: async function () {
+    const userId = window.localStorage.getItem("id");
     const res = await axios.get(`http://localhost:3000/users/${userId}`);
-    console.log('レスポンス');
-    console.log(res.data);
     const brands = res.data.brands;
-    console.log('aaaaaaaaaaa');
-    console.log(brands);
     for (const brand in brands) {
-      console.log('ループ');
-      console.log(brands[brand]);
-      console.log(brandId);
-      console.log(brands[brand].id);
-      if (brands[brand].id == brandId) {
-        console.log('bbbbbbbb');
-        console.log(brands[brand].id);
+      if (brands[brand].id == this.brandId) {
         this.isLiked = false;
         break;
       }
     }
   },
-  // created: async function () {
-  //   const userId = window.localStorage.getItem('id');
-  //   const user = await axios.get(`http://localhost:3000/users/${userId}`);
-  //   const brands = user.brands;
-  //   console.log('aaaaaaaaaaa');
-  //   console.log(user);
-  //   console.log(brands);
-  //   for (const brand in brands) {
-  //     if (brand.id === this.brandId) {
-  //       console.log('bbbbbbbb');
-  //       console.log(brand.id);
-  //       this.isLiked = true;
-  //       break;
-  //     }
-  //   }
-  // }
-
 };
 </script>
 
