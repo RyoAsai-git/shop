@@ -13,8 +13,15 @@
         }}</a>
         <FAIcon
           :icon="['fas', 'angle-left']"
-          class="favorite-button"
+          class="favorite-button like-button"
+          v-show="isLiked"
           @click="likeShop(this.shop.id)"
+        />
+        <FAIcon
+          :icon="['fas', 'angle-left']"
+          class="favorite-button delete-like-button"
+          v-show="!isLiked"
+          @click="deleteLikeShop(this.shop.id)"
         />
         <p class="shop-description description">
           {{ this.shop.description }}
@@ -52,6 +59,7 @@ export default {
     return {
       shopId: this.$route.params.id,
       shop: "",
+      isLiked: true,
       error: null,
     };
   },
@@ -69,9 +77,30 @@ export default {
         }
         if (!this.error) {
           console.log({ res });
+          this.isLiked = false;
         }
       } catch (error) {
         this.error = "お気に入り登録できませんでした";
+        console.error({ error });
+      }
+    },
+
+    async deleteLikeShop(shopId) {
+      this.error = null;
+      const userId = window.localStorage.getItem("id");
+      try {
+        const res = await axios.delete(
+          `http://localhost:3000/shops/${shopId}/user/${userId}`
+        );
+        if (!res) {
+          throw new Error("お気に入りを解除できませんでした");
+        }
+        if (!this.error) {
+          console.log({ res });
+          this.isLiked = true;
+        }
+      } catch (error) {
+        this.error = "お気に入りを解除できませんでした";
         console.error({ error });
       }
     },
@@ -85,6 +114,18 @@ export default {
       this.shop = res.data;
     } catch (error) {
       console.error(error);
+    }
+  },
+
+  mounted: async function () {
+    const userId = window.localStorage.getItem("id");
+    const res = await axios.get(`http://localhost:3000/users/${userId}`);
+    const shops = res.data.shops;
+    for (const shop in shops) {
+      if (shops[shop].id == this.shopId) {
+        this.isLiked = false;
+        break;
+      }
     }
   },
 };
@@ -127,6 +168,14 @@ export default {
   left: 120px;
   top: 125px;
   cursor: pointer;
+}
+
+.like-button {
+  color: var(--main-bg-color);
+}
+
+.delete-like-button {
+  color: red;
 }
 
 .favorite-button:hover {
