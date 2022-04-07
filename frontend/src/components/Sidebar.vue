@@ -39,8 +39,7 @@ ul li a {
   display: inline-block;
   height: 100%;
   width: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  line-height: 60px;
 }
 
 .navbar {
@@ -53,13 +52,10 @@ ul li a {
 }
 
 li {
-  text-align: center;
-  line-height: 20px;
   transition: background-color 0.5s;
   font-size: var(--main-font-size);
+  list-style: none;
   cursor: pointer;
-  /* margin-left: 1.4em;
-	text-indent: -1.4em; */
 }
 
 li:hover {
@@ -69,10 +65,8 @@ li:hover {
 
 .icon {
   color: #d3d3d3;
-  margin-right: 5%;
-  /* margin-left: -15%; */
-  position: absolute;
-  left: 20px;
+  width: 40px;
+  padding-left: 20%;
 }
 
 .router-link-active {
