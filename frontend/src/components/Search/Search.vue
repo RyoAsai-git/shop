@@ -1,8 +1,10 @@
 <template>
   <main>
+    <div class="search-area">
+      <input type="text" class="search-bar" v-model="keyword" />
+    </div>
     <div class="content">
       <div class="shop-area">
-        <input type="text" v-model="keyword" />
         <router-link
           :to="{ name: 'modal', params: { id: shop.id } }"
           v-for="shop in filteredShops"
@@ -66,8 +68,27 @@ export default {
 </script>
 
 <style scoped>
+.search-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.search-bar {
+  height: 25px;
+  width: 250px;
+  border-radius: 5px;
+  border: solid #d3d3d3;
+}
+
+.search-bar:focus {
+  outline-color: var(--main-bg-color);
+}
+
 .shop-area {
-  margin-top: 100px;
+  margin-top: 40px;
   overflow: auto;
 }
 
