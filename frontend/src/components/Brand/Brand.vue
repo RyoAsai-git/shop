@@ -43,12 +43,12 @@ export default {
   border-radius: 20px;
   border: 1px solid #d3d3d3;
   margin-top: 30px;
-  margin-left: 20px;
+  margin-left: 24px;
   aspect-ratio: 1;
 }
 
 .brand-icon-top {
-  width: 20%;
+  width: 17%;
 }
 
 .brand-icon-top:hover {
