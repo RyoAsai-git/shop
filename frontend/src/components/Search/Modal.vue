@@ -182,7 +182,7 @@ export default {
 }
 
 .delete-like-button {
-  color: #e0548e;;
+  color: #e0548e;
 }
 
 .delete-button:hover {

@@ -30,7 +30,7 @@ export default {
     };
   },
 
-    computed: {
+  computed: {
     filteredBrands: function () {
       const brands = [];
       for (const i in this.brands) {
