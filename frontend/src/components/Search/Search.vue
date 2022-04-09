@@ -30,16 +30,6 @@ export default {
     };
   },
 
-  methods: {
-    openModal: function (shop) {
-      this.showContent = true;
-      this.postItem = shop;
-    },
-    closeModal: function () {
-      this.showContent = false;
-    },
-  },
-
   computed: {
     filteredShops: function () {
       const shops = [];
