@@ -2,7 +2,7 @@
   <main>
     <div class="search-area">
       <input type="text" class="search-bar" v-model="keyword" />
-      <font-awesome-icon :icon="['fas', 'search']" class="icon" />
+      <font-awesome-icon :icon="['fas', 'search']" class="search-icon" />
     </div>
     <div class="content">
       <div class="shop-area">
@@ -59,31 +59,6 @@ export default {
 </script>
 
 <style scoped>
-.search-area {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 50px;
-}
-
-.search-bar {
-  height: 25px;
-  width: 250px;
-  border-radius: 5px;
-  border: solid #d3d3d3;
-}
-
-.search-bar:focus {
-  outline-color: var(--main-bg-color);
-}
-
-.icon {
-  margin-left: 10px;
-  font-size: 19px;
-  color: var(--main-bg-color);
-}
-
 .shop-area {
   margin-top: 40px;
   overflow: auto;

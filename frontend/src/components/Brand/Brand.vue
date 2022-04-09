@@ -1,9 +1,13 @@
 <template>
   <main>
+    <div class="search-area">
+      <input type="text" class="search-bar" v-model="keyword" />
+      <font-awesome-icon :icon="['fas', 'search']" class="search-icon" />
+    </div>
     <div class="content">
       <router-link
         :to="{ name: 'detail', params: { id: brand.id } }"
-        v-for="brand in brands"
+        v-for="brand in filteredBrands"
         :key="brand.id"
       >
         <img :src="brand.image" class="brand-image brand-icon-top" />
@@ -22,7 +26,24 @@ export default {
   data() {
     return {
       brands: "",
+      keyword: "",
     };
+  },
+
+    computed: {
+    filteredBrands: function () {
+      const brands = [];
+      for (const i in this.brands) {
+        const brand = this.brands[i];
+        if (
+          brand.name.indexOf(this.keyword) !== -1 ||
+          brand.description.indexOf(this.keyword) !== -1
+        ) {
+          brands.push(brand);
+        }
+      }
+      return brands;
+    },
   },
 
   created: async function () {
@@ -43,12 +64,12 @@ export default {
   border-radius: 20px;
   border: 1px solid #d3d3d3;
   margin-top: 30px;
-  margin-left: 24px;
+  margin-left: 40px;
   aspect-ratio: 1;
 }
 
 .brand-icon-top {
-  width: 17%;
+  width: 180px;
 }
 
 .brand-icon-top:hover {
