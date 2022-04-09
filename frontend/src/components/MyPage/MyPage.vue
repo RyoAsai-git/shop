@@ -3,9 +3,8 @@
     <div class="content my_page-area">
       <div class="my_page">
         <div class="my_page-profile">
-          <img
-            src="https://pakutaso.cdn.rabify.me/shared/img/page/model_yumiko.jpg?d=500"
-            alt=""
+          <font-awesome-icon
+            :icon="['fa-solid', 'user']"
             class="profile-image no-caret"
           />
           <font-awesome-icon :icon="['fa-solid', 'camera']" class="icon" />
@@ -107,14 +106,20 @@ export default {
   height: 30%;
 }
 
-.profile-image {
-  position: relative;
-  aspect-ratio: 1;
-  height: 175px;
+.my_page-profile {
   border: 0.5px solid #d3d3d3;
-  border-radius: 50%;
+  border-radius: 50px;
   margin-top: 40px;
   margin-left: 35px;
+  height: 175px;
+  width: 175px;
+}
+
+.profile-image {
+  position: absolute;
+  font-size: 155px;
+  left: 55px;
+  top: 50px;
 }
 
 .profile-name {
@@ -124,13 +129,14 @@ export default {
   color: #333333;
   font-weight: 600;
   font-size: 20px;
+  margin-left: 10px;
 }
 
 .icon {
   font-size: 25px;
   position: absolute;
   top: 175px;
-  left: 105px;
+  left: 111px;
   color: #fff;
   cursor: pointer;
 }

@@ -11,7 +11,7 @@ import { far } from '@fortawesome/free-regular-svg-icons'
 
 library.add(fas, far, fab)
 
-createApp(App)
-.use(router)
-.component('font-awesome-icon', FontAwesomeIcon)
-.mount('#app')
+var app = createApp(App)
+app.component('font-awesome-icon', FontAwesomeIcon )
+app.use(router)
+app.mount('#app')
