@@ -179,6 +179,7 @@ export default {
   right: 0;
   margin: auto;
   border-radius: 20px;
+  border: solid #d3d3d3;
   background-color: var(--main-bg-color);
   line-height: 40px;
   text-align: center;
