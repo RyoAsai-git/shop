@@ -129,6 +129,7 @@ export default {
   position: fixed;
   height: 100%;
   width: 80%;
+  top: 0;
   left: 15%;
   margin-left: 20px;
   background: #fff;
