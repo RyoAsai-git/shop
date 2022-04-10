@@ -36,8 +36,8 @@ export default {
       for (const i in this.shops) {
         const shop = this.shops[i];
         if (
-          shop.name.indexOf(this.keyword) !== -1 ||
-          shop.description.indexOf(this.keyword) !== -1
+          shop.name.toLowerCase().indexOf(this.keyword) !== -1 ||
+          shop.description.toLowerCase().indexOf(this.keyword) !== -1
         ) {
           shops.push(shop);
         }

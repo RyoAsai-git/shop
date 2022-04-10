@@ -36,8 +36,8 @@ export default {
       for (const i in this.brands) {
         const brand = this.brands[i];
         if (
-          brand.name.indexOf(this.keyword) !== -1 ||
-          brand.description.indexOf(this.keyword) !== -1
+          brand.name.toLowerCase().indexOf(this.keyword) !== -1 ||
+          brand.description.toLowerCase().indexOf(this.keyword) !== -1
         ) {
           brands.push(brand);
         }
