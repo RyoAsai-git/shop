@@ -41,7 +41,10 @@
               v-for="brand in this.shop.brands"
               :key="brand.id"
             >
-              <img :src="brand.image" class="related-image brand-image no-caret" />
+              <img
+                :src="brand.image"
+                class="related-image brand-image no-caret"
+              />
             </router-link>
           </div>
         </div>
