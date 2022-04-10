@@ -66,18 +66,15 @@ export default {
 
 .shop-area-image-wrap {
   display: inline-block;
-  height: 100px;
-  width: 300px;
-  padding-left: 75px;
+  padding-left: 45px;
   margin: 20px auto 0;
   transition-duration: 0.5s;
   cursor: pointer;
 }
 
 .shop-area-image {
-  width: 107%;
+  width: 320px;
   border-radius: 20px;
-  background-color: #ccc;
   aspect-ratio: 5 / 3;
 }
 
