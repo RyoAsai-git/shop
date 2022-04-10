@@ -39,7 +39,7 @@
         <p class="brand-content">{{ this.brand.description }}</p>
       </div>
       <div class="related-content shop-content">
-        <p class="item-text shop-content-title">取り扱い店舗</p>
+        <p class="item-text shop-content-title">取扱店舗</p>
         <router-link
           :to="{ name: 'modal', params: { id: shop.id } }"
           v-for="shop in this.brand.shops"
