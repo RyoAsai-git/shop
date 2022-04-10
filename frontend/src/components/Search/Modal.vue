@@ -1,7 +1,7 @@
 <template>
   <div id="overlay">
     <font-awesome-icon
-      :icon="['fas', 'angle-left']"
+      :icon="['fa', 'times']"
       class="back-button"
       @click="$router.back()"
     />
