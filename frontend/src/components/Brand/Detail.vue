@@ -40,6 +40,15 @@
       >
         <p class="button-text">このブランドのお気に入りを解除する</p>
       </div>
+      <div class="related-content shop-content">
+        <router-link
+          :to="{ name: 'modal', params: { id: shop.id } }"
+          v-for="shop in this.brand.shops"
+          :key="shop.id"
+        >
+          <img :src="shop.image" class="related-image shop-image no-caret" />
+        </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -203,5 +212,21 @@ export default {
 .button-text {
   font-weight: bold;
   color: var(--main-font-color);
+}
+
+.shop-content {
+  /* overflow-x: auto;
+  white-space: nowrap;
+  border-radius: 30px; */
+  margin-top: 40px;
+}
+
+.shop-image {
+  width: 150px;
+  aspect-ratio: 5 / 3;
+  /* border-radius: 20px;
+  border: 1px solid #d3d3d3;
+  margin-top: 55px;
+  margin-left: 20px; */
 }
 </style>

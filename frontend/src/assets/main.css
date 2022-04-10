@@ -103,3 +103,16 @@ input:focus {
   font-size: 19px;
   color: var(--main-bg-color);
 }
+
+.related-content {
+  overflow-x: auto;
+  white-space: nowrap;
+  border-radius: 30px;
+}
+
+.related-image {
+  border-radius: 20px;
+  border: 1px solid #d3d3d3;
+  margin-top: 55px;
+  margin-left: 20px;
+}
