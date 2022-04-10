@@ -1,7 +1,7 @@
 <template>
   <div id="overlay">
     <font-awesome-icon
-      :icon="['fas', 'angle-left']"
+      :icon="['fa', 'times']"
       class="back-button"
       @click="$router.back()"
     />
@@ -35,13 +35,16 @@
       <div class="modal-right-content">
         <h1 class="modal-right-top item-text">取扱ブランド</h1>
         <div class="brand-image-area">
-          <div class="brand-image-content">
+          <div class="related-content">
             <router-link
               :to="{ name: 'detail', params: { id: brand.id } }"
               v-for="brand in this.shop.brands"
               :key="brand.id"
             >
-              <img :src="brand.image" class="brand-image no-caret" />
+              <img
+                :src="brand.image"
+                class="related-image brand-image no-caret"
+              />
             </router-link>
           </div>
         </div>
@@ -173,22 +176,6 @@ export default {
   cursor: pointer;
 }
 
-.like-button {
-  color: #d3d3d3;
-}
-
-.like-button:hover {
-  color: #d3d3d3;
-}
-
-.delete-like-button {
-  color: #e0548e;;
-}
-
-.delete-button:hover {
-  color: #e0548e;
-}
-
 .modal-right-content {
   display: flex;
   flex-direction: column;
@@ -232,18 +219,9 @@ export default {
   font-weight: 600;
 }
 
-.brand-image-content {
-  overflow-x: auto;
-  white-space: nowrap;
-  border-radius: 30px;
-}
-
 .brand-image {
   width: 40%;
   aspect-ratio: 3 / 3;
-  border-radius: 20px;
-  border: 1px solid #d3d3d3;
   margin-top: 55px;
-  margin-left: 20px;
 }
 </style>

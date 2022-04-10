@@ -1,7 +1,11 @@
 <template>
   <div class="brand-details-body">
     <div class="brand-details-header">
-      <font-awesome-icon :icon="['fas', 'angle-left']" class="back-button" @click="$router.back()" />
+      <font-awesome-icon
+        :icon="['fas', 'angle-left']"
+        class="back-button"
+        @click="$router.back()"
+      />
     </div>
     <div class="brand-details-main no-caret">
       <div class="brand-details-content">
@@ -20,21 +24,29 @@
         <a :href="this.brand.brand_url" target="_blank" class="brand-name">{{
           this.brand.name
         }}</a>
+        <font-awesome-icon
+          :icon="['fas', 'heart']"
+          class="favorite-button like-button"
+          v-show="isLiked"
+          @click="likeBrand(this.brand.id)"
+        />
+        <font-awesome-icon
+          :icon="['fas', 'heart']"
+          class="favorite-button delete-like-button"
+          v-show="!isLiked"
+          @click="deleteLikeBrand(this.brand.id)"
+        />
         <p class="brand-content">{{ this.brand.description }}</p>
       </div>
-      <div
-        class="brand-button like-button"
-        v-show="isLiked"
-        @click="likeBrand(this.brand.id)"
-      >
-        <p class="button-text">このブランドをお気に入りにする</p>
-      </div>
-      <div
-        class="brand-button delete-like-button"
-        v-show="!isLiked"
-        @click="deleteLikeBrand(this.brand.id)"
-      >
-        <p class="button-text">このブランドのお気に入りを解除する</p>
+      <div class="related-content shop-content">
+        <h3 class="item-text shop-content-title">取扱店舗</h3>
+        <router-link
+          :to="{ name: 'modal', params: { id: shop.id } }"
+          v-for="shop in this.brand.shops"
+          :key="shop.id"
+        >
+          <img :src="shop.image" class="related-image shop-image no-caret" />
+        </router-link>
       </div>
     </div>
   </div>
@@ -125,6 +137,7 @@ export default {
   position: fixed;
   height: 100%;
   width: 80%;
+  top: 0;
   left: 15%;
   margin-left: 20px;
   background: #fff;
@@ -163,7 +176,7 @@ export default {
 
 .brand-name {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 25px;
   color: #333333;
   text-decoration: none;
 }
@@ -172,31 +185,23 @@ export default {
   color: var(--main-bg-color);
 }
 
-.brand-button {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  border-radius: 20px;
-  line-height: 40px;
-  text-align: center;
+.favorite-button {
+  margin-left: 20px;
+  font-size: 20px;
   cursor: pointer;
 }
 
-.like-button {
-  width: 265px;
-  top: 500px;
-  background-color: var(--main-bg-color);
+.shop-content {
+  margin-top: 40px;
 }
 
-.delete-like-button {
-  width: 290px;
-  top: 500px;
-  background: red;
+.shop-content-title {
+  margin-left: 40px;
 }
 
-.button-text {
-  font-weight: bold;
-  color: var(--main-font-color);
+.shop-image {
+  width: 150px;
+  margin-top: 25px;
+  aspect-ratio: 5 / 3;
 }
 </style>

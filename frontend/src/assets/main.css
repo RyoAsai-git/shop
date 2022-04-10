@@ -103,3 +103,31 @@ input:focus {
   font-size: 19px;
   color: var(--main-bg-color);
 }
+
+.like-button {
+  color: #d3d3d3;
+}
+
+.like-button:hover {
+  color: #d3d3d3;
+}
+
+.delete-like-button {
+  color: #e0548e;
+}
+
+.delete-button:hover {
+  color: #e0548e;
+}
+
+.related-content {
+  overflow-x: auto;
+  white-space: nowrap;
+  border-radius: 30px;
+}
+
+.related-image {
+  border-radius: 20px;
+  border: 1px solid #d3d3d3;
+  margin-left: 20px;
+}
