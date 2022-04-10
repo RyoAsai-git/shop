@@ -39,6 +39,7 @@
         <p class="brand-content">{{ this.brand.description }}</p>
       </div>
       <div class="related-content shop-content">
+        <p class="item-text shop-content-title">取り扱い店舗</p>
         <router-link
           :to="{ name: 'modal', params: { id: shop.id } }"
           v-for="shop in this.brand.shops"
@@ -191,11 +192,16 @@ export default {
 }
 
 .shop-content {
-  margin-top: 70px;
+  margin-top: 40px;
+}
+
+.shop-content-title {
+  margin-left: 40px;
 }
 
 .shop-image {
   width: 150px;
+  margin-top: 25px;
   aspect-ratio: 5 / 3;
 }
 </style>

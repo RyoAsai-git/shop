@@ -222,5 +222,6 @@ export default {
 .brand-image {
   width: 40%;
   aspect-ratio: 3 / 3;
+  margin-top: 55px;
 }
 </style>

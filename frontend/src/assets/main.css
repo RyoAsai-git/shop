@@ -104,13 +104,6 @@ input:focus {
   color: var(--main-bg-color);
 }
 
-/* .favorite-button {
-  position: absolute;
-  left: 120px;
-  top: 125px;
-  cursor: pointer;
-} */
-
 .like-button {
   color: #d3d3d3;
 }
@@ -136,6 +129,5 @@ input:focus {
 .related-image {
   border-radius: 20px;
   border: 1px solid #d3d3d3;
-  margin-top: 55px;
   margin-left: 20px;
 }
