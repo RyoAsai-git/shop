@@ -5,8 +5,8 @@ class BrandsController < ApplicationController
   end
 
   def show
-    brand = Brand.find(params[:id])
-    render json: brand, status: 200
+    brands = Brand.includes(:shops).find(params[:id])
+    render json: brands.to_json(:include => [:shops]);
   end
 
   def likes
