@@ -176,22 +176,6 @@ export default {
   cursor: pointer;
 }
 
-.like-button {
-  color: #d3d3d3;
-}
-
-.like-button:hover {
-  color: #d3d3d3;
-}
-
-.delete-like-button {
-  color: #e0548e;
-}
-
-.delete-button:hover {
-  color: #e0548e;
-}
-
 .modal-right-content {
   display: flex;
   flex-direction: column;

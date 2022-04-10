@@ -24,21 +24,19 @@
         <a :href="this.brand.brand_url" target="_blank" class="brand-name">{{
           this.brand.name
         }}</a>
+        <font-awesome-icon
+          :icon="['fas', 'heart']"
+          class="favorite-button like-button"
+          v-show="isLiked"
+          @click="likeBrand(this.brand.id)"
+        />
+        <font-awesome-icon
+          :icon="['fas', 'heart']"
+          class="favorite-button delete-like-button"
+          v-show="!isLiked"
+          @click="deleteLikeBrand(this.brand.id)"
+        />
         <p class="brand-content">{{ this.brand.description }}</p>
-      </div>
-      <div
-        class="brand-button like-button"
-        v-show="isLiked"
-        @click="likeBrand(this.brand.id)"
-      >
-        <p class="button-text">このブランドをお気に入りにする</p>
-      </div>
-      <div
-        class="brand-button delete-like-button"
-        v-show="!isLiked"
-        @click="deleteLikeBrand(this.brand.id)"
-      >
-        <p class="button-text">このブランドのお気に入りを解除する</p>
       </div>
       <div class="related-content shop-content">
         <router-link
@@ -186,32 +184,10 @@ export default {
   color: var(--main-bg-color);
 }
 
-.brand-button {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: auto;
-  border-radius: 20px;
-  line-height: 40px;
-  text-align: center;
+.favorite-button {
+  margin-left: 20px;
+  font-size: 20px;
   cursor: pointer;
-}
-
-.like-button {
-  width: 265px;
-  top: 500px;
-  background-color: var(--main-bg-color);
-}
-
-.delete-like-button {
-  width: 290px;
-  top: 500px;
-  background: red;
-}
-
-.button-text {
-  font-weight: bold;
-  color: var(--main-font-color);
 }
 
 .shop-content {
