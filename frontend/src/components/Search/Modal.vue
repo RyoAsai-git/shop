@@ -219,18 +219,8 @@ export default {
   font-weight: 600;
 }
 
-/* .brand-image-content {
-  overflow-x: auto;
-  white-space: nowrap;
-  border-radius: 30px;
-} */
-
 .brand-image {
   width: 40%;
   aspect-ratio: 3 / 3;
-  /* border-radius: 20px;
-  border: 1px solid #d3d3d3;
-  margin-top: 55px;
-  margin-left: 20px; */
 }
 </style>
