@@ -39,7 +39,7 @@
         <p class="brand-content">{{ this.brand.description }}</p>
       </div>
       <div class="related-content shop-content">
-        <p class="item-text shop-content-title">取扱店舗</p>
+        <h3 class="item-text shop-content-title">取扱店舗</h3>
         <router-link
           :to="{ name: 'modal', params: { id: shop.id } }"
           v-for="shop in this.brand.shops"
@@ -176,7 +176,7 @@ export default {
 
 .brand-name {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 25px;
   color: #333333;
   text-decoration: none;
 }
