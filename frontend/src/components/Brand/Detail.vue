@@ -215,18 +215,11 @@ export default {
 }
 
 .shop-content {
-  /* overflow-x: auto;
-  white-space: nowrap;
-  border-radius: 30px; */
-  margin-top: 40px;
+  margin-top: 70px;
 }
 
 .shop-image {
   width: 150px;
   aspect-ratio: 5 / 3;
-  /* border-radius: 20px;
-  border: 1px solid #d3d3d3;
-  margin-top: 55px;
-  margin-left: 20px; */
 }
 </style>
