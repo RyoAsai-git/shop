@@ -1,11 +1,12 @@
 <template>
-  <div id="overlay">
+  <div id="overlay" v-if="!loading">
     <font-awesome-icon
       :icon="['fa', 'times']"
       class="back-button"
       @click="$router.back()"
     />
     <div class="modal">
+      <v-loading v-if="loading"></v-loading>
       <img :src="this.shop.image" alt="" class="modal-image no-caret" />
       <dir class="description-area">
         <a
@@ -67,6 +68,7 @@ export default {
       shop: "",
       isLiked: true,
       error: null,
+      loading: false
     };
   },
 
@@ -113,11 +115,13 @@ export default {
   },
 
   created: async function () {
+    this.loading = true;
     const id = this.shopId;
     try {
       const res = await axios.get(`http://localhost:3000/shops/${id}`);
       console.log(res);
       this.shop = res.data;
+      this.loading = false;
     } catch (error) {
       console.error(error);
     }
