@@ -4,6 +4,7 @@
       <input type="text" class="search-bar" v-model="keyword" />
       <font-awesome-icon :icon="['fas', 'search']" class="search-icon" />
     </div>
+    <v-loading v-if="loading"></v-loading>
     <div class="content">
       <div class="shop-area">
         <router-link
@@ -27,6 +28,7 @@ export default {
     return {
       shops: "",
       keyword: "",
+      loading: false
     };
   },
 
@@ -47,10 +49,12 @@ export default {
   },
 
   created: async function () {
+    this.loading = true;
     try {
       const res = await axios.get("http://localhost:3000/shops");
       console.log(res);
       this.shops = res.data;
+      this.loading = false;
     } catch (error) {
       console.error(error);
     }

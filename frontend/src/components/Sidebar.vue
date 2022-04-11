@@ -2,7 +2,7 @@
   <div class="navbar">
     <ul class="navbar-list">
       <li>
-        <router-link to="/search" exact class="item-text"
+        <router-link to="/shop" exact class="item-text"
           ><font-awesome-icon
             :icon="['fa-solid', 'shop']"
             class="icon"

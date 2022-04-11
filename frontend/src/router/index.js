@@ -3,11 +3,11 @@ import {
   createWebHistory
 } from 'vue-router'
 import Welcome from '../components/Auth/Welcome'
-import Search from '../components/Search/Search'
+import Shop from '../components/Shop/Shop'
 import Brand from '../components/Brand/Brand'
 import Detail from '../components/Brand/Detail'
 import MyPage from '../components/MyPage/MyPage'
-import Modal from '../components/Search/Modal'
+import Modal from '../components/Shop/Modal'
 
 const routes = [{
     path: '/welcome',
@@ -15,9 +15,9 @@ const routes = [{
     component: Welcome,
   },
   {
-    path: '/search',
-    name: 'search',
-    component: Search,
+    path: '/shop',
+    name: 'shop',
+    component: Shop,
     children: [{
       path: ':id',
       name: 'modal',
