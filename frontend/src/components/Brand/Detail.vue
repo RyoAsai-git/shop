@@ -7,7 +7,8 @@
         @click="$router.back()"
       />
     </div>
-    <div class="brand-details-main no-caret">
+    <v-loading v-if="loading"></v-loading>
+    <div class="brand-details-main no-caret" v-if="!loading">
       <div class="brand-details-content">
         <img
           :src="this.brand.image"
@@ -62,6 +63,7 @@ export default {
       brand: "",
       isLiked: true,
       error: null,
+      loading: false,
     };
   },
 
@@ -108,11 +110,13 @@ export default {
   },
 
   created: async function () {
+    this.loading = true;
     const brandId = this.brandId;
     try {
       const res = await axios.get(`http://localhost:3000/brands/${brandId}`);
       console.log(res);
       this.brand = res.data;
+      this.loading = false;
     } catch (error) {
       console.error(error);
     }

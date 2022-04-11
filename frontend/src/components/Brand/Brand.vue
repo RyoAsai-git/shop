@@ -4,7 +4,8 @@
       <input type="text" class="search-bar" v-model="keyword" />
       <font-awesome-icon :icon="['fas', 'search']" class="search-icon" />
     </div>
-    <div class="content">
+    <v-loading v-if="loading"></v-loading>
+    <div class="content" v-if="!loading">
       <router-link
         :to="{ name: 'detail', params: { id: brand.id } }"
         v-for="brand in filteredBrands"
@@ -27,6 +28,7 @@ export default {
     return {
       brands: "",
       keyword: "",
+      loading: false,
     };
   },
 
@@ -47,10 +49,12 @@ export default {
   },
 
   created: async function () {
+    this.loading = true;
     try {
       const res = await axios.get("http://localhost:3000/brands");
       console.log(res);
       this.brands = res.data;
+      this.loading = false;
     } catch (error) {
       console.error(error);
     }
