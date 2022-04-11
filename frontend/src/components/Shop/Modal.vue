@@ -1,12 +1,12 @@
 <template>
-  <div id="overlay" v-if="!loading">
+  <div id="overlay">
     <font-awesome-icon
       :icon="['fa', 'times']"
       class="back-button"
       @click="$router.back()"
     />
-    <div class="modal">
-      <v-loading v-if="loading"></v-loading>
+    <v-loading v-if="loading"></v-loading>
+    <div class="modal" v-if="!loading">
       <img :src="this.shop.image" alt="" class="modal-image no-caret" />
       <dir class="description-area">
         <a
@@ -32,7 +32,7 @@
         </p>
       </dir>
     </div>
-    <div class="modal-right">
+    <div class="modal-right" v-if="!loading">
       <div class="modal-right-content">
         <h1 class="modal-right-top item-text">取扱ブランド</h1>
         <div class="brand-image-area">
@@ -68,7 +68,7 @@ export default {
       shop: "",
       isLiked: true,
       error: null,
-      loading: false
+      loading: false,
     };
   },
 

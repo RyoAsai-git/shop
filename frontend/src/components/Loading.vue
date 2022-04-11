@@ -21,7 +21,7 @@ export default {};
 .loader {
   display: inline-block;
   position: absolute;
-  top: 25%;
+  top: 30%;
   left: 50%;
 }
 
@@ -188,8 +188,8 @@ export default {};
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   position: absolute;
-  width: 15px;
-  height: 15px;
+  width: 30px;
+  height: 30px;
   border-radius: 100%;
   background: green;
 }
