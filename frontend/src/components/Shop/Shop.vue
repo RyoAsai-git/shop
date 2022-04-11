@@ -4,7 +4,6 @@
       <input type="text" class="search-bar" v-model="keyword" />
       <font-awesome-icon :icon="['fas', 'search']" class="search-icon" />
     </div>
-    <v-loading></v-loading>
     <v-loading v-if="loading"></v-loading>
     <div class="content">
       <div class="shop-area">
