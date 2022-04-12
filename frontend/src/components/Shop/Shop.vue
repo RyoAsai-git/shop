@@ -8,7 +8,7 @@
     <div class="content">
       <div class="shop-area">
         <router-link
-          :to="{ name: 'modal', params: { id: shop.id } }"
+          :to="{ name: 'Modal', params: { id: shop.id } }"
           v-for="shop in filteredShops"
           :key="shop.id"
           class="shop-area-image-wrap"

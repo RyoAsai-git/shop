@@ -7,7 +7,7 @@
     <v-loading v-if="loading"></v-loading>
     <div class="content" v-if="!loading">
       <router-link
-        :to="{ name: 'detail', params: { id: brand.id } }"
+        :to="{ name: 'Detail', params: { id: brand.id } }"
         v-for="brand in filteredBrands"
         :key="brand.id"
       >

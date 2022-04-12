@@ -18,7 +18,7 @@
         >
       </li>
       <li>
-        <router-link to="/myPage" exact class="item-text"
+        <router-link to="/MyPage" exact class="item-text"
           ><font-awesome-icon
             :icon="['fa-solid', 'user']"
             class="icon"

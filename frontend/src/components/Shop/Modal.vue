@@ -38,7 +38,7 @@
         <div class="brand-image-area">
           <div class="related-content">
             <router-link
-              :to="{ name: 'detail', params: { id: brand.id } }"
+              :to="{ name: 'Detail', params: { id: brand.id } }"
               v-for="brand in this.shop.brands"
               :key="brand.id"
             >

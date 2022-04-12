@@ -17,27 +17,27 @@ const routes = [{
   },
   {
     path: '/shop',
-    name: 'shop',
+    name: 'Shop',
     component: Shop,
     children: [{
       path: ':id',
-      name: 'modal',
+      name: 'Modal',
       component: Modal,
     }]
   },
   {
     path: '/brand',
-    name: 'brand',
+    name: 'Brand',
     component: Brand,
     children: [{
       path: ':id',
-      name: 'detail',
+      name: 'Detail',
       component: Detail,
     }]
   },
   {
     path: '/myPage',
-    name: 'myPage',
+    name: 'MyPage',
     component: MyPage,
   },
   {

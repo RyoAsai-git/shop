@@ -35,14 +35,14 @@ export default {
   },
   methods: {
     redirectToHome() {
-      this.$router.push({ name: "shop" });
+      this.$router.push({ name: "Shop" });
     },
   },
   created: function () {
     const accessToken = window.localStorage.getItem("access-token");
     console.log(accessToken);
     if (accessToken) {
-      this.$router.push({ name: "shop" });
+      this.$router.push({ name: "Shop" });
     }
   },
 };

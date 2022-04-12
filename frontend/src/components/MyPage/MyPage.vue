@@ -15,7 +15,7 @@
       <div class="favorite-content">
         <h1 class="favorite-topic item-text">お気に入りショップ</h1>
         <router-link
-          :to="{ name: 'modal', params: { id: shop.id } }"
+          :to="{ name: 'Modal', params: { id: shop.id } }"
           v-for="shop in user.shops"
           :key="shop.id"
         >
@@ -26,7 +26,7 @@
         <h1 class="favorite-topic item-text">お気に入りブランド</h1>
         <div class="brand-content">
           <router-link
-            :to="{ name: 'detail', params: { id: brand.id } }"
+            :to="{ name: 'Detail', params: { id: brand.id } }"
             v-for="brand in user.brands"
             :key="brand.id"
           >
