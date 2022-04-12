@@ -1,6 +1,7 @@
 <template>
   <main>
-    <div class="content my_page-area">
+    <v-loading v-if="loading"></v-loading>
+    <div class="content my_page-area" v-if="!loading">
       <div class="my_page">
         <div class="my_page-profile">
           <font-awesome-icon
@@ -50,6 +51,7 @@ export default {
     return {
       user: {},
       error: null,
+      loading: false,
     };
   },
   methods: {
@@ -83,11 +85,13 @@ export default {
   },
 
   created: async function () {
+    this.loading = true;
     try {
       const userId = window.localStorage.getItem("id");
       const res = await axios.get(`http://localhost:3000/users/${userId}`);
       console.log({ res });
       this.user = res.data;
+      this.loading = false;
     } catch (error) {
       console.error({ error });
     }
