@@ -1,4 +1,5 @@
 <template>
+<div class="error-main">
   <div class="error-page">
     <h1>404 page not found</h1>
     <h2>ページが見つかりません。</h2>
@@ -10,6 +11,7 @@
       <button class="home-button" @click="redirectToHome">HOMEに戻る</button>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -23,6 +25,9 @@ export default {
 </script>
 
 <style scoped>
+.error-main {
+  overflow: hidden;
+}
 .error-page {
   text-align: center;
   margin-top: 80px;
