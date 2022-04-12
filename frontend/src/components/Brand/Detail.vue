@@ -42,7 +42,7 @@
       <div class="related-content shop-content">
         <h3 class="item-text shop-content-title">取扱店舗</h3>
         <router-link
-          :to="{ name: 'modal', params: { id: shop.id } }"
+          :to="{ name: 'Modal', params: { id: shop.id } }"
           v-for="shop in this.brand.shops"
           :key="shop.id"
         >
@@ -119,6 +119,9 @@ export default {
       this.loading = false;
     } catch (error) {
       console.error(error);
+      if (error.request.status) {
+        this.$router.push({ path: '/:catchAll(.*)'});
+      }
     }
   },
 

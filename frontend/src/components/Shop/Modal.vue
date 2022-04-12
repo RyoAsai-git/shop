@@ -38,7 +38,7 @@
         <div class="brand-image-area">
           <div class="related-content">
             <router-link
-              :to="{ name: 'detail', params: { id: brand.id } }"
+              :to="{ name: 'Detail', params: { id: brand.id } }"
               v-for="brand in this.shop.brands"
               :key="brand.id"
             >
@@ -123,7 +123,10 @@ export default {
       this.shop = res.data;
       this.loading = false;
     } catch (error) {
-      console.error(error);
+      console.error({ error });
+      if (error.request.status) {
+        this.$router.push({ path: '/:catchAll(.*)'});
+      }
     }
   },
 
