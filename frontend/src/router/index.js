@@ -8,6 +8,7 @@ import Brand from '../components/Brand/Brand'
 import Detail from '../components/Brand/Detail'
 import MyPage from '../components/MyPage/MyPage'
 import Modal from '../components/Shop/Modal'
+import NotFound from '../components/NotFound'
 
 const routes = [{
     path: '/welcome',
@@ -39,6 +40,11 @@ const routes = [{
     name: 'myPage',
     component: MyPage,
   },
+  {
+    path: '/404',
+    name: '404',
+    component: NotFound,
+  }
 ]
 
 const router = createRouter({
