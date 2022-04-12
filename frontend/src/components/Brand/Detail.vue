@@ -120,7 +120,7 @@ export default {
     } catch (error) {
       console.error(error);
       if (error.request.status) {
-        this.$router.push({ name: String(error.request.status) });
+        this.$router.push({ path: '/:catchAll(.*)'});
       }
     }
   },
