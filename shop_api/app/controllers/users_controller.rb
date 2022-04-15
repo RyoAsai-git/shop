@@ -11,4 +11,14 @@ class UsersController < ApplicationController
   #   user = User.find(params[:id])
   #   user.update(name: params[:name])
   # end
+
+  def update
+    user = User.find(params[:id])
+    user.update(icatch: params[:icatch])
+  end
+
+  private
+  def user_params
+    params.permit(:name, :icatch)
+  end
 end
