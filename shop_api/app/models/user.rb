@@ -20,4 +20,6 @@ class User < ActiveRecord::Base
     return nil unless icatch.attached?
     url_for(icatch)
   end
+
+  validates :icatch, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg',]}
 end
