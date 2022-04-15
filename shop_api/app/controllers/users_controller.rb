@@ -5,4 +5,10 @@ class UsersController < ApplicationController
     shops = user.shops
     render json: user.to_json(:include => [:brands, :shops])
   end
+
+  # 名前更新可能
+  # def update
+  #   user = User.find(params[:id])
+  #   user.update(name: params[:name])
+  # end
 end
