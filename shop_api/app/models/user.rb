@@ -21,5 +21,5 @@ class User < ActiveRecord::Base
     url_for(icatch)
   end
 
-  validates :icatch, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg',]}
+  # validates :icatch, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg',]}
 end
