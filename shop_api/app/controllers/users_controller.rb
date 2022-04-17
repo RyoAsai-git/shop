@@ -14,9 +14,4 @@ class UsersController < ApplicationController
       render json: { message: '画像をアップロードできませんでした', errors: user.errors.messages }, status: 400
     end
   end
-
-  # private
-  # def user_params
-  #   params.permit(:name, :icatch)
-  # end
 end
