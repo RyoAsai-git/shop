@@ -7,6 +7,7 @@ import Shop from '../components/Shop/Shop'
 import Brand from '../components/Brand/Brand'
 import Detail from '../components/Brand/Detail'
 import MyPage from '../components/MyPage/MyPage'
+import UploadImage from '../components/MyPage/UploadImage'
 import Modal from '../components/Shop/Modal'
 import NotFound from '../components/NotFound'
 
@@ -39,6 +40,11 @@ const routes = [{
     path: '/myPage',
     name: 'MyPage',
     component: MyPage,
+    children: [{
+      path: 'uploadImage',
+      name: 'UploadImage',
+      component: UploadImage,
+    }]
   },
   {
     path: '/:catchAll(.*)',
