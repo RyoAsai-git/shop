@@ -6,16 +6,14 @@ class UsersController < ApplicationController
     render json: user.to_json(:include => [:brands, :shops])
   end
 
-  # 名前更新可能
-  # def update
-  #   user = User.find(params[:id])
-  #   user.update(name: params[:name])
-  # end
-
-  # def update
-  #   user = User.find(params[:id])
-  #   user.update(icatch: params[:icatch])
-  # end
+  def update
+    user = User.find(params[:id])
+    if user.update(icatch: params[:icatch])
+      render json: { user_id: user.id, message: '画像のアップロードに成功しました' }, status: 200
+    else
+      render json: { message: '画像をアップロードできませんでした', errors: user.errors.messages }, status: 400
+    end
+  end
 
   # private
   # def user_params
