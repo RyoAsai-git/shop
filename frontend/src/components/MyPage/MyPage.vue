@@ -8,11 +8,9 @@
             :icon="['fa-solid', 'user']"
             class="profile-image no-caret"
           />
-          <router-link
-            :to="{ name: 'UploadImage' }"
-          >
+          <!-- <router-link :to="{ name: 'UploadImage' }">
             <font-awesome-icon :icon="['fa-solid', 'camera']" class="icon" />
-          </router-link>
+          </router-link> -->
           <p class="profile-name">{{ user.name }}</p>
         </div>
       </div>
@@ -43,7 +41,9 @@
         <p class="sign_out-text">ログアウトする</p>
       </button>
 
-      <router-view></router-view>
+      <!-- <router-view></router-view> -->
+      <PostForm />
+      <PostList />
     </div>
   </main>
 </template>
@@ -51,8 +51,14 @@
 <script>
 import axios from "axios";
 import removeItem from "../../auth/removeItem";
+import PostForm from "../MyPage/PostForm.vue";
+import PostList from "../MyPage/PostList.vue";
 
 export default {
+  components: {
+    PostForm,
+    PostList
+  },
   data() {
     return {
       user: {},
