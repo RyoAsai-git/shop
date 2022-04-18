@@ -13,4 +13,6 @@ Rails.application.routes.draw do
     post "user/:user_id" => "brands#likes", as: "likes"
     delete "user/:user_id" => "brands#delete_likes", as: "delete_likes"
   end
+
+  resources :posts, only: [:index, :create, :destroy]
 end
