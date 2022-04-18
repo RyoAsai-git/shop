@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const apiUrlBase = "http://localhost:3000/users";
+// const apiUrlBase = "http://localhost:3000/users";
+const apiUrlBase = "http://localhost:3000/posts";
 const headers = {
   "Content-Type": "multipart/form-data"
 };
