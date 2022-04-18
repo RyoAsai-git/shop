@@ -25,7 +25,7 @@ export default {
     imageFile: null
   }),
   methods: {
-    ...mapActions("posts", ["createPost"]),
+    ...mapActions("test", ["createPost"]),
     setImage(e) {
       e.preventDefault();
       this.imageFile = e.target.files[0];

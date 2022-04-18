@@ -19,10 +19,10 @@ export default {
     this.fetchPosts();
   },
   computed: {
-    ...mapGetters("posts", ["posts"])
+    ...mapGetters("test", ["posts"])
   },
   methods: {
-    ...mapActions("posts", ["fetchPosts", "deletePost"]),
+    ...mapActions("test", ["fetchPosts", "deletePost"]),
     del(id) {
       this.deletePost(id);
     }
