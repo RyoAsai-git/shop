@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def update
     user = User.find(params[:id])
-    if user.update(icatch: params[:icatch])
+    if user.update(image: params[:image])
       render json: { user_id: user.id, message: '画像のアップロードに成功しました' }, status: 200
     else
       render json: { message: '画像をアップロードできませんでした', errors: user.errors.messages }, status: 400

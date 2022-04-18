@@ -14,11 +14,11 @@ class User < ActiveRecord::Base
   has_many :shop_users
   has_many :shops, through: :shop_users
 
-  has_one_attached :icatch
+  has_one_attached :image
 
-  def icatch_url
-    return nil unless icatch.attached?
-    url_for(icatch)
+  def image_url
+    # 紐づいている画像のURLを取得する
+    icatch.attached? ? url_for(icatch) : nil
   end
 
   # validates :icatch, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg',]}
