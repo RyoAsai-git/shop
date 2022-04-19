@@ -3,7 +3,7 @@ Rails.application.routes.draw do
                                         registrations: "auth/registrations",
                                       }
 
-  resources :users, only: ["show", "update"]
+  resources :users, only: ["index", "show", "update"]
   resources :shops, only: ["index", "show"] do
     post "user/:user_id" => "shops#likes", as: "likes"
     delete "user/:user_id" => "shops#delete_likes", as: "delete_likes"

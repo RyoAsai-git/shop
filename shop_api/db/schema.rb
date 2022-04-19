@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2022_04_18_061823) do
     t.integer "brand_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id", "brand_id"], name: "index_brand_users_on_user_id_and_brand_id", unique: true
   end
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
@@ -67,6 +68,7 @@ ActiveRecord::Schema.define(version: 2022_04_18_061823) do
     t.integer "shop_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id", "shop_id"], name: "index_shop_users_on_user_id_and_shop_id", unique: true
   end
 
   create_table "shops", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|

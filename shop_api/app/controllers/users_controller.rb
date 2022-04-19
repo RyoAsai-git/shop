@@ -3,8 +3,23 @@ class UsersController < ApplicationController
     user = User.includes([:brands, :shops]).find(params[:id])
     brands = user.brands
     shops = user.shops
-    render json: user.to_json(:include => [:brands, :shops])
+    # render json: user.to_json(:include => [:brands, :shops])
+    render json: user.to_json(:include => [:brands, :shops, avatar: { avatar_attachment: :blob }])
   end
+
+  def index
+    user = User.all
+    avatar.url_for(User.last.image)
+  end
+
+  # def show
+  #   user = User.find(params[:id]).as_json
+  #   avatar = user.avatar
+  #   if avatar.present?
+  #     user['image'] = encode_base64(avatar) # 画像ファイルを1.で定義したメソッドでBase64エンコードし、renderするデータに追加する
+  #   end
+  #   render json: user, status: 200
+  # end
 
   # def update
   #   user = User.find(params[:id])
