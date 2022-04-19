@@ -14,12 +14,9 @@ class User < ActiveRecord::Base
   has_many :shop_users
   has_many :shops, through: :shop_users
 
-  has_one_attached :image
+  has_one_attached :avatar
 
   def image_url
-    # 紐づいている画像のURLを取得する
-    icatch.attached? ? url_for(icatch) : nil
+    avatar.attached? ? url_for(avatar) : nil
   end
-
-  # validates :icatch, blob: { content_type: ['image/png', 'image/jpg', 'image/jpeg',]}
 end
