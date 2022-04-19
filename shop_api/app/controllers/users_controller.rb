@@ -18,14 +18,25 @@ class UsersController < ApplicationController
 
   def update
     user = User.find(params[:id])
-    blob = ActiveStorage::Blob.create_after_upload!(
-      io: StringIO.new(decode(params[:avatar]) + "\n"),
-      filename: params[:avatar],
-    )
-    user.avatar.attach(blob)
+    user.avatar.attach(params[:avatar])
+
+    # blob = ActiveStorage::Blob.create_after_upload!(
+    #   io: StringIO.new(decode(params[:avatar]) + "\n"),
+    #   filename: params[:avatar],
+    # )
   end
 
   def decode(str)
     Base64.decode64(str.split(',').last)
   end
+
+  def encode_base64(image_file)
+    image = Base64.encode64(image_file.download) # 画像ファイルをActive Storageでダウンロードし、エンコードする
+    blob = ActiveStorage::Blob.find(image_file[:id]) # Blobを作成
+    "data:#{blob[:content_type]};base64,#{image}" # Vue側でそのまま画像として読み込み出来るBase64文字列にして返す
+  end
 end
+
+
+# active_storageで画像をどのようにフロント⇨バック⇨フロントのように受けわたすかを調査
+# base64でエンコード、デコードなど
