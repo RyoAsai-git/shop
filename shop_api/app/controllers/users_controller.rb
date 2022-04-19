@@ -6,12 +6,26 @@ class UsersController < ApplicationController
     render json: user.to_json(:include => [:brands, :shops])
   end
 
+  # def update
+  #   user = User.find(params[:id])
+  #   if user.update(user_params)
+  #   # if user.update(image: params[:image])
+  #     render json: { user_id: user.id, message: '画像のアップロードに成功しました' }, status: 200
+  #   else
+  #     render json: { message: '画像をアップロードできませんでした', errors: user.errors.messages }, status: 400
+  #   end
+  # end
+
   def update
     user = User.find(params[:id])
-    if user.update(image: params[:image])
-      render json: { user_id: user.id, message: '画像のアップロードに成功しました' }, status: 200
-    else
-      render json: { message: '画像をアップロードできませんでした', errors: user.errors.messages }, status: 400
-    end
+    blob = ActiveStorage::Blob.create_after_upload!(
+      io: StringIO.new(decode(params[:avatar]) + "\n"),
+      filename: params[:avatar],
+    )
+    user.avatar.attach(blob)
+  end
+
+  def decode(str)
+    Base64.decode64(str.split(',').last)
   end
 end
