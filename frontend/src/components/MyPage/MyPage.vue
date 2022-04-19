@@ -8,10 +8,14 @@
             :icon="['fa-solid', 'user']"
             class="profile-image no-caret"
           />
-          <!-- <router-link :to="{ name: 'UploadImage' }">
+          <router-link :to="{ name: 'UploadImage' }">
             <font-awesome-icon :icon="['fa-solid', 'camera']" class="icon" />
-          </router-link> -->
+          </router-link>
           <p class="profile-name">{{ user.name }}</p>
+          <!-- <div>
+            {{ user.avatar }}
+            <img :src="user.avatar" alt="">
+          </div> -->
         </div>
       </div>
 
@@ -41,7 +45,7 @@
         <p class="sign_out-text">ログアウトする</p>
       </button>
 
-      <!-- <router-view></router-view> -->
+      <router-view></router-view>
       <PostForm />
       <PostList />
     </div>

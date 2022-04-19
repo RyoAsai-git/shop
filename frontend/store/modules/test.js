@@ -1,6 +1,5 @@
 import axios from "axios";
 
-// const apiUrlBase = "http://localhost:3000/users";
 const apiUrlBase = "http://localhost:3000/posts";
 const headers = {
   "Content-Type": "multipart/form-data"
@@ -35,8 +34,11 @@ const actions = {
   async createPost({
     commit
   }, post) {
+    console.log(post);
     try {
       const response = await axios.post(`${apiUrlBase}`, post, headers);
+      console.log(headers);
+      console.log(response.data);
       commit("appendPost", response.data);
     } catch (e) {
       console.error(e);
