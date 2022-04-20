@@ -28,7 +28,7 @@ export default {
     return {
       shops: "",
       keyword: "",
-      loading: false
+      loading: false,
     };
   },
 

@@ -15,7 +15,7 @@ class ShopsController < ApplicationController
 
     like = ShopUser.new(user_id: user.id, shop_id: shop.id)
     if like.save
-    render json: { user_id: user.id, shop_id: shop.id, message: '成功しました' }, status: 200
+      render json: { user_id: user.id, shop_id: shop.id, message: '成功しました' }, status: 200
     else
       render json: { message: '保存できませんでした', errors: like.errors.messages }, status: 400
     end

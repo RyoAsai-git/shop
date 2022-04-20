@@ -1,14 +1,25 @@
 <template>
   <main>
-    <div class="content my_page-area">
+    <v-loading v-if="loading"></v-loading>
+    <div class="content my_page-area" v-if="!loading">
       <div class="my_page">
         <div class="my_page-profile">
           <font-awesome-icon
             :icon="['fa-solid', 'user']"
-            class="profile-image no-caret"
+            class="profile-icon no-caret"
+            v-if="!user.avatar_url"
           />
-          <font-awesome-icon :icon="['fa-solid', 'camera']" class="icon" />
+          <img
+            :src="user.avatar_url"
+            alt=""
+            class="profile-image no-caret"
+            v-if="user.avatar_url"
+          />
+          <router-link :to="{ name: 'UploadImage' }">
+            <font-awesome-icon :icon="['fa-solid', 'camera']" class="icon" />
+          </router-link>
           <p class="profile-name">{{ user.name }}</p>
+          <div></div>
         </div>
       </div>
 
@@ -37,6 +48,8 @@
       <button class="sign_out-button" @click="signOut">
         <p class="sign_out-text">ログアウトする</p>
       </button>
+
+      <router-view></router-view>
     </div>
   </main>
 </template>
@@ -50,6 +63,7 @@ export default {
     return {
       user: {},
       error: null,
+      loading: false,
     };
   },
   methods: {
@@ -83,11 +97,13 @@ export default {
   },
 
   created: async function () {
+    this.loading = true;
     try {
       const userId = window.localStorage.getItem("id");
       const res = await axios.get(`http://localhost:3000/users/${userId}`);
       console.log({ res });
       this.user = res.data;
+      this.loading = false;
     } catch (error) {
       console.error({ error });
     }
@@ -113,13 +129,19 @@ export default {
   margin-left: 35px;
   height: 175px;
   width: 175px;
+  overflow: hidden;
 }
 
-.profile-image {
+.profile-icon {
   position: absolute;
   font-size: 155px;
   left: 55px;
   top: 50px;
+}
+
+.profile-image {
+  height: 180px;
+  aspect-ratio: 1;
 }
 
 .profile-name {
