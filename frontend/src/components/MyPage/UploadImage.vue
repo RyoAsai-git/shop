@@ -25,7 +25,11 @@
         </div>
       </div>
       <section class="select-image-area">
-        <label for="image" class="select-image-button item-text image-button" v-if="!this.imageFile">
+        <label
+          for="image"
+          class="select-image-button item-text image-button"
+          v-if="!this.imageFile"
+        >
           画像を選択する
           <input
             type="file"
