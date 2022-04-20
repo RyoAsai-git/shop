@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
 
   has_one_attached :avatar
 
-  def image_url
+  def avatar_url
     avatar.attached? ? url_for(avatar) : nil
   end
 end

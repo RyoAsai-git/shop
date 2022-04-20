@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     brands = user.brands
     shops = user.shops
     # render json: user.to_json(:include => [:brands, :shops])
-    render json: user.to_json(:include => [:brands, :shops], methods: [:image_url] )
+    render json: user.to_json(:include => [:brands, :shops], methods: [:avatar_url] )
   end
 
   # 画像URL取得可能
