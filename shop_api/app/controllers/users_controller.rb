@@ -4,12 +4,27 @@ class UsersController < ApplicationController
     brands = user.brands
     shops = user.shops
     # render json: user.to_json(:include => [:brands, :shops])
-    render json: user.to_json(:include => [:brands, :shops, avatar: { avatar_attachment: :blob }])
+    render json: user.to_json(:include => [:brands, :shops], methods: [:image_url] )
   end
 
+  # 画像URL取得可能
+  # def show
+  #   user = User.find(params[:id])
+  #   render json: user.url_for(user.avatar)
+  # end
+
+  # def show
+  #   user = User.includes([:brands, :shops]).find(params[:id])
+  #   brands = user.brands
+  #   shops = user.shops
+  #   # user = user.url_for(user.avatar)
+  #   # user.avatar = user.url_for(user.avatar)
+  #   render json: user.to_json(:include => [:brands, :shops, :avatar])
+  # end
+
   def index
-    user = User.all
-    avatar.url_for(User.last.image)
+    # user = User.all
+    # avatar.url_for(User.last.image)
   end
 
   # def show
