@@ -3,38 +3,8 @@ class UsersController < ApplicationController
     user = User.includes([:brands, :shops]).find(params[:id])
     brands = user.brands
     shops = user.shops
-    # render json: user.to_json(:include => [:brands, :shops])
     render json: user.to_json(:include => [:brands, :shops], methods: [:avatar_url] )
   end
-
-  # 画像URL取得可能
-  # def show
-  #   user = User.find(params[:id])
-  #   render json: user.url_for(user.avatar)
-  # end
-
-  # def show
-  #   user = User.includes([:brands, :shops]).find(params[:id])
-  #   brands = user.brands
-  #   shops = user.shops
-  #   # user = user.url_for(user.avatar)
-  #   # user.avatar = user.url_for(user.avatar)
-  #   render json: user.to_json(:include => [:brands, :shops, :avatar])
-  # end
-
-  def index
-    # user = User.all
-    # avatar.url_for(User.last.image)
-  end
-
-  # def show
-  #   user = User.find(params[:id]).as_json
-  #   avatar = user.avatar
-  #   if avatar.present?
-  #     user['image'] = encode_base64(avatar) # 画像ファイルを1.で定義したメソッドでBase64エンコードし、renderするデータに追加する
-  #   end
-  #   render json: user, status: 200
-  # end
 
   # def update
   #   user = User.find(params[:id])
@@ -49,11 +19,6 @@ class UsersController < ApplicationController
   def update
     user = User.find(params[:id])
     user.avatar.attach(params[:avatar])
-
-    # blob = ActiveStorage::Blob.create_after_upload!(
-    #   io: StringIO.new(decode(params[:avatar]) + "\n"),
-    #   filename: params[:avatar],
-    # )
   end
 
   def decode(str)
@@ -66,7 +31,3 @@ class UsersController < ApplicationController
     "data:#{blob[:content_type]};base64,#{image}" # Vue側でそのまま画像として読み込み出来るBase64文字列にして返す
   end
 end
-
-
-# active_storageで画像をどのようにフロント⇨バック⇨フロントのように受けわたすかを調査
-# base64でエンコード、デコードなど
