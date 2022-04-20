@@ -41,7 +41,7 @@ const routes = [{
     name: 'MyPage',
     component: MyPage,
     children: [{
-      path: 'uploadImage',
+      path: 'uploadImage/:id',
       name: 'UploadImage',
       component: UploadImage,
     }]

@@ -5,7 +5,8 @@
       class="back-button"
       @click="$router.back()"
     />
-    <div class="form-modal">
+    <v-loading v-if="loading"></v-loading>
+    <div class="form-modal" v-if="!loading">
       <div class="form-title">
         <p class="item-text">プロフィール</p>
       </div>
@@ -13,7 +14,13 @@
         <font-awesome-icon
           :icon="['fa-solid', 'user']"
           class="preview-icon no-caret"
-          v-if="!url"
+          v-if="!url && !user.avatar_url"
+        />
+        <img
+          :src="user.avatar_url"
+          alt=""
+          class="preview-image"
+          v-if="user.avatar_url && !url"
         />
         <div v-if="url">
           <font-awesome-icon
@@ -62,6 +69,9 @@ import axios from "axios";
 export default {
   data() {
     return {
+      userId: this.$route.params.id,
+      user: "",
+      loading: false,
       imageFile: "",
       url: "",
     };
@@ -75,11 +85,9 @@ export default {
 
   methods: {
     setImage() {
-      console.log(this.$refs.preview.files[0]);
       const file = this.$refs.preview.files[0];
       this.url = URL.createObjectURL(file);
       this.imageFile = file;
-      console.log(this.imageFile);
     },
 
     deletePreview() {
@@ -107,8 +115,21 @@ export default {
     },
   },
 
-  mounted: function () {
-    console.log(this.$refs.preview);
+  created: async function () {
+    this.loading = true;
+    const userId = this.userId;
+    console.log(userId);
+    try {
+      const res = await axios.get(`http://localhost:3000/users/${userId}`);
+      console.log(res);
+      this.user = res.data;
+      this.loading = false;
+    } catch (error) {
+      console.error(error);
+      if (error.request.status) {
+        this.$router.push({ path: "/:catchAll(.*)" });
+      }
+    }
   },
 };
 </script>
