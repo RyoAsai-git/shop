@@ -50,8 +50,6 @@
       </button>
 
       <router-view></router-view>
-      <PostForm />
-      <PostList />
     </div>
   </main>
 </template>
@@ -59,14 +57,8 @@
 <script>
 import axios from "axios";
 import removeItem from "../../auth/removeItem";
-import PostForm from "../MyPage/PostForm.vue";
-import PostList from "../MyPage/PostList.vue";
 
 export default {
-  components: {
-    PostForm,
-    PostList,
-  },
   data() {
     return {
       user: {},
