@@ -75,11 +75,9 @@ export default {
 
   methods: {
     setImage() {
-      console.log(this.$refs.preview.files[0]);
       const file = this.$refs.preview.files[0];
       this.url = URL.createObjectURL(file);
       this.imageFile = file;
-      console.log(this.imageFile);
     },
 
     deletePreview() {
@@ -105,10 +103,6 @@ export default {
         console.error({ error });
       }
     },
-  },
-
-  mounted: function () {
-    console.log(this.$refs.preview);
   },
 };
 </script>
