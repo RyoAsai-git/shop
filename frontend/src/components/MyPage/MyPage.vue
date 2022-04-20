@@ -9,13 +9,17 @@
             class="profile-icon no-caret"
             v-if="!user.avatar_url"
           />
-          <img :src="user.avatar_url" alt="" class="profile-image no-caret" v-if="user.avatar_url">
+          <img
+            :src="user.avatar_url"
+            alt=""
+            class="profile-image no-caret"
+            v-if="user.avatar_url"
+          />
           <router-link :to="{ name: 'UploadImage' }">
             <font-awesome-icon :icon="['fa-solid', 'camera']" class="icon" />
           </router-link>
           <p class="profile-name">{{ user.name }}</p>
-          <div>
-          </div>
+          <div></div>
         </div>
       </div>
 
@@ -61,7 +65,7 @@ import PostList from "../MyPage/PostList.vue";
 export default {
   components: {
     PostForm,
-    PostList
+    PostList,
   },
   data() {
     return {
