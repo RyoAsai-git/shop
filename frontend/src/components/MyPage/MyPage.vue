@@ -6,16 +6,16 @@
         <div class="my_page-profile">
           <font-awesome-icon
             :icon="['fa-solid', 'user']"
-            class="profile-image no-caret"
+            class="profile-icon no-caret"
+            v-if="!user.image_url"
           />
+          <img :src="user.image_url" alt="" class="profile-image no-caret" v-if="user.image_url">
           <router-link :to="{ name: 'UploadImage' }">
             <font-awesome-icon :icon="['fa-solid', 'camera']" class="icon" />
           </router-link>
           <p class="profile-name">{{ user.name }}</p>
-          <!-- <div>
-            {{ user.avatar }}
-            <img :src="user.avatar" alt="">
-          </div> -->
+          <div>
+          </div>
         </div>
       </div>
 
@@ -133,13 +133,19 @@ export default {
   margin-left: 35px;
   height: 175px;
   width: 175px;
+  overflow: hidden;
 }
 
-.profile-image {
+.profile-icon {
   position: absolute;
   font-size: 155px;
   left: 55px;
   top: 50px;
+}
+
+.profile-image {
+  height: 180px;
+  aspect-ratio: 1;
 }
 
 .profile-name {
