@@ -1,12 +1,12 @@
 <template>
-  <div id="overlay" v-if="!loading">
-    <v-loading v-if="loading"></v-loading>
+  <div id="overlay">
     <font-awesome-icon
       :icon="['fa', 'times']"
       class="back-button"
       @click="$router.back()"
     />
-    <div class="form-modal">
+    <v-loading v-if="loading"></v-loading>
+    <div class="form-modal" v-if="!loading">
       <div class="form-title">
         <p class="item-text">プロフィール</p>
       </div>
