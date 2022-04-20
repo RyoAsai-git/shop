@@ -1,19 +1,24 @@
 <template>
   <div id="overlay">
-    <h2>UserForm</h2>
-    <section>
-      <label for="image">image: </label>
-      <input
-        type="file"
-        id="image"
-        name="image"
-        accept="image/png,image/jpeg"
-        @change="setImage"
-      />
-    </section>
-    <section>
-      <button type="submit" @click="uploadImage">upload</button>
-    </section>
+    <div class="form-modal">
+      <div v-if="url">
+        <img :src="url" class="preview-image"/>
+      </div>
+      <section>
+        <label for="image"></label>
+        <input
+          type="file"
+          id="image"
+          name="image"
+          accept="image/png,image/jpeg"
+          ref="preview"
+          @change="uploadFile"
+        />
+      </section>
+      <section>
+        <button type="submit" @click="uploadImage">upload</button>
+      </section>
+    </div>
   </div>
 </template>
 
@@ -23,7 +28,8 @@ import axios from "axios";
 export default {
   data() {
     return {
-      imageFile: null,
+      imageFile: "",
+      url: "",
     };
   },
 
@@ -34,9 +40,12 @@ export default {
   },
 
   methods: {
-    setImage(e) {
-      e.preventDefault();
-      this.imageFile = e.target.files[0];
+    uploadFile() {
+      console.log(this.$refs.preview.files[0]);
+      const file = this.$refs.preview.files[0];
+      this.url = URL.createObjectURL(file);
+      this.imageFile = file;
+      console.log(this.imageFile);
     },
 
     async uploadImage() {
@@ -51,11 +60,28 @@ export default {
           { headers }
         );
         console.log(res);
-        this.$router.push({ name: 'MyPage' })
+        this.$router.push({ name: "MyPage" });
       } catch (error) {
         console.error({ error });
       }
     },
   },
+
+  mounted: function () {
+    console.log(this.$refs.preview);
+  },
 };
 </script>
+
+<style scoped>
+.form-modal {
+  background: #fff;
+  border-radius: 30px;
+  /* height: 300px; */
+}
+
+.preview-image {
+  height: 300px;
+  aspect-ratio: 1;
+}
+</style>
