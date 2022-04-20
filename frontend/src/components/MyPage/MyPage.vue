@@ -15,7 +15,7 @@
             class="profile-image no-caret"
             v-if="user.avatar_url"
           />
-          <router-link :to="{ name: 'UploadImage' }">
+          <router-link :to="{ name: 'UploadImage', params: {id: user.id } }">
             <font-awesome-icon :icon="['fa-solid', 'camera']" class="icon" />
           </router-link>
           <p class="profile-name">{{ user.name }}</p>

@@ -1,5 +1,6 @@
 <template>
-  <div id="overlay">
+  <div id="overlay" v-if="!loading">
+    <v-loading v-if="loading"></v-loading>
     <font-awesome-icon
       :icon="['fa', 'times']"
       class="back-button"
@@ -13,7 +14,13 @@
         <font-awesome-icon
           :icon="['fa-solid', 'user']"
           class="preview-icon no-caret"
-          v-if="!url"
+          v-if="!url && !user.avatar_url"
+        />
+        <img
+          :src="user.avatar_url"
+          alt=""
+          class="preview-image"
+          v-if="user.avatar_url && !url"
         />
         <div v-if="url">
           <font-awesome-icon
@@ -62,6 +69,9 @@ import axios from "axios";
 export default {
   data() {
     return {
+      userId: this.$route.params.id,
+      user: "",
+      loading: false,
       imageFile: "",
       url: "",
     };
@@ -103,6 +113,23 @@ export default {
         console.error({ error });
       }
     },
+  },
+
+  created: async function () {
+    this.loading = true;
+    const userId = this.userId;
+    console.log(userId);
+    try {
+      const res = await axios.get(`http://localhost:3000/users/${userId}`);
+      console.log(res);
+      this.user = res.data;
+      this.loading = false;
+    } catch (error) {
+      console.error(error);
+      if (error.request.status) {
+        this.$router.push({ path: "/:catchAll(.*)" });
+      }
+    }
   },
 };
 </script>
