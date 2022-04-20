@@ -1,22 +1,52 @@
 <template>
   <div id="overlay">
+    <font-awesome-icon
+      :icon="['fa', 'times']"
+      class="back-button"
+      @click="$router.back()"
+    />
     <div class="form-modal">
-      <div v-if="url">
-        <img :src="url" class="preview-image"/>
+      <div class="form-title">
+        <p class="item-text">プロフィール</p>
       </div>
-      <section>
-        <label for="image"></label>
-        <input
-          type="file"
-          id="image"
-          name="image"
-          accept="image/png,image/jpeg"
-          ref="preview"
-          @change="uploadFile"
+      <div class="preview-profile">
+        <font-awesome-icon
+          :icon="['fa-solid', 'user']"
+          class="preview-icon no-caret"
+          v-if="!url"
         />
+        <div v-if="url">
+          <font-awesome-icon
+            :icon="['fa', 'times']"
+            class="delete-preview-button"
+            @click="deletePreview"
+          />
+          <img :src="url" class="preview-image" />
+        </div>
+      </div>
+      <section class="select-image-area">
+        <label for="image" class="select-image-button item-text image-button" v-if="!this.imageFile">
+          画像を選択する
+          <input
+            type="file"
+            id="image"
+            name="image"
+            accept="image/png,image/jpeg"
+            style="display: none"
+            ref="preview"
+            @change="setImage()"
+          />
+        </label>
       </section>
-      <section>
-        <button type="submit" @click="uploadImage">upload</button>
+      <section class="upload-button-area">
+        <button
+          type="submit"
+          class="upload-image-button item-text image-button"
+          @click="uploadImage()"
+          v-if="this.imageFile"
+        >
+          プロフィール画像を変更する
+        </button>
       </section>
     </div>
   </div>
@@ -40,12 +70,18 @@ export default {
   },
 
   methods: {
-    uploadFile() {
+    setImage() {
       console.log(this.$refs.preview.files[0]);
       const file = this.$refs.preview.files[0];
       this.url = URL.createObjectURL(file);
       this.imageFile = file;
       console.log(this.imageFile);
+    },
+
+    deletePreview() {
+      this.url = "";
+      URL.revokeObjectURL(this.url);
+      this.imageFile = "";
     },
 
     async uploadImage() {
@@ -74,14 +110,65 @@ export default {
 </script>
 
 <style scoped>
+.back-button {
+  position: absolute;
+  top: 15%;
+  left: 30%;
+  height: 50px;
+  color: #fff;
+  cursor: pointer;
+}
+
 .form-modal {
   background: #fff;
   border-radius: 30px;
-  /* height: 300px; */
+  display: inline-block;
+  text-align: center;
+  width: 300px;
+}
+
+.form-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.preview-profile {
+  border: 0.5px solid #d3d3d3;
+  border-radius: 50px;
+  width: 180px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.preview-icon {
+  font-size: 180px;
 }
 
 .preview-image {
-  height: 300px;
+  height: 180px;
   aspect-ratio: 1;
+}
+
+.delete-preview-button {
+  position: absolute;
+  height: 25px;
+  cursor: pointer;
+}
+
+.select-image-area {
+  margin-top: 20px;
+}
+
+.select-image-button {
+  max-width: 120px;
+}
+
+.upload-image-button {
+  max-width: 280px;
+  border: solid #d3d3d3;
+}
+
+.upload-button-area {
+  margin-bottom: 10px;
 }
 </style>

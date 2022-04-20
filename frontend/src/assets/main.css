@@ -326,3 +326,16 @@ input:focus {
   border-radius: 100%;
   background: green;
 }
+
+.image-button {
+  margin: 15px auto;
+  padding: 10px;
+  border-radius: 4px;
+  /* max-width: 120px; */
+  text-align: center;
+  display: block;
+  background-color: #f1f1f1;
+  color: var(--main-bg-color);
+  box-shadow: 0 2px 6px rgba(146, 146, 146, 0.8);
+  cursor: pointer;
+}
