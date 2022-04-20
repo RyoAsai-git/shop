@@ -7,9 +7,9 @@
           <font-awesome-icon
             :icon="['fa-solid', 'user']"
             class="profile-icon no-caret"
-            v-if="!user.image_url"
+            v-if="!user.avatar_url"
           />
-          <img :src="user.image_url" alt="" class="profile-image no-caret" v-if="user.image_url">
+          <img :src="user.avatar_url" alt="" class="profile-image no-caret" v-if="user.avatar_url">
           <router-link :to="{ name: 'UploadImage' }">
             <font-awesome-icon :icon="['fa-solid', 'camera']" class="icon" />
           </router-link>
