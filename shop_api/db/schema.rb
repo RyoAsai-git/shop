@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_18_061823) do
+ActiveRecord::Schema.define(version: 2022_04_15_061501) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", null: false
@@ -50,12 +50,6 @@ ActiveRecord::Schema.define(version: 2022_04_18_061823) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "title"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "shop_brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "shop_id"
     t.integer "brand_id"
@@ -74,8 +68,8 @@ ActiveRecord::Schema.define(version: 2022_04_18_061823) do
   create_table "shops", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", limit: 100, null: false
     t.string "image"
-    t.string "latitude"
-    t.string "longitude"
+    t.float "latitude", limit: 53
+    t.float "longitude", limit: 53
     t.text "description"
     t.text "shop_url"
     t.datetime "created_at", precision: 6, null: false

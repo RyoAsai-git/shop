@@ -10,8 +10,8 @@
     image: "https://lh5.googleusercontent.com/p/AF1QipMccV9puxC1HRW6434gib2j3boiTTMHb_0jBEPM=w1080-k-no",
     description: Faker::JapaneseMedia::OnePiece.quote,
     shop_url: Faker::Internet.url,
-    latitude: '35.66166163404057',
-    longitude: '139.71664574234688',
+    latitude: 35.66166163404057,
+    longitude: 139.71664574234688,
   )
 
   Brand.create(
