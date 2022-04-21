@@ -23,6 +23,7 @@
 <script>
 import axios from "axios";
 import setItem from "../../auth/setItem";
+import API_REQUEST_URL from "@/const/api";
 
 export default {
   emits: ["redirectToHome"],
@@ -33,11 +34,12 @@ export default {
       error: null,
     };
   },
+
   methods: {
     async login() {
       this.error = null;
       try {
-        const res = await axios.post("http://localhost:3000/auth/sign_in", {
+        const res = await axios.post(`${API_REQUEST_URL['API_REQUEST_URL']}/auth/sign_in`, {
           email: this.email,
           password: this.password,
         });

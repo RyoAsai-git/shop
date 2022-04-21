@@ -33,11 +33,13 @@ export default {
       shouldShowLoginForm: true,
     };
   },
+
   methods: {
     redirectToHome() {
       this.$router.push({ name: "Shop" });
     },
   },
+
   created: function () {
     const accessToken = window.localStorage.getItem("access-token");
     console.log(accessToken);

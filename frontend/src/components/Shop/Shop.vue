@@ -22,6 +22,7 @@
 </template>
 <script>
 import axios from "axios";
+import API_REQUEST_URL from "@/const/api";
 
 export default {
   data() {
@@ -48,10 +49,10 @@ export default {
     },
   },
 
-  created: async function () {
+  mounted: async function () {
     this.loading = true;
     try {
-      const res = await axios.get("http://localhost:3000/shops");
+      const res = await axios.get(`${API_REQUEST_URL['API_REQUEST_URL']}/shops`);
       console.log(res);
       this.shops = res.data;
       this.loading = false;
