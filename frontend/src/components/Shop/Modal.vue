@@ -77,8 +77,10 @@ export default {
       google: null,
       mapConfig: {
         center: {
-          lat: 35.68944,
-          lng: 139.69167,
+          // lat: 35.68944,
+          // lng: 139.69167,
+          lat: "",
+          lng: "",
         },
         zoom: 15,
       },
@@ -128,7 +130,10 @@ export default {
 
     initializeMap() {
       new this.google.maps.Map(this.$refs.googleMap, this.mapConfig);
-      const map = new this.google.maps.Map(this.$refs.googleMap, this.mapConfig);
+      const map = new this.google.maps.Map(
+        this.$refs.googleMap,
+        this.mapConfig
+      );
       const markerOptions = {
         map: map,
         position: this.mapConfig.center,
@@ -137,13 +142,17 @@ export default {
     },
   },
 
-  created: async function () {
+  mounted: async function () {
     this.loading = true;
     const id = this.shopId;
     try {
       const res = await axios.get(`http://localhost:3000/shops/${id}`);
       console.log(res);
       this.shop = res.data;
+      this.mapConfig.center.lat = Number(res.data.latitude);
+      this.mapConfig.center.lng = Number(res.data.longitude);
+      console.log(this.mapConfig.center.lat);
+      console.log(this.mapConfig.center.lng);
       this.loading = false;
     } catch (error) {
       console.error({ error });
@@ -151,9 +160,7 @@ export default {
         this.$router.push({ path: "/:catchAll(.*)" });
       }
     }
-  },
 
-  mounted: async function () {
     const userId = window.localStorage.getItem("id");
     const res = await axios.get(`http://localhost:3000/users/${userId}`);
     const shops = res.data.shops;
