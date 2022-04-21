@@ -51,7 +51,6 @@
         </div>
       </div>
       <div class="modal-right-content">
-        <div class="modal-right-top item-text">アクセス</div>
         <div>
           <div class="map" ref="googleMap" />
         </div>
@@ -63,10 +62,10 @@
 
 <script>
 import axios from "axios";
-import GoogleMapsApiLoader from 'google-maps-api-loader';
+import GoogleMapsApiLoader from "google-maps-api-loader";
 
 export default {
-  name: 'Map',
+  name: "Map",
   data() {
     return {
       shopId: this.$route.params.id,
@@ -79,10 +78,10 @@ export default {
       mapConfig: {
         center: {
           lat: 35.68944,
-          lng: 139.69167
+          lng: 139.69167,
         },
-        zoom: 17
-      }
+        zoom: 15,
+      },
     };
   },
 
@@ -129,7 +128,13 @@ export default {
 
     initializeMap() {
       new this.google.maps.Map(this.$refs.googleMap, this.mapConfig);
-    }
+      const map = new this.google.maps.Map(this.$refs.googleMap, this.mapConfig);
+      const markerOptions = {
+        map: map,
+        position: this.mapConfig.center,
+      };
+      new this.google.maps.Marker(markerOptions);
+    },
   },
 
   created: async function () {
@@ -168,8 +173,6 @@ export default {
 </script>
 
 <style scoped>
-
-
 .back-button {
   position: absolute;
   top: 5%;
