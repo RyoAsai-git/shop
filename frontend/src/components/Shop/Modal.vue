@@ -77,8 +77,6 @@ export default {
       google: null,
       mapConfig: {
         center: {
-          // lat: 35.68944,
-          // lng: 139.69167,
           lat: "",
           lng: "",
         },
@@ -149,10 +147,8 @@ export default {
       const res = await axios.get(`http://localhost:3000/shops/${id}`);
       console.log(res);
       this.shop = res.data;
-      this.mapConfig.center.lat = Number(res.data.latitude);
-      this.mapConfig.center.lng = Number(res.data.longitude);
-      console.log(this.mapConfig.center.lat);
-      console.log(this.mapConfig.center.lng);
+      this.mapConfig.center.lat = res.data.latitude;
+      this.mapConfig.center.lng = res.data.longitude;
       this.loading = false;
     } catch (error) {
       console.error({ error });
