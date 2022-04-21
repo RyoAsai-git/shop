@@ -227,8 +227,9 @@ export default {
 }
 
 .map {
-  width: 40vw;
-  height: 50vh;
+  width: 100vw;
+  height: 100vh;
+  position: static !important;
 }
 
 .modal-right-content:nth-child(2n) {
