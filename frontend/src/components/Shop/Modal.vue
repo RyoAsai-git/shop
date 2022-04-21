@@ -51,7 +51,9 @@
         </div>
       </div>
       <div class="modal-right-content">
-        <div class="modal-right-top item-text">アクセス</div>
+        <div>
+          <div class="map" ref="googleMap" />
+        </div>
       </div>
     </div>
     <router-view></router-view>
@@ -60,8 +62,10 @@
 
 <script>
 import axios from "axios";
+import GoogleMapsApiLoader from "google-maps-api-loader";
 
 export default {
+  name: "Map",
   data() {
     return {
       shopId: this.$route.params.id,
@@ -69,6 +73,15 @@ export default {
       isLiked: true,
       error: null,
       loading: false,
+
+      google: null,
+      mapConfig: {
+        center: {
+          lat: "",
+          lng: "",
+        },
+        zoom: 15,
+      },
     };
   },
 
@@ -112,15 +125,30 @@ export default {
         console.error({ error });
       }
     },
+
+    initializeMap() {
+      new this.google.maps.Map(this.$refs.googleMap, this.mapConfig);
+      const map = new this.google.maps.Map(
+        this.$refs.googleMap,
+        this.mapConfig
+      );
+      const markerOptions = {
+        map: map,
+        position: this.mapConfig.center,
+      };
+      new this.google.maps.Marker(markerOptions);
+    },
   },
 
-  created: async function () {
+  mounted: async function () {
     this.loading = true;
     const id = this.shopId;
     try {
       const res = await axios.get(`http://localhost:3000/shops/${id}`);
       console.log(res);
       this.shop = res.data;
+      this.mapConfig.center.lat = res.data.latitude;
+      this.mapConfig.center.lng = res.data.longitude;
       this.loading = false;
     } catch (error) {
       console.error({ error });
@@ -128,9 +156,7 @@ export default {
         this.$router.push({ path: "/:catchAll(.*)" });
       }
     }
-  },
 
-  mounted: async function () {
     const userId = window.localStorage.getItem("id");
     const res = await axios.get(`http://localhost:3000/users/${userId}`);
     const shops = res.data.shops;
@@ -140,6 +166,11 @@ export default {
         break;
       }
     }
+
+    this.google = await GoogleMapsApiLoader({
+      apiKey: 'API_KEY'
+    });
+    this.initializeMap();
   },
 };
 </script>
@@ -186,12 +217,19 @@ export default {
 .modal-right-content {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   position: relative;
   height: 185px;
   width: 280px;
   margin-left: 10px;
   border-radius: 40px;
   background: var(--main-font-color);
+}
+
+.map {
+  width: 100vw;
+  height: 100vh;
+  position: static !important;
 }
 
 .modal-right-content:nth-child(2n) {
