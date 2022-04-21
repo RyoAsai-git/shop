@@ -74,6 +74,8 @@ ActiveRecord::Schema.define(version: 2022_04_18_061823) do
   create_table "shops", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", limit: 100, null: false
     t.string "image"
+    t.string "latitude"
+    t.string "longitude"
     t.text "description"
     t.text "shop_url"
     t.datetime "created_at", precision: 6, null: false

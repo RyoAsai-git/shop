@@ -3,6 +3,8 @@ class CreateShops < ActiveRecord::Migration[6.0]
     create_table :shops do |t|
       t.string :name, limit: 100, null: false
       t.string :image
+      t.string :latitude
+      t.string :longitude
       t.text :description
       t.text :shop_url
       t.timestamps
