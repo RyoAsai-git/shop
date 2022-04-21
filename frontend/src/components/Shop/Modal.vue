@@ -52,6 +52,9 @@
       </div>
       <div class="modal-right-content">
         <div class="modal-right-top item-text">アクセス</div>
+        <div>
+          <div class="map" ref="googleMap" />
+        </div>
       </div>
     </div>
     <router-view></router-view>
@@ -60,8 +63,10 @@
 
 <script>
 import axios from "axios";
+import GoogleMapsApiLoader from 'google-maps-api-loader';
 
 export default {
+  name: 'Map',
   data() {
     return {
       shopId: this.$route.params.id,
@@ -69,6 +74,15 @@ export default {
       isLiked: true,
       error: null,
       loading: false,
+
+      google: null,
+      mapConfig: {
+        center: {
+          lat: 35.68944,
+          lng: 139.69167
+        },
+        zoom: 17
+      }
     };
   },
 
@@ -112,6 +126,10 @@ export default {
         console.error({ error });
       }
     },
+
+    initializeMap() {
+      new this.google.maps.Map(this.$refs.googleMap, this.mapConfig);
+    }
   },
 
   created: async function () {
@@ -140,11 +158,18 @@ export default {
         break;
       }
     }
+
+    this.google = await GoogleMapsApiLoader({
+      apiKey: 'API_KEY'
+    });
+    this.initializeMap();
   },
 };
 </script>
 
 <style scoped>
+
+
 .back-button {
   position: absolute;
   top: 5%;
@@ -186,12 +211,18 @@ export default {
 .modal-right-content {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   position: relative;
   height: 185px;
   width: 280px;
   margin-left: 10px;
   border-radius: 40px;
   background: var(--main-font-color);
+}
+
+.map {
+  width: 40vw;
+  height: 50vh;
 }
 
 .modal-right-content:nth-child(2n) {
