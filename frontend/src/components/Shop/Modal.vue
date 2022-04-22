@@ -144,9 +144,7 @@ export default {
     this.loading = true;
     const id = this.shopId;
     try {
-      const res = await axios.get(
-        `${process.env.VUE_APP_API_URL}/shops/${id}`
-      );
+      const res = await axios.get(`${process.env.VUE_APP_API_URL}/shops/${id}`);
       console.log(res);
       this.shop = res.data;
       this.mapConfig.center.lat = res.data.latitude;
