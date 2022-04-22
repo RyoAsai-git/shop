@@ -20,7 +20,7 @@ brands = [
   },
   {
     "name" => "Graphpaper",
-    "image" => "https://static.staff-start.com/articles/46/21872/046218720001592559270.jpg",
+    "image" => "https://i.imgur.com/ZVcSgtB.jpg",
     "description" => "クリエイティブディレクター南貴之が手がける 「Graphpaper」。常に時代のスタンダードであり続ける大人のための上質なワードローブ。人と衣服の間に“余白”を作り、ノイズにならない寄り添う衣服。衣服における新しいデザインは20世紀までに出尽くしたと言っていいでしょう。偉大な先人たちが構築してきた機能や概念には敬意を表しつつ、現代の都市生活に必要な機能とデザインを残し、出来うる限りのサイズ概念をなくすことであらゆる体型に合うよう設計しています。",
     "brand_url" => "https://graphpaper-tokyo.com",
   },
@@ -288,7 +288,7 @@ shops = [
   },
   {
     "name" => "ARTS&SCIENCE DAIKANYAMA",
-    "image" => "https://arts-science.com/wp/wp-content/uploads/2018/11/L1006008_s.jpg",
+    "image" => "https://arts-science.com/wp/wp-content/uploads/2018/11/L1006158_s.jpg",
     "description" => "東京では初の一軒家を改装した路面店。「ホーム&ベーシック」をコンセプトに、家での豊かな時間を過ごすための品々で構成したホームコレクションと、長い歳月をかけて作り続けてきたシーズンレス・ジェンダーレスの定番アイテムや、選び抜いた生活用品が並ぶ。",
     "shop_url" => "https://arts-science.com",
     "latitude" => 35.65134476712134,
