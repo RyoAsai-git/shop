@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2022_04_15_061501) do
 
   create_table "brands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", limit: 100, null: false
-    t.string "image"
+    t.text "image"
     t.text "description"
     t.text "brand_url"
     t.datetime "created_at", precision: 6, null: false
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 2022_04_15_061501) do
 
   create_table "shops", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name", limit: 100, null: false
-    t.string "image"
+    t.text "image"
     t.float "latitude", limit: 53
     t.float "longitude", limit: 53
     t.text "description"
