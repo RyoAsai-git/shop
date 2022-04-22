@@ -6,12 +6,14 @@
         type="email"
         required
         placeholder="メールアドレス"
+        autocomplete="off"
         v-model="email"
       />
       <input
         type="password"
         required
         placeholder="パスワード"
+        autocomplete="off"
         v-model="password"
       />
       <div class="error">{{ error }}</div>
