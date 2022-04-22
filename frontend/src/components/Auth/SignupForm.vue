@@ -41,6 +41,7 @@ import axios from "axios";
 import setItem from "../../auth/setItem";
 
 export default {
+  name: "SignupPage",
   emits: ["redirectToHome"],
   data() {
     return {

@@ -59,6 +59,7 @@ import axios from "axios";
 import removeItem from "../../auth/removeItem";
 
 export default {
+  name: "MyPage",
   data() {
     return {
       user: {},

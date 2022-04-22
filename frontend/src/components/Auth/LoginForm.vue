@@ -27,6 +27,7 @@ import axios from "axios";
 import setItem from "../../auth/setItem";
 
 export default {
+  name: "LoginPage",
   emits: ["redirectToHome"],
   data() {
     return {

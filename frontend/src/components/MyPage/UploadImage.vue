@@ -67,6 +67,7 @@
 import axios from "axios";
 
 export default {
+  name: "UploadImage",
   data() {
     return {
       userId: this.$route.params.id,
@@ -118,7 +119,6 @@ export default {
   mounted: async function () {
     this.loading = true;
     const userId = this.userId;
-    console.log(userId);
     try {
       const res = await axios.get(`${process.env.VUE_APP_API_URL}/users/${userId}`);
       console.log(res);

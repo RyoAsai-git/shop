@@ -24,6 +24,7 @@ import LoginForm from "./LoginForm.vue";
 import SignupForm from "./SignupForm.vue";
 
 export default {
+  name: "WelcomePage",
   components: {
     LoginForm,
     SignupForm,

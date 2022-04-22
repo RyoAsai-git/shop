@@ -57,6 +57,7 @@
 import axios from "axios";
 
 export default {
+  name: "BrandDetailPage",
   data() {
     return {
       brandId: this.$route.params.id,

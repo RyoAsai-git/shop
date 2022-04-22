@@ -68,7 +68,7 @@ import axios from "axios";
 import GoogleMapsApiLoader from "google-maps-api-loader";
 
 export default {
-  name: "Map",
+  name: "ShopDetailPage",
   data() {
     return {
       shopId: this.$route.params.id,
