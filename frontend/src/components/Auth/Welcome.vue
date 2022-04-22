@@ -24,6 +24,7 @@ import LoginForm from "./LoginForm.vue";
 import SignupForm from "./SignupForm.vue";
 
 export default {
+  name: "WelcomePage",
   components: {
     LoginForm,
     SignupForm,
@@ -33,14 +34,15 @@ export default {
       shouldShowLoginForm: true,
     };
   },
+
   methods: {
     redirectToHome() {
       this.$router.push({ name: "Shop" });
     },
   },
+
   created: function () {
     const accessToken = window.localStorage.getItem("access-token");
-    console.log(accessToken);
     if (accessToken) {
       this.$router.push({ name: "Shop" });
     }

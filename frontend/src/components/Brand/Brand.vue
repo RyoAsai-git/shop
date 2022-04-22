@@ -24,6 +24,7 @@
 import axios from "axios";
 
 export default {
+  name: "BrandListPage",
   data() {
     return {
       brands: "",
@@ -48,10 +49,10 @@ export default {
     },
   },
 
-  created: async function () {
+  mounted: async function () {
     this.loading = true;
     try {
-      const res = await axios.get("http://localhost:3000/brands");
+      const res = await axios.get(`${process.env.VUE_APP_API_URL}/brands`);
       console.log(res);
       this.brands = res.data;
       this.loading = false;

@@ -9,24 +9,27 @@
     <div class="modal" v-if="!loading">
       <img :src="this.shop.image" alt="" class="modal-image no-caret" />
       <dir class="description-area">
-        <a
-          :href="this.shop.shop_url"
-          target="_blank"
-          class="shop-name item-text"
-          >{{ this.shop.name }}</a
-        >
-        <font-awesome-icon
-          :icon="['fas', 'heart']"
-          class="favorite-button like-button"
-          v-show="isLiked"
-          @click="likeShop(this.shop.id)"
-        />
-        <font-awesome-icon
-          :icon="['fas', 'heart']"
-          class="favorite-button delete-like-button"
-          v-show="!isLiked"
-          @click="deleteLikeShop(this.shop.id)"
-        />
+        <div class="shop-name-area">
+          <a
+            :href="this.shop.shop_url"
+            target="_blank"
+            class="shop-name item-text"
+            >{{ this.shop.name }}</a
+          >
+          <font-awesome-icon
+            :icon="['fas', 'heart']"
+            class="favorite-button like-button"
+            v-show="isLiked"
+            @click="likeShop(this.shop.id)"
+          />
+          <font-awesome-icon
+            :icon="['fas', 'heart']"
+            class="favorite-button delete-like-button"
+            v-show="!isLiked"
+            @click="deleteLikeShop(this.shop.id)"
+          />
+        </div>
+
         <p class="shop-description description">
           {{ this.shop.description }}
         </p>
@@ -65,7 +68,7 @@ import axios from "axios";
 import GoogleMapsApiLoader from "google-maps-api-loader";
 
 export default {
-  name: "Map",
+  name: "ShopDetailPage",
   data() {
     return {
       shopId: this.$route.params.id,
@@ -91,7 +94,7 @@ export default {
       const userId = window.localStorage.getItem("id");
       try {
         const res = await axios.post(
-          `http://localhost:3000/shops/${shopId}/user/${userId}`
+          `${process.env.VUE_APP_API_URL}/shops/${shopId}/user/${userId}`
         );
         if (!res) {
           throw new Error("お気に入り登録できませんでした");
@@ -111,7 +114,7 @@ export default {
       const userId = window.localStorage.getItem("id");
       try {
         const res = await axios.delete(
-          `http://localhost:3000/shops/${shopId}/user/${userId}`
+          `${process.env.VUE_APP_API_URL}/shops/${shopId}/user/${userId}`
         );
         if (!res) {
           throw new Error("お気に入りを解除できませんでした");
@@ -144,7 +147,7 @@ export default {
     this.loading = true;
     const id = this.shopId;
     try {
-      const res = await axios.get(`http://localhost:3000/shops/${id}`);
+      const res = await axios.get(`${process.env.VUE_APP_API_URL}/shops/${id}`);
       console.log(res);
       this.shop = res.data;
       this.mapConfig.center.lat = res.data.latitude;
@@ -158,7 +161,9 @@ export default {
     }
 
     const userId = window.localStorage.getItem("id");
-    const res = await axios.get(`http://localhost:3000/users/${userId}`);
+    const res = await axios.get(
+      `${process.env.VUE_APP_API_URL}/users/${userId}`
+    );
     const shops = res.data.shops;
     for (const shop in shops) {
       if (shops[shop].id == this.shopId) {
@@ -168,7 +173,7 @@ export default {
     }
 
     this.google = await GoogleMapsApiLoader({
-      apiKey: 'API_KEY'
+      apiKey: process.env.VUE_APP_GOOGLE_MAP_KEY,
     });
     this.initializeMap();
   },
@@ -208,9 +213,7 @@ export default {
 }
 
 .favorite-button {
-  position: absolute;
-  left: 120px;
-  top: 125px;
+  margin-left: 15px;
   cursor: pointer;
 }
 
@@ -244,9 +247,12 @@ export default {
   font-size: var(--main-font-size);
 }
 
-.shop-name {
+.shop-name-area {
   position: absolute;
   top: 120px;
+}
+
+.shop-name {
   font-size: var(--main-font-size);
   text-decoration: none;
   cursor: pointer;

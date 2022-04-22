@@ -59,6 +59,7 @@ import axios from "axios";
 import removeItem from "../../auth/removeItem";
 
 export default {
+  name: "MyPage",
   data() {
     return {
       user: {},
@@ -73,7 +74,7 @@ export default {
       const accessToken = window.localStorage.getItem("access-token");
       const client = window.localStorage.getItem("client");
       try {
-        const res = await axios.delete("http://localhost:3000/auth/sign_out", {
+        const res = await axios.delete(`${process.env.VUE_APP_API_URL}/auth/sign_out`, {
           headers: {
             uid: uid,
             client: client,
@@ -100,7 +101,7 @@ export default {
     this.loading = true;
     try {
       const userId = window.localStorage.getItem("id");
-      const res = await axios.get(`http://localhost:3000/users/${userId}`);
+      const res = await axios.get(`${process.env.VUE_APP_API_URL}/users/${userId}`);
       console.log({ res });
       this.user = res.data;
       this.loading = false;

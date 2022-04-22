@@ -67,6 +67,7 @@
 import axios from "axios";
 
 export default {
+  name: "UploadImage",
   data() {
     return {
       userId: this.$route.params.id,
@@ -103,7 +104,7 @@ export default {
       const userId = window.localStorage.getItem("id");
       try {
         const res = await axios.put(
-          `http://localhost:3000/users/${userId}`,
+          `${process.env.VUE_APP_API_URL}/users/${userId}`,
           formData,
           { headers }
         );
@@ -115,12 +116,11 @@ export default {
     },
   },
 
-  created: async function () {
+  mounted: async function () {
     this.loading = true;
     const userId = this.userId;
-    console.log(userId);
     try {
-      const res = await axios.get(`http://localhost:3000/users/${userId}`);
+      const res = await axios.get(`${process.env.VUE_APP_API_URL}/users/${userId}`);
       console.log(res);
       this.user = res.data;
       this.loading = false;

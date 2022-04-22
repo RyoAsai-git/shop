@@ -16,6 +16,7 @@
 
 <script>
 export default {
+  name: "NotFoundPage",
   methods: {
     redirectToHome() {
       this.$router.push({ name: "Shop" });

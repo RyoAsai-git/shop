@@ -2,23 +2,32 @@
   <div>
     <h2>アカウントを登録</h2>
     <form @submit.prevent="signUp">
-      <input type="text" required placeholder="名前" v-model="name" />
+      <input
+        type="text"
+        required
+        placeholder="名前"
+        autocomplete="off"
+        v-model="name"
+      />
       <input
         type="email"
         required
         placeholder="メールアドレス"
+        autocomplete="off"
         v-model="email"
       />
       <input
         type="password"
         required
         placeholder="パスワード"
+        autocomplete="off"
         v-model="password"
       />
       <input
         type="password"
         required
         placeholder="パスワード（確認用）"
+        autocomplete="off"
         v-model="passwordConfirmation"
       />
       <div class="error">{{ error }}</div>
@@ -32,6 +41,7 @@ import axios from "axios";
 import setItem from "../../auth/setItem";
 
 export default {
+  name: "SignupPage",
   emits: ["redirectToHome"],
   data() {
     return {
@@ -42,11 +52,12 @@ export default {
       error: null,
     };
   },
+
   methods: {
     async signUp() {
       this.error = null;
       try {
-        const res = await axios.post("http://localhost:3000/auth", {
+        const res = await axios.post(`${process.env.VUE_APP_API_URL}/auth`, {
           name: this.name,
           email: this.email,
           password: this.password,

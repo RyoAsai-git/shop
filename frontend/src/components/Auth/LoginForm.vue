@@ -6,12 +6,14 @@
         type="email"
         required
         placeholder="メールアドレス"
+        autocomplete="off"
         v-model="email"
       />
       <input
         type="password"
         required
         placeholder="パスワード"
+        autocomplete="off"
         v-model="password"
       />
       <div class="error">{{ error }}</div>
@@ -25,6 +27,7 @@ import axios from "axios";
 import setItem from "../../auth/setItem";
 
 export default {
+  name: "LoginPage",
   emits: ["redirectToHome"],
   data() {
     return {
@@ -33,11 +36,12 @@ export default {
       error: null,
     };
   },
+
   methods: {
     async login() {
       this.error = null;
       try {
-        const res = await axios.post("http://localhost:3000/auth/sign_in", {
+        const res = await axios.post(`${process.env.VUE_APP_API_URL}/auth/sign_in`, {
           email: this.email,
           password: this.password,
         });
