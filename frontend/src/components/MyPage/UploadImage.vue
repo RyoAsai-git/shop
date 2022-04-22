@@ -65,7 +65,6 @@
 
 <script>
 import axios from "axios";
-import API_REQUEST_URL from "@/const/api";
 
 export default {
   data() {
@@ -104,7 +103,7 @@ export default {
       const userId = window.localStorage.getItem("id");
       try {
         const res = await axios.put(
-          `${API_REQUEST_URL['API_REQUEST_URL']}/users/${userId}`,
+          `${process.env.VUE_APP_API_URL}/users/${userId}`,
           formData,
           { headers }
         );
@@ -121,7 +120,7 @@ export default {
     const userId = this.userId;
     console.log(userId);
     try {
-      const res = await axios.get(`${API_REQUEST_URL['API_REQUEST_URL']}/users/${userId}`);
+      const res = await axios.get(`${process.env.VUE_APP_API_URL}/users/${userId}`);
       console.log(res);
       this.user = res.data;
       this.loading = false;

@@ -55,7 +55,6 @@
 
 <script>
 import axios from "axios";
-import API_REQUEST_URL from "@/const/api";
 
 export default {
   data() {
@@ -74,7 +73,7 @@ export default {
       const userId = window.localStorage.getItem("id");
       try {
         const res = await axios.post(
-          `${API_REQUEST_URL["API_REQUEST_URL"]}/brands/${brandId}/user/${userId}`
+          `${process.env.VUE_APP_API_URL}/brands/${brandId}/user/${userId}`
         );
         if (!res) {
           throw new Error("お気に入り登録できませんでした");
@@ -94,7 +93,7 @@ export default {
       const userId = window.localStorage.getItem("id");
       try {
         const res = await axios.delete(
-          `${API_REQUEST_URL["API_REQUEST_URL"]}/brands/${brandId}/user/${userId}`
+          `${process.env.VUE_APP_API_URL}/brands/${brandId}/user/${userId}`
         );
         if (!res) {
           throw new Error("お気に入りを解除できませんでした");
@@ -115,7 +114,7 @@ export default {
     const brandId = this.brandId;
     try {
       const res = await axios.get(
-        `${API_REQUEST_URL["API_REQUEST_URL"]}/brands/${brandId}`
+        `${process.env.VUE_APP_API_URL}/brands/${brandId}`
       );
       console.log(res);
       this.brand = res.data;
@@ -130,7 +129,7 @@ export default {
     try {
       const userId = window.localStorage.getItem("id");
       const res = await axios.get(
-        `${API_REQUEST_URL["API_REQUEST_URL"]}/users/${userId}`
+        `${process.env.VUE_APP_API_URL}/users/${userId}`
       );
       const brands = res.data.brands;
       for (const brand in brands) {

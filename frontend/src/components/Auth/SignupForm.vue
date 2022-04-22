@@ -30,7 +30,6 @@
 <script>
 import axios from "axios";
 import setItem from "../../auth/setItem";
-import API_REQUEST_URL from "@/const/api";
 
 export default {
   emits: ["redirectToHome"],
@@ -48,7 +47,7 @@ export default {
     async signUp() {
       this.error = null;
       try {
-        const res = await axios.post(`${API_REQUEST_URL['API_REQUEST_URL']}/auth`, {
+        const res = await axios.post(`${process.env.VUE_APP_API_URL}/auth`, {
           name: this.name,
           email: this.email,
           password: this.password,

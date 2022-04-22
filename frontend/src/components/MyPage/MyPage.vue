@@ -57,7 +57,6 @@
 <script>
 import axios from "axios";
 import removeItem from "../../auth/removeItem";
-import API_REQUEST_URL from "@/const/api";
 
 export default {
   data() {
@@ -74,7 +73,7 @@ export default {
       const accessToken = window.localStorage.getItem("access-token");
       const client = window.localStorage.getItem("client");
       try {
-        const res = await axios.delete(`${API_REQUEST_URL['API_REQUEST_URL']}/auth/sign_out`, {
+        const res = await axios.delete(`${process.env.VUE_APP_API_URL}}/auth/sign_out`, {
           headers: {
             uid: uid,
             client: client,
@@ -101,7 +100,7 @@ export default {
     this.loading = true;
     try {
       const userId = window.localStorage.getItem("id");
-      const res = await axios.get(`${API_REQUEST_URL['API_REQUEST_URL']}/users/${userId}`);
+      const res = await axios.get(`${process.env.VUE_APP_API_URL}/users/${userId}`);
       console.log({ res });
       this.user = res.data;
       this.loading = false;

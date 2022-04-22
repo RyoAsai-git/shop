@@ -22,7 +22,6 @@
 
 <script>
 import axios from "axios";
-import API_REQUEST_URL from "@/const/api";
 
 export default {
   data() {
@@ -52,7 +51,7 @@ export default {
   mounted: async function () {
     this.loading = true;
     try {
-      const res = await axios.get(`${API_REQUEST_URL['API_REQUEST_URL']}/brands`);
+      const res = await axios.get(`${process.env.VUE_APP_API_URL}/brands`);
       console.log(res);
       this.brands = res.data;
       this.loading = false;
