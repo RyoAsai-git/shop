@@ -132,7 +132,7 @@ brands = [
   },
   {
     "name" => "SHINYA KOZUKA",
-    "image" => "https://idiome.co.jp/brand-logo/brand-2296340.png",
+    "image" => "https://ac-static.api.everforth.com/img/post/0bac3b01-d1e2-41c2-83fe-c5ed387ce400/8bfce94457f98310b0e6a71d8fd80b0a.jpg",
     "description" => "シンヤコヅカ(SHINYAKOZUKA)は、2015年よりスタートした小塚信哉によるメンズウェアブランド。ブランドコンセプトは、Blur、Vague、Unclear、Hidden。「曖昧」と「ぼかす」の2つをキーワードに、ワークウェアやユニフォームが持つ機能性・匿名性をベースとしている。",
     "brand_url" => "https://shinyakozuka.com",
   },
@@ -172,12 +172,84 @@ brands = [
     "description" => "ティー(TTT_MSW)は東京発のストリートブランド。 サブネームである「MSW」はモダンストリートウエアの略。 ブランド名の通り、モダンなデザインでありながら、ストリートなどライフスタイルの一部となりうる高品質なウェアを提案。 「ジャンルレス、ジェンダレス、ボーダレス」をコンセプトに掲げている。",
     "brand_url" => "https://www.tttmsw.jp",
   },
-# {
-#   "name" => "",
-#   "image" => "",
-#   "description" => "",
-#   "brand_url" => "",
-# },
+  {
+    "name" => "LEMAIRE",
+    "image" => "https://i.pinimg.com/originals/24/11/2f/24112fd2bce1e5063d1064e85288b385.jpg",
+    "description" => "ルメールは「日常のために服をデザインする」という共通のファッションへの信念を持って、クリエーションを行っている。 思慮深いシルエットと最高級の素材を組み合わせたルメールの服は、都会的で洗練されたパリジェンヌ／パリジャンスタイルの文脈の、まさに中心に位置するものだ。コレクションは、ブランドのフラッグシップストアが位置する、パリのマレ地区にあるアトリエでデザインされている。",
+    "brand_url" => "https://us.lemaire.fr/",
+  },
+  {
+    "name" => "is-ness",
+    "image" => "https://jackinthenet.jp/wp-content/uploads/2021/07/3542D779-F421-4AA5-A995-C66C9C8D1F3C.jpeg",
+    "description" => "イズネス(is-ness)は日本のファッションブランド。2001年より本格始動。ブランド名のイズネスとは、”存在そのもの”を示しており「存在そのもの≒is-ness」。技術、アート、ミュージック、ファッション、映画、文学、デザインなどをキーワードとしている。伝統と現代的センスを融合して革新的クリエーティブワークと独創的ブランドイメージを構想するデザイングループ、五感では感じられない何かを感じとれるような「心で感じるプロダクト」を目指している。",
+    "brand_url" => "http://www.is-ness.com",
+  },
+  {
+    "name" => "INTERIM",
+    "image" => "https://jackinthenet.jp/wp-content/uploads/2021/04/%E5%90%8D%E7%A7%B0%E6%9C%AA%E8%A8%AD%E5%AE%9A-1-3-1024x1024.jpg",
+    "description" => "INTERIMは2019年に設立されたメンズファッションブランド。ブランド名のINTERIMは「暫定的なもの」という意味があり、“目まぐるしく変わるファッションシーンにおいて普遍的なアイテムを提案していくこと”をブランドコンセプトに掲げたものづくりを行う。",
+    "brand_url" => "https://interim-tokyo.com/",
+  },
+  {
+    "name" => "CAMIEL FORTGENS",
+    "image" => "data:image/png;base64,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",
+    "description" => "デザイナー カミエル・フォートヘンス自身が立ち上げたアムステルダムのファッションブランド。 アートや芸術からではなく、カミエル自身が日常で感じたもの、社会情勢、社会規範をコンセプトとし、様々な視点からのインスピレーションをファッションに落とし込んだコレクションを展開している。",
+    "brand_url" => "https://camielfortgens.com",
+  },
+  {
+    "name" => "OAMC",
+    "image" => "https://blog-matsunoya.com/wp-content/uploads/2020/03/blog0814_1.jpg",
+    "description" => "OAMC(オーエーエムシー)は、フランス、パリを拠点とするファッションブランド。 ラグジュアリーな素材を使用し、モダンで構築的なデザインに機能性を充実させたメンズウェアを展開。",
+    "brand_url" => "https://jp.oamc.com/",
+  },
+  {
+    "name" => "CASEY CASEY",
+    "image" => "https://cdn.shopify.com/s/files/1/0519/5887/4266/files/Logo_CC.png?height=628&pad_color=fff&v=1636564637&width=1200",
+    "description" => "ケイシーケイシー(CASEY CASEY)は、フランス・パリのファッションブランド。長年着古し、愛着のわくような服、経年変化した服の風合いを、洗いや染めによって再現することを得意とする。「タイムレス・快適・リラックス・機能的」をテーマに、レディ・トゥ・ウェア(既製服)を、すべてパリのアトリエで製作している。手作りによる服は、手洗い、手染め、手縫い、絞りなどの工程を絶対にアトリエで施してからショップに並ぶ。",
+    "brand_url" => "https://caseycasey.eu",
+  },
+  {
+    "name" => "Cristaseya",
+    "image" => "https://raku-ru.jp/images/brand_img/20210527140720_1.jpg",
+    "description" => "クリスタセヤ(CristaSeya)は、イタリア人のクリスティーナ・カシーニ(Cristina Casini)と日本人の瀬谷慶子が、パリをベースに2013年にスタートしたファッションブランド。ファッションのシーズンにとらわれない、独自のスタイル「エディション」でアイテムを展開。2013年にファーストエディション「WINTER SKY」を発表。アイテムは、長くつきあうことができる、オーセンティックな魅力を持ち、着心地の良さを上質さを大切にしている。",
+    "brand_url" => "https://cristaseya.co",
+  },
+  {
+    "name" => "DIGAWEL",
+    "image" => "https://rakutenfashionweektokyo.com/jp/wp-content/uploads/2018/01/digawel_ogp_620x520.jpg",
+    "description" => "ディガウェル(DIGAWEL)は、日本のファッションブランド。メンズを中心としながら同じデザインでウィメンズも展開する。2006年に祐天寺にショップをオープンし、ディガウェルをスタート。西村自身が企画、デザイン、販売を行う。",
+    "brand_url" => "http://www.digawel.com/",
+  },
+  {
+    "name" => "stein",
+    "image" => "https://rakutenfashionweektokyo.com/jp/wp-content/uploads/2022/01/stein_logo_620_340.jpg",
+    "description" => "シュタイン(stein)は、デザイナー・浅川喜一朗が手掛ける日本のファッションブランド。「Stillness and motion , minimal and maximal , mode and tradition.」「無から有へ。そのはざまの部分を表現する。」をブランドコンセプトに、メンズおよびウィメンズのアイテムを展開している。",
+    "brand_url" => "http://www.ssstein.com/",
+  },
+  {
+    "name" => "YOKE",
+    "image" => "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAe1BMVEX///8AAADp6eljYmL19fWLi4ucnJx9fX3c3NwpKChDQ0P4+Pjz8/ODg4Pv7+/8/Px0dHQiISGioqI2NTU/Pj6mpqbNzc1dXFzT09MMCgqtra28vLx5eXmVlZXj4+Pb2tpUU1Nra2tOTU0yMTEcGxvGxsYUExO+vr4YFxfRlciKAAAC60lEQVR4nO3Ya3OiMBiGYV9ACyoH6xEVK9Z2+/9/4QJVyWl3urOOTWfu60tNCDN5SsiBwQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOAneon1ch7H7oY/1lGWWjmVod1oeggmD+rP/WUiU6UYS2I0yJdHac32K/vuZdonr9Ln/sI0HSqe7Tsf6FlqpTQWI8eyCXfcj4b1XGRsDeC1RJdf+VFOeX8hENXi/t3+F3Ml1FZC7Vo0lnJ5eUyHQmRk3BteE0YLKdQLgRRZcJPdvdP/ZCOv158TEa0z+VwK5cFszmbEa8IsMV7fQJ7u3c//UNz6vRf9jQkl1crRTN6MBl3CQ2nc6FnCSCTofrzIXLuwk6PR9CBlrpY/E25EdkZDvxI2b9+6+7uQjVY/uyRXVPo47RK+ifFkB94lbGbQtotLfbIYrBy9zPXVpE24FbE3Cb4ljGXWLGFym/o/pcYj7RRanFCa1WZmPWn/EnY7mUK2euVCcrvlTmsVlqkspnarJmHqqP1GeSlbGRuVVkUr1paFsJS149/QJkzGV3NzGvoWO7Hfpsv8o9OHX5PQsY3tmp2Tq3cvEjY7cGtYfSXh+8Id0bv3cDB9L63R9pVRKpk7on8Ja/ll1Y1dM81Wn2lk0uzsHBG9S7hyjcihe7U4KKV2PZy4InqXMLF3L23svVWX99v0VreniV6lMtv5lrCyjkUdR+5K32J/7kujxIroWcKD/mBu3uRk1MRy1sqXs4Ud0bOEJ9cL1yqMfmZno+X1fDhNjFHgV8KdseNWnKRW9qqrD+OzVX/Gz2b68PUqYXOw//OHtLXI6HLs39Ri7lz7hIPsQ4sYSH2Ib16iwXcqrOOrapeIzIunfdhs60Jr4um/RLUjWBmo+pco8/PWY8Xz+u8NdvWs6WO5GDo+FW+rflMQVFX/H5hWI0XlWIv8kmeuExIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4AF+A4LhGZICjK3/AAAAAElFTkSuQmCC",
+    "description" => "YOKEは日本のファッションブランド。素材やパターンに拘り、スタンダードなアイテムにコンテンポラリーな要素をプラス。ユニセックスで着用できる洗練されたアイテムを提案。ブランド名のYOKEは、「 繋ぐ」「絆」「洋服の切り替え布」といった意味がありブランドのコンセプトに通じている。",
+    "brand_url" => "YOKEhttps://www.yoketokyo.com",
+  },
+  {
+    "name" => "MAATEE & SONS",
+    "image" => "https://shop6-makeshop.akamaized.net/shopimages/LINKSGOHONGI/slide1.jpg?MjAyMi0wMy0xNyAxNjoyMzowMw==",
+    "description" => "MAATEE &SONS 福岡市今泉のセレクトショップ – UNREAL REAL CLOTHES. tim.（ティム）を展開していた松村大基が中心となって立ち上げたブランド。",
+    "brand_url" => "www.maateeandsons.com",
+  },
+  {
+    "name" => "NICENESS",
+    "image" => "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQsAAAC9CAMAAACTb6i8AAAA9lBMVEX////8///mAAD6//////7pAAD3///lAADufXf9+/vywLr3sav86ObsYV77/vzqOC3pTEf38/PtRDznRkL62tj9+/f/+v7tcm/eAADvAAD94eH5+//zurbtOTP+9fL3//z50cvtXlb52tPqUULnLSHpOyzpMyT2w8PqgXzlWUTlQTLz49/uk4rrU0/zhIfxj5D1oaLy//ftb2jpJhncLST14OPvZFrsdGryaWnmEBT10dD0kpPx0snsKSvoranmem3rSk/qk4T0nZ/urqL3tbXzub7rcXTuycPypKXyfYLgWlvvWFz0q6P67vT89erwkZfp4uHtj4MmPhZNAAAHWElEQVR4nO3Yb1/ayBoG4Mw8mRkHcYRAYgBDhKKyBFaLtVarba3d6u5az+n3/zLnGQIIbs/ueXO0L+5Lf0D+DeTmmcmEIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4MeHqguAlJ/xa6zeE85XMP/MGfiH4Qcz3t7MWwiAMnzTJ/8KGi8bFsjG/fvZXNjlriRdDsf45XoLNNRHpZLGotaaAqKODgARRqK2PxQrdLYp6TjbPbadDvJMgwdud5v8g71AgtHXzRmJukITjLX6ncLYjEz64PCFRL9q8S8f52G2H7Gm7Lshq+1IZLFBzezvL9mix2H812B8cHOrhL4PR6E1t2JmtLcaDya9Hb2vHcdCuJ6+H0UGUvdvZ2ZlOTvbftIkq+9tZVF2cDO2+GmSD6NRNRwej6Mzv1xhkB3HH+bCL6cHOeOtt07V9qeju8ORs/O6Xit4TP/6Ez8dSOFXpeSHmXwsFF+rLrIaHSo79s0vofTro+212qG4GhUjIbinTn+1/eWU+kAuqDWNGdVFWBtf7rrogsqIbSRP7VfGtSW99/6OK+Wi5iiomOuKTp/b5qzq/S9M0GvTjT/is3EnLpN1kUeEUlR9q08hdv7XjJuZTXG7Td7JV+OcNo5qzNUmcTXx/akuZ1uyiMoRrlC96xtRn4wBV5dDH3VVZzBk4upFjXm33VcEJhrqves9ysv/AZT2lDuqLEtVRmcqmUru8Lg6m6dVDZ9ZXuMKnaZVHOb2zyIJLIq3yc5HtS9XLF03GZRZimUVIe5I40bEaax4onHWZz6Iit8jNus7O5LnO9+/YrNuQprEYvERUrt6UshL4zi/N3WNXrprCd4JFXQgK6culXz+pnqRqSp1ZUYXzLIKtMgvrVx8X/OqVuhPl+4yved1Qbsw71mH0M/QRuy26Az6PmMpqXs8i2ObTedyZorUs7B4l3EUCUa3RnjHmqAz0aRaiykfphM82Uu/nF629IT+cyS1d9s7uTzFe2O04KFSqPubC2b9k0UxVjx4v/fa6vchChI4uNrT1YwlnEdChMuYz+a99JQvlg9Q3X/hy6lufmEGhnaVcxE1fF0be6pAsT2le/joSlFkE/VaqvgdJ/pcs7mVruPKNuXo8z6LvZyHTo3KbzyKgTZmmX7SfYa3Whcs7+tXu/PixkufHVa07dnbqFcm1VOVZynLoflmzLDqXKjXHvgCeZHFkzLF4/KDWv/ZZyL6tnw7V+5UsAjpWylTEel18S+L+VB7Oj6+rc2Nk7a5eHmdH5lyZ6H2hX3zWOWO3fR8Xv8lUfiBrn2TxVcqbp0f4LMzB4OpcpWtZBMF7c24uec65zCJV2eBEmWUWohhxXvw/dh3fubo9w6Uh5bCu4//vaf5PZllYont5rir6SRaCe/T901sFzkIaHjfcnjpaz4KGrdQUYqUupBNC7C6zcJ3wlosllWoSk18Ulzsnkt95+6HzDOf6T8q6sFZ/Vidqj0RUXvPmWYyl/CxWhjXiYHwWksdOq+++Cx4T+WznWTixocxJIVayqPPQqH/n8cJPK3hE4tbru3/Ic/Odu1vntSURV76aVP2pn/m8f6TMIggTPW6dyOZyrlX2kV2l3q1+ytvTcHlNtXS6IfhmLVxmwXOzLSWjB7t+TU0u+TrCd2WxjRM/nOiAZy2Zi5N4FrMOLs9T0322M/7v5lkENqGvygy+1day6Jq1+UUwba7OL+ILviI+JMFjFiKuGVOLP5VLZRahrnOPen2ai7vbjr/kckUNpYrFxR35/hk6/UWp/vOc7t9aZMHFr3sybYzWshBTJe9pcaPhuunaXIuRu/omgmUWNv8WGdXbKpfmdREGIhfVUSDuxzRrPelUpOq65tv5JSovlPypsuArq6speVIO6It554NMz7vzGYbVR+ppFmInEitZiJD8bHx+p7W1vB/piNoZufuD+W50l0bk+mY+YuaHaetn6CNB5sT8ai9EHKmBm/XtTcNTBRvGVFHmqwjId2zaTWXBd/F6mHIWszXBZ/WvwLliwnf3s0ZcqKtGbfmftSxtpWVdhKTPzActNlu/8cRUhHn+yRxr12yNRZDwovtdnb342BnH7lBd5IvKCIOHwcD//OTys5YaEuV8JntZ2uvybZhz1+m1LLTN41pL7gr/e9W3j0oe8sTyWPWXP0xZ3TRcF+FrXR0os0fE/aLL98JFom9M6zAkoZMjM6WE+sbcO+Jv4oOqvXxZ0GXjKhqMKvNFrvZ+xt9vfBYdRFHWOPPDfhDfT9TO8f1ZdFSlSkH610YWZVnPy95k2wV9GA2yN41i3gjXzeGf/rB3Ee8XTXi3CT9HdRdsbv77be/6fmM/quSJo+Z1fWPy/eb76OouppefeYqVRy8U3XL5cQNfMoNutdqulj/bBk+OCMTTuyoeKtcaWX+rsN2uzjbbco92u90tjwIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAF/cfI7eMXs/csgsAAAAASUVORK5CYII=",
+    "description" => "「ナイスネス(NICENESS)」は、イイものはイイ＝Just good is goodをコンセプトに洋服をデザイン。サヴィー(salvy;)でブランド立ち上げから2017-18年秋冬コレクションまでデザインを担当していた郷裕一が、パーソナルな趣向を反映させた洋服を展開するブランドとして「ナイスネス」をスタートさせる",
+    "brand_url" => "http://www.niceness.jp/",
+  },
+  {
+    "name" => "amachi.",
+    "image" => "https://www.garage69.jp/wp-content/uploads/2020/07/amachi-logo.jpg",
+    "description" => "2016年に、吉本天地(Amachi Yoshimoto)が立ち上げたブランド。 長野県の山奥に拠点を置いています。 1993年、アメリカのカリフォルニア州の山奥、エルクバレー生まれ。 ミュージシャンの両親のもとで幼少期を過ごしました。",
+    "brand_url" => "https://vimeo.com/amachi",
+  },
 ]
 
 brands.each do |brand|
@@ -350,7 +422,6 @@ shops = [
 #   "latitude" => ,
 #   "longitude" => ,
 # },
-
 ]
 
 shops.each do |shop|
@@ -361,5 +432,297 @@ shops.each do |shop|
     shop_url: shop["shop_url"],
     latitude: shop["latitude"],
     longitude: shop["longitude"],
+  )
+end
+
+shopBrands = [
+  {
+    # AURALEE
+    "shop_id" => 1,
+    "brand_id" => 1,
+  },
+  {
+    # COMOLI
+    "shop_id" => 2,
+    "brand_id" => 2,
+  },
+  {
+    # Graphpaper
+    "shop_id" => 3,
+    "brand_id" => 3,
+  },
+  {
+    "shop_id" => 3,
+    "brand_id" => 11,
+  },
+  {
+    "shop_id" => 3,
+    "brand_id" => 14,
+  },
+  {
+    "shop_id" => 3,
+    "brand_id" => 22,
+  },
+  {
+    "shop_id" => 3,
+    "brand_id" => 23,
+  },
+  {
+    "shop_id" => 3,
+    "brand_id" => 24,
+  },
+  {
+    "shop_id" => 3,
+    "brand_id" => 25,
+  },
+  {
+    "shop_id" => 3,
+    "brand_id" => 26,
+  },
+  {
+    "shop_id" => 3,
+    "brand_id" => 27,
+  },
+  {
+    "shop_id" => 3,
+    "brand_id" => 28,
+  },
+  {
+    "shop_id" => 3,
+    "brand_id" => 29,
+  },
+  {
+    "shop_id" => 3,
+    "brand_id" => 34,
+  },
+  {
+    # 1LDK
+    "shop_id" => 4,
+    "brand_id" => 1,
+  },
+  {
+    "shop_id" => 4,
+    "brand_id" => 2,
+  },
+  {
+    "shop_id" => 4,
+    "brand_id" => 6,
+  },
+  {
+    "shop_id" => 4,
+    "brand_id" => 7,
+  },
+  {
+    "shop_id" => 4,
+    "brand_id" => 10,
+  },
+  {
+    "shop_id" => 4,
+    "brand_id" => 11,
+  },
+  {
+    "shop_id" => 4,
+    "brand_id" => 13,
+  },
+  {
+    "shop_id" => 4,
+    "brand_id" => 17,
+  },
+  {
+    "shop_id" => 4,
+    "brand_id" => 23,
+  },
+  {
+    "shop_id" => 4,
+    "brand_id" => 25,
+  },
+  {
+    "shop_id" => 4,
+    "brand_id" => 28,
+  },
+  {
+    "shop_id" => 4,
+    "brand_id" => 29,
+  },
+  {
+    "shop_id" => 4,
+    "brand_id" => 30,
+  },
+  {
+    "shop_id" => 4,
+    "brand_id" => 31,
+  },
+  {
+    "shop_id" => 4,
+    "brand_id" => 32,
+  },
+  {
+    # BLOOM & BRANCH
+    "shop_id" => 5,
+    "brand_id" => 1,
+  },
+  {
+    "shop_id" => 5,
+    "brand_id" => 2,
+  },
+  {
+    "shop_id" => 5,
+    "brand_id" => 7,
+  },
+  {
+    "shop_id" => 5,
+    "brand_id" => 12,
+  },
+  {
+    "shop_id" => 5,
+    "brand_id" => 13,
+  },
+  {
+    "shop_id" => 5,
+    "brand_id" => 18,
+  },
+  {
+    "shop_id" => 5,
+    "brand_id" => 25,
+  },
+  {
+    "shop_id" => 5,
+    "brand_id" => 27,
+  },
+  {
+    "shop_id" => 5,
+    "brand_id" => 28,
+  },
+  {
+    # H Beauty&Youth
+    "shop_id" => 6,
+    "brand_id" => 1,
+  },
+  {
+    "shop_id" => 6,
+    "brand_id" => 2,
+  },
+  {
+    "shop_id" => 6,
+    "brand_id" => 8,
+  },
+  {
+    "shop_id" => 6,
+    "brand_id" => 10,
+  },
+  {
+    "shop_id" => 6,
+    "brand_id" => 22,
+  },
+  {
+    "shop_id" => 6,
+    "brand_id" => 25,
+  },
+  {
+    # L'ECHOPPE
+    "shop_id" => 7,
+    "brand_id" => 18,
+  },
+  {
+    "shop_id" => 7,
+    "brand_id" => 32,
+  },
+  {
+    "shop_id" => 7,
+    "brand_id" => 33,
+  },
+  {
+    "shop_id" => 8,
+    "brand_id" => 4,
+  },
+  {
+    "shop_id" => 8,
+    "brand_id" => 5,
+  },
+  {
+    "shop_id" => 8,
+    "brand_id" => 6,
+  },
+  {
+    "shop_id" => 8,
+    "brand_id" => 10,
+  },
+  {
+    "shop_id" => 9,
+    "brand_id" => 34,
+  },
+  {
+    # BIOTOP TOKYO
+    "shop_id" => 11,
+    "brand_id" => 1,
+  },
+  {
+    "shop_id" => 11,
+    "brand_id" => 2,
+  },
+  {
+    "shop_id" => 11,
+    "brand_id" => 6,
+  },
+  {
+    "shop_id" => 11,
+    "brand_id" => 21,
+  },
+  {
+    "shop_id" => 11,
+    "brand_id" => 22,
+  },
+  {
+    "shop_id" => 11,
+    "brand_id" => 25,
+  },
+  {
+    "shop_id" => 11,
+    "brand_id" => 26,
+  },
+  {
+    "shop_id" => 11,
+    "brand_id" => 28,
+  },
+  {
+    # sacai
+    "shop_id" => 14,
+    "brand_id" => 4,
+  },
+  {
+    # kolor
+    "shop_id" => 15,
+    "brand_id" => 5,
+  },
+  {
+    # Maison Margiela
+    "shop_id" => 16,
+    "brand_id" => 6,
+  },
+  {
+    # A.P.C
+    "shop_id" => 17,
+    "brand_id" => 9,
+  },
+  {
+    # スキマ
+    "shop_id" => 18,
+    "brand_id" => 10,
+  },
+# {
+#   "shop_id" => ,
+#   "brand_id" => ,
+# },
+# {
+#   "shop_id" => ,
+#   "brand_id" => ,
+# },
+
+]
+
+shopBrands.each do |shopBrand|
+  ShopBrand.create(
+    shop_id: shopBrand["shop_id"],
+    brand_id: shopBrand["brand_id"],
   )
 end
