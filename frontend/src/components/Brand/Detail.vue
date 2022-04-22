@@ -37,7 +37,7 @@
           v-show="!isLiked"
           @click="deleteLikeBrand(this.brand.id)"
         />
-        <p class="brand-content">{{ this.brand.description }}</p>
+        <p class="brand-content brand-description">{{ this.brand.description }}</p>
       </div>
       <div class="related-content shop-content">
         <h3 class="item-text shop-content-title">取扱店舗</h3>
@@ -168,7 +168,7 @@ export default {
 }
 
 .brand-details-background-image {
-  height: 350px;
+  height: 300px;
   width: 100%;
   object-fit: cover;
 }
@@ -184,6 +184,7 @@ export default {
 
 .brand-description-area {
   width: 90%;
+  margin-top: 10px;
   margin-left: 40px;
 }
 
@@ -196,6 +197,11 @@ export default {
 
 .brand-name:hover {
   color: var(--main-bg-color);
+}
+
+.brand-description {
+  line-height: 30px;
+  margin-top: 20px;
 }
 
 .favorite-button {
@@ -214,7 +220,7 @@ export default {
 
 .shop-image {
   width: 150px;
-  margin-top: 25px;
+  margin-top: 15px;
   aspect-ratio: 5 / 3;
 }
 </style>

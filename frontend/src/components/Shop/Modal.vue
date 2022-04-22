@@ -9,24 +9,27 @@
     <div class="modal" v-if="!loading">
       <img :src="this.shop.image" alt="" class="modal-image no-caret" />
       <dir class="description-area">
-        <a
-          :href="this.shop.shop_url"
-          target="_blank"
-          class="shop-name item-text"
-          >{{ this.shop.name }}</a
-        >
-        <font-awesome-icon
-          :icon="['fas', 'heart']"
-          class="favorite-button like-button"
-          v-show="isLiked"
-          @click="likeShop(this.shop.id)"
-        />
-        <font-awesome-icon
-          :icon="['fas', 'heart']"
-          class="favorite-button delete-like-button"
-          v-show="!isLiked"
-          @click="deleteLikeShop(this.shop.id)"
-        />
+        <div class="shop-name-area">
+          <a
+            :href="this.shop.shop_url"
+            target="_blank"
+            class="shop-name item-text"
+            >{{ this.shop.name }}</a
+          >
+          <font-awesome-icon
+            :icon="['fas', 'heart']"
+            class="favorite-button like-button"
+            v-show="isLiked"
+            @click="likeShop(this.shop.id)"
+          />
+          <font-awesome-icon
+            :icon="['fas', 'heart']"
+            class="favorite-button delete-like-button"
+            v-show="!isLiked"
+            @click="deleteLikeShop(this.shop.id)"
+          />
+        </div>
+
         <p class="shop-description description">
           {{ this.shop.description }}
         </p>
@@ -210,9 +213,7 @@ export default {
 }
 
 .favorite-button {
-  position: absolute;
-  left: 120px;
-  top: 125px;
+  margin-left: 15px;
   cursor: pointer;
 }
 
@@ -246,9 +247,12 @@ export default {
   font-size: var(--main-font-size);
 }
 
-.shop-name {
+.shop-name-area {
   position: absolute;
   top: 120px;
+}
+
+.shop-name {
   font-size: var(--main-font-size);
   text-decoration: none;
   cursor: pointer;
