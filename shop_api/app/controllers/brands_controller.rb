@@ -1,6 +1,4 @@
 class BrandsController < ApplicationController
-  before_action :authenticate_user!
-
   def index
     brands = Brand.all
     render json: brands, status: 200
