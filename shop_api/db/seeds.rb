@@ -1,44 +1,4 @@
-# 10.times do |number|
-#   User.create(
-#     name: Faker::JapaneseMedia::OnePiece.unique.character,
-#     email: Faker::Internet.email,
-#     password: 'aaaaaaaa',
-#   )
-
-#   Shop.create(
-#     name: Faker::JapaneseMedia::OnePiece.sea,
-#     image: "https://lh5.googleusercontent.com/p/AF1QipMccV9puxC1HRW6434gib2j3boiTTMHb_0jBEPM=w1080-k-no",
-#     description: Faker::JapaneseMedia::OnePiece.quote,
-#     shop_url: Faker::Internet.url,
-#     latitude: 35.66166163404057,
-#     longitude: 139.71664574234688,
-#   )
-
-#   Brand.create(
-#     name: Faker::JapaneseMedia::OnePiece.island,
-#     image: "https://cld.fashionsnap.com/image/upload/asset/brand/images/2021/05/auraleelogo20210513-000.jpg",
-#     description: Faker::JapaneseMedia::OnePiece.quote,
-#     brand_url: Faker::Internet.url,
-#   )
-
-#   ShopUser.create(
-#     user_id: number,
-#     shop_id: number,
-#   )
-
-#   ShopBrand.create(
-#     shop_id: number,
-#     brand_id: number,
-#   )
-
-#   BrandUser.create(
-#     user_id: number,
-#     brand_id: number,
-#   )
-
-#   puts "#{number}番目のダミーデータを作成しました"
-# end
-
+# テスト用ログインユーザー
 User.create(
   name: "test",
   email: "test@test.com",
@@ -156,7 +116,7 @@ brands = [
   },
   {
     "name" => "TAUPE",
-    "image" => "https://static.wixstatic.com/media/af7b6a_3049b497a7964d8cba3e7b5a425f9467~mv2.jpg/v1/crop/x_0,y_0,w_2239,h_656/fill/w_638,h_208,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/22ss_top%E3%83%90%E3%83%8A%E3%83%BC.jpg",
+    "image" => "https://static.wixstatic.com/media/af7b6a_3049b497a7964d8cba3e7b5a425f9467~mv2.jpg/v1/crop/x_0,y_0,w_2239,h_656/fill/w_2239,h_655,al_c,q_85,enc_auto/22ss_top%E3%83%90%E3%83%8A%E3%83%BC.jpg",
     "description" => "“大人に向けた、個性を発揮する為の日常着” 大人＝保守的という固定観念に捉われずに、自由な発想で個の主張やスタイルを持ち続ける為のリアルクローズ。ジャストスタンダードではなく、日常に溶け込む趣向品を目指しています。",
     "brand_url" => "https://www.taupe-japan.com/",
   },
