@@ -42,7 +42,6 @@ export default {
 
   created: function () {
     const accessToken = window.localStorage.getItem("access-token");
-    console.log(accessToken);
     if (accessToken) {
       this.$router.push({ name: "Shop" });
     }
