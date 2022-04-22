@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+
   def show
     user = User.includes([:brands, :shops]).find(params[:id])
     brands = user.brands

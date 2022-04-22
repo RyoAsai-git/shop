@@ -1,4 +1,6 @@
 class ShopsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     shops = Shop.all
     render json: shops, status: 200
