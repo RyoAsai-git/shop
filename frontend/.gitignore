@@ -23,3 +23,6 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+ecs-cli.asc
+public_key_filename.txt
