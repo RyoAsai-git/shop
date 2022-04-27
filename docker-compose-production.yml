@@ -1,0 +1,31 @@
+version: '3'
+x-aws-vpc: "vpc-0ceb92c5724b18b85"
+
+services:
+  frontend:
+    build: app
+    # image: 670614348464.dkr.ecr.ap-northeast-1.amazonaws.com/shop-app:latest
+    ports:
+      - '8080:8080'
+    command: npm run serve
+    depends_on:
+      - shop_api
+
+  shop_api:
+    # image: 670614348464.dkr.ecr.ap-northeast-1.amazonaws.com/shop-app-api:latest
+    command: /bin/sh -c "rm -f tmp/pids/server.pid && bundle exec rails server -b 0.0.0.0"
+    environment:
+      TZ: Asia/Tokyo
+    ports:
+      - 3000:3000
+    networks:
+      app_net:
+        ipv4_address: '172.20.0.3'
+
+  networks:
+  app_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/24
