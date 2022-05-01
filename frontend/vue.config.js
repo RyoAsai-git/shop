@@ -1,5 +1,5 @@
 module.exports = {
-  publicPath: '/frontend',
+  publicPath: '/',
   configureWebpack: {
     performance: {
       maxAssetSize: 2700000,
