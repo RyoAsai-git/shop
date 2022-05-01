@@ -17,6 +17,8 @@ services:
         ipv4_address: '172.20.0.2'
 
   frontend:
+    container_name: frontend
+    image: frontend
     build: ./frontend
     volumes:
       - ./frontend:/app
