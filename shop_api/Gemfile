@@ -49,3 +49,5 @@ gem 'rename'
 gem 'faker'
 
 gem 'activestorage-validator'
+
+gem 'dotenv-rails'
