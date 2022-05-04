@@ -8,9 +8,7 @@
 #     npm install -g @vue/cli && \
 #     npm install --save axios
 
-FROM node:12.18.3-alpine
-
-# WORKDIR /app
+FROM node:15.11.0-alpine
 
 ENV LANG C.UTF-8
 ENV TZ Asia/Tokyo
@@ -25,8 +23,7 @@ ADD package-lock.json $APP_HOME/package-lock.json
 ADD . $APP_HOME
 
 RUN npm install
-# RUN npm run build
 
-EXPOSE 3000
+# EXPOSE 3000
 
-CMD ["npm", "run", "start"]
+# CMD [ "npm", "run", "prod-build" ]
