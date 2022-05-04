@@ -11,6 +11,7 @@
         "prod-serve": "vue-cli-service serve --mode production",
         "dev-build": "vue-cli-service build --mode development",
         "prod-build": "vue-cli-service build --mode production",
+        "deploy": "bash deploy-s3.sh",
         "lint": "vue-cli-service lint",
         "test": "jest",
         "webpack dev": "webpack --mode development",
