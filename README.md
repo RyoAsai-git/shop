@@ -11,7 +11,7 @@ APIリクエストには```axios```を導入し、HTTPリクエストを使っ�
 またルーティング制御には```vue-router```プラグインを使用しています。
 
 ## 本番環境URL
-[https://www.shop-app.site](https://www.shop-app.site)
+https://www.shop-app.site
 
 ### テストユーザー
 メールアドレス： test@test.com<br>
