@@ -21,7 +21,8 @@ APIリクエストには```axios```を導入し、HTTPリクエストを使っ�
 ・Circle Ci 2.1<br>
 
 ## インフラ構成図
-![test](https://user-images.githubusercontent.com/61679701/166973946-fdb7ab3a-a6f6-4aa5-b887-8b75bb349f8f.png)
+
+![test](https://user-images.githubusercontent.com/61679701/167063081-2af6c327-a6d9-4d04-8347-fc294ffa63cd.png)
 
 
 ## 画面構成
