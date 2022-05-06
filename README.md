@@ -10,6 +10,13 @@ SPAを作成するにあたり、```Rails API```と```Vue.js```の実装方法�
 APIリクエストには```axios```を導入し、HTTPリクエストを使ってRails　APIサーバからデータの取得やデータへのデータ送信を行っています。<br>
 またルーティング制御には```vue-router```プラグインを使用しています。
 
+## 本番環境URL
+https://www.shop-app.site
+
+### テストユーザー
+メールアドレス： test@test.com<br>
+パスワード： aaaaaaaa<br>
+
 ## 開発環境
 ・HTML<br>
 ・CSS<br>
