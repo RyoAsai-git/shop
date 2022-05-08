@@ -56,4 +56,6 @@ Rails.application.configure do
   host = 'localhost' #←先ほどの上のコードのhost名と合わせる
   Rails.application.routes.default_url_options[:host] = host
   Rails.application.routes.default_url_options[:port] = 3000
+
+  config.hosts << "app"
 end

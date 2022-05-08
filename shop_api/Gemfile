@@ -49,3 +49,7 @@ gem 'rename'
 gem 'faker'
 
 gem 'activestorage-validator'
+
+gem 'dotenv-rails'
+
+gem 'aws-sdk-s3'

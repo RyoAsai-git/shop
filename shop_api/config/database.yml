@@ -54,3 +54,4 @@ production:
   database: shop_api_production
   username: shop_api
   password: <%= ENV['shop_api_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>

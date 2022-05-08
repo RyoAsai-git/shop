@@ -41,10 +41,13 @@ export default {
     async login() {
       this.error = null;
       try {
-        const res = await axios.post(`${process.env.VUE_APP_API_URL}/auth/sign_in`, {
-          email: this.email,
-          password: this.password,
-        });
+        const res = await axios.post(
+          `${process.env.VUE_APP_API_URL}/auth/sign_in`,
+          {
+            email: this.email,
+            password: this.password,
+          }
+        );
         if (!res) {
           throw new Error("メールアドレスかパスワードが違います");
         }
