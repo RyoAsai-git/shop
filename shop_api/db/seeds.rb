@@ -158,7 +158,7 @@ brands = [
   },
   {
     "name" => "OAMC",
-    "image" => "https://blog-matsunoya.com/wp-content/uploads/2020/03/blog0814_1.jpg",
+    "image" => "http://voice-public.com/wp/wp-content/uploads/2016/08/blog0814_1.jpg",
     "description" => "OAMC(オーエーエムシー)は、フランス、パリを拠点とするファッションブランド。 ラグジュアリーな素材を使用し、モダンで構築的なデザインに機能性を充実させたメンズウェアを展開。",
     "brand_url" => "https://jp.oamc.com/",
   },
