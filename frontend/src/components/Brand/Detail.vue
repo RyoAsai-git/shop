@@ -150,7 +150,7 @@ export default {
 .brand-details-body {
   position: fixed;
   height: 100%;
-  width: 80%;
+  width: 100%;
   top: 0;
   left: 15%;
   margin-left: 20px;
@@ -166,6 +166,10 @@ export default {
 
 .back-button:hover {
   color: var(--main-bg-color);
+}
+
+.brand-details-main {
+  padding-right: 200px;
 }
 
 .brand-details-background-image {
@@ -220,7 +224,7 @@ export default {
 }
 
 .shop-image {
-  width: 150px;
+  width: 13%;
   margin-top: 15px;
   aspect-ratio: 5 / 3;
 }
