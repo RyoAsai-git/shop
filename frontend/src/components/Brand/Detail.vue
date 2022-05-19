@@ -37,7 +37,9 @@
           v-show="!isLiked"
           @click="deleteLikeBrand(this.brand.id)"
         />
-        <p class="brand-content brand-description">{{ this.brand.description }}</p>
+        <p class="brand-content brand-description">
+          {{ this.brand.description }}
+        </p>
       </div>
       <div class="related-content shop-content">
         <h3 class="item-text shop-content-title">取扱店舗</h3>
