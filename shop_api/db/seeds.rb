@@ -194,7 +194,7 @@ brands = [
   },
   {
     "name" => "MAATEE & SONS",
-    "image" => "https://shop6-makeshop.akamaized.net/shopimages/LINKSGOHONGI/slide1.jpg?MjAyMi0wMy0xNyAxNjoyMzowMw==",
+    "image" => "https://www.rassemble-nara.com/wp-content/uploads/2021/09/maatee_logo_arch.jpg",
     "description" => "MAATEE &SONS 福岡市今泉のセレクトショップ – UNREAL REAL CLOTHES. tim.（ティム）を展開していた松村大基が中心となって立ち上げたブランド。",
     "brand_url" => "www.maateeandsons.com",
   },
@@ -217,7 +217,7 @@ brands.each do |brand|
     name: brand["name"],
     image: brand["image"],
     description: brand["description"],
-    brand_url: brand["shop_url"],
+    brand_url: brand["brand_url"],
   )
 end
 
