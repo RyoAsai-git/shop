@@ -217,7 +217,7 @@ brands.each do |brand|
     name: brand["name"],
     image: brand["image"],
     description: brand["description"],
-    brand_url: brand["shop_url"],
+    brand_url: brand["brand_url"],
   )
 end
 
