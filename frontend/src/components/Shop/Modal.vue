@@ -192,8 +192,8 @@ export default {
 
 .modal {
   position: relative;
-  height: 60%;
-  width: 35%;
+  height: 425px;
+  width: 500px;
   padding: 1em;
   border-radius: 40px;
   background: var(--main-font-color);

@@ -15,7 +15,7 @@
             class="profile-image no-caret"
             v-if="user.avatar_url"
           />
-          <router-link :to="{ name: 'UploadImage', params: {id: user.id } }">
+          <router-link :to="{ name: 'UploadImage', params: { id: user.id } }">
             <font-awesome-icon :icon="['fa-solid', 'camera']" class="icon" />
           </router-link>
           <p class="profile-name">{{ user.name }}</p>
@@ -74,13 +74,16 @@ export default {
       const accessToken = window.localStorage.getItem("access-token");
       const client = window.localStorage.getItem("client");
       try {
-        const res = await axios.delete(`${process.env.VUE_APP_API_URL}/auth/sign_out`, {
-          headers: {
-            uid: uid,
-            client: client,
-            "access-token": accessToken,
-          },
-        });
+        const res = await axios.delete(
+          `${process.env.VUE_APP_API_URL}/auth/sign_out`,
+          {
+            headers: {
+              uid: uid,
+              client: client,
+              "access-token": accessToken,
+            },
+          }
+        );
         if (!res) {
           throw new Error("ログアウトできませんでした");
         }
@@ -101,7 +104,9 @@ export default {
     this.loading = true;
     try {
       const userId = window.localStorage.getItem("id");
-      const res = await axios.get(`${process.env.VUE_APP_API_URL}/users/${userId}`);
+      const res = await axios.get(
+        `${process.env.VUE_APP_API_URL}/users/${userId}`
+      );
       console.log({ res });
       this.user = res.data;
       this.loading = false;
@@ -201,6 +206,7 @@ export default {
   left: 0;
   right: 0;
   margin: auto;
+  margin-top: 3%;
   border-radius: 20px;
   border: solid #d3d3d3;
   background-color: var(--main-bg-color);

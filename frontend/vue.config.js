@@ -1,4 +1,10 @@
 module.exports = {
+  pages: {
+    index: {
+      entry: "src/main.js",
+      title: "SHOP"
+    }
+  },
   publicPath: '/',
   configureWebpack: {
     performance: {

@@ -1,17 +1,17 @@
 <template>
-<div class="error-main">
-  <div class="error-page">
-    <h1>404 page not found</h1>
-    <h2>ページが見つかりません。</h2>
-    <h3 class="error-description">
-      お探しのページが見つかりませんでした。<br />
-      URLが間違っているか、ページが存在しません。<br />
-    </h3>
-    <div>
-      <button class="home-button" @click="redirectToHome">HOMEに戻る</button>
+  <div class="error-main">
+    <div class="error-page">
+      <h1>404 page not found</h1>
+      <h2>ページが見つかりません。</h2>
+      <h3 class="error-description">
+        お探しのページが見つかりませんでした。<br />
+        URLが間違っているか、ページが存在しません。<br />
+      </h3>
+      <div>
+        <button class="home-button" @click="redirectToHome">HOMEに戻る</button>
+      </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
