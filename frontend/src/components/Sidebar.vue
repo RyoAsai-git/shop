@@ -74,4 +74,10 @@ li:hover {
 .router-link-active {
   color: var(--main-bg-color);
 }
+
+@media (max-width: 767px) {
+  .icon {
+    display: none;
+  }
+}
 </style>
