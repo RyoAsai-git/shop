@@ -31,53 +31,58 @@
 
 <script>
 export default {
-  name: 'Sidebar'
+  name: "Sidebar",
 };
 </script>
 
 <style scoped>
-ul li a {
-  text-decoration: none;
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  line-height: 60px;
-}
+@media (min-width: 1200px) {
+  ul li a {
+    text-decoration: none;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    line-height: 60px;
+  }
 
-.navbar {
-  height: 100%;
-  width: 15%;
-  border-right: 2px solid #f1f1f1;
-  position: fixed;
-  left: 0;
-  top: 0;
-}
+  .navbar {
+    height: 100%;
+    width: 15%;
+    border-right: 2px solid #f1f1f1;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
 
-li {
-  transition: background-color 0.5s;
-  font-size: var(--main-font-size);
-  list-style: none;
-  cursor: pointer;
-}
+  li {
+    transition: background-color 0.5s;
+    font-size: var(--main-font-size);
+    list-style: none;
+    cursor: pointer;
+  }
 
-li:hover {
-  background-color: rgb(191, 207, 207);
-  transition: background-color 100ms;
-}
+  li:hover {
+    background-color: rgb(191, 207, 207);
+    transition: background-color 100ms;
+  }
 
-.icon {
-  color: #d3d3d3;
-  width: 40px;
-  padding-left: 20%;
-}
+  .icon {
+    color: #d3d3d3;
+    width: 40px;
+    padding-left: 20%;
+  }
 
-.router-link-active {
-  color: var(--main-bg-color);
+  .router-link-active {
+    color: var(--main-bg-color);
+  }
 }
 
 @media (max-width: 767px) {
-  .icon {
-    display: none;
+  .navbar {
+    position: fixed;
+    bottom: 0;
+  }
+  .item-text {
   }
 }
 </style>
