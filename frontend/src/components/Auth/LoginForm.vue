@@ -19,7 +19,9 @@
       <div class="error">{{ error }}</div>
       <button>ログインする</button>
     </form>
-    <button>ゲストログイン</button>
+    <form @submit.prevent="guestLogin">
+      <button>ゲストログイン</button>
+    </form>
   </div>
 </template>
 
@@ -70,8 +72,8 @@ export default {
         const res = await axios.post(
           `${process.env.VUE_APP_API_URL}/auth/sign_in`,
           {
-            email: 'test@test.com',
-            password: 'aaaaaaaa',
+            email: "test@test.com",
+            password: "aaaaaaaa",
           }
         );
         if (!res) {
