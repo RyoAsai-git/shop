@@ -19,6 +19,7 @@
       <div class="error">{{ error }}</div>
       <button>ログインする</button>
     </form>
+    <button>ゲストログイン</button>
   </div>
 </template>
 
