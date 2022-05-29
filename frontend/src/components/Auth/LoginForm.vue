@@ -62,6 +62,31 @@ export default {
         this.error = "メールアドレスかパスワードが違います";
       }
     },
+
+    async guestLogin() {
+      this.error = null;
+      try {
+        const res = await axios.post(
+          `${process.env.VUE_APP_API_URL}/auth/sign_in`,
+          {
+            email: 'test@test.com',
+            password: 'aaaaaaaa',
+          }
+        );
+        if (!res) {
+          throw new Error("メールアドレスかパスワードが違います");
+        }
+        if (!this.error) {
+          setItem(res.headers, res.data);
+          this.$emit("redirectToHome");
+        }
+        console.log({ res });
+        return res;
+      } catch (error) {
+        console.log({ error });
+        this.error = "メールアドレスかパスワードが違います";
+      }
+    },
   },
 };
 </script>
