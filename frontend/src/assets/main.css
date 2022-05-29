@@ -27,7 +27,7 @@ body {
 }
 
 input:focus {
-  border: 1px solid #51b392;
+  border: 1px solid var(--main-bg-color);
 }
 
 .no-caret {
