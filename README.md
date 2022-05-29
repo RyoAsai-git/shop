@@ -18,6 +18,8 @@ APIリクエストには```axios```を導入し、HTTPリクエストを使っ�
 ## 本番環境URL
 https://www.shop-app.site
 
+ログイン画面の「ゲストログイン」用ボタンからログインして下さい。
+
 ### テストユーザー
 メールアドレス： test@test.com<br>
 パスワード： aaaaaaaa<br>
