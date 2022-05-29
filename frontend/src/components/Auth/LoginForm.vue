@@ -20,6 +20,7 @@
       <button>ログインする</button>
     </form>
     <form @submit.prevent="guestLogin">
+      <div class="error">{{ guestError }}</div>
       <button>ゲストログイン</button>
     </form>
   </div>
@@ -37,6 +38,7 @@ export default {
       email: "",
       password: "",
       error: null,
+      guestError: null,
     };
   },
 
@@ -67,27 +69,27 @@ export default {
     },
 
     async guestLogin() {
-      this.error = null;
+      this.guestError = null;
       try {
         const res = await axios.post(
           `${process.env.VUE_APP_API_URL}/auth/sign_in`,
           {
-            email: "test@test.com",
-            password: "aaaaaaaa",
+            email: process.env.VUE_APP_GUEST_EMAIL,
+            password: process.env.VUE_APP_GUEST_PASSWORD
           }
         );
         if (!res) {
-          throw new Error("メールアドレスかパスワードが違います");
+          throw new Error("ゲストログイン用のメールアドレスかパスワードが違います");
         }
-        if (!this.error) {
+        if (!this.guestError) {
           setItem(res.headers, res.data);
           this.$emit("redirectToHome");
         }
         console.log({ res });
         return res;
-      } catch (error) {
-        console.log({ error });
-        this.error = "メールアドレスかパスワードが違います";
+      } catch (guestError) {
+        console.log({ guestError });
+        this.guestError = "ゲストログイン用のメールアドレスかパスワードが違います";
       }
     },
   },
