@@ -38,6 +38,9 @@ https://www.shop-app.site
 ・Docker 20.10.7<br>
 ・Circle Ci 2.1<br>
 
+## 本番環境
+・AWS Route53
+
 
 
 ## インフラ構成図
