@@ -39,13 +39,13 @@ https://www.shop-app.site
 ・Circle Ci 2.1<br>
 
 ## 本番環境
-・AWS Route53
-・AWS Certificate Manager
-・Amazon Cloud Front
-・Amazon Cloud Watch 
-・ECR ECS(Fargate) 
-・S3 
-・Amazon RDS
+・AWS Route53<br>
+・AWS Certificate Manager<br>
+・Amazon Cloud Front<br>
+・Amazon Cloud Watch <br>
+・ECR ECS(Fargate) <br>
+・S3 <br>
+・Amazon RDS<br>
 
 ## インフラ構成図
 
