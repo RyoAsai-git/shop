@@ -40,8 +40,12 @@ https://www.shop-app.site
 
 ## 本番環境
 ・AWS Route53
-
-
+・AWS Certificate Manager
+・Amazon Cloud Front
+・Amazon Cloud Watch 
+・ECR ECS(Fargate) 
+・S3 
+・Amazon RDS
 
 ## インフラ構成図
 
