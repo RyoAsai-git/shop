@@ -29,25 +29,37 @@
           class="brand-image brand-icon-details"
         />
       </div>
-      <div class="brand-description-modal">
-        <a :href="this.brand.brand_url" target="_blank" class="brand-name">{{
-          this.brand.name
-        }}</a>
-        <font-awesome-icon
-          :icon="['fas', 'heart']"
-          class="favorite-button like-button"
-          v-show="isLiked"
-          @click="likeBrand(this.brand.id)"
-        />
-        <font-awesome-icon
-          :icon="['fas', 'heart']"
-          class="favorite-button delete-like-button"
-          v-show="!isLiked"
-          @click="deleteLikeBrand(this.brand.id)"
-        />
-        <p class="brand-content brand-description">
-          {{ this.brand.description }}
-        </p>
+      <div class="brand-detail-modal-bottom">
+        <div class="brand-description-modal">
+          <a :href="this.brand.brand_url" target="_blank" class="brand-name">{{
+            this.brand.name
+          }}</a>
+          <font-awesome-icon
+            :icon="['fas', 'heart']"
+            class="favorite-button like-button"
+            v-show="isLiked"
+            @click="likeBrand(this.brand.id)"
+          />
+          <font-awesome-icon
+            :icon="['fas', 'heart']"
+            class="favorite-button delete-like-button"
+            v-show="!isLiked"
+            @click="deleteLikeBrand(this.brand.id)"
+          />
+          <p class="brand-content brand-description">
+            {{ this.brand.description }}
+          </p>
+        </div>
+        <div class="brand-shop-modal">
+          <h3 class="item-text shop-content-title">取扱店舗</h3>
+          <router-link
+            :to="{ name: 'Modal', params: { id: shop.id } }"
+            v-for="shop in this.brand.shops"
+            :key="shop.id"
+          >
+            <img :src="shop.image" class="related-image shop-image no-caret" />
+          </router-link>
+        </div>
       </div>
 
       <!-- <div class="brand-description-area">
@@ -182,7 +194,7 @@ export default {
 <style scoped>
 .brand-details-header {
   position: absolute;
-  top: 10%;
+  top: 5;
   left: 20%;
   color: var(--main-font-color);
 }
@@ -227,11 +239,15 @@ export default {
   object-fit: contain;
 }
 
+.brand-detail-modal-bottom {
+  display: flex;
+}
+
 .brand-details-modal {
   position: relative;
-  left: 25%;
+  /* left: 15%; */
   height: 250px;
-  width: 700px;
+  width: 788px;
   background: #fff;
   border-radius: 30px;
 }
@@ -244,13 +260,15 @@ export default {
   border-radius: 20px;
   border: 1px solid #d3d3d3; */
   width: 25%;
+  /* height: 85%; */
   /* top: 120px; */
   /* left: 100px; */
   border-radius: 20px;
   border: 1px solid #d3d3d3;
-  margin-top: 35px;
+  margin-top: 20px;
   position: absolute;
   left: 5%;
+  aspect-ratio: 3 / 3;
 }
 
 .brand-description-area {
@@ -260,12 +278,14 @@ export default {
 }
 
 .brand-description-modal {
-  width: 25%;
+  /* width: 25%; */
   padding-top: 20px;
   background: #fff;
   border-radius: 40px;
   margin-top: 25px;
-  margin-left: 25%;
+  /* margin-left: 15%; */
+      width: 400px;
+    height: 300px;
 }
 
 .brand-name {
@@ -292,12 +312,22 @@ export default {
   cursor: pointer;
 }
 
+.brand-shop-modal {
+  background: #fff;
+  border-radius: 40px;
+  margin-top: 25px;
+  margin-left: 25px;
+  width: 360px;
+}
+
 .shop-content {
   margin-top: 40px;
 }
 
 .shop-content-title {
   margin-left: 40px;
+  padding-top: 15px;
+  font-size: 25px;
 }
 
 .shop-image {
