@@ -7,29 +7,50 @@
         @click="$router.back()"
       />
     </div>
-    <div class="brand-details-body">
-      <v-loading v-if="loading"></v-loading>
-      <div class="brand-details-main no-caret" v-if="!loading">
-        <!-- <div class="brand-details-content">
+    <!-- <div class="brand-details-body"> -->
+    <v-loading v-if="loading"></v-loading>
+    <div class="brand-details-main no-caret" v-if="!loading">
+      <!-- <div class="brand-details-content">
           <img
             :src="this.brand.image"
             alt=""
             class="brand-details-background-image"
           />
         </div> -->
-        <div class="brand-details-modal">
-          <img
-            :src="this.brand.image"
-            alt=""
-            class="brand-details-background-image"
-          />
-          <img
-            :src="this.brand.image"
-            alt=""
-            class="brand-image brand-icon-details"
-          />
-        </div>
-        <!-- <div class="brand-description-area">
+      <div class="brand-details-modal">
+        <img
+          :src="this.brand.image"
+          alt=""
+          class="brand-details-background-image"
+        />
+        <img
+          :src="this.brand.image"
+          alt=""
+          class="brand-image brand-icon-details"
+        />
+      </div>
+      <div class="brand-description-modal">
+        <a :href="this.brand.brand_url" target="_blank" class="brand-name">{{
+          this.brand.name
+        }}</a>
+        <font-awesome-icon
+          :icon="['fas', 'heart']"
+          class="favorite-button like-button"
+          v-show="isLiked"
+          @click="likeBrand(this.brand.id)"
+        />
+        <font-awesome-icon
+          :icon="['fas', 'heart']"
+          class="favorite-button delete-like-button"
+          v-show="!isLiked"
+          @click="deleteLikeBrand(this.brand.id)"
+        />
+        <p class="brand-content brand-description">
+          {{ this.brand.description }}
+        </p>
+      </div>
+
+      <!-- <div class="brand-description-area">
           <a :href="this.brand.brand_url" target="_blank" class="brand-name">{{
             this.brand.name
           }}</a>
@@ -48,8 +69,9 @@
           <p class="brand-content brand-description">
             {{ this.brand.description }}
           </p>
-        </div>
-        <div class="related-content shop-content">
+        </div> -->
+
+      <!-- <div class="related-content shop-content">
           <h3 class="item-text shop-content-title">取扱店舗</h3>
           <router-link
             :to="{ name: 'Modal', params: { id: shop.id } }"
@@ -59,8 +81,8 @@
             <img :src="shop.image" class="related-image shop-image no-caret" />
           </router-link>
         </div> -->
-      </div>
     </div>
+    <!-- </div> -->
   </div>
 </template>
 
@@ -183,6 +205,11 @@ export default {
   border-radius: 40px;
 } */
 
+.brand-details-body {
+  position: absolute;
+  top: 20%;
+}
+
 .back-button:hover {
   color: var(--main-bg-color);
 }
@@ -192,16 +219,20 @@ export default {
 } */
 
 .brand-details-background-image {
-  height: 300px;
+  /* height: 300px;
   width: 100%;
-  object-fit: cover;
+  object-fit: cover; */
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 .brand-details-modal {
   position: relative;
+  left: 25%;
   height: 250px;
-  background: #fff;
   width: 700px;
+  background: #fff;
   border-radius: 30px;
 }
 
@@ -218,12 +249,23 @@ export default {
   border-radius: 20px;
   border: 1px solid #d3d3d3;
   margin-top: 35px;
+  position: absolute;
+  left: 5%;
 }
 
 .brand-description-area {
-  width: 90%;
+  /* width: 90%;
   margin-top: 10px;
-  margin-left: 40px;
+  margin-left: 40px; */
+}
+
+.brand-description-modal {
+  width: 25%;
+  padding-top: 20px;
+  background: #fff;
+  border-radius: 40px;
+  margin-top: 25px;
+  margin-left: 25%;
 }
 
 .brand-name {
@@ -231,6 +273,7 @@ export default {
   font-size: 25px;
   color: #333333;
   text-decoration: none;
+  padding-left: 35px;
 }
 
 .brand-name:hover {
@@ -240,6 +283,7 @@ export default {
 .brand-description {
   line-height: 30px;
   margin-top: 20px;
+  padding: 0 20px 20px 20px;
 }
 
 .favorite-button {
