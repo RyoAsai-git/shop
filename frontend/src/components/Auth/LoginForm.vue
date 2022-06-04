@@ -19,6 +19,10 @@
       <div class="error">{{ error }}</div>
       <button>ログインする</button>
     </form>
+    <form @submit.prevent="guestLogin">
+      <div class="error">{{ guestError }}</div>
+      <button>ゲストログイン</button>
+    </form>
   </div>
 </template>
 
@@ -34,6 +38,7 @@ export default {
       email: "",
       password: "",
       error: null,
+      guestError: null,
     };
   },
 
@@ -62,6 +67,31 @@ export default {
         this.error = "メールアドレスかパスワードが違います";
       }
     },
+
+    async guestLogin() {
+      this.guestError = null;
+      try {
+        const res = await axios.post(
+          `${process.env.VUE_APP_API_URL}/auth/sign_in`,
+          {
+            email: process.env.VUE_APP_GUEST_EMAIL,
+            password: process.env.VUE_APP_GUEST_PASSWORD
+          }
+        );
+        if (!res) {
+          throw new Error("ゲストログイン用のメールアドレスかパスワードが違います");
+        }
+        if (!this.guestError) {
+          setItem(res.headers, res.data);
+          this.$emit("redirectToHome");
+        }
+        console.log({ res });
+        return res;
+      } catch (guestError) {
+        console.log({ guestError });
+        this.guestError = "ゲストログイン用のメールアドレスかパスワードが違います";
+      }
+    },
   },
 };
 </script>
@@ -69,7 +99,8 @@ export default {
 <style scoped>
 button {
   text-decoration: none;
-  background: #51b392;
+  /* background: #51b392; */
+  background: var(--main-bg-color);
   color: white;
   font-weight: bold;
   border: 0;

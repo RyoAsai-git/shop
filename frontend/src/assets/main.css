@@ -5,6 +5,7 @@
 
 :root {
   --main-font-color: #fff;
+  --main-background-color: #fff;
   --main-font-size: 17px;
   --sub-font-size: 14px;
   --main-bg-color: #0096a9;
@@ -27,7 +28,7 @@ body {
 }
 
 input:focus {
-  border: 1px solid #51b392;
+  border: 1px solid var(--main-bg-color);
 }
 
 .no-caret {

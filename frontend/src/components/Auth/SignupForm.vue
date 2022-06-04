@@ -84,7 +84,7 @@ export default {
 <style scoped>
 button {
   text-decoration: none;
-  background: #51b392;
+  background: var(--main-bg-color);
   color: white;
   font-weight: bold;
   border: 0;
