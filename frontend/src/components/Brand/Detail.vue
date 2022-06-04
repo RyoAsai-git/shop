@@ -2,21 +2,13 @@
   <div id="overlay">
     <div class="brand-details-header">
       <font-awesome-icon
-        :icon="['fas', 'angle-left']"
+        :icon="['fa', 'times']"
         class="back-button"
         @click="$router.back()"
       />
     </div>
-    <!-- <div class="brand-details-body"> -->
     <v-loading v-if="loading"></v-loading>
     <div class="brand-details-main no-caret" v-if="!loading">
-      <!-- <div class="brand-details-content">
-          <img
-            :src="this.brand.image"
-            alt=""
-            class="brand-details-background-image"
-          />
-        </div> -->
       <div class="brand-details-modal">
         <img
           :src="this.brand.image"
@@ -52,49 +44,21 @@
         </div>
         <div class="brand-shop-modal">
           <h3 class="item-text shop-content-title">取扱店舗</h3>
-          <router-link
-            :to="{ name: 'Modal', params: { id: shop.id } }"
-            v-for="shop in this.brand.shops"
-            :key="shop.id"
-          >
-            <img :src="shop.image" class="related-image shop-image no-caret" />
-          </router-link>
+          <div class="brand-shop-image-area">
+            <router-link
+              :to="{ name: 'Modal', params: { id: shop.id } }"
+              v-for="shop in this.brand.shops"
+              :key="shop.id"
+            >
+              <img
+                :src="shop.image"
+                class="related-image shop-image no-caret"
+              />
+            </router-link>
+          </div>
         </div>
       </div>
-
-      <!-- <div class="brand-description-area">
-          <a :href="this.brand.brand_url" target="_blank" class="brand-name">{{
-            this.brand.name
-          }}</a>
-          <font-awesome-icon
-            :icon="['fas', 'heart']"
-            class="favorite-button like-button"
-            v-show="isLiked"
-            @click="likeBrand(this.brand.id)"
-          />
-          <font-awesome-icon
-            :icon="['fas', 'heart']"
-            class="favorite-button delete-like-button"
-            v-show="!isLiked"
-            @click="deleteLikeBrand(this.brand.id)"
-          />
-          <p class="brand-content brand-description">
-            {{ this.brand.description }}
-          </p>
-        </div> -->
-
-      <!-- <div class="related-content shop-content">
-          <h3 class="item-text shop-content-title">取扱店舗</h3>
-          <router-link
-            :to="{ name: 'Modal', params: { id: shop.id } }"
-            v-for="shop in this.brand.shops"
-            :key="shop.id"
-          >
-            <img :src="shop.image" class="related-image shop-image no-caret" />
-          </router-link>
-        </div> -->
     </div>
-    <!-- </div> -->
   </div>
 </template>
 
@@ -194,28 +158,18 @@ export default {
 <style scoped>
 .brand-details-header {
   position: absolute;
-  top: 5;
+  top: 0;
   left: 20%;
   color: var(--main-font-color);
+  cursor: pointer;
 }
 
 .back-button {
-  height: 30px;
+  height: 50px;
   width: 30px;
   margin-top: 15px;
   margin-left: 20px;
 }
-
-/* .brand-details-body {
-  position: fixed;
-  height: 90%;
-  width: 100%;
-  top: 0;
-  left: 15%;
-  margin-left: 20px;
-  background: #fff;
-  border-radius: 40px;
-} */
 
 .brand-details-body {
   position: absolute;
@@ -226,14 +180,7 @@ export default {
   color: var(--main-bg-color);
 }
 
-/* .brand-details-main {
-  padding-right: 200px;
-} */
-
 .brand-details-background-image {
-  /* height: 300px;
-  width: 100%;
-  object-fit: cover; */
   height: 100%;
   width: 100%;
   object-fit: contain;
@@ -245,7 +192,6 @@ export default {
 
 .brand-details-modal {
   position: relative;
-  /* left: 15%; */
   height: 250px;
   width: 788px;
   background: #fff;
@@ -253,16 +199,7 @@ export default {
 }
 
 .brand-icon-details {
-  /* position: absolute;
-  width: 15%;
-  top: 120px;
-  left: 100px;
-  border-radius: 20px;
-  border: 1px solid #d3d3d3; */
   width: 25%;
-  /* height: 85%; */
-  /* top: 120px; */
-  /* left: 100px; */
   border-radius: 20px;
   border: 1px solid #d3d3d3;
   margin-top: 20px;
@@ -271,21 +208,13 @@ export default {
   aspect-ratio: 3 / 3;
 }
 
-.brand-description-area {
-  /* width: 90%;
-  margin-top: 10px;
-  margin-left: 40px; */
-}
-
 .brand-description-modal {
-  /* width: 25%; */
+  height: 300px;
+  width: 400px;
+  margin-top: 25px;
   padding-top: 20px;
   background: #fff;
   border-radius: 40px;
-  margin-top: 25px;
-  /* margin-left: 15%; */
-      width: 400px;
-    height: 300px;
 }
 
 .brand-name {
@@ -320,6 +249,12 @@ export default {
   width: 360px;
 }
 
+.brand-shop-image-area {
+  overflow-x: auto;
+  white-space: nowrap;
+  border-radius: 30px;
+}
+
 .shop-content {
   margin-top: 40px;
 }
@@ -331,7 +266,7 @@ export default {
 }
 
 .shop-image {
-  width: 13%;
+  width: 90%;
   margin-top: 15px;
   aspect-ratio: 5 / 3;
 }
