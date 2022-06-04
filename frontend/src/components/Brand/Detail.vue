@@ -194,7 +194,7 @@ export default {
   position: relative;
   height: 250px;
   width: 788px;
-  background: #fff;
+  background: var(--main-background-color);
   border-radius: 30px;
 }
 
@@ -213,7 +213,7 @@ export default {
   width: 400px;
   margin-top: 25px;
   padding-top: 20px;
-  background: #fff;
+  background: var(--main-background-color);
   border-radius: 40px;
 }
 
@@ -242,7 +242,7 @@ export default {
 }
 
 .brand-shop-modal {
-  background: #fff;
+  background: var(--main-background-color);
   border-radius: 40px;
   margin-top: 25px;
   margin-left: 25px;
