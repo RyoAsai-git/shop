@@ -38,9 +38,11 @@
             v-show="!isLiked"
             @click="deleteLikeBrand(this.brand.id)"
           />
-          <p class="brand-content brand-description">
-            {{ this.brand.description }}
-          </p>
+          <div class="brand-description-area">
+            <p class="brand-content brand-description">
+              {{ this.brand.description }}
+            </p>
+          </div>
         </div>
         <div class="brand-shop-modal">
           <h3 class="item-text shop-content-title">取扱店舗</h3>
@@ -229,9 +231,9 @@ export default {
   color: var(--main-bg-color);
 }
 
-.brand-description {
-  line-height: 30px;
-  margin-top: 20px;
+.brand-description-area {
+  line-height: 25px;
+  margin-top: 10px;
   padding: 0 20px 20px 20px;
 }
 
