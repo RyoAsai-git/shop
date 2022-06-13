@@ -18,13 +18,13 @@ export default {
   data() {
     return {
       accessToken: null,
-    }
+    };
   },
-  created: function() {
-    const accessToken = window.localStorage.getItem('access-token')
+  created: function () {
+    const accessToken = window.localStorage.getItem("access-token");
     if (!accessToken) {
       this.$router.push({ name: "Welcome" });
     }
-  }
+  },
 };
 </script>
