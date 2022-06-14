@@ -13,8 +13,6 @@ default: &default
   adapter: mysql2
   encoding: utf8mb4
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  # username: root
-  # password: password
   username: <%= ENV['DEVELOPMENT_USERNAME'] %>
   password: <%= ENV['DEVELOPMENT_PASSWORD'] %>
   socket: /tmp/mysql.sock
@@ -23,7 +21,6 @@ default: &default
 development:
   <<: *default
   database: shop_api_development
-  # url: mysql2://root:password@db:3306
   url: <%= ENV['DEVELOPMENT_DATABASE_URL'] %>
 
 # Warning: The database defined as "test" will be erased and
