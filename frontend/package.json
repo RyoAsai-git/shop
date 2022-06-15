@@ -5,6 +5,8 @@
     "scripts": {
         "serve": "vue-cli-service serve",
         "prebuild": "rimraf dist",
+        "predev-build": "rimraf dist",
+        "preprod-build": "rimraf dist",
         "build": "vue-cli-service build",
         "test:unit": "vue-cli-service test:unit",
         "local-serve": "vue-cli-service serve --mode local",
