@@ -16,7 +16,7 @@ APIリクエストには```axios```を導入し、HTTPリクエストを使っ�
 <br>
 
 ## 本番環境URL
-https://www.shop-app.site
+~~https://www.shop-app.site~~
 
 ログイン画面の「ゲストログイン」からログインして下さい。
 <img width="776" alt="66a3900fc96294f6aaa518e83c730d7e" src="https://user-images.githubusercontent.com/61679701/171205972-d8b2a624-bcab-4c23-9576-b7b118d37315.png">
